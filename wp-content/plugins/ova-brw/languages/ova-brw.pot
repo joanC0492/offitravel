@@ -1,0 +1,6204 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Travel and Tour Booking\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-27 03:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9; php-8.1.17\n"
+"X-Domain: ova-brw"
+
+#: inc/ovabrw-get-data.php:1756
+#, php-format
+msgid " (Adult: %s%s - Baby: %s%s)"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1754
+#, php-format
+msgid " (Adult: %s%s - Child: %s%s"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1752
+#, php-format
+msgid " (Adult: %s%s - Child: %s%s - Baby: %s%s)"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1758
+#, php-format
+msgid " (Adult: %s%s)"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:473
+#, php-format
+msgid " (includes %s insurance)"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:500
+msgid " Check-in "
+msgstr ""
+
+#: inc/ovabrw_hooks.php:243
+msgid " Check-in date"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:501
+msgid " Check-out "
+msgstr ""
+
+#: inc/ovabrw_hooks.php:249
+msgid " Check-out date"
+msgstr ""
+
+#: inc/ovabrw-taxonomy.php:25 inc/ovabrw-taxonomy.php:76
+msgid " Name"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:503
+msgid " Original Order "
+msgstr ""
+
+#: inc/ovabrw_hooks.php:502
+msgid " Price Detail "
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax_sidebar.php:246
+msgid " Price: high to low"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:504
+msgid " Remaining Balance Order "
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:160 inc/ovabrw-extra-tab.php:419
+#: inc/ovabrw-extra-tab.php:781 inc/ovabrw-extra-tab.php:841
+#: inc/ovabrw-cart.php:695 inc/ovabrw-cart.php:760 inc/ovabrw-cart.php:1045
+#: inc/ovabrw-cart.php:1112 admin/class-ovabrw-admin-orders.php:571
+#: admin/class-ovabrw-admin-orders.php:634
+#, php-format
+msgid "%s (%s)"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:301 inc/ovabrw-extra-tab.php:336
+#: inc/ovabrw-extra-tab.php:363 inc/ovabrw-cart.php:392 inc/ovabrw-cart.php:429
+#: inc/ovabrw-cart.php:459 admin/class-ovabrw-admin-orders.php:457
+#: admin/class-ovabrw-admin-orders.php:491
+#: admin/class-ovabrw-admin-orders.php:518
+#, php-format
+msgid "%s (x%d)"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:181
+#, php-format
+msgid "%s day"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:183
+#, php-format
+msgid "%s days"
+msgstr ""
+
+#: inc/ovabrw-cart.php:199 inc/ovabrw-cart.php:251 inc/ovabrw-cart.php:258
+#, php-format
+msgid "%s field is required"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:174
+#, php-format
+msgid "%s hour"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:164
+#, php-format
+msgid "%s hour %s minute"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:160
+#, php-format
+msgid "%s hour %s minutes"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:176
+#, php-format
+msgid "%s hours"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:162
+#, php-format
+msgid "%s hours %s minute"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:158
+#, php-format
+msgid "%s hours %s minutes"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1709
+#, php-format
+msgid "%s is required."
+msgstr ""
+
+#: inc/ovabrw-cart.php:836 inc/ovabrw-cart.php:844 inc/ovabrw-cart.php:907
+#: inc/ovabrw-cart.php:912
+#, php-format
+msgid "%s isn't available for this time, Please book other time."
+msgstr ""
+
+#: inc/ovabrw_ajax.php:191 inc/ovabrw_ajax.php:354 inc/ovabrw_ajax.php:458
+#: inc/ovabrw_ajax.php:576 inc/ovabrw_ajax.php:713 inc/ovabrw_ajax.php:1975
+#, php-format
+msgid "%s isn't available for this time.<br>Please book other time."
+msgstr ""
+
+#: inc/ovabrw-cart.php:209
+#, php-format
+msgid "%s max file size %sMB"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:168
+#, php-format
+msgid "%s minute"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:170
+#, php-format
+msgid "%s minutes"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_list.php:107
+msgid "( Note*: Template 2 has only Column 1 or Column 2 style )"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:308 inc/ovabrw_deposit.php:151
+#: inc/ovabrw_deposit.php:913
+#, php-format
+msgid "(%s%% deposit of %s)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:815
+msgid "(0y-5y)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:756
+msgid "(12y-99y)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:786
+msgid "(6y-11y)"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:310 inc/ovabrw_deposit.php:153
+#: inc/ovabrw_deposit.php:915
+#, php-format
+msgid "(deposit of %s)"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:526
+msgid ""
+"(Event titles such as 1/200 or 2/200 reflect the number of units booked "
+"relative to the total available quantity)"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:992 inc/ovabrw_deposit.php:1047
+#: inc/ovabrw_deposit.php:1106
+msgid "(ex. tax)"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:228
+msgid "(excl. tax)"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1739
+#, php-format
+msgid "(excludes %s %s)"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:545 inc/ovabrw_deposit.php:555
+#: inc/ovabrw_deposit.php:621 inc/ovabrw_deposit.php:636
+#: inc/ovabrw_deposit.php:1292 inc/ovabrw_deposit.php:1299
+#: inc/ovabrw_deposit.php:1375 inc/ovabrw_deposit.php:1380
+#, php-format
+msgid "(excludes %s)"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:389 inc/ovabrw-blocks.php:455
+#: inc/ovabrw_deposit.php:225 inc/ovabrw_deposit.php:294
+#: inc/ovabrw_deposit.php:980 inc/ovabrw_deposit.php:1035
+#: inc/ovabrw_deposit.php:1564 inc/ovabrw_deposit.php:1600
+#, php-format
+msgid "(incl. %s insurance fee)"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:228 inc/ovabrw_deposit.php:997
+#: inc/ovabrw_deposit.php:1052 inc/ovabrw_deposit.php:1111
+msgid "(incl. tax)"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:485
+#, php-format
+msgid "(includes %1$s estimated for %2$s)"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1712 inc/ovabrw_deposit.php:1771
+#, php-format
+msgid "(includes %s %s)"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:513 inc/ovabrw_deposit.php:515
+#: inc/ovabrw_deposit.php:1270
+#, php-format
+msgid "(includes %s insurance fee)"
+msgstr ""
+
+#: inc/ovabrw_ajax.php:284
+#, php-format
+msgid "(includes %s insurance)"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:487 inc/ovabrw_deposit.php:540
+#: inc/ovabrw_deposit.php:552 inc/ovabrw_deposit.php:614
+#: inc/ovabrw_deposit.php:631 inc/ovabrw_deposit.php:1221
+#: inc/ovabrw_deposit.php:1290 inc/ovabrw_deposit.php:1302
+#: inc/ovabrw_deposit.php:1369 inc/ovabrw_deposit.php:1387
+#, php-format
+msgid "(includes %s)"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3882 inc/ovabrw-cart.php:1234
+msgid "(view information)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:498
+#: elementor/widgets/ovabrw_search_ajax.php:497
+msgid "+3 days"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:487
+#: elementor/widgets/ovabrw_search_ajax.php:486
+msgid "+7 hours"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:458
+#: admin/ovabrw-admin-core-functions.php:621
+msgid "-- Choose Product --"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:331
+msgid "..."
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:98
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:79
+msgid ".jpg, .jpeg, .png, .gif, .ico, .webp"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:81
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:89
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:62
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:70
+msgid ".jpg, .jpeg, .png, .pdf, .doc, .docx"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:116
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:97
+msgid ".mp3, .m4a, .ogg, .wav"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:125
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:106
+msgid ".mp4, .m4v, .mov, .wmv, .avi, .mpg, .ogv, .3gp, .3g2"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:107
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:88
+msgid ""
+".pdf, .doc, .docx, .ppt, .pptx, .pps, .ppsx, .odt, .xls, .xlsx, .PSD, .XML"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:299 inc/ovabrw-get-data.php:313
+msgid "/"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1467 inc/ovabrw-get-data.php:1483
+#: inc/ovabrw-get-data.php:1502 admin/metabox/fields/ovabrw_resources.php:166
+#: admin/metabox/fields/ovabrw_daily_price.php:141
+#: admin/metabox/fields/ovabrw_service.php:211
+#: admin/metabox/fields/ovabrw_service_field.php:66
+#: admin/metabox/fields/ovabrw_resources_field.php:73
+#: admin/metabox/fields/schedule/friday.php:49
+#: admin/metabox/fields/schedule/saturday.php:49
+#: admin/metabox/fields/schedule/wednesday.php:49
+#: admin/metabox/fields/schedule/sunday.php:49
+#: admin/metabox/fields/schedule/thursday.php:49
+#: admin/metabox/fields/schedule/monday.php:49
+#: admin/metabox/fields/schedule/tuesday.php:49
+msgid "/order"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1465 inc/ovabrw-get-data.php:1481
+#: inc/ovabrw-get-data.php:1500 admin/metabox/fields/ovabrw_resources.php:163
+#: admin/metabox/fields/ovabrw_daily_price.php:138
+#: admin/metabox/fields/ovabrw_service.php:208
+#: admin/metabox/fields/ovabrw_service_field.php:63
+#: admin/metabox/fields/ovabrw_resources_field.php:70
+#: admin/metabox/fields/schedule/friday.php:46
+#: admin/metabox/fields/schedule/saturday.php:46
+#: admin/metabox/fields/schedule/wednesday.php:46
+#: admin/metabox/fields/schedule/sunday.php:46
+#: admin/metabox/fields/schedule/thursday.php:46
+#: admin/metabox/fields/schedule/monday.php:46
+#: admin/metabox/fields/schedule/tuesday.php:46
+msgid "/per person"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:325
+#: ovabrw-templates/single/search_ajax_sidebar.php:202
+msgid "0"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:469
+#: elementor/widgets/ovabrw_search_ajax.php:468
+msgid "0-3 hours"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:152
+#: admin/metabox/ovabrw-custom-fields.php:736
+msgid ""
+"0: Sunday, 1: Monday, 2: Tuesday, 3: Wednesday, 4: Thursday, 5: Friday, 6: "
+"Saturday . Example: 0,6"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:492
+#: elementor/widgets/ovabrw_search_ajax.php:491
+msgid "1-3 days"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:120
+#: elementor/widgets/ovabrw_product_destination_ajax.php:123
+msgid "1|2|3"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:201
+#: elementor/widgets/ovabrw_search_ajax.php:188
+#: elementor/widgets/ovabrw_product_category_ajax.php:202
+#: elementor/widgets/ovabrw_product_destination_ajax.php:189
+msgid "2 Column"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:202
+#: elementor/widgets/ovabrw_search_ajax.php:189
+#: elementor/widgets/ovabrw_product_category_ajax.php:203
+#: elementor/widgets/ovabrw_product_destination_ajax.php:190
+msgid "3 Column"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:475
+#: elementor/widgets/ovabrw_search_ajax.php:474
+msgid "3-5 hours"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:190
+#: elementor/widgets/ovabrw_product_category_ajax.php:204
+#: elementor/widgets/ovabrw_product_destination_ajax.php:191
+msgid "4 Column"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:481
+#: elementor/widgets/ovabrw_search_ajax.php:480
+msgid "5-7 hours"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1000
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1078
+msgid "86400s = 24*60*60(1 day)"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:861 inc/ovabrw-get-data.php:963
+#: inc/ovabrw-get-data.php:1012 inc/ovabrw-get-data.php:1033
+#: inc/ovabrw-get-data.php:1051 inc/ovabrw-taxonomy.php:21
+#: inc/ovabrw-taxonomy.php:72 inc/ovabrw-taxonomy.php:96
+msgid ": "
+msgstr ""
+
+#: inc/ovabrw_ajax.php:299
+#, php-format
+msgid "<span class=\"show_total\">%s</span> <small>(of %s)</small>"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:58
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:64
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:37
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:45
+msgid "[0-9]{3}-[0-9]{3}-[0-9]{4}"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:713
+#: admin/metabox/ovabrw-custom-fields.php:884
+msgid "[contact-form-7]"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:452
+msgid "a fixed amount of payment"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:451
+msgid "a percentage amount of payment "
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:416
+msgid "Accept partial payment when booking"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-guest-info-fields.php:67
+#: admin/guest-info-fields/views/html-guest-info-fields.php:151
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:230
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:203
+msgid "Actions"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:1078
+#: elementor/widgets/ovabrw_product_slider.php:1225
+#: elementor/widgets/ovabrw_product_filter_ajax.php:490
+#: elementor/widgets/ovabrw_product_category_ajax.php:341
+#: elementor/widgets/ovabrw_product_destination_ajax.php:311
+#: elementor/widgets/ovabrw_product_tabs.php:312
+#: elementor/widgets/ovabrw_product_categories.php:1007
+msgid "Active"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:646
+#: elementor/widgets/ovabrw_search_ajax.php:653
+#: elementor/widgets/ovabrw_search.php:267
+msgid "Activity"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:261
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:290
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:229
+msgid "Add"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_untime.php:73
+#: admin/metabox/fields/ovabrw_fixed_time.php:69
+msgid "Add date range"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_global_discount.php:125
+#: admin/metabox/fields/ovabrw_st_record.php:81
+#: admin/metabox/fields/ovabrw_st.php:249
+msgid "Add discount"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_features.php:89
+msgid "Add Feature"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:135
+#: admin/guest-info-fields/views/html-guest-info-fields.php:20
+#: admin/guest-info-fields/views/html-guest-info-fields.php:21
+msgid "Add field"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:189
+msgid "Add Item"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:5
+msgid "Add Meta"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:335 inc/ovabrw-functions.php:2044
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:436
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:501
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:567
+msgid "Add new option"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_resources.php:184
+#: admin/metabox/fields/ovabrw_service.php:226
+#: admin/metabox/fields/ovabrw_service_group.php:67
+msgid "Add option"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_service.php:243
+msgid "Add service"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_st.php:275
+msgid "Add special time"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:107
+msgid "Add Taxonomy"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_daily_price.php:159
+msgid "Add timeslot"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:363
+msgid "Add Tour Excluded"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:345
+msgid "Add Tour Included"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:382
+msgid "Add Tour Plan"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:153
+#: elementor/widgets/ovabrw_product_slider.php:219
+#: elementor/widgets/ovabrw_product_images.php:60
+#: elementor/widgets/ovabrw_product_categories.php:169
+msgid "Additional Options"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:295
+msgid "Additional Options Slider"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_product_map.php:29
+msgid "Address"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:156
+msgid "Address 1"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:163
+msgid "Address 2"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:188
+msgid "Address: "
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1132
+msgid "Admin settings"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3861 admin/metabox/ovabrw-custom-fields.php:75
+msgid "Adult"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:9
+msgid "Adult Price"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_global_discount.php:25
+#: admin/metabox/fields/ovabrw_resources.php:43
+#: admin/metabox/fields/ovabrw_daily_price.php:58
+#: admin/metabox/fields/ovabrw_st_record.php:58
+#: admin/metabox/fields/ovabrw_st.php:27 admin/metabox/fields/ovabrw_st.php:129
+#: admin/metabox/fields/ovabrw_service.php:98
+#: admin/metabox/fields/ovabrw_service_group.php:40
+msgid "Adult price"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:18
+#, php-format
+msgid "Adult price (%s)"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1458
+msgid "Adult: "
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:145 inc/ovabrw-extra-tab.php:404
+#: inc/ovabrw-extra-tab.php:766 inc/ovabrw-extra-tab.php:826
+#: inc/ovabrw-cart.php:680 inc/ovabrw-cart.php:745 inc/ovabrw-cart.php:1030
+#: inc/ovabrw-cart.php:1097 admin/class-ovabrw-admin-orders.php:556
+#: admin/class-ovabrw-admin-orders.php:619
+#, php-format
+msgid "Adult: %s"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:256 inc/ovabrw-cart.php:596
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:817
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:826
+#: elementor/widgets/ovabrw_search_ajax.php:850
+#: elementor/widgets/ovabrw_search_ajax.php:859
+#: elementor/widgets/ovabrw_search.php:464
+#: elementor/widgets/ovabrw_search.php:473
+#: admin/bookings/views/html-create-booking-meta-boxes.php:94
+msgid "Adults"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1804
+msgid "Adults out of slots"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:207
+msgid "Adults: "
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:693
+msgid "Advanced options"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:257
+msgid "Advanced Search"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:258
+#: elementor/widgets/ovabrw_search_ajax.php:236
+msgid "Advanced Search Settings"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:134
+msgid "Albanian (Shqip)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:419
+#: elementor/widgets/ovabrw_product_short_description.php:112
+#: elementor/widgets/ovabrw_product_content.php:111
+#: elementor/widgets/ovabrw_product_title.php:126
+#: elementor/widgets/ovabrw_product_categories.php:372
+#: elementor/widgets/ovabrw_product_categories.php:661
+msgid "Alignment"
+msgstr ""
+
+#: ovabrw-templates/single/product_filter_ajax.php:67
+#: ovabrw-templates/elementor/ovabrw_product_category_ajax.php:49
+#: ovabrw-templates/elementor/ovabrw_product_destination_ajax.php:44
+#: admin/category/init.php:47 admin/category/init.php:206
+#: elementor/widgets/ovabrw_product_slider.php:127
+#: elementor/widgets/ovabrw_product_filter_ajax.php:223
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:653
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:734
+#: elementor/widgets/ovabrw_search_ajax.php:669
+#: elementor/widgets/ovabrw_search_ajax.php:757
+#: elementor/widgets/ovabrw_product_list.php:141
+#: elementor/widgets/ovabrw_search.php:283
+#: elementor/widgets/ovabrw_search.php:371
+msgid "All"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:662
+#: elementor/widgets/ovabrw_search.php:276
+msgid "All Activity"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:176
+msgid "All categories"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:2163 admin/metabox/ovabrw-custom-fields.php:167
+msgid "All Destination"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:750
+#: elementor/widgets/ovabrw_search.php:364
+msgid "All Taxonomy"
+msgstr ""
+
+#: admin/class-ovabrw-admin-bookings.php:348
+msgid "all-day"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1063
+msgid "Allow to send mail to customer"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:73
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:54
+msgid "Allowed file types"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:639
+msgid "Allows creating new orders"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1856 inc/ovabrw_deposit.php:1925
+#: inc/ovabrw_deposit.php:1962
+msgid "Amount"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:268
+msgid "Amount Of Insurance"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:157
+msgid "Amount of insurance"
+msgstr ""
+
+#: inc/ovabrw-functions.php:1137
+msgid "An error occurred with reCAPTCHA. Please try again later."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:191
+msgid "API Key"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3199 inc/ovabrw-get-data.php:3326
+msgid "Apply"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:371
+msgid "Apply tax for insurance amount"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:93
+msgid "Arabic"
+msgstr ""
+
+#: inc/ovabrw-assets.php:86
+msgid "Are you sure you want to continue?"
+msgstr ""
+
+#: inc/ovabrw-assets.php:85
+msgid "Are you sure you want to delete this field?"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:337 inc/ovabrw-functions.php:2046
+msgid "Are you sure?"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:140
+msgid "ASC"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:189
+#: elementor/widgets/ovabrw_product_filter_ajax.php:106
+#: elementor/widgets/ovabrw_product_filter_ajax.php:283
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:141
+#: elementor/widgets/ovabrw_search_ajax.php:128
+#: elementor/widgets/ovabrw_product_list.php:214
+#: elementor/widgets/ovabrw_product_category_ajax.php:145
+#: elementor/widgets/ovabrw_product_destination_ajax.php:148
+msgid "Ascending"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:114
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:95
+msgid "Audio:"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:98
+msgid "Auto"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:986
+msgid "Auto create remaining invoice"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:67
+#: elementor/widgets/ovabrw_product_destination_ajax.php:67
+msgid "Auto Sorted"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:972
+msgid "Automatically create order details for remaining amount"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:221
+#: elementor/widgets/ovabrw_product_slider.php:284
+#: elementor/widgets/ovabrw_product_filter_ajax.php:340
+#: elementor/widgets/ovabrw_product_images.php:125
+#: elementor/widgets/ovabrw_product_categories.php:234
+msgid "Autoplay"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:235
+#: elementor/widgets/ovabrw_product_slider.php:298
+#: elementor/widgets/ovabrw_product_filter_ajax.php:354
+#: elementor/widgets/ovabrw_product_images.php:139
+#: elementor/widgets/ovabrw_product_categories.php:248
+msgid "Autoplay Speed"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:518
+msgid "Available"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1389
+#, php-format
+msgid "Available tour is %s"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:156
+msgid "Available tour palace"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:176
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:125
+#: elementor/widgets/ovabrw_search_ajax.php:112
+#: elementor/widgets/ovabrw_product_list.php:201
+msgid "Average rating"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:94
+msgid "Azerbaijanian (Azeri)"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:262 inc/ovabrw-cart.php:626
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:943
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:952
+#: elementor/widgets/ovabrw_search_ajax.php:976
+#: elementor/widgets/ovabrw_search_ajax.php:985
+#: elementor/widgets/ovabrw_search.php:590
+#: elementor/widgets/ovabrw_search.php:599
+#: admin/bookings/views/html-create-booking-meta-boxes.php:128
+msgid "Babies"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1832
+msgid "Babies out of slots"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:209
+msgid "Babies: "
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3871 admin/metabox/ovabrw-custom-fields.php:109
+msgid "Baby"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:43
+msgid "Baby Price"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_global_discount.php:34
+#: admin/metabox/fields/ovabrw_resources.php:52
+#: admin/metabox/fields/ovabrw_daily_price.php:67
+#: admin/metabox/fields/ovabrw_st_record.php:67
+#: admin/metabox/fields/ovabrw_st.php:36 admin/metabox/fields/ovabrw_st.php:138
+#: admin/metabox/fields/ovabrw_service.php:107
+#: admin/metabox/fields/ovabrw_service_group.php:49
+msgid "Baby price"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:39
+#, php-format
+msgid "Baby price (%s)"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1493
+msgid "Baby: "
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:157 inc/ovabrw-extra-tab.php:416
+#: inc/ovabrw-extra-tab.php:778 inc/ovabrw-extra-tab.php:838
+#: inc/ovabrw-cart.php:692 inc/ovabrw-cart.php:757 inc/ovabrw-cart.php:1042
+#: inc/ovabrw-cart.php:1109 admin/class-ovabrw-admin-orders.php:568
+#: admin/class-ovabrw-admin-orders.php:631
+#, php-format
+msgid "Baby: %s"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:297
+#: elementor/widgets/ovabrw_product_slider.php:386
+#: elementor/widgets/ovabrw_product_video_gallery.php:222
+#: elementor/widgets/ovabrw_product_table_price.php:185
+#: elementor/widgets/ovabrw_product_list.php:277
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:143
+#: elementor/widgets/ovabrw_product_category_ajax.php:280
+#: elementor/widgets/ovabrw_product_category_ajax.php:320
+#: elementor/widgets/ovabrw_product_category_ajax.php:359
+#: elementor/widgets/ovabrw_product_destination_ajax.php:267
+#: elementor/widgets/ovabrw_product_destination_ajax.php:298
+#: elementor/widgets/ovabrw_product_destination_ajax.php:329
+#: elementor/widgets/ovabrw_product_tabs.php:330
+#: elementor/widgets/ovabrw_product_images.php:385
+msgid "Background"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:731
+#: elementor/widgets/ovabrw_product_related.php:783
+#: elementor/widgets/ovabrw_product_slider.php:843
+#: elementor/widgets/ovabrw_product_slider.php:907
+#: elementor/widgets/ovabrw_product_video_gallery.php:182
+#: elementor/widgets/ovabrw_product_list.php:732
+#: elementor/widgets/ovabrw_product_list.php:796
+#: elementor/widgets/ovabrw_product_tabs.php:299
+msgid "Background "
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:381
+#: elementor/widgets/ovabrw_product_related.php:443
+#: elementor/widgets/ovabrw_product_related.php:506
+#: elementor/widgets/ovabrw_product_related.php:914
+#: elementor/widgets/ovabrw_product_related.php:956
+#: elementor/widgets/ovabrw_product_slider.php:493
+#: elementor/widgets/ovabrw_product_slider.php:555
+#: elementor/widgets/ovabrw_product_slider.php:618
+#: elementor/widgets/ovabrw_product_slider.php:1038
+#: elementor/widgets/ovabrw_product_slider.php:1080
+#: elementor/widgets/ovabrw_product_filter_ajax.php:445
+#: elementor/widgets/ovabrw_product_filter_ajax.php:477
+#: elementor/widgets/ovabrw_product_filter_ajax.php:508
+#: elementor/widgets/ovabrw_product_forms.php:109
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1054
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1456
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1487
+#: elementor/widgets/ovabrw_product_table_price.php:135
+#: elementor/widgets/ovabrw_search_ajax.php:1124
+#: elementor/widgets/ovabrw_search_ajax.php:1563
+#: elementor/widgets/ovabrw_search_ajax.php:1594
+#: elementor/widgets/ovabrw_product_list.php:384
+#: elementor/widgets/ovabrw_product_list.php:446
+#: elementor/widgets/ovabrw_product_list.php:509
+#: elementor/widgets/ovabrw_search.php:738
+#: elementor/widgets/ovabrw_search.php:1177
+#: elementor/widgets/ovabrw_search.php:1208
+#: elementor/widgets/ovabrw_product_features.php:133
+#: elementor/widgets/ovabrw_product_images.php:354
+#: elementor/widgets/ovabrw_product_categories.php:510
+#: elementor/widgets/ovabrw_product_categories.php:806
+#: elementor/widgets/ovabrw_product_categories.php:848
+msgid "Background Color"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:521
+msgid "Background Color Hover"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:1145
+#: elementor/widgets/ovabrw_product_slider.php:1213
+#: elementor/widgets/ovabrw_product_slider.php:1233
+#: elementor/widgets/ovabrw_product_categories.php:896
+#: elementor/widgets/ovabrw_product_categories.php:963
+#: elementor/widgets/ovabrw_product_categories.php:995
+#: elementor/widgets/ovabrw_product_categories.php:1015
+msgid "Background Gradient"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1415
+#: elementor/widgets/ovabrw_search_ajax.php:1522
+#: elementor/widgets/ovabrw_search.php:1136
+msgid "Background Size"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1237
+#: elementor/widgets/ovabrw_search_ajax.php:1344
+#: elementor/widgets/ovabrw_search.php:958
+msgid "Backgrund Color"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1248
+#: elementor/widgets/ovabrw_search_ajax.php:1355
+#: elementor/widgets/ovabrw_search.php:969
+msgid "Backgrund Color Hover"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:367
+msgid "Billing details"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:205
+msgid "Blend Mode"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:97
+msgid "Block"
+msgstr ""
+
+#: inc/ovabrw-cart.php:91
+#, php-format
+msgid "Book %s day(s) in advance from the current time"
+msgstr ""
+
+#: inc/ovabrw-cart.php:128
+#, php-format
+msgid "Book before %s hours today"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:320
+#: admin/metabox/ovabrw-custom-fields.php:755
+msgid "Book before X hours today"
+msgstr ""
+
+#: admin/bookings/views/html-booking-calendar.php:13
+msgid "Booking Calendar"
+msgstr ""
+
+#: admin/class-ovabrw-admin-bookings.php:30
+#: admin/class-ovabrw-admin-bookings.php:31
+msgid "Booking calendar"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:30
+#: admin/settings/class-ovabrw-booking-tours-settings.php:315
+#: admin/settings/class-ovabrw-booking-tours-settings.php:879
+msgid "Booking form"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:255
+#: admin/order/class_render_table_order.php:138
+msgid "Booking ID"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:18
+msgid "Booking Tours"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:318
+#: elementor/widgets/ovabrw_product_related.php:405
+#: elementor/widgets/ovabrw_product_related.php:743
+#: elementor/widgets/ovabrw_product_related.php:795
+#: elementor/widgets/ovabrw_product_slider.php:418
+#: elementor/widgets/ovabrw_product_slider.php:517
+#: elementor/widgets/ovabrw_product_slider.php:855
+#: elementor/widgets/ovabrw_product_slider.php:919
+#: elementor/widgets/ovabrw_product_video_gallery.php:194
+#: elementor/widgets/ovabrw_product_video_gallery.php:234
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1102
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1284
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1368
+#: elementor/widgets/ovabrw_search_ajax.php:1172
+#: elementor/widgets/ovabrw_search_ajax.php:1220
+#: elementor/widgets/ovabrw_search_ajax.php:1391
+#: elementor/widgets/ovabrw_search_ajax.php:1475
+#: elementor/widgets/ovabrw_product_list.php:309
+#: elementor/widgets/ovabrw_product_list.php:408
+#: elementor/widgets/ovabrw_product_list.php:744
+#: elementor/widgets/ovabrw_product_list.php:808
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:155
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:173
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:191
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:276
+#: elementor/widgets/ovabrw_search.php:786
+#: elementor/widgets/ovabrw_search.php:834
+#: elementor/widgets/ovabrw_search.php:1005
+#: elementor/widgets/ovabrw_search.php:1089
+msgid "Border"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:903
+#: elementor/widgets/ovabrw_product_related.php:945
+#: elementor/widgets/ovabrw_product_slider.php:1027
+#: elementor/widgets/ovabrw_product_slider.php:1069
+#: elementor/widgets/ovabrw_product_categories.php:795
+#: elementor/widgets/ovabrw_product_categories.php:837
+msgid "Border Color"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:163
+msgid "Border Items (first)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:181
+msgid "Border Items (last)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:327
+#: elementor/widgets/ovabrw_product_related.php:751
+#: elementor/widgets/ovabrw_product_related.php:970
+#: elementor/widgets/ovabrw_product_related.php:1064
+#: elementor/widgets/ovabrw_product_related.php:1132
+#: elementor/widgets/ovabrw_product_slider.php:427
+#: elementor/widgets/ovabrw_product_slider.php:875
+#: elementor/widgets/ovabrw_product_slider.php:1094
+#: elementor/widgets/ovabrw_product_slider.php:1191
+#: elementor/widgets/ovabrw_product_slider.php:1279
+#: elementor/widgets/ovabrw_product_forms.php:120
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1089
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1271
+#: elementor/widgets/ovabrw_product_table_price.php:123
+#: elementor/widgets/ovabrw_search_ajax.php:1159
+#: elementor/widgets/ovabrw_search_ajax.php:1378
+#: elementor/widgets/ovabrw_product_list.php:318
+#: elementor/widgets/ovabrw_product_list.php:764
+#: elementor/widgets/ovabrw_product_category_ajax.php:407
+#: elementor/widgets/ovabrw_search.php:773
+#: elementor/widgets/ovabrw_search.php:992
+#: elementor/widgets/ovabrw_product_features.php:175
+#: elementor/widgets/ovabrw_product_destination_ajax.php:377
+#: elementor/widgets/ovabrw_product_tabs.php:370
+#: elementor/widgets/ovabrw_product_images.php:243
+#: elementor/widgets/ovabrw_product_categories.php:296
+#: elementor/widgets/ovabrw_product_categories.php:545
+#: elementor/widgets/ovabrw_product_categories.php:862
+#: elementor/widgets/ovabrw_product_categories.php:973
+#: elementor/widgets/ovabrw_product_categories.php:1081
+msgid "Border Radius"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:308
+msgid "Border Radius Hover"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:96
+msgid "Bosanski"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:878
+msgid "Both"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:309
+#: elementor/widgets/ovabrw_product_slider.php:409
+#: elementor/widgets/ovabrw_product_forms.php:133
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1111
+#: elementor/widgets/ovabrw_search_ajax.php:1181
+#: elementor/widgets/ovabrw_product_list.php:300
+#: elementor/widgets/ovabrw_search.php:795
+msgid "Box Shadow"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:8
+msgid "BRW"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:67
+msgid "BRW - Booking Rental Plugin WooCommerce"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:95
+msgid "Bulgarian"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:691
+#: elementor/widgets/ovabrw_product_slider.php:803
+#: elementor/widgets/ovabrw_product_video_gallery.php:131
+#: elementor/widgets/ovabrw_product_list.php:692
+msgid "Button"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:235
+#: elementor/widgets/ovabrw_search_ajax.php:214
+#: elementor/widgets/ovabrw_search_ajax.php:255
+#: elementor/widgets/ovabrw_search.php:136
+msgid "Button Label"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-guest-info-fields.php:15
+#, php-format
+msgid ""
+"By default, all these fields will be applied to all guests. However, you can "
+"select specific fields for each guest in the %s tab."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:89
+msgid "Calendar language"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3198 inc/ovabrw-get-data.php:3325
+#: inc/ovabrw_deposit.php:1882 inc/ovabrw_deposit.php:1951
+#: inc/ovabrw_deposit.php:1988 admin/ovabrw-admin-core-functions.php:326
+#: admin/order/class_render_table_order.php:55
+#: admin/order/class_render_table_order.php:72
+msgid "Cancel"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1030
+msgid "Cancellation is accepted if the total order is less than x amount"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1019
+msgid "Cancellation Policy"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:37
+msgid "Cancellation policy"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:101
+#: admin/settings/class-ovabrw-booking-tours-settings.php:657
+msgid "Cancelled"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1376
+#: elementor/widgets/ovabrw_search_ajax.php:1483
+#: elementor/widgets/ovabrw_search.php:1097
+msgid "Caret Color"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:97
+msgid "Català"
+msgstr ""
+
+#: admin/class-ovabrw-admin-menus.php:63 admin/class-ovabrw-admin-menus.php:64
+#: elementor/widgets/ovabrw_product_filter_ajax.php:254
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:317
+#: elementor/widgets/ovabrw_search_ajax.php:316
+#: elementor/widgets/ovabrw_product_categories.php:86
+msgid "Categories"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:315
+#: elementor/widgets/ovabrw_search_ajax.php:314
+msgid "Categories Label"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:242
+msgid "Category"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:205
+#: elementor/widgets/ovabrw_product_filter_ajax.php:409
+msgid "Category Filter"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:121
+msgid "Category IDs are separated by \"|\""
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:198
+#: elementor/widgets/ovabrw_product_list.php:223
+msgid "Category In"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:207
+#: elementor/widgets/ovabrw_product_list.php:232
+msgid "Category Not In"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:702
+#: admin/metabox/ovabrw-custom-fields.php:816
+msgid "Category settings"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:725
+#: admin/metabox/ovabrw-custom-fields.php:821
+msgid "Category settings: Setup in per category"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:612
+msgid "Cc"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:427
+#: elementor/widgets/ovabrw_product_short_description.php:120
+#: elementor/widgets/ovabrw_product_content.php:119
+#: elementor/widgets/ovabrw_product_title.php:134
+#: elementor/widgets/ovabrw_product_categories.php:380
+#: elementor/widgets/ovabrw_product_categories.php:669
+msgid "Center"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:890
+msgid "Challenge (v2)"
+msgstr ""
+
+#: inc/ovabrw-cart.php:560 elementor/widgets/ovabrw_search_ajax_sidebar.php:784
+#: elementor/widgets/ovabrw_search_ajax.php:807
+#: elementor/widgets/ovabrw_search.php:421
+msgid "Check in"
+msgstr ""
+
+#: inc/ovabrw-cart.php:568 inc/ovabrw-cart.php:574
+msgid "Check out"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:996
+msgid "Check periodically every X seconds for creating a remaining invoice"
+msgstr ""
+
+#: admin/class-ovabrw-admin.php:93 admin/class-ovabrw-admin.php:94
+#: admin/ovabrw-admin-core-functions.php:455
+msgid "Check Product"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:268
+msgid "Check Tour booking available by Maximum total number of guest"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:60
+msgid "Check-in"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:144
+msgid "Check-in @ Check-out"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:277
+msgid "Check-in Date"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_fixed_time.php:15
+msgid "Check-in date"
+msgstr ""
+
+#: inc/ovabrw-cart.php:528
+msgid "Check-in date is required."
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:191
+msgid "Check-in: "
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:72
+msgid "Check-out"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:286
+msgid "Check-out Date"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_fixed_time.php:18
+msgid "Check-out date"
+msgstr ""
+
+#: inc/ovabrw-cart.php:536
+msgid "Check-out date is required."
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:841
+msgid "Check-out field"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:203
+msgid "Check-out: "
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:54
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:369
+msgid "Checkbox"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3866 admin/metabox/ovabrw-custom-fields.php:92
+msgid "Child"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_global_discount.php:29
+#: admin/metabox/fields/ovabrw_resources.php:47
+#: admin/metabox/fields/ovabrw_daily_price.php:62
+#: admin/metabox/fields/ovabrw_st_record.php:62
+#: admin/metabox/fields/ovabrw_st.php:31 admin/metabox/fields/ovabrw_st.php:133
+#: admin/metabox/fields/ovabrw_service.php:102
+#: admin/metabox/fields/ovabrw_service_group.php:44
+msgid "Child price"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:27
+#, php-format
+msgid "Child price (%s)"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1474
+msgid "Child: "
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:151 inc/ovabrw-extra-tab.php:410
+#: inc/ovabrw-extra-tab.php:772 inc/ovabrw-extra-tab.php:832
+#: inc/ovabrw-cart.php:686 inc/ovabrw-cart.php:751 inc/ovabrw-cart.php:1036
+#: inc/ovabrw-cart.php:1103 admin/class-ovabrw-admin-orders.php:562
+#: admin/class-ovabrw-admin-orders.php:625
+#, php-format
+msgid "Child: %s"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:259 inc/ovabrw-cart.php:611
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:880
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:889
+#: elementor/widgets/ovabrw_search_ajax.php:913
+#: elementor/widgets/ovabrw_search_ajax.php:922
+#: elementor/widgets/ovabrw_search.php:527
+#: elementor/widgets/ovabrw_search.php:536
+#: admin/bookings/views/html-create-booking-meta-boxes.php:111
+msgid "Children"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1818
+msgid "Children out of slots"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:26
+msgid "Children Price"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:208
+msgid "Children: "
+msgstr ""
+
+#: admin/category/init.php:44 admin/category/init.php:200
+msgid "Choose custom checkout fields"
+msgstr ""
+
+#: admin/category/init.php:54 admin/category/init.php:217
+msgid "Choose other custom checkout fields"
+msgstr ""
+
+#: admin/category/init.php:48 admin/category/init.php:209
+msgid "Choose other fields"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:73
+#: admin/bookings/views/html-create-booking-item.php:15
+msgid "Choose Product"
+msgstr ""
+
+#: admin/category/init.php:19 admin/category/init.php:173
+msgid "Choose Taxonomies"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:326
+msgid "Choose Time"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:764
+msgid "Choose time"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1905
+msgid "Choose time *"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:171
+msgid "City"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:646
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:444
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:370
+msgid "Class"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:337
+msgid "Clear"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:529
+#: elementor/widgets/ovabrw_search_ajax.php:528
+msgid "Clear Filter"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:527
+#: elementor/widgets/ovabrw_search_ajax.php:526
+msgid "Clear Text"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:358
+msgid "Close modal panel"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:329
+#: admin/order/class_render_table_order.php:58
+#: admin/order/class_render_table_order.php:73
+msgid "Closed"
+msgstr ""
+
+#: custom-post-type/register_cpt.php:12
+#, php-format
+msgid "Closed <span class=\"count\">(%s)</span>"
+msgid_plural "Closed<span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:837
+msgid "Collect customer information"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:370
+#: elementor/widgets/ovabrw_product_related.php:432
+#: elementor/widgets/ovabrw_product_related.php:495
+#: elementor/widgets/ovabrw_product_related.php:537
+#: elementor/widgets/ovabrw_product_related.php:621
+#: elementor/widgets/ovabrw_product_related.php:649
+#: elementor/widgets/ovabrw_product_related.php:677
+#: elementor/widgets/ovabrw_product_related.php:720
+#: elementor/widgets/ovabrw_product_related.php:772
+#: elementor/widgets/ovabrw_product_related.php:892
+#: elementor/widgets/ovabrw_product_related.php:934
+#: elementor/widgets/ovabrw_product_related.php:1017
+#: elementor/widgets/ovabrw_product_related.php:1085
+#: elementor/widgets/ovabrw_product_slider.php:482
+#: elementor/widgets/ovabrw_product_slider.php:544
+#: elementor/widgets/ovabrw_product_slider.php:607
+#: elementor/widgets/ovabrw_product_slider.php:649
+#: elementor/widgets/ovabrw_product_slider.php:733
+#: elementor/widgets/ovabrw_product_slider.php:761
+#: elementor/widgets/ovabrw_product_slider.php:789
+#: elementor/widgets/ovabrw_product_slider.php:832
+#: elementor/widgets/ovabrw_product_slider.php:896
+#: elementor/widgets/ovabrw_product_slider.php:1016
+#: elementor/widgets/ovabrw_product_slider.php:1058
+#: elementor/widgets/ovabrw_product_filter_ajax.php:434
+#: elementor/widgets/ovabrw_product_filter_ajax.php:466
+#: elementor/widgets/ovabrw_product_filter_ajax.php:497
+#: elementor/widgets/ovabrw_product_filter_ajax.php:540
+#: elementor/widgets/ovabrw_product_video_gallery.php:160
+#: elementor/widgets/ovabrw_product_video_gallery.php:211
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1150
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1185
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1215
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1344
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1445
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1476
+#: elementor/widgets/ovabrw_product_table_price.php:258
+#: elementor/widgets/ovabrw_product_location_review.php:122
+#: elementor/widgets/ovabrw_product_location_review.php:162
+#: elementor/widgets/ovabrw_search_ajax.php:1208
+#: elementor/widgets/ovabrw_search_ajax.php:1269
+#: elementor/widgets/ovabrw_search_ajax.php:1292
+#: elementor/widgets/ovabrw_search_ajax.php:1322
+#: elementor/widgets/ovabrw_search_ajax.php:1451
+#: elementor/widgets/ovabrw_search_ajax.php:1552
+#: elementor/widgets/ovabrw_search_ajax.php:1583
+#: elementor/widgets/ovabrw_unavailable_time.php:119
+#: elementor/widgets/ovabrw_unavailable_time.php:159
+#: elementor/widgets/ovabrw_product_list.php:373
+#: elementor/widgets/ovabrw_product_list.php:435
+#: elementor/widgets/ovabrw_product_list.php:498
+#: elementor/widgets/ovabrw_product_list.php:540
+#: elementor/widgets/ovabrw_product_list.php:622
+#: elementor/widgets/ovabrw_product_list.php:650
+#: elementor/widgets/ovabrw_product_list.php:678
+#: elementor/widgets/ovabrw_product_list.php:721
+#: elementor/widgets/ovabrw_product_list.php:785
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:241
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:326
+#: elementor/widgets/ovabrw_product_category_ajax.php:269
+#: elementor/widgets/ovabrw_product_category_ajax.php:309
+#: elementor/widgets/ovabrw_product_category_ajax.php:348
+#: elementor/widgets/ovabrw_search.php:822
+#: elementor/widgets/ovabrw_search.php:883
+#: elementor/widgets/ovabrw_search.php:906
+#: elementor/widgets/ovabrw_search.php:936
+#: elementor/widgets/ovabrw_search.php:1065
+#: elementor/widgets/ovabrw_search.php:1166
+#: elementor/widgets/ovabrw_search.php:1197
+#: elementor/widgets/ovabrw_product_short_description.php:142
+#: elementor/widgets/ovabrw_product_destination_ajax.php:256
+#: elementor/widgets/ovabrw_product_destination_ajax.php:287
+#: elementor/widgets/ovabrw_product_destination_ajax.php:318
+#: elementor/widgets/ovabrw_product_tabs.php:288
+#: elementor/widgets/ovabrw_product_tabs.php:319
+#: elementor/widgets/ovabrw_product_title.php:166
+#: elementor/widgets/ovabrw_product_title.php:216
+#: elementor/widgets/ovabrw_product_images.php:343
+#: elementor/widgets/ovabrw_product_images.php:374
+#: elementor/widgets/ovabrw_product_categories.php:338
+#: elementor/widgets/ovabrw_product_categories.php:416
+#: elementor/widgets/ovabrw_product_categories.php:487
+#: elementor/widgets/ovabrw_product_categories.php:638
+#: elementor/widgets/ovabrw_product_categories.php:784
+#: elementor/widgets/ovabrw_product_categories.php:826
+msgid "Color"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:214
+msgid "Color Dodge"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:549
+#: elementor/widgets/ovabrw_product_slider.php:661
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1226
+#: elementor/widgets/ovabrw_search_ajax.php:1333
+#: elementor/widgets/ovabrw_product_list.php:551
+#: elementor/widgets/ovabrw_search.php:947
+#: elementor/widgets/ovabrw_product_categories.php:349
+#: elementor/widgets/ovabrw_product_categories.php:427
+#: elementor/widgets/ovabrw_product_categories.php:499
+msgid "Color Hover"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_table_price.php:147
+#: elementor/widgets/ovabrw_product_table_price.php:196
+#: elementor/widgets/ovabrw_product_features.php:144
+msgid "Color Title"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_features.php:188
+msgid "Color Value"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:198
+#: elementor/widgets/ovabrw_product_destination_ajax.php:185
+msgid "Column"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_list.php:131
+msgid "Column 1"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_list.php:132
+msgid "Column 2"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_list.php:133
+msgid "Column 3"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_list.php:134
+msgid "Column 4"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_list.php:127
+msgid "Columns"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:132
+msgid "Company"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:89
+#: admin/ovabrw-admin-core-functions.php:314
+#: admin/order/class_render_table_order.php:46
+#: admin/order/class_render_table_order.php:68
+#: admin/settings/class-ovabrw-booking-tours-settings.php:656
+msgid "Completed"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:420
+#: admin/settings/class-ovabrw-booking-tours-settings.php:681
+#: elementor/widgets/ovabrw_product_related.php:59
+#: elementor/widgets/ovabrw_product_related.php:289
+#: elementor/widgets/ovabrw_product_slider.php:59
+#: elementor/widgets/ovabrw_product_slider.php:352
+#: elementor/widgets/ovabrw_product_table_price.php:94
+#: elementor/widgets/ovabrw_product_list.php:60
+#: elementor/widgets/ovabrw_product_list.php:243
+#: elementor/widgets/ovabrw_product_category_ajax.php:59
+#: elementor/widgets/ovabrw_product_destination_ajax.php:59
+#: elementor/widgets/ovabrw_product_categories.php:62
+#: elementor/widgets/ovabrw_product_categories.php:288
+msgid "Content"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:379
+#: elementor/widgets/ovabrw_search_ajax.php:378
+msgid "Create Duration Fields"
+msgstr ""
+
+#: admin/class-ovabrw-admin.php:83 admin/class-ovabrw-admin.php:84
+#: admin/ovabrw-admin-core-functions.php:25
+#: admin/ovabrw-admin-core-functions.php:193
+msgid "Create new booking"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1905
+msgid "Create Remaining Invoice"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:67
+msgid "Currency"
+msgstr ""
+
+#: admin/class-ovabrw-admin.php:103 admin/class-ovabrw-admin.php:104
+msgid "Custom Checkout Field"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:809
+msgid "Custom checkout fields"
+msgstr ""
+
+#: admin/class-ovabrw-admin.php:62 admin/class-ovabrw-admin.php:63
+msgid "Custom taxonomies"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:604
+#: elementor/widgets/ovabrw_search_ajax.php:612
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:21
+#: elementor/widgets/ovabrw_search.php:218
+msgid "Custom Taxonomy"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:265
+msgid "Customer Name"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:141
+msgid "Customer name"
+msgstr ""
+
+#: admin/bookings/views/html-popup-event-data.php:59
+msgid "Customer:"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:325
+msgid "Customers can book before X hours today."
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:429
+msgid ""
+"Customers can choose to make a Partial Payment or Pay the Full Amount when "
+"Booking"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:59
+msgid "d-m-Y"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:100
+msgid "Dansk"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:212
+msgid "Darken"
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:56
+#: elementor/widgets/ovabrw_product_related.php:122
+#: elementor/widgets/ovabrw_product_slider.php:172
+#: elementor/widgets/ovabrw_product_filter_ajax.php:94
+#: elementor/widgets/ovabrw_product_filter_ajax.php:271
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:121
+#: elementor/widgets/ovabrw_search_ajax.php:108
+#: elementor/widgets/ovabrw_product_list.php:197
+#: elementor/widgets/ovabrw_product_category_ajax.php:158
+#: elementor/widgets/ovabrw_product_destination_ajax.php:161
+msgid "Date"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:55
+msgid "Date format"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:828
+#: elementor/widgets/ovabrw_search.php:442
+msgid "Dates"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:389
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:395
+#: elementor/widgets/ovabrw_search_ajax.php:394
+msgid "Day"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3217 inc/ovabrw-get-data.php:3344
+#: admin/class-ovabrw-admin-bookings.php:345
+msgid "day"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:211
+msgid "Days"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3221 inc/ovabrw-get-data.php:3348
+msgid "days"
+msgstr ""
+
+#: inc/ovabrw-functions.php:357
+msgid "DD-MM-YYYY"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:235
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:581
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:673
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:754
+#: elementor/widgets/ovabrw_search_ajax.php:589
+#: elementor/widgets/ovabrw_search_ajax.php:689
+#: elementor/widgets/ovabrw_search_ajax.php:777
+#: elementor/widgets/ovabrw_search.php:64
+#: elementor/widgets/ovabrw_search.php:195
+#: elementor/widgets/ovabrw_search.php:303
+#: elementor/widgets/ovabrw_search.php:391
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:321
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:259
+msgid "Default"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:833
+#: elementor/widgets/ovabrw_search_ajax.php:866
+#: elementor/widgets/ovabrw_search.php:480
+msgid "Default Adults Number"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:959
+#: elementor/widgets/ovabrw_search_ajax.php:992
+#: elementor/widgets/ovabrw_search.php:606
+msgid "Default Babies Number"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:174
+#: elementor/widgets/ovabrw_search_ajax.php:161
+msgid "Default Category"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:896
+#: elementor/widgets/ovabrw_search_ajax.php:929
+#: elementor/widgets/ovabrw_search.php:543
+msgid "Default Children Number"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:205
+msgid "Default latitude "
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:184
+#: elementor/widgets/ovabrw_search_ajax.php:171
+msgid "Default Layout"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:213
+msgid "Default longitude "
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:265
+msgid "Default or Other (made in Templates of Elementor )"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:436
+msgid "Default selected"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:536
+#: elementor/widgets/ovabrw_search_ajax.php:535
+msgid "Default Sort by"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:635
+msgid "Default value"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:596
+msgid "Default: 20MB"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-guest-info-fields.php:35
+#: admin/guest-info-fields/views/html-guest-info-fields.php:36
+#: admin/guest-info-fields/views/html-guest-info-fields.php:119
+msgid "Delete"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:46
+msgid "Demo"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:175
+msgid "Depend on each category"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:120 inc/ovabrw_deposit.php:445
+#: inc/ovabrw_deposit.php:446 inc/ovabrw_deposit.php:1414
+#: inc/ovabrw_deposit.php:2370
+#: admin/settings/class-ovabrw-booking-tours-settings.php:36
+#: admin/metabox/ovabrw-custom-fields.php:400
+msgid "Deposit"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:271
+#: admin/bookings/views/html-create-booking-meta-boxes.php:172
+msgid "Deposit Amount"
+msgstr ""
+
+#: inc/ovabrw_ajax.php:1827
+msgid "Deposit amount is greater than total."
+msgstr ""
+
+#: inc/ovabrw_deposit.php:2372 admin/order/class_render_table_order.php:147
+msgid "Deposit status"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:449
+msgid "Deposit type"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:379 inc/ovabrw_deposit.php:214
+#: inc/ovabrw_deposit.php:969 inc/ovabrw_deposit.php:1173
+msgid "Deposit:"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:141
+msgid "DESC"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:190
+#: elementor/widgets/ovabrw_product_filter_ajax.php:107
+#: elementor/widgets/ovabrw_product_filter_ajax.php:284
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:142
+#: elementor/widgets/ovabrw_search_ajax.php:129
+#: elementor/widgets/ovabrw_product_list.php:215
+#: elementor/widgets/ovabrw_product_category_ajax.php:146
+#: elementor/widgets/ovabrw_product_destination_ajax.php:149
+msgid "Descending"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:401
+#: elementor/widgets/ovabrw_product_tabs.php:104
+#: elementor/widgets/ovabrw_product_tabs.php:114
+#: admin/metabox/fields/ovabrw_resources.php:40
+#: admin/metabox/fields/ovabrw_features.php:30
+#: admin/metabox/fields/ovabrw_features.php:71
+#: admin/metabox/fields/ovabrw_feature_field.php:32
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:193
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:166
+msgid "Description"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:161
+#: elementor/widgets/ovabrw_product_list.php:171
+#: elementor/widgets/ovabrw_product_destination_ajax.php:229
+msgid "Destination"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_destination_ajax.php:120
+msgid "Destination IDs"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_destination_ajax.php:124
+msgid "Destination IDs are separated by \"|\""
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:553
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:574
+#: elementor/widgets/ovabrw_search_ajax.php:552
+#: elementor/widgets/ovabrw_search_ajax.php:573
+#: elementor/widgets/ovabrw_search.php:158
+#: elementor/widgets/ovabrw_search.php:179
+#: elementor/widgets/ovabrw_product_destination_ajax.php:106
+msgid "Destinations"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:217
+msgid "Difference"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-guest-info-fields.php:32
+#: admin/guest-info-fields/views/html-guest-info-fields.php:33
+#: admin/guest-info-fields/views/html-guest-info-fields.php:112
+#: admin/guest-info-fields/views/html-guest-info-fields.php:115
+msgid "Disable"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:733
+msgid "Disable weekday"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:149
+msgid "Disable weekdays"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_st.php:46
+msgid "Discount in special time (DST)"
+msgstr ""
+
+#: admin/category/init.php:9 admin/category/init.php:154
+#: admin/metabox/ovabrw-custom-fields.php:845
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:93
+msgid "Display"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:814
+msgid "Display custom fields from"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:146
+msgid "Display in Calendar"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:469
+msgid "Display Schedule"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:19 admin/menus/views/html-preview.php:21
+msgid "Documentation"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:105
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:86
+msgid "Documents:"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_table_price.php:55
+#: elementor/widgets/ovabrw_product_content.php:55
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product content of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_features.php:55
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product features of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_forms.php:62
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product forms of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_images.php:187
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product images of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_included_excluded.php:55
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product Included/Excluded of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_location_review.php:54
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product location and review of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_map.php:65
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product map of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_plan.php:62
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product plan of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:67
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product related of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_reviews.php:55
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product reviews of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_short_description.php:55
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product short description of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_tabs.php:65
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product tabs of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:54
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product title of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_unavailable_time.php:54
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product unavailable_time of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_video_gallery.php:55
+msgid ""
+"Don't enter Product ID if you use this element in templates for product "
+"detail page.In Elementor Preview ( When empty Product ID ) , this element "
+"display an example product video and gallery of the latest product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:1109
+msgid "Dots"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:985
+#: elementor/widgets/ovabrw_product_categories.php:878
+msgid "Dots (Mobile)"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3125
+msgid "Drop-off"
+msgstr ""
+
+#: inc/ovabrw-cart.php:137
+msgid "Drop-off Date must be greater than Pick-up Date"
+msgstr ""
+
+#: inc/ovabrw-functions.php:2020
+msgid "Duplicate date."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2018
+msgid "Duplicate ID."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2019
+msgid "Duplicate time."
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:186
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:355
+#: elementor/widgets/ovabrw_search_ajax.php:354
+msgid "Duration"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:353
+#: elementor/widgets/ovabrw_search_ajax.php:352
+msgid "Duration Label"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:124
+msgid "Dutch"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:427
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:168
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:300
+#: admin/custom-taxonomy/custom_taxonomy.php:139
+#: admin/custom-taxonomy/custom_taxonomy.php:207
+#: admin/guest-info-fields/views/html-guest-info-fields.php:109
+msgid "Edit"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:426
+msgid "Edit this order"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:106
+msgid "Eesti"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:140
+#: admin/ovabrw-admin-core-functions.php:372
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:50
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:354
+msgid "Email"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:620
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1106
+msgid "Email content"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:586
+msgid "Email settings"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:965
+msgid "Email the order for the remaining amount to the customer."
+msgstr ""
+
+#: admin/bookings/views/html-popup-event-data.php:71
+msgid "Email:"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:181
+msgid "Email: "
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:617
+msgid "Emails separated by \"|\"."
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:146
+msgid "Embed video link"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:410
+#: admin/settings/class-ovabrw-booking-tours-settings.php:671
+#: admin/settings/class-ovabrw-booking-tours-settings.php:864
+#: admin/settings/class-ovabrw-booking-tours-settings.php:978
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1056
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:676
+#: admin/custom-taxonomy/custom_taxonomy.php:285
+#: admin/guest-info-fields/views/html-guest-info-fields.php:29
+#: admin/guest-info-fields/views/html-guest-info-fields.php:30
+#: admin/guest-info-fields/views/html-guest-info-fields.php:64
+#: admin/guest-info-fields/views/html-guest-info-fields.php:113
+#: admin/guest-info-fields/views/html-guest-info-fields.php:116
+#: admin/guest-info-fields/views/html-guest-info-fields.php:148
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:476
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:400
+msgid "Enable"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:410
+msgid "Enable deposit"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:165
+#: admin/custom-taxonomy/custom_taxonomy.php:133
+msgid "Enabled"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_untime.php:22
+#: admin/metabox/fields/ovabrw_st.php:43
+msgid "End date"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:103
+msgid "English"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:104
+msgid "English (British) "
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:32
+msgid "Enquiry form"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:882
+msgid "Enquiry shortcode"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:645
+msgid "Enter a venue"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:451
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:376
+msgid "enter class name"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:186
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:160
+msgid "enter label"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:160
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:140
+msgid "enter name"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:354
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:287
+msgid "enter phone number"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:181
+msgid "enter placeholder"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:371
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:301
+msgid "enter text value"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:200
+#: elementor/widgets/ovabrw_product_slider.php:209
+#: elementor/widgets/ovabrw_product_list.php:225
+#: elementor/widgets/ovabrw_product_list.php:234
+msgid "Enter the product category IDs. IDs are separated by \"|\". Ex: 1|2|3."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:194
+msgid "Enter your API Key"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:196
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:169
+msgid "enter your text here..."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:476
+msgid "Error page"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:66
+msgid "Error Update"
+msgstr ""
+
+#: inc/ovabrw-functions.php:1203
+#, php-format
+msgid "Error: Unable to create follow up payment (%s)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:107
+msgid "Euskara"
+msgstr ""
+
+#: inc/ovabrw-cron.php:45 inc/ovabrw-cron.php:52
+#, php-format
+msgid "Every %s seconds"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:814
+msgid "Ex: (0y-5y)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:757
+msgid "Ex: (12y-99y)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:785
+msgid "Ex: (6y-11y)"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:63
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:87
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:43
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:68
+msgid "Example:"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:327
+#: elementor/widgets/ovabrw_search_ajax.php:326
+msgid "Exclude Category"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:613 inc/ovabrw-blocks.php:620
+#: inc/ovabrw-blocks.php:707 inc/ovabrw-blocks.php:720
+#, php-format
+msgid "Excluding %s"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:253
+msgid "Explore"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1409
+msgid "Extra Price"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:442
+msgid "Extra: "
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:107
+msgid "Failed"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:469
+#: elementor/widgets/ovabrw_product_slider.php:581
+#: elementor/widgets/ovabrw_product_list.php:472
+msgid "Favorite"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:87
+#: elementor/widgets/ovabrw_product_slider.php:173
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:122
+#: elementor/widgets/ovabrw_search_ajax.php:109
+#: elementor/widgets/ovabrw_product_list.php:198
+msgid "Featured"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:479
+#: elementor/widgets/ovabrw_product_features.php:94
+msgid "Features"
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:57
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:372
+msgid "File"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:334
+#: admin/bookings/views/html-booking-calendar.php:51
+#: admin/bookings/views/html-booking-calendar.php:53
+msgid "Filter"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:267
+#: elementor/widgets/ovabrw_search_ajax.php:266
+msgid "Filter Price"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:511
+#: elementor/widgets/ovabrw_search_ajax.php:510
+msgid "Filter Settings"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:212
+#: elementor/widgets/ovabrw_product_filter_ajax.php:523
+msgid "Filter Title"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:109
+msgid "Finnish (Suomi)"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:117
+msgid "First Name"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:225
+msgid "Fixed dates"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:919
+msgid "Footer"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:874
+msgid "Form"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:376
+msgid "Formats: .jpg, .jpeg, .png, .pdf, .doc"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:860
+msgid "Forms"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:110
+msgid "French"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:164
+#: admin/metabox/fields/ovabrw_daily_price.php:24
+msgid "Friday"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1938 inc/ovabrw-get-data.php:2791
+#, php-format
+msgid "From %s to %s"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:607
+msgid "From date"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:598
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1090
+msgid "From name"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:277
+msgid "Full Amount"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:2474 admin/order/class_render_table_order.php:522
+msgid "Full Payment"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:438
+msgid "Full payment"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:442
+msgid "Full payment or Pay deposit selected by default."
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:406
+#: elementor/widgets/ovabrw_search_ajax.php:405
+msgid "Fullday"
+msgstr ""
+
+#: inc/ovabrw-functions.php:397
+#: admin/settings/class-ovabrw-booking-tours-settings.php:75
+msgid "G:i"
+msgstr ""
+
+#: inc/ovabrw-functions.php:400
+#: admin/settings/class-ovabrw-booking-tours-settings.php:76
+msgid "g:i"
+msgstr ""
+
+#: inc/ovabrw-functions.php:406
+#: admin/settings/class-ovabrw-booking-tours-settings.php:78
+msgid "g:i A"
+msgstr ""
+
+#: inc/ovabrw-functions.php:403
+#: admin/settings/class-ovabrw-booking-tours-settings.php:77
+msgid "g:i a"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:111
+msgid "Galego"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:218
+#: elementor/widgets/ovabrw_search_ajax.php:206
+#: elementor/widgets/ovabrw_product_list.php:119
+#: elementor/widgets/ovabrw_product_category_ajax.php:220
+#: elementor/widgets/ovabrw_product_destination_ajax.php:207
+msgid "Gallery"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:28
+#: admin/settings/class-ovabrw-booking-tours-settings.php:50
+msgid "General"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:56
+msgid "General price"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:101
+msgid "German"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:602
+#: admin/metabox/ovabrw-custom-fields.php:781
+#: admin/metabox/ovabrw-custom-fields.php:795
+#: admin/metabox/ovabrw-custom-fields.php:897
+#: admin/metabox/ovabrw-custom-fields.php:912
+msgid "Global"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:494
+msgid "Global discount (GD) / Price per person"
+msgstr ""
+
+#: admin/category/init.php:76 admin/category/init.php:243
+msgid ""
+"Global Setting (WooCommerce >> Settings >> Booking & Rental >> Product "
+"Template) or Other (made in Templates of Elementor )"
+msgstr ""
+
+#: admin/category/init.php:94 admin/category/init.php:250
+msgid "Global Settings"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:847
+#: admin/metabox/ovabrw-custom-fields.php:866
+msgid "Global settings"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:907
+#: admin/metabox/ovabrw-custom-fields.php:922
+msgid ""
+"Global settings: Go to Appearacce >> Customize >> WooCommerce >> Product "
+"detail"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:800
+msgid ""
+"Global settings: Go to WooCommerce >> Settings >> Booking Tours >> Guests >> "
+"Show babies field"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:786
+msgid ""
+"Global settings: Go to WooCommerce >> Settings >> Booking Tours >> Guests >> "
+"Show children field"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:873
+msgid ""
+"Global settings: Go to WooCommerce >> Settings >> Booking Tours >> Product "
+"Details"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:852
+msgid ""
+"Global settings: Go to WooCommerce >> Settings >> Booking Tours >> Show "
+"Check-out field"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:188
+msgid "Google Maps"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-guest-info-fields.php:121
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:263
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:292
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:231
+msgid "Grab & Drop"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:360
+#: elementor/widgets/ovabrw_product_list.php:251
+msgid "Grap"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:189
+#: elementor/widgets/ovabrw_search_ajax.php:176
+#: elementor/widgets/ovabrw_product_category_ajax.php:173
+#: elementor/widgets/ovabrw_product_destination_ajax.php:176
+msgid "Grid"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:197
+#: elementor/widgets/ovabrw_search_ajax.php:184
+msgid "Grid Column"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:182
+msgid "Grid Template"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1295
+#: elementor/widgets/ovabrw_search_ajax.php:1402
+#: elementor/widgets/ovabrw_search.php:1016
+msgid "Guest"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3903 admin/order/fields/guest-info.php:11
+#, php-format
+msgid "Guest %s"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1327
+#: elementor/widgets/ovabrw_search_ajax.php:1434
+#: elementor/widgets/ovabrw_search.php:1048
+msgid "Guest Dropdown"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:135
+msgid "Guest info"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:34
+msgid "Guest Information"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:68
+msgid "Guest type price"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:33
+#: admin/metabox/ovabrw-custom-fields.php:257
+#: admin/metabox/ovabrw-custom-fields.php:773
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1005
+#: elementor/widgets/ovabrw_search_ajax.php:1038
+#: elementor/widgets/ovabrw_search_ajax.php:1059
+#: elementor/widgets/ovabrw_search.php:652
+#: elementor/widgets/ovabrw_search.php:673
+#: admin/guest-info-fields/views/html-guest-info-fields.php:15
+msgid "Guests"
+msgstr ""
+
+#: inc/ovabrw-functions.php:385
+#: admin/settings/class-ovabrw-booking-tours-settings.php:71
+msgid "H:i"
+msgstr ""
+
+#: inc/ovabrw-functions.php:388
+#: admin/settings/class-ovabrw-booking-tours-settings.php:72
+msgid "h:i"
+msgstr ""
+
+#: inc/ovabrw-functions.php:394
+#: admin/settings/class-ovabrw-booking-tours-settings.php:74
+msgid "h:i A"
+msgstr ""
+
+#: inc/ovabrw-functions.php:391
+#: admin/settings/class-ovabrw-booking-tours-settings.php:73
+msgid "h:i a"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:904
+msgid "Header"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:893
+msgid "Header & Footer"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_plan.php:127
+#: elementor/widgets/ovabrw_product_reviews.php:111
+#: elementor/widgets/ovabrw_product_included_excluded.php:122
+#: elementor/widgets/ovabrw_product_content.php:160
+#: elementor/widgets/ovabrw_product_map.php:121
+msgid "Heading Color"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:112
+msgid "Hebrew (עברית)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:1046
+#: elementor/widgets/ovabrw_product_related.php:1114
+#: elementor/widgets/ovabrw_product_slider.php:1173
+#: elementor/widgets/ovabrw_product_slider.php:1261
+#: elementor/widgets/ovabrw_product_categories.php:597
+#: elementor/widgets/ovabrw_product_categories.php:944
+#: elementor/widgets/ovabrw_product_categories.php:1063
+msgid "Height"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_video_gallery.php:95
+#: elementor/widgets/ovabrw_product_video_gallery.php:107
+#: elementor/widgets/ovabrw_product_video_gallery.php:119
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:70
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:82
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:280
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:305
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:343
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:368
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:593
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:806
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:869
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:932
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:995
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1035
+#: elementor/widgets/ovabrw_search_ajax.php:70
+#: elementor/widgets/ovabrw_search_ajax.php:82
+#: elementor/widgets/ovabrw_search_ajax.php:279
+#: elementor/widgets/ovabrw_search_ajax.php:304
+#: elementor/widgets/ovabrw_search_ajax.php:342
+#: elementor/widgets/ovabrw_search_ajax.php:367
+#: elementor/widgets/ovabrw_search_ajax.php:601
+#: elementor/widgets/ovabrw_search_ajax.php:839
+#: elementor/widgets/ovabrw_search_ajax.php:902
+#: elementor/widgets/ovabrw_search_ajax.php:965
+#: elementor/widgets/ovabrw_search_ajax.php:1028
+#: elementor/widgets/ovabrw_search_ajax.php:1078
+#: elementor/widgets/ovabrw_product_category_ajax.php:231
+#: elementor/widgets/ovabrw_search.php:207
+#: elementor/widgets/ovabrw_search.php:453
+#: elementor/widgets/ovabrw_search.php:516
+#: elementor/widgets/ovabrw_search.php:579
+#: elementor/widgets/ovabrw_search.php:642
+#: elementor/widgets/ovabrw_search.php:692
+#: elementor/widgets/ovabrw_product_destination_ajax.php:218
+#: elementor/widgets/ovabrw_product_tabs.php:124
+#: elementor/widgets/ovabrw_product_tabs.php:155
+#: elementor/widgets/ovabrw_product_tabs.php:186
+#: elementor/widgets/ovabrw_product_tabs.php:217
+#: elementor/widgets/ovabrw_product_tabs.php:248
+#: elementor/widgets/ovabrw_product_categories.php:121
+#: elementor/widgets/ovabrw_product_categories.php:133
+#: elementor/widgets/ovabrw_product_categories.php:145
+msgid "Hide"
+msgstr ""
+
+#: admin/class-ovabrw-admin-menus.php:41 admin/class-ovabrw-admin-menus.php:42
+#: admin/menus/views/html-preview.php:14
+msgid "Home"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_images.php:292
+msgid "Horizontal Spacing"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:396
+#: elementor/widgets/ovabrw_search_ajax.php:395
+msgid "Hour"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:235
+msgid "Hours"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:765
+#: elementor/widgets/ovabrw_product_related.php:927
+#: elementor/widgets/ovabrw_product_slider.php:889
+#: elementor/widgets/ovabrw_product_slider.php:1051
+#: elementor/widgets/ovabrw_product_slider.php:1205
+#: elementor/widgets/ovabrw_product_filter_ajax.php:459
+#: elementor/widgets/ovabrw_product_video_gallery.php:204
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1469
+#: elementor/widgets/ovabrw_search_ajax.php:1576
+#: elementor/widgets/ovabrw_product_list.php:778
+#: elementor/widgets/ovabrw_product_category_ajax.php:302
+#: elementor/widgets/ovabrw_search.php:1190
+#: elementor/widgets/ovabrw_product_destination_ajax.php:280
+#: elementor/widgets/ovabrw_product_images.php:367
+#: elementor/widgets/ovabrw_product_categories.php:819
+#: elementor/widgets/ovabrw_product_categories.php:987
+msgid "Hover"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:113
+msgid "Hrvatski"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:106
+msgid "HTML Tag"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://themeforest.net/user/ovatheme"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://themeforest.net/user/ovatheme/portfolio"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search.php:75
+msgid "https://your-link.com"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:219
+msgid "Hue"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:114
+msgid "Hungarian"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:560
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:632
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:713
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:791
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1012
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1387
+#: elementor/widgets/ovabrw_search_ajax.php:559
+#: elementor/widgets/ovabrw_search_ajax.php:639
+#: elementor/widgets/ovabrw_search_ajax.php:727
+#: elementor/widgets/ovabrw_search_ajax.php:814
+#: elementor/widgets/ovabrw_search_ajax.php:1045
+#: elementor/widgets/ovabrw_search_ajax.php:1240
+#: elementor/widgets/ovabrw_search_ajax.php:1494
+#: elementor/widgets/ovabrw_search.php:165
+#: elementor/widgets/ovabrw_search.php:253
+#: elementor/widgets/ovabrw_search.php:341
+#: elementor/widgets/ovabrw_search.php:428
+#: elementor/widgets/ovabrw_search.php:659
+#: elementor/widgets/ovabrw_search.php:854
+#: elementor/widgets/ovabrw_search.php:1108
+#: elementor/widgets/ovabrw_product_categories.php:97
+#: elementor/widgets/ovabrw_product_categories.php:439
+msgid "Icon"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:244
+#: elementor/widgets/ovabrw_search_ajax.php:222
+#: elementor/widgets/ovabrw_search_ajax.php:243
+#: elementor/widgets/ovabrw_search.php:144
+msgid "Icon Button"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_features.php:23
+msgid "Icon Class"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_features.php:52
+#: admin/metabox/fields/ovabrw_feature_field.php:15
+msgid "Icon class"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_video_gallery.php:171
+msgid "Icon Color"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1122
+msgid "Icon Label"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:821
+#: elementor/widgets/ovabrw_product_slider.php:945
+#: elementor/widgets/ovabrw_product_images.php:322
+#: elementor/widgets/ovabrw_product_categories.php:448
+#: elementor/widgets/ovabrw_product_categories.php:717
+msgid "Icon Size"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:389
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:520
+#: elementor/widgets/ovabrw_product_slider.php:171
+#: elementor/widgets/ovabrw_product_filter_ajax.php:92
+#: elementor/widgets/ovabrw_product_filter_ajax.php:269
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:120
+#: elementor/widgets/ovabrw_search_ajax.php:107
+#: elementor/widgets/ovabrw_product_list.php:196
+#: elementor/widgets/ovabrw_product_category_ajax.php:159
+#: elementor/widgets/ovabrw_product_destination_ajax.php:162
+msgid "ID"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:589
+msgid ""
+"If this field is filled in, this field will display as address instead of "
+"the Map and Iframe address."
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:217
+#: elementor/widgets/ovabrw_search_ajax.php:205
+#: elementor/widgets/ovabrw_product_list.php:118
+#: elementor/widgets/ovabrw_product_category_ajax.php:219
+#: elementor/widgets/ovabrw_product_destination_ajax.php:206
+#: elementor/widgets/ovabrw_product_categories.php:558
+msgid "Image"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:96
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:77
+msgid "Images:"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_tabs.php:135
+#: elementor/widgets/ovabrw_product_tabs.php:145
+msgid "Included/Excluded"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:331
+msgid "Included/Excluded & Tour Plan"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:610 inc/ovabrw-blocks.php:618
+#: inc/ovabrw-blocks.php:701 inc/ovabrw-blocks.php:716
+#, php-format
+msgid "Including %s"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:588
+#, php-format
+msgid "Including %s insurance fee"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:115
+msgid "Indonesian"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:207
+#: elementor/widgets/ovabrw_product_slider.php:270
+#: elementor/widgets/ovabrw_product_filter_ajax.php:326
+#: elementor/widgets/ovabrw_product_images.php:111
+#: elementor/widgets/ovabrw_product_categories.php:220
+msgid "Infinite Loop"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-guest-info-fields.php:12
+msgid "Information fields"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:714
+#: admin/metabox/ovabrw-custom-fields.php:885
+msgid "Insert a shortcode. You can use shortcode of contact form 7 plugin."
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:464
+msgid "Insert deposit amount"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:831
+msgid ""
+"Insert name in general custom checkout field. Example: ova_email_field, "
+"ova_address_field"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:830
+msgid "Insert new custom checkout fields"
+msgstr ""
+
+#: inc/ovabrw-cart.php:73
+msgid "Insert Pick-up date"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:720
+msgid ""
+"Insert the [product-link] tag into the \"Message body\" in Contact Form 7 to "
+"show the product title and link."
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1421 inc/ovabrw_deposit.php:2373
+#: admin/metabox/ovabrw-custom-fields.php:45
+msgid "Insurance"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1749
+msgid "insurance"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:388
+msgid "Insurance amount will be paid in full in the first payment"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:381
+msgid "Insurance amount will be paid once"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1724 inc/ovabrw_deposit.php:1773
+msgid "insurance fee"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:181
+msgid "Insurance Fee:"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:942
+msgid "Insurance fee:"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:2945
+msgid "Insurance fees"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:150
+msgid "Insurance status"
+msgstr ""
+
+#: inc/ovabrw-functions.php:2030
+msgid ""
+"Invalid file type. Please upload an image file (.jpg, .jpeg, .png, .pdf, ."
+"doc)."
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:416
+#: elementor/widgets/ovabrw_product_slider.php:528
+#: elementor/widgets/ovabrw_product_list.php:419
+msgid "Is Featured"
+msgstr ""
+
+#: inc/ovabrw_ajax.php:1194 inc/ovabrw_ajax.php:1430 inc/ovabrw_ajax.php:1540
+msgid "It seems we can’t find what you’re looking for."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:116
+msgid "Italian"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:170
+#: elementor/widgets/ovabrw_product_slider.php:236
+#: elementor/widgets/ovabrw_product_images.php:77
+#: elementor/widgets/ovabrw_product_categories.php:186
+msgid "Item Number"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:463
+#: elementor/widgets/ovabrw_search_ajax.php:462
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:135
+msgid "Items"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:117
+msgid "Japanese"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_short_description.php:128
+#: elementor/widgets/ovabrw_product_content.php:127
+#: elementor/widgets/ovabrw_product_title.php:142
+msgid "Justified"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:119
+msgid "Korean"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:118
+msgid "Korean (한국어)"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:156
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:392
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:523
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:613
+#: admin/custom-taxonomy/custom_taxonomy.php:273
+#: admin/custom-taxonomy/custom_taxonomy.php:395
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:824
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:887
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:950
+#: elementor/widgets/ovabrw_search_ajax.php:571
+#: elementor/widgets/ovabrw_search_ajax.php:651
+#: elementor/widgets/ovabrw_search_ajax.php:739
+#: elementor/widgets/ovabrw_search_ajax.php:826
+#: elementor/widgets/ovabrw_search_ajax.php:857
+#: elementor/widgets/ovabrw_search_ajax.php:920
+#: elementor/widgets/ovabrw_search_ajax.php:983
+#: elementor/widgets/ovabrw_search_ajax.php:1057
+#: elementor/widgets/ovabrw_search_ajax.php:1192
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:225
+#: elementor/widgets/ovabrw_search.php:177
+#: elementor/widgets/ovabrw_search.php:265
+#: elementor/widgets/ovabrw_search.php:353
+#: elementor/widgets/ovabrw_search.php:440
+#: elementor/widgets/ovabrw_search.php:471
+#: elementor/widgets/ovabrw_search.php:534
+#: elementor/widgets/ovabrw_search.php:597
+#: elementor/widgets/ovabrw_search.php:671
+#: elementor/widgets/ovabrw_search.php:806
+#: elementor/widgets/ovabrw_product_tabs.php:113
+#: elementor/widgets/ovabrw_product_tabs.php:144
+#: elementor/widgets/ovabrw_product_tabs.php:175
+#: elementor/widgets/ovabrw_product_tabs.php:206
+#: elementor/widgets/ovabrw_product_tabs.php:237
+#: admin/metabox/fields/ovabrw_service.php:64
+#: admin/metabox/fields/ovabrw_features.php:27
+#: admin/metabox/fields/ovabrw_features.php:62
+#: admin/metabox/fields/ovabrw_feature_field.php:24
+#: admin/metabox/fields/ovabrw_service_group.php:7
+#: admin/guest-info-fields/views/html-guest-info-fields.php:58
+#: admin/guest-info-fields/views/html-guest-info-fields.php:142
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:178
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:152
+msgid "Label"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:332
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:417
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:548
+msgid "label"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:753
+msgid "Label beside Adults"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:811
+msgid "Label beside Babies"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:782
+msgid "Label beside Children"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:127
+msgid "Label Frontend"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:270
+msgid "Label frontend"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3367
+msgid "Last 30 Days"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3366
+msgid "Last 7 Days"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3369
+msgid "Last Month"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:125
+msgid "Last Name"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:345
+#: ovabrw-templates/single/search_ajax_sidebar.php:231
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:540
+#: elementor/widgets/ovabrw_search_ajax.php:539
+msgid "Latest"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_product_map.php:38
+msgid "Latitude"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:121
+msgid "Latvian (Latviešu)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:169
+#: elementor/widgets/ovabrw_product_destination_ajax.php:172
+msgid "Layout"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:423
+#: elementor/widgets/ovabrw_product_short_description.php:116
+#: elementor/widgets/ovabrw_product_content.php:115
+#: elementor/widgets/ovabrw_product_title.php:130
+#: elementor/widgets/ovabrw_product_categories.php:376
+#: elementor/widgets/ovabrw_product_categories.php:665
+msgid "Left"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:96
+msgid "Left Sidebar"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:213
+msgid "Lighten"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:551
+msgid "Line Color"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search.php:73
+#: elementor/widgets/ovabrw_product_title.php:91
+msgid "Link"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:188
+#: elementor/widgets/ovabrw_search_ajax.php:175
+#: elementor/widgets/ovabrw_product_category_ajax.php:174
+#: elementor/widgets/ovabrw_product_destination_ajax.php:177
+msgid "List"
+msgstr ""
+
+#: admin/class-ovabrw-admin-bookings.php:346
+msgid "list"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:120
+msgid "Lithuanian (lietuvių)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_location_review.php:21
+msgid "Location & Rating"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_location_review.php:113
+msgid "Location Options"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_product_map.php:47
+msgid "Longitude"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:220
+msgid "Luminosity"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:60
+msgid "m/d/Y"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:122
+msgid "Macedonian (Македонски)"
+msgstr ""
+
+#: admin/class-ovabrw-admin.php:72 admin/class-ovabrw-admin.php:73
+#: admin/ovabrw-admin-core-functions.php:246
+#: admin/settings/class-ovabrw-booking-tours-settings.php:39
+msgid "Manage bookings"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:130
+msgid "Manage Taxonomy"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:194
+msgid "Manage Taxonomy: Add/Update value of taxonomy"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_product_map.php:20
+msgid "Map name"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:996
+#: elementor/widgets/ovabrw_product_filter_ajax.php:562
+#: elementor/widgets/ovabrw_product_video_gallery.php:246
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1077
+#: elementor/widgets/ovabrw_product_table_price.php:227
+#: elementor/widgets/ovabrw_product_table_price.php:289
+#: elementor/widgets/ovabrw_product_location_review.php:101
+#: elementor/widgets/ovabrw_product_location_review.php:141
+#: elementor/widgets/ovabrw_product_location_review.php:173
+#: elementor/widgets/ovabrw_search_ajax.php:1147
+#: elementor/widgets/ovabrw_unavailable_time.php:138
+#: elementor/widgets/ovabrw_unavailable_time.php:178
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:122
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:212
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:297
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:350
+#: elementor/widgets/ovabrw_product_category_ajax.php:395
+#: elementor/widgets/ovabrw_search.php:761
+#: elementor/widgets/ovabrw_product_destination_ajax.php:357
+#: elementor/widgets/ovabrw_product_tabs.php:345
+#: elementor/widgets/ovabrw_product_title.php:185
+#: elementor/widgets/ovabrw_product_categories.php:360
+#: elementor/widgets/ovabrw_product_categories.php:649
+msgid "Margin"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:160
+#: elementor/widgets/ovabrw_product_slider.php:226
+#: elementor/widgets/ovabrw_product_images.php:68
+#: elementor/widgets/ovabrw_product_categories.php:176
+msgid "Margin Right Items"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:426
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:451
+#: elementor/widgets/ovabrw_search_ajax.php:425
+#: elementor/widgets/ovabrw_search_ajax.php:450
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:428
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:355
+msgid "Max"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:396
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:325
+msgid "Max date"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_resources.php:56
+#: admin/metabox/fields/ovabrw_service.php:111
+#: admin/metabox/fields/ovabrw_service_group.php:53
+msgid "Max quantity"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:588
+msgid "Max Size"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:132
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:113
+msgid "Max size"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:1097
+#: elementor/widgets/ovabrw_search.php:711
+#: elementor/widgets/ovabrw_product_features.php:111
+msgid "Max Width"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:844
+#: elementor/widgets/ovabrw_search_ajax.php:877
+#: elementor/widgets/ovabrw_search.php:491
+msgid "Maximum Adults"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:327
+msgid "Maximum adults"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:970
+#: elementor/widgets/ovabrw_search_ajax.php:1003
+#: elementor/widgets/ovabrw_search.php:617
+msgid "Maximum Babies"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:384
+msgid "Maximum babies"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:907
+#: elementor/widgets/ovabrw_search_ajax.php:940
+#: elementor/widgets/ovabrw_search.php:554
+msgid "Maximum Children"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:355
+msgid "Maximum children"
+msgstr ""
+
+#: inc/ovabrw-functions.php:2038
+msgid "Maximum number of [guest]: [number]."
+msgstr ""
+
+#: inc/ovabrw-cart.php:1806
+#, php-format
+msgid "Maximum number of adults: %s"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1834
+#, php-format
+msgid "Maximum number of babies: %s"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1820
+#, php-format
+msgid "Maximum number of children: %s"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_resources.php:57
+#: admin/metabox/fields/ovabrw_service.php:112
+#: admin/metabox/fields/ovabrw_service_group.php:54
+msgid "Maximum number of guests per booking."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2036
+msgid "Maximum number of guests: [number]."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2034
+msgid "Maximum quantity: [number]."
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:301
+msgid "Maximum total number of guest"
+msgstr ""
+
+#: inc/ovabrw_ajax.php:779
+#, php-format
+msgid "Maximum total number of guests: %s"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:128
+#: elementor/widgets/ovabrw_product_slider.php:174
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:123
+#: elementor/widgets/ovabrw_search_ajax.php:110
+#: elementor/widgets/ovabrw_product_list.php:199
+msgid "Menu Order"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:413
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:438
+#: elementor/widgets/ovabrw_search_ajax.php:412
+#: elementor/widgets/ovabrw_search_ajax.php:437
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:413
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:341
+msgid "Min"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_global_discount.php:38
+#: admin/metabox/fields/ovabrw_st_record.php:71
+#: admin/metabox/fields/ovabrw_st.php:142
+msgid "Min - Max: Guests"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:381
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:311
+msgid "Min date"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:252
+msgid "Min Width"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:855
+#: elementor/widgets/ovabrw_search_ajax.php:888
+#: elementor/widgets/ovabrw_search.php:502
+msgid "Minimum Adults"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:314
+msgid "Minimum adults"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:981
+#: elementor/widgets/ovabrw_search_ajax.php:1014
+#: elementor/widgets/ovabrw_search.php:628
+msgid "Minimum Babies"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:371
+msgid "Minimum babies"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:918
+#: elementor/widgets/ovabrw_search_ajax.php:951
+#: elementor/widgets/ovabrw_search.php:565
+msgid "Minimum Children"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:342
+msgid "Minimum children"
+msgstr ""
+
+#: inc/ovabrw-functions.php:2037
+msgid "Minimum number of [guest]: [number]."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2035
+msgid "Minimum number of guests: [number]."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2033
+msgid "Minimum quantity: [number]."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1024
+msgid "Minimum time required before canceling (hours)"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:288
+msgid "Minimum total number of guest"
+msgstr ""
+
+#: inc/ovabrw-functions.php:353
+msgid "MM/DD/YYYY"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:160
+#: admin/metabox/fields/ovabrw_daily_price.php:20
+msgid "Monday"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:123
+msgid "Mongolian (Монгол)"
+msgstr ""
+
+#: admin/class-ovabrw-admin-bookings.php:343
+msgid "month"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:690
+#: elementor/widgets/ovabrw_search_ajax.php:704
+#: elementor/widgets/ovabrw_search.php:318
+msgid "More Taxonomies"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:2802
+msgid "more..."
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:209
+msgid "Multiply"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:121
+#: admin/custom-taxonomy/custom_taxonomy.php:251
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:404
+#: elementor/widgets/ovabrw_search_ajax.php:403
+#: admin/metabox/fields/ovabrw_resources.php:37
+#: admin/metabox/fields/ovabrw_service.php:95
+#: admin/metabox/fields/ovabrw_service_group.php:37
+#: admin/guest-info-fields/views/html-guest-info-fields.php:55
+#: admin/guest-info-fields/views/html-guest-info-fields.php:139
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:152
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:227
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:132
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:200
+msgid "Name"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:310
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:248
+msgid "Name:"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:180
+msgid "Name: "
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_images.php:258
+#: elementor/widgets/ovabrw_product_categories.php:690
+msgid "Nav"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:810
+#: elementor/widgets/ovabrw_product_slider.php:934
+msgid "Nav Control"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:660
+#: elementor/widgets/ovabrw_product_slider.php:772
+#: elementor/widgets/ovabrw_product_list.php:661
+msgid "Negotiable Price"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:817
+msgid "New"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:311
+msgid "New field"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search.php:65
+msgid "New Page"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:604
+#: elementor/widgets/ovabrw_product_slider.php:716
+#: elementor/widgets/ovabrw_product_list.php:605
+msgid "New Price"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:632
+msgid "New York"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:633
+#: admin/metabox/ovabrw-custom-fields.php:635
+msgid "New York, NY, USA"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:2146
+msgid "Next"
+msgstr ""
+
+#: inc/ovabrw-functions.php:1358
+msgid "Next Day"
+msgstr ""
+
+#: inc/ovabrw-functions.php:1362
+msgid "Next Month"
+msgstr ""
+
+#: inc/ovabrw-functions.php:1360
+msgid "Next Week"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:275
+#: admin/settings/class-ovabrw-booking-tours-settings.php:285
+#: admin/settings/class-ovabrw-booking-tours-settings.php:295
+#: admin/settings/class-ovabrw-booking-tours-settings.php:334
+#: admin/settings/class-ovabrw-booking-tours-settings.php:345
+#: admin/settings/class-ovabrw-booking-tours-settings.php:356
+#: admin/settings/class-ovabrw-booking-tours-settings.php:366
+#: admin/settings/class-ovabrw-booking-tours-settings.php:376
+#: admin/settings/class-ovabrw-booking-tours-settings.php:386
+#: admin/settings/class-ovabrw-booking-tours-settings.php:396
+#: admin/settings/class-ovabrw-booking-tours-settings.php:415
+#: admin/settings/class-ovabrw-booking-tours-settings.php:487
+#: admin/settings/class-ovabrw-booking-tours-settings.php:497
+#: admin/settings/class-ovabrw-booking-tours-settings.php:507
+#: admin/settings/class-ovabrw-booking-tours-settings.php:517
+#: admin/settings/class-ovabrw-booking-tours-settings.php:527
+#: admin/settings/class-ovabrw-booking-tours-settings.php:537
+#: admin/settings/class-ovabrw-booking-tours-settings.php:547
+#: admin/settings/class-ovabrw-booking-tours-settings.php:557
+#: admin/settings/class-ovabrw-booking-tours-settings.php:567
+#: admin/settings/class-ovabrw-booking-tours-settings.php:577
+#: admin/settings/class-ovabrw-booking-tours-settings.php:644
+#: admin/settings/class-ovabrw-booking-tours-settings.php:676
+#: admin/settings/class-ovabrw-booking-tours-settings.php:748
+#: admin/settings/class-ovabrw-booking-tours-settings.php:766
+#: admin/settings/class-ovabrw-booking-tours-settings.php:777
+#: admin/settings/class-ovabrw-booking-tours-settings.php:795
+#: admin/settings/class-ovabrw-booking-tours-settings.php:806
+#: admin/settings/class-ovabrw-booking-tours-settings.php:869
+#: admin/settings/class-ovabrw-booking-tours-settings.php:962
+#: admin/settings/class-ovabrw-booking-tours-settings.php:983
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1061
+#: admin/metabox/ovabrw-custom-fields.php:412
+#: admin/metabox/ovabrw-custom-fields.php:425
+#: admin/metabox/ovabrw-custom-fields.php:604
+#: admin/metabox/ovabrw-custom-fields.php:783
+#: admin/metabox/ovabrw-custom-fields.php:797
+#: admin/metabox/ovabrw-custom-fields.php:818
+#: admin/metabox/ovabrw-custom-fields.php:849
+#: elementor/widgets/ovabrw_product_related.php:197
+#: elementor/widgets/ovabrw_product_related.php:212
+#: elementor/widgets/ovabrw_product_related.php:226
+#: elementor/widgets/ovabrw_product_related.php:263
+#: elementor/widgets/ovabrw_product_related.php:277
+#: elementor/widgets/ovabrw_product_slider.php:69
+#: elementor/widgets/ovabrw_product_slider.php:80
+#: elementor/widgets/ovabrw_product_slider.php:91
+#: elementor/widgets/ovabrw_product_slider.php:261
+#: elementor/widgets/ovabrw_product_slider.php:275
+#: elementor/widgets/ovabrw_product_slider.php:289
+#: elementor/widgets/ovabrw_product_slider.php:326
+#: elementor/widgets/ovabrw_product_slider.php:340
+#: elementor/widgets/ovabrw_product_filter_ajax.php:70
+#: elementor/widgets/ovabrw_product_filter_ajax.php:118
+#: elementor/widgets/ovabrw_product_filter_ajax.php:129
+#: elementor/widgets/ovabrw_product_filter_ajax.php:140
+#: elementor/widgets/ovabrw_product_filter_ajax.php:151
+#: elementor/widgets/ovabrw_product_filter_ajax.php:162
+#: elementor/widgets/ovabrw_product_filter_ajax.php:173
+#: elementor/widgets/ovabrw_product_filter_ajax.php:184
+#: elementor/widgets/ovabrw_product_filter_ajax.php:195
+#: elementor/widgets/ovabrw_product_filter_ajax.php:317
+#: elementor/widgets/ovabrw_product_filter_ajax.php:331
+#: elementor/widgets/ovabrw_product_filter_ajax.php:345
+#: elementor/widgets/ovabrw_product_filter_ajax.php:382
+#: elementor/widgets/ovabrw_product_filter_ajax.php:396
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:693
+#: elementor/widgets/ovabrw_search_ajax.php:707
+#: elementor/widgets/ovabrw_product_list.php:70
+#: elementor/widgets/ovabrw_product_list.php:81
+#: elementor/widgets/ovabrw_product_list.php:92
+#: elementor/widgets/ovabrw_product_category_ajax.php:70
+#: elementor/widgets/ovabrw_search.php:321
+#: elementor/widgets/ovabrw_product_destination_ajax.php:70
+#: elementor/widgets/ovabrw_product_images.php:102
+#: elementor/widgets/ovabrw_product_images.php:116
+#: elementor/widgets/ovabrw_product_images.php:130
+#: elementor/widgets/ovabrw_product_images.php:167
+#: elementor/widgets/ovabrw_product_categories.php:211
+#: elementor/widgets/ovabrw_product_categories.php:225
+#: elementor/widgets/ovabrw_product_categories.php:239
+#: elementor/widgets/ovabrw_product_categories.php:276
+#: admin/metabox/fields/ovabrw_service.php:82
+#: admin/metabox/fields/ovabrw_service_group.php:24
+msgid "No"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:1542
+msgid "No products found"
+msgstr ""
+
+#: ovabrw-templates/search_result.php:41
+#: elementor/widgets/ovabrw_product_related.php:1245
+msgid "No products found."
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_resources.php:96
+#: admin/metabox/fields/ovabrw_service.php:148
+#: admin/metabox/fields/ovabrw_service_field.php:8
+#: admin/metabox/fields/ovabrw_resources_field.php:9
+msgid "No space"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1949
+msgid "No time"
+msgstr ""
+
+#: inc/ovabrw_ajax.php:348 inc/ovabrw_ajax.php:1871 inc/ovabrw-cart.php:27
+msgid "No time, please choose another date!"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:88
+#: elementor/widgets/ovabrw_product_video_gallery.php:76
+#: elementor/widgets/ovabrw_product_forms.php:83
+#: elementor/widgets/ovabrw_product_table_price.php:76
+#: elementor/widgets/ovabrw_product_location_review.php:75
+#: elementor/widgets/ovabrw_product_reviews.php:76
+#: elementor/widgets/ovabrw_unavailable_time.php:75
+#: elementor/widgets/ovabrw_product_included_excluded.php:76
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:67
+#: elementor/widgets/ovabrw_product_short_description.php:76
+#: elementor/widgets/ovabrw_product_features.php:76
+#: elementor/widgets/ovabrw_product_content.php:76
+#: elementor/widgets/ovabrw_product_tabs.php:86
+#: elementor/widgets/ovabrw_product_title.php:75
+#: elementor/widgets/ovabrw_product_images.php:208
+#: elementor/widgets/ovabrw_product_map.php:86
+msgid "No tour products."
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:609
+#: elementor/widgets/ovabrw_search_ajax.php:617
+#: elementor/widgets/ovabrw_search.php:224
+msgid "None"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:703
+#: elementor/widgets/ovabrw_product_related.php:885
+#: elementor/widgets/ovabrw_product_related.php:1010
+#: elementor/widgets/ovabrw_product_slider.php:815
+#: elementor/widgets/ovabrw_product_slider.php:1009
+#: elementor/widgets/ovabrw_product_slider.php:1137
+#: elementor/widgets/ovabrw_product_filter_ajax.php:427
+#: elementor/widgets/ovabrw_product_video_gallery.php:143
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1438
+#: elementor/widgets/ovabrw_search_ajax.php:1545
+#: elementor/widgets/ovabrw_product_list.php:704
+#: elementor/widgets/ovabrw_product_category_ajax.php:262
+#: elementor/widgets/ovabrw_search.php:1159
+#: elementor/widgets/ovabrw_product_destination_ajax.php:249
+#: elementor/widgets/ovabrw_product_tabs.php:271
+#: elementor/widgets/ovabrw_product_title.php:208
+#: elementor/widgets/ovabrw_product_images.php:314
+#: elementor/widgets/ovabrw_product_categories.php:777
+#: elementor/widgets/ovabrw_product_categories.php:888
+msgid "Normal"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:125
+msgid "Norwegian"
+msgstr ""
+
+#: inc/ovabrw_ajax.php:1191 inc/ovabrw_ajax.php:1427 inc/ovabrw_ajax.php:1537
+msgid "Not available tours"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:654
+msgid "Not Found"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:414
+msgid "Note"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:518
+msgid "Note: ST doesn't use GD, it will use DST"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:747
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:48
+msgid "Number"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:334 inc/ovabrw-functions.php:1498
+#: inc/ovabrw-functions.php:1700 inc/ovabrw-functions.php:1852
+#: inc/ovabrw-functions.php:2043
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:431
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:496
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:562
+msgid "number"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:172
+#: elementor/widgets/ovabrw_product_slider.php:238
+#: elementor/widgets/ovabrw_product_images.php:79
+#: elementor/widgets/ovabrw_product_categories.php:188
+msgid "Number Item"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:84
+msgid "Number of adults"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:118
+msgid "Number of babies"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-meta-boxes.php:101
+msgid "Number of children"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:632
+#: elementor/widgets/ovabrw_product_slider.php:744
+#: elementor/widgets/ovabrw_product_list.php:633
+msgid "Old Price"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:98
+#: admin/ovabrw-admin-core-functions.php:323
+#: admin/order/class_render_table_order.php:49
+#: admin/order/class_render_table_order.php:70
+#: admin/settings/class-ovabrw-booking-tours-settings.php:655
+msgid "On hold"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:867
+msgid "Only booking form"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:869
+msgid "Only enquiry form"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:868
+msgid "Only request form"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:66
+#: elementor/widgets/ovabrw_product_list.php:67
+msgid "Only Show Featured"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:88
+#: elementor/widgets/ovabrw_product_filter_ajax.php:67
+#: elementor/widgets/ovabrw_product_list.php:89
+msgid "Only Show On Sale Products"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:77
+msgid "Only Show Rental Products"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_list.php:78
+msgid "Only Show Tour Products"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:578
+msgid "Opacity"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:906
+#: elementor/widgets/ovabrw_product_categories.php:1025
+msgid "Opacity Dots"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:224
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:197
+msgid "Option ID"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:243
+msgid "Option Price"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-guest-info-fields.php:26
+#: admin/guest-info-fields/views/html-guest-info-fields.php:27
+msgid "Optional"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:382
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:457
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:513
+msgid "Options"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:217
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:190
+msgid "Options(*)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:634
+#: elementor/widgets/ovabrw_product_related.php:136
+#: elementor/widgets/ovabrw_product_slider.php:185
+#: elementor/widgets/ovabrw_product_filter_ajax.php:102
+#: elementor/widgets/ovabrw_product_filter_ajax.php:279
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:137
+#: elementor/widgets/ovabrw_search_ajax.php:124
+#: elementor/widgets/ovabrw_product_list.php:210
+#: elementor/widgets/ovabrw_product_category_ajax.php:141
+#: elementor/widgets/ovabrw_product_destination_ajax.php:144
+msgid "Order"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:353
+msgid "Order #"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:118
+#: elementor/widgets/ovabrw_product_slider.php:166
+#: elementor/widgets/ovabrw_product_filter_ajax.php:88
+#: elementor/widgets/ovabrw_product_filter_ajax.php:265
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:115
+#: elementor/widgets/ovabrw_search_ajax.php:102
+#: elementor/widgets/ovabrw_product_list.php:191
+msgid "Order By"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:172
+msgid "Order details: "
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:649
+msgid "Order status"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:358 custom-post-type/register_cpt.php:7
+msgctxt "Order status"
+msgid "Closed"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:473 inc/ovabrw-extra-tab.php:475
+msgid "Order total: "
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:154
+#: elementor/widgets/ovabrw_product_destination_ajax.php:157
+msgid "OrderBy"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:2507 admin/order/class_render_table_order.php:561
+#, php-format
+msgid "Original Order #%1$s"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:2461 admin/order/class_render_table_order.php:509
+msgid "Original Payment"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:52
+msgid "Our Themes and Add-ons"
+msgstr ""
+
+#. Author of the plugin
+msgid "Ovatheme"
+msgstr ""
+
+#. Description of the plugin
+msgid "OvaTheme Travel and Tour Booking WooCommerce Plugin."
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:211
+#: elementor/widgets/ovabrw_product_categories.php:567
+msgid "Overlay"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:44
+msgid "Overview"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:339
+#: elementor/widgets/ovabrw_product_related.php:392
+#: elementor/widgets/ovabrw_product_related.php:454
+#: elementor/widgets/ovabrw_product_related.php:560
+#: elementor/widgets/ovabrw_product_slider.php:439
+#: elementor/widgets/ovabrw_product_slider.php:504
+#: elementor/widgets/ovabrw_product_slider.php:566
+#: elementor/widgets/ovabrw_product_slider.php:672
+#: elementor/widgets/ovabrw_product_slider.php:863
+#: elementor/widgets/ovabrw_product_video_gallery.php:259
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1065
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1162
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1259
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1355
+#: elementor/widgets/ovabrw_product_table_price.php:111
+#: elementor/widgets/ovabrw_product_table_price.php:215
+#: elementor/widgets/ovabrw_product_table_price.php:277
+#: elementor/widgets/ovabrw_search_ajax.php:1135
+#: elementor/widgets/ovabrw_search_ajax.php:1228
+#: elementor/widgets/ovabrw_search_ajax.php:1366
+#: elementor/widgets/ovabrw_search_ajax.php:1462
+#: elementor/widgets/ovabrw_product_list.php:330
+#: elementor/widgets/ovabrw_product_list.php:395
+#: elementor/widgets/ovabrw_product_list.php:457
+#: elementor/widgets/ovabrw_product_list.php:562
+#: elementor/widgets/ovabrw_product_list.php:752
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:110
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:200
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:285
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:338
+#: elementor/widgets/ovabrw_product_category_ajax.php:382
+#: elementor/widgets/ovabrw_search.php:749
+#: elementor/widgets/ovabrw_search.php:842
+#: elementor/widgets/ovabrw_search.php:980
+#: elementor/widgets/ovabrw_search.php:1076
+#: elementor/widgets/ovabrw_product_features.php:163
+#: elementor/widgets/ovabrw_product_destination_ajax.php:344
+#: elementor/widgets/ovabrw_product_tabs.php:358
+#: elementor/widgets/ovabrw_product_categories.php:533
+msgid "Padding"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:228
+#: elementor/widgets/ovabrw_product_destination_ajax.php:215
+msgid "Pagination"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:2529 admin/order/class_render_table_order.php:473
+msgid "Paid for Customers"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:2467 admin/order/class_render_table_order.php:515
+msgid "Partial Payment"
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:51
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:351
+msgid "Password"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:51
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:30
+msgid "Pattern"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:192
+#: elementor/widgets/ovabrw_product_slider.php:256
+#: elementor/widgets/ovabrw_product_filter_ajax.php:312
+#: elementor/widgets/ovabrw_product_images.php:97
+#: elementor/widgets/ovabrw_product_categories.php:206
+msgid "Pause on Hover"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:439
+msgid "Pay deposit"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1908
+msgid "Pay Full (offline)"
+msgstr ""
+
+#: inc/ovabrw-functions.php:1346
+#, php-format
+msgid "Payment remaining for %s"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:384
+msgid "Payment via"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:95
+#: admin/ovabrw-admin-core-functions.php:320
+#: admin/order/class_render_table_order.php:52
+#: admin/order/class_render_table_order.php:71
+#: admin/settings/class-ovabrw-booking-tours-settings.php:653
+msgid "Pending payment"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:108
+msgid "Persian"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:1068
+#: elementor/widgets/ovabrw_search.php:682
+msgid "Persons"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:148
+#: admin/ovabrw-admin-core-functions.php:378
+#: admin/ovabrw-admin-core-functions.php:400
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:357
+msgid "Phone"
+msgstr ""
+
+#: admin/bookings/views/html-popup-event-data.php:85
+msgid "Phone:"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:184
+msgid "Phone: "
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3124
+msgid "Pick-up"
+msgstr ""
+
+#: inc/ovabrw-cart.php:80
+msgid "Pick-up Date must be greater than Current Time"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:576
+msgid "Place"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:159
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:624
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:572
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:644
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:725
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1024
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1177
+#: elementor/widgets/ovabrw_search_ajax.php:580
+#: elementor/widgets/ovabrw_search_ajax.php:660
+#: elementor/widgets/ovabrw_search_ajax.php:748
+#: elementor/widgets/ovabrw_search_ajax.php:1066
+#: elementor/widgets/ovabrw_search_ajax.php:1284
+#: elementor/widgets/ovabrw_search.php:186
+#: elementor/widgets/ovabrw_search.php:274
+#: elementor/widgets/ovabrw_search.php:362
+#: elementor/widgets/ovabrw_search.php:680
+#: elementor/widgets/ovabrw_search.php:898
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:202
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:175
+msgid "Placeholder"
+msgstr ""
+
+#: inc/ovabrw-cart.php:157
+msgid "Please choose quantity greater 0."
+msgstr ""
+
+#: inc/ovabrw-cart.php:171
+msgid "Please choose service"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1879
+msgid "Please choose the number of adults larger %d"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1885
+msgid "Please choose the number of adults less than or equals %d"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1949
+msgid "Please choose the number of babies larger %d"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1955
+msgid "Please choose the number of babies less than or equals %d"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1914
+msgid "Please choose the number of children larger %d"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1920
+msgid "Please choose the number of children less than or equals %d"
+msgstr ""
+
+#: inc/ovabrw-functions.php:2026
+msgid "Please enter a valid date."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2023
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2027
+msgid "Please enter a valid number."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2024
+msgid "Please enter a valid phone number."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2025
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2031
+msgid "Please enter a value greater than or equal to [number]."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2032
+msgid "Please enter a value less than or equal to [number]."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2028
+msgid "Please enter only digits."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2021
+msgid "Please read and accept the terms and conditions to continue."
+msgstr ""
+
+#: inc/ovabrw-functions.php:2022
+msgid "Please verify that you are not a robot."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:126
+msgid "Polish"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:214
+msgid "Popular Categories"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:125
+msgid "Popularity"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:175
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:124
+#: elementor/widgets/ovabrw_search_ajax.php:111
+#: elementor/widgets/ovabrw_product_list.php:200
+msgid "Popularity (sales)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:127
+msgid "Portuguese"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:128
+msgid "Português(Brasil)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:157
+#: elementor/widgets/ovabrw_product_list.php:182
+msgid "Posts Per Page"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:131
+#: elementor/widgets/ovabrw_product_destination_ajax.php:134
+msgid "Posts per page"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:2128
+msgid "Prev"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:576
+msgid "Preview"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:395
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:467
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:526
+#: elementor/widgets/ovabrw_product_related.php:124
+#: elementor/widgets/ovabrw_product_related.php:596
+#: elementor/widgets/ovabrw_product_slider.php:708
+#: elementor/widgets/ovabrw_product_list.php:597
+msgid "Price"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:333 inc/ovabrw-functions.php:1432
+#: inc/ovabrw-functions.php:1444 inc/ovabrw-functions.php:1786
+#: inc/ovabrw-functions.php:1798
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:424
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:489
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:555
+msgid "price"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:265
+#: elementor/widgets/ovabrw_search_ajax.php:264
+msgid "Price Label"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:363
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:543
+#: elementor/widgets/ovabrw_search_ajax.php:542
+msgid "Price: high to low"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:357
+#: ovabrw-templates/single/search_ajax_sidebar.php:241
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:542
+#: elementor/widgets/ovabrw_search_ajax.php:541
+msgid "Price: low to high"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:92
+#: admin/ovabrw-admin-core-functions.php:317
+#: admin/order/class_render_table_order.php:43
+#: admin/order/class_render_table_order.php:69
+#: admin/settings/class-ovabrw-booking-tours-settings.php:654
+msgid "Processing"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:153
+#: elementor/widgets/ovabrw_product_filter_ajax.php:60
+#: admin/bookings/views/html-create-booking-item.php:11
+msgid "Product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:103
+#: elementor/widgets/ovabrw_product_categories.php:21
+msgid "Product Categories"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:21
+msgid "Product Category Ajax"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:117
+msgid "Product Category IDs"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_content.php:21
+msgid "Product Content"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:619
+msgid "Product Counts"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_destination_ajax.php:21
+msgid "Product Destination Ajax"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:29
+#: admin/settings/class-ovabrw-booking-tours-settings.php:257
+msgid "Product details"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1861
+msgid "Product does not exist."
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_features.php:21
+msgid "Product Features"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:21
+msgid "Product Filter Ajax"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_forms.php:21
+msgid "Product Forms"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_plan.php:87
+#: elementor/widgets/ovabrw_product_related.php:94
+#: elementor/widgets/ovabrw_product_video_gallery.php:82
+#: elementor/widgets/ovabrw_product_forms.php:89
+#: elementor/widgets/ovabrw_product_table_price.php:82
+#: elementor/widgets/ovabrw_product_location_review.php:81
+#: elementor/widgets/ovabrw_product_reviews.php:82
+#: elementor/widgets/ovabrw_unavailable_time.php:81
+#: elementor/widgets/ovabrw_product_included_excluded.php:82
+#: elementor/widgets/ovabrw_product_short_description.php:82
+#: elementor/widgets/ovabrw_product_features.php:82
+#: elementor/widgets/ovabrw_product_content.php:82
+#: elementor/widgets/ovabrw_product_tabs.php:92
+#: elementor/widgets/ovabrw_product_title.php:81
+#: elementor/widgets/ovabrw_product_images.php:214
+#: elementor/widgets/ovabrw_product_map.php:92
+msgid "Product ID"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_images.php:21
+msgid "Product Images"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_included_excluded.php:21
+msgid "Product Included/Excluded"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_list.php:21
+msgid "Product List"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_map.php:21
+msgid "Product Map"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_plan.php:53
+#: elementor/widgets/ovabrw_product_video_gallery.php:46
+#: elementor/widgets/ovabrw_product_forms.php:53
+#: elementor/widgets/ovabrw_product_table_price.php:46
+#: elementor/widgets/ovabrw_product_location_review.php:45
+#: elementor/widgets/ovabrw_product_reviews.php:46
+#: elementor/widgets/ovabrw_unavailable_time.php:45
+#: elementor/widgets/ovabrw_product_included_excluded.php:46
+#: elementor/widgets/ovabrw_product_short_description.php:46
+#: elementor/widgets/ovabrw_product_features.php:46
+#: elementor/widgets/ovabrw_product_content.php:46
+#: elementor/widgets/ovabrw_product_tabs.php:56
+#: elementor/widgets/ovabrw_product_images.php:178
+#: elementor/widgets/ovabrw_product_map.php:56
+msgid "Product Option"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_plan.php:21
+msgid "Product Plan"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_table_price.php:21
+msgid "Product Price Table"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:21
+msgid "Product Related"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_reviews.php:21
+msgid "Product Reviews"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:21
+msgid "Product Slider"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_tabs.php:21
+msgid "Product Tabs"
+msgstr ""
+
+#: elementor/ovabrw-register-elementor.php:42
+msgid "Product Template"
+msgstr ""
+
+#: admin/category/init.php:74 admin/category/init.php:241
+#: admin/metabox/ovabrw-custom-fields.php:721
+msgid "Product template"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:262
+msgid "Product templates"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:21
+msgid "Product Title"
+msgstr ""
+
+#: admin/bookings/views/html-popup-event-data.php:99
+msgid "Product:"
+msgstr ""
+
+#: admin/class-ovabrw-admin-menus.php:52 admin/class-ovabrw-admin-menus.php:53
+msgid "Products"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_forms.php:101
+msgid "Products Forms"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:78
+msgid "Products Per Category"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:104
+msgid "Products Per Page"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:265 admin/metabox/ovabrw-custom-fields.php:177
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:470
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:529
+msgid "Quantity"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:380
+msgid "Quantity: "
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:53
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:366
+msgid "Radio"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:161
+#: elementor/widgets/ovabrw_product_destination_ajax.php:164
+msgid "rand"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:127
+msgid "Random"
+msgstr ""
+
+#: ovabrw-templates/elementor/ovabrw_product_filter_ajax.php:211
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:351
+#: ovabrw-templates/single/search_ajax_sidebar.php:236
+#: elementor/widgets/ovabrw_product_related.php:126
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:541
+#: elementor/widgets/ovabrw_search_ajax.php:540
+msgid "Rating"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:35
+#: admin/settings/class-ovabrw-booking-tours-settings.php:859
+msgid "reCAPTCHA"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:885
+msgid "reCAPTCHA type"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:920
+msgid "reCAPTCHA v2"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:899
+msgid "reCAPTCHA v3"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:2523 admin/order/class_render_table_order.php:467
+msgid "Received"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:104
+msgid "Refunded"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:632 inc/ovabrw_deposit.php:452
+#: inc/ovabrw_deposit.php:453 inc/ovabrw_deposit.php:1415
+#: inc/ovabrw_deposit.php:2371
+msgid "Remaining"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1844
+#, php-format
+msgid "Remaining - Invoice #%1$s"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:274
+#: admin/bookings/views/html-create-booking-meta-boxes.php:186
+msgid "Remaining Amount"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:952
+msgid "Remaining amount"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:2489 admin/order/class_render_table_order.php:540
+#, php-format
+msgid "Remaining Invoice #%1$s"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:445 inc/ovabrw_deposit.php:283
+#: inc/ovabrw_deposit.php:1024 inc/ovabrw_deposit.php:1182
+msgid "Remaining:"
+msgstr ""
+
+#: inc/ovabrw-mail.php:9
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1085
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1093
+msgid "Remind Check-in Date"
+msgstr ""
+
+#: inc/ovabrw-mail.php:55
+msgid "Remind Pick-up date"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:38
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1051
+msgid "Reminder"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:57 admin/menus/views/html-preview.php:65
+msgid "Remons"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:59
+msgid "Remons - Booking Rental Theme WordPress"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:346
+#: admin/custom-taxonomy/custom_taxonomy.php:364
+#: admin/custom-taxonomy/custom_taxonomy.php:383
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:262
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:291
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:230
+msgid "Remove"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:336 inc/ovabrw-functions.php:2045
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:439
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:504
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:570
+msgid "Remove option"
+msgstr ""
+
+#: admin/category/init.php:160
+msgid "Rental"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:525 inc/ovabrw-extra-tab.php:528
+#: admin/settings/class-ovabrw-booking-tours-settings.php:594
+#: admin/settings/class-ovabrw-booking-tours-settings.php:601
+msgid "Request For Booking"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:31
+#: admin/settings/class-ovabrw-booking-tours-settings.php:465
+#: admin/settings/class-ovabrw-booking-tours-settings.php:880
+msgid "Request form"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:841
+msgid ""
+"Require guests to enter information for each person in the booking/request "
+"form."
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:162
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:666
+#: admin/metabox/fields/ovabrw_service.php:75
+#: admin/metabox/fields/ovabrw_service_group.php:17
+#: admin/guest-info-fields/views/html-guest-info-fields.php:23
+#: admin/guest-info-fields/views/html-guest-info-fields.php:24
+#: admin/guest-info-fields/views/html-guest-info-fields.php:61
+#: admin/guest-info-fields/views/html-guest-info-fields.php:145
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:467
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:391
+msgid "Required"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:788
+msgid "Resource"
+msgstr ""
+
+#: inc/ovabrw-cart.php:703 inc/ovabrw-cart.php:1052
+#: admin/class-ovabrw-admin-orders.php:578
+#, php-format
+msgid "Resource%s"
+msgid_plural "Resources%s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/ovabrw-extra-tab.php:386
+msgid "Resource: "
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:790 admin/metabox/ovabrw-custom-fields.php:529
+#: admin/bookings/views/html-create-booking-meta-boxes.php:144
+msgid "Resources"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:388
+msgid "Resources: "
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:574
+#: elementor/widgets/ovabrw_product_slider.php:686
+#: elementor/widgets/ovabrw_product_list.php:576
+msgid "Review"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:290
+#: elementor/widgets/ovabrw_search_ajax.php:289
+msgid "Review Label"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_location_review.php:153
+msgid "Review Options"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:292
+#: elementor/widgets/ovabrw_search_ajax.php:291
+msgid "Review Score"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_tabs.php:228
+#: elementor/widgets/ovabrw_product_tabs.php:238
+msgid "Reviews"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:431
+#: elementor/widgets/ovabrw_product_short_description.php:124
+#: elementor/widgets/ovabrw_product_content.php:123
+#: elementor/widgets/ovabrw_product_title.php:138
+#: elementor/widgets/ovabrw_product_categories.php:384
+#: elementor/widgets/ovabrw_product_categories.php:673
+msgid "Right"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:861
+#: elementor/widgets/ovabrw_product_slider.php:985
+#: elementor/widgets/ovabrw_product_categories.php:753
+msgid "Right Position"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:95
+msgid "Right Sidebar"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:129
+msgid "Romanian"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:466
+msgid "Rotate"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:130
+msgid "Russian"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:215
+msgid "Saturation"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_daily_price.php:25
+msgid "Saturday"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:165
+msgid "Saturday "
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1880 inc/ovabrw_deposit.php:1949
+#: inc/ovabrw_deposit.php:1986
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:683
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:484
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:408
+msgid "Save"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:312
+msgid "save"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:246
+msgid "Schedule"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:889
+msgid "Score based (v3)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_title.php:210
+msgid "Screen"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:632
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:237
+msgid "Search"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:21
+msgid "Search Ajax Sidebar"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1199
+#: elementor/widgets/ovabrw_search_ajax.php:1306
+#: elementor/widgets/ovabrw_search.php:920
+msgid "Search Button"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search.php:110
+msgid "Search in Categories"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:91
+msgid "Search Position"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search.php:21
+msgid "Search Product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search.php:60
+msgid "Search Result Page"
+msgstr ""
+
+#: ovabrw-templates/search_result.php:22
+msgid "Search Results"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:226
+msgid "Search Title"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:228
+msgid "Search Tours"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1046
+#: elementor/widgets/ovabrw_search_ajax.php:1089
+#: elementor/widgets/ovabrw_search.php:703
+msgid "Search Wrapper"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:910
+#: admin/settings/class-ovabrw-booking-tours-settings.php:931
+msgid "Secret key"
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:55
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:363
+msgid "Select"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1711
+#, php-format
+msgid "Select %s"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:147
+#: elementor/widgets/ovabrw_product_list.php:161
+msgid "Select Category"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:622
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:703
+#: elementor/widgets/ovabrw_search_ajax.php:629
+#: elementor/widgets/ovabrw_search_ajax.php:717
+#: elementor/widgets/ovabrw_search.php:243
+#: elementor/widgets/ovabrw_search.php:331
+msgid "Select Custom Taxonomy"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:444
+msgid "Select Page"
+msgstr ""
+
+#: admin/bookings/views/html-create-booking-item.php:19
+msgid "Select product"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:295
+msgid "Select product ..."
+msgstr ""
+
+#: admin/bookings/views/html-booking-calendar.php:21
+#: admin/bookings/views/html-booking-calendar.php:23
+msgid "Select product..."
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:311
+msgid "Select status ..."
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:36
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:15
+msgid "Select type"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1074
+msgid "Send a recurring email every X seconds after the initial one."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:605
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1098
+msgid "Send from email"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:957
+msgid "Send order detail to customer"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:136
+msgid "Serbian (Srpski)"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:135
+msgid "Serbian Cyrillic (Српски)"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:432
+msgid "Service: "
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:545
+#: admin/bookings/views/html-create-booking-meta-boxes.php:151
+msgid "Services"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:434
+msgid "Services: "
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:184
+#: elementor/widgets/ovabrw_product_slider.php:248
+#: elementor/widgets/ovabrw_product_filter_ajax.php:304
+#: elementor/widgets/ovabrw_product_images.php:89
+#: elementor/widgets/ovabrw_product_categories.php:198
+msgid "Set how many slides are scrolled per swipe."
+msgstr ""
+
+#: admin/class-ovabrw-admin-menus.php:74 admin/class-ovabrw-admin-menus.php:75
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:60
+#: elementor/widgets/ovabrw_search_ajax.php:60
+#: elementor/widgets/ovabrw_search.php:53
+msgid "Settings"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:392
+msgid "Shipping details"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:406
+msgid "Shipping method"
+msgstr ""
+
+#: admin/category/init.php:12 admin/category/init.php:163
+msgid "Shop"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:586
+msgid "Short address"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_short_description.php:21
+msgid "Short Description"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:710
+msgid "Shortcode"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_video_gallery.php:94
+#: elementor/widgets/ovabrw_product_video_gallery.php:106
+#: elementor/widgets/ovabrw_product_video_gallery.php:118
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:69
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:81
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:279
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:304
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:342
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:367
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:590
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:592
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:803
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:805
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:866
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:868
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:929
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:931
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:992
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:994
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1032
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1034
+#: elementor/widgets/ovabrw_search_ajax.php:69
+#: elementor/widgets/ovabrw_search_ajax.php:81
+#: elementor/widgets/ovabrw_search_ajax.php:278
+#: elementor/widgets/ovabrw_search_ajax.php:303
+#: elementor/widgets/ovabrw_search_ajax.php:341
+#: elementor/widgets/ovabrw_search_ajax.php:366
+#: elementor/widgets/ovabrw_search_ajax.php:598
+#: elementor/widgets/ovabrw_search_ajax.php:600
+#: elementor/widgets/ovabrw_search_ajax.php:836
+#: elementor/widgets/ovabrw_search_ajax.php:838
+#: elementor/widgets/ovabrw_search_ajax.php:899
+#: elementor/widgets/ovabrw_search_ajax.php:901
+#: elementor/widgets/ovabrw_search_ajax.php:962
+#: elementor/widgets/ovabrw_search_ajax.php:964
+#: elementor/widgets/ovabrw_search_ajax.php:1025
+#: elementor/widgets/ovabrw_search_ajax.php:1027
+#: elementor/widgets/ovabrw_search_ajax.php:1075
+#: elementor/widgets/ovabrw_search_ajax.php:1077
+#: elementor/widgets/ovabrw_product_category_ajax.php:230
+#: elementor/widgets/ovabrw_search.php:204
+#: elementor/widgets/ovabrw_search.php:206
+#: elementor/widgets/ovabrw_search.php:450
+#: elementor/widgets/ovabrw_search.php:452
+#: elementor/widgets/ovabrw_search.php:513
+#: elementor/widgets/ovabrw_search.php:515
+#: elementor/widgets/ovabrw_search.php:576
+#: elementor/widgets/ovabrw_search.php:578
+#: elementor/widgets/ovabrw_search.php:639
+#: elementor/widgets/ovabrw_search.php:641
+#: elementor/widgets/ovabrw_search.php:689
+#: elementor/widgets/ovabrw_search.php:691
+#: elementor/widgets/ovabrw_product_destination_ajax.php:217
+#: elementor/widgets/ovabrw_product_tabs.php:123
+#: elementor/widgets/ovabrw_product_tabs.php:154
+#: elementor/widgets/ovabrw_product_tabs.php:185
+#: elementor/widgets/ovabrw_product_tabs.php:216
+#: elementor/widgets/ovabrw_product_tabs.php:247
+#: elementor/widgets/ovabrw_product_categories.php:120
+#: elementor/widgets/ovabrw_product_categories.php:132
+#: elementor/widgets/ovabrw_product_categories.php:144
+msgid "Show"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:492
+msgid "Show address"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:67
+#: elementor/widgets/ovabrw_search_ajax.php:67
+msgid "Show Advanced Search"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:870
+msgid "Show all"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:361
+#: admin/settings/class-ovabrw-booking-tours-settings.php:572
+msgid "Show amount of insurance"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:790
+#: admin/metabox/ovabrw-custom-fields.php:793
+msgid "Show babies field"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:270
+msgid "Show booking form"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1138
+msgid "Show booking ID"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:340
+#: elementor/widgets/ovabrw_search_ajax.php:339
+msgid "Show Category Filter"
+msgstr ""
+
+#: admin/bookings/views/html-booking-calendar.php:37
+msgid "Show Check-in & Check-out"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:502
+msgid "Show check-out date"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:329
+msgid "Show check-out field"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:761
+#: admin/metabox/ovabrw-custom-fields.php:779
+msgid "Show children field"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:512
+msgid "Show custom checkout fields"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:171
+msgid "Show custom taxonomy"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1144
+msgid "Show customer"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1156
+msgid "Show deposit status"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:272
+#: elementor/widgets/ovabrw_product_slider.php:335
+#: elementor/widgets/ovabrw_product_filter_ajax.php:391
+msgid "Show Dots"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:137
+msgid "Show Duration"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:365
+#: elementor/widgets/ovabrw_search_ajax.php:364
+msgid "Show Duration Filter"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:290
+msgid "Show enquiry form"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:192
+msgid "Show Explore Button"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:542
+msgid "Show extra info"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:522
+msgid "Show extra services"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:115
+msgid "Show Featured"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:79
+#: elementor/widgets/ovabrw_search_ajax.php:79
+msgid "Show Filter"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:864
+msgid "Show forms"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:423
+msgid "Show full payment"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_video_gallery.php:104
+msgid "Show Gallery Button"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:118
+msgid "Show Image"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:136
+#: admin/custom-taxonomy/custom_taxonomy.php:300
+msgid "Show in Listing"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1162
+msgid "Show insurance status"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:159
+msgid "Show Location"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:599
+msgid "Show map"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:258
+#: elementor/widgets/ovabrw_product_slider.php:321
+#: elementor/widgets/ovabrw_product_filter_ajax.php:377
+#: elementor/widgets/ovabrw_product_images.php:162
+#: elementor/widgets/ovabrw_product_categories.php:271
+msgid "Show Nav"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:351
+#: admin/settings/class-ovabrw-booking-tours-settings.php:562
+msgid "Show number of tours available"
+msgstr ""
+
+#: admin/bookings/views/html-booking-calendar.php:40
+msgid "Show only Check-in"
+msgstr ""
+
+#: admin/bookings/views/html-booking-calendar.php:43
+msgid "Show only Check-out"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:482
+msgid "Show phone"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:181
+msgid "Show Price"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:743
+msgid "Show price beside Adults"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:801
+msgid "Show price beside Babies"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:772
+msgid "Show price beside Children"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:277
+#: elementor/widgets/ovabrw_search_ajax.php:276
+msgid "Show Price Filter"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1168
+msgid "Show product"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:142
+msgid "Show Product Counts"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:340
+msgid "Show quantity"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:170
+msgid "Show Rating"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:280
+msgid "Show request form"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:391
+msgid "Show resources and services in Cart, Checkout, Order detail"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:302
+#: elementor/widgets/ovabrw_search_ajax.php:301
+msgid "Show Review Filter"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:532
+msgid "Show service"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_video_gallery.php:116
+msgid "Show Share Button"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1174
+msgid "Show status"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:798
+msgid "Show the baby field in the Booking form and Request Booking form"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:337
+msgid ""
+"Show the check-out field in the Booking Form, Cart, Checkout, Order Detail"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:769
+msgid "Show the children field in the Booking form and Request Booking form"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:348
+msgid ""
+"Show the quantity field in the Booking form, Request form, Cart, Checkout, "
+"Order Detail"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1150
+msgid "Show time"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:148
+#: elementor/widgets/ovabrw_product_categories.php:130
+msgid "Show Title"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:552
+msgid "Show total"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_video_gallery.php:92
+msgid "Show Video Button"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:126
+msgid "Show Wishlist"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_tabs.php:121
+#: elementor/widgets/ovabrw_product_tabs.php:152
+#: elementor/widgets/ovabrw_product_tabs.php:183
+#: elementor/widgets/ovabrw_product_tabs.php:214
+#: elementor/widgets/ovabrw_product_tabs.php:245
+msgid "Show/Hide"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:98
+msgid "Simplified Chinese"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:142
+msgid "Simplified Chinese (简体中文)"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:124
+#: admin/custom-taxonomy/custom_taxonomy.php:261
+msgid "Singular name"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:904
+#: admin/settings/class-ovabrw-booking-tours-settings.php:925
+msgid "Site key"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:477
+#: elementor/widgets/ovabrw_product_slider.php:589
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1130
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1396
+#: elementor/widgets/ovabrw_search_ajax.php:1249
+#: elementor/widgets/ovabrw_search_ajax.php:1503
+#: elementor/widgets/ovabrw_product_list.php:480
+#: elementor/widgets/ovabrw_search.php:863
+#: elementor/widgets/ovabrw_search.php:1117
+#: elementor/widgets/ovabrw_product_images.php:270
+#: elementor/widgets/ovabrw_product_categories.php:698
+msgid "Size"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:182
+#: elementor/widgets/ovabrw_product_slider.php:246
+#: elementor/widgets/ovabrw_product_filter_ajax.php:302
+#: elementor/widgets/ovabrw_product_images.php:87
+#: elementor/widgets/ovabrw_product_categories.php:196
+msgid "Slides to Scroll"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:132
+msgid "Slovenčina"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:133
+msgid "Slovenščina"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:150
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:601
+#: admin/custom-taxonomy/custom_taxonomy.php:118
+#: admin/custom-taxonomy/custom_taxonomy.php:239
+msgid "Slug"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:249
+#: elementor/widgets/ovabrw_product_slider.php:312
+#: elementor/widgets/ovabrw_product_filter_ajax.php:368
+#: elementor/widgets/ovabrw_product_images.php:153
+#: elementor/widgets/ovabrw_product_categories.php:262
+msgid "Smart Speed"
+msgstr ""
+
+#: inc/ovabrw_ajax.php:618
+msgid "Something is wrong!"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:336
+#: ovabrw-templates/single/search_ajax_sidebar.php:217
+msgid "Sort by"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:343
+#: ovabrw-templates/single/search_ajax_sidebar.php:230
+msgid "Sort by latest"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:177
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:126
+#: elementor/widgets/ovabrw_search_ajax.php:113
+#: elementor/widgets/ovabrw_product_list.php:202
+msgid "Sort by price"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:361
+#: ovabrw-templates/single/search_ajax_sidebar.php:245
+msgid "Sort by price: high to low"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:355
+#: ovabrw-templates/single/search_ajax_sidebar.php:240
+msgid "Sort by price: low to high"
+msgstr ""
+
+#: ovabrw-templates/single/search_ajax.php:349
+#: ovabrw-templates/single/search_ajax_sidebar.php:235
+msgid "Sort by rating"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:105
+msgid "Spanish"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:509
+msgid "Special time (ST) / Price per person"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:582
+#: elementor/widgets/ovabrw_product_slider.php:694
+#: elementor/widgets/ovabrw_product_list.php:584
+msgid "Star Color"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_untime.php:19
+#: admin/metabox/fields/ovabrw_st.php:40
+msgid "Start date"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:85
+#: admin/order/class_render_table_order.php:156
+msgid "Status"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:83
+msgid "Step time"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:640
+msgid "Stock Quantity"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_plan.php:99
+#: elementor/widgets/ovabrw_product_location_review.php:93
+#: elementor/widgets/ovabrw_product_reviews.php:94
+#: elementor/widgets/ovabrw_product_included_excluded.php:94
+#: elementor/widgets/ovabrw_product_short_description.php:94
+#: elementor/widgets/ovabrw_product_content.php:94
+#: elementor/widgets/ovabrw_product_images.php:226
+#: elementor/widgets/ovabrw_product_map.php:104
+msgid "Style"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:116
+msgid "Style 1"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:117
+msgid "Style 2"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:591
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1082
+msgid "Subject"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:166
+#: admin/metabox/fields/ovabrw_daily_price.php:26
+msgid "Sunday"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:27 admin/menus/views/html-preview.php:29
+msgid "Supports"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:137
+msgid "Svenska"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:131
+msgid "Swedish"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_table_price.php:168
+msgid "Table"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_table_price.php:241
+msgid "Table Value"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_tabs.php:259
+msgid "Tabs"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1866 inc/ovabrw_deposit.php:1935
+#: inc/ovabrw_deposit.php:1972
+msgid "Tax"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:378
+msgid ""
+"Tax will be calculated for insurance during checkout (required enable Taxes)"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:769
+#: elementor/widgets/ovabrw_search_ajax.php:792
+#: elementor/widgets/ovabrw_search.php:406
+msgid "Taxonomies"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:179
+msgid "Taxonomies displayed by Product Category"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:727
+#: elementor/widgets/ovabrw_search_ajax.php:741
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:85
+#: elementor/widgets/ovabrw_search.php:355
+msgid "Taxonomy"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:264
+msgid "Taxonomy 1"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:245
+msgid "Taxonomy key, must not exceed 32 characters"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:242
+msgid "taxonomy_1"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:254
+msgid "Taxonomys 1"
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:49
+msgid "Tel"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:99
+#: elementor/widgets/ovabrw_product_list.php:100
+#: elementor/widgets/ovabrw_search.php:123
+msgid "Template"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:103
+#: elementor/widgets/ovabrw_product_list.php:104
+#: elementor/widgets/ovabrw_product_category_ajax.php:186
+#: elementor/widgets/ovabrw_search.php:127
+msgid "Template 1"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:104
+#: elementor/widgets/ovabrw_product_list.php:105
+#: elementor/widgets/ovabrw_product_category_ajax.php:187
+#: elementor/widgets/ovabrw_search.php:128
+msgid "Template 2"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:112
+msgid "Template 2 - Style"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:405
+#: admin/settings/class-ovabrw-booking-tours-settings.php:666
+msgid "Terms and conditions"
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:47
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:348
+#: admin/custom-taxonomy/custom_taxonomy.php:352
+#: admin/custom-taxonomy/custom_taxonomy.php:370
+msgid "Text"
+msgstr ""
+
+#: inc/ovabrw-functions.php:2042
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:247
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:257
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:276
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:286
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:216
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:225
+msgid "text"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_filter_ajax.php:221
+msgid "Text All"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:109
+#: elementor/widgets/ovabrw_product_categories.php:399
+msgid "Text Button"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_plan.php:116
+#: elementor/widgets/ovabrw_product_included_excluded.php:111
+#: elementor/widgets/ovabrw_product_content.php:141
+msgid "Text Color"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:154
+msgid "Text Product Counts"
+msgstr ""
+
+#: admin/guest-info-fields/class-ovabrw-guest-info-fields.php:52
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:360
+msgid "Textarea"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:138
+msgid "Thai"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:470
+msgid "Thank page"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:599
+msgid "The Available"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:748
+msgid "The customer book X days in advance from the current time"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:609
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1102
+msgid "The customer will know them to receive mail from which email address is"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:210
+msgid "The default latitude of map when the event do not exist"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:218
+msgid "The default longitude of map when the event do not exist"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1135
+msgid ""
+"The fields are sorted ascending. To hide the field, enter the number: 0 or "
+"empty"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:156
+msgid "The first day of the week"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1980
+msgid "The number of guests is required."
+msgstr ""
+
+#: admin/menus/views/html-preview.php:47
+msgid ""
+"The plugin is developed based on WooCommerce, so some menus will redirect to "
+"WooCommerce settings such as Products, Categories, and Settings."
+msgstr ""
+
+#: inc/ovabrw-functions.php:1142
+msgid "The request is invalid or malformed."
+msgstr ""
+
+#: inc/ovabrw-functions.php:1143
+msgid ""
+"The response is no longer valid: either is too old or has been used "
+"previously."
+msgstr ""
+
+#: inc/ovabrw-functions.php:1141
+msgid "The response parameter is invalid or malformed."
+msgstr ""
+
+#: inc/ovabrw-functions.php:1140
+msgid "The response parameter is missing."
+msgstr ""
+
+#: inc/ovabrw-functions.php:1139
+msgid "The secret parameter is invalid or malformed."
+msgstr ""
+
+#: inc/ovabrw-functions.php:1138
+msgid "The secret parameter is missing."
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_plan.php:108
+#: elementor/widgets/ovabrw_product_table_price.php:103
+#: elementor/widgets/ovabrw_product_table_price.php:177
+#: elementor/widgets/ovabrw_product_table_price.php:250
+#: elementor/widgets/ovabrw_product_reviews.php:103
+#: elementor/widgets/ovabrw_unavailable_time.php:102
+#: elementor/widgets/ovabrw_product_included_excluded.php:103
+#: elementor/widgets/ovabrw_product_short_description.php:103
+#: elementor/widgets/ovabrw_product_features.php:103
+#: elementor/widgets/ovabrw_product_content.php:103
+#: elementor/widgets/ovabrw_product_images.php:235
+#: elementor/widgets/ovabrw_product_map.php:113
+msgid ""
+"The style of this widget is often affected by your theme and plugins. If you "
+"experience any such issue, try to switch to a basic theme and deactivate "
+"related plugins."
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:602
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1094
+msgid "The subject displays in mail detail"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:595
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1086
+msgid "The subject displays in the email list"
+msgstr ""
+
+#: inc/ovabrw_ajax.php:295
+msgid "The total must be greater than 0"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1986
+msgid "The total number of guests must be greater than %d"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1992
+msgid "The total number of guests must be less than %d"
+msgstr ""
+
+#: inc/ovabrw-functions.php:2017
+msgid "This field is required."
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3368 inc/ovabrw-functions.php:1361
+msgid "This Month"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1555 inc/ovabrw-cart.php:1599 inc/ovabrw-cart.php:1617
+msgid "This time is not available for booking"
+msgstr ""
+
+#: inc/ovabrw-functions.php:1359
+msgid "This Week"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:213
+#: elementor/widgets/ovabrw_search_ajax.php:201
+#: elementor/widgets/ovabrw_product_list.php:114
+#: elementor/widgets/ovabrw_product_category_ajax.php:215
+#: elementor/widgets/ovabrw_product_destination_ajax.php:202
+msgid "Thumbnail"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:163
+#: admin/metabox/fields/ovabrw_daily_price.php:23
+msgid "Thursday"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:2433 inc/ovabrw-get-data.php:2464
+#: admin/metabox/fields/ovabrw_daily_price.php:55
+msgid "Time"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:67
+msgid "Time format"
+msgstr ""
+
+#: inc/ovabrw_hooks.php:253
+msgid "Time From"
+msgstr ""
+
+#: inc/ovabrw-cart.php:551
+msgid "Time from"
+msgstr ""
+
+#: elementor/widgets/ovabrw_unavailable_time.php:150
+msgid "Time Options"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:202
+msgid "Time slots"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:123
+#: elementor/widgets/ovabrw_product_related.php:520
+#: elementor/widgets/ovabrw_product_slider.php:170
+#: elementor/widgets/ovabrw_product_slider.php:632
+#: elementor/widgets/ovabrw_product_filter_ajax.php:93
+#: elementor/widgets/ovabrw_product_filter_ajax.php:270
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:119
+#: elementor/widgets/ovabrw_search_ajax.php:106
+#: elementor/widgets/ovabrw_product_list.php:195
+#: elementor/widgets/ovabrw_product_list.php:523
+#: elementor/widgets/ovabrw_product_title.php:46
+#: elementor/widgets/ovabrw_product_title.php:158
+#: elementor/widgets/ovabrw_product_categories.php:321
+msgid "Title"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_category_ajax.php:160
+#: elementor/widgets/ovabrw_product_destination_ajax.php:163
+msgid "title"
+msgstr ""
+
+#: elementor/widgets/ovabrw_unavailable_time.php:111
+msgid "Title Options"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:610
+msgid "to"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3364 inc/ovabrw-functions.php:1357
+msgid "Today"
+msgstr ""
+
+#: admin/class-ovabrw-admin-bookings.php:342
+msgid "today"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:1117
+msgid "Top"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:839
+#: elementor/widgets/ovabrw_product_slider.php:963
+#: elementor/widgets/ovabrw_product_categories.php:735
+msgid "Top Position"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:730
+#: admin/bookings/views/html-create-booking-meta-boxes.php:204
+msgid "Total"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:472
+msgid "Total Available"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1782
+msgid "Total Deposit:"
+msgstr ""
+
+#: admin/order/fields/guest-types.php:23
+msgid "Total guests:"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1800
+msgid "Total Payable:"
+msgstr ""
+
+#: inc/ovabrw-blocks.php:519 inc/ovabrw_deposit.php:359
+#: inc/ovabrw_deposit.php:1090
+msgid "Total payable:"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1791
+msgid "Total Remaining:"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1189
+msgid "Total:"
+msgstr ""
+
+#: admin/class-ovabrw-admin-metabox.php:58 admin/category/init.php:11
+msgid "Tour"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:354
+#: elementor/widgets/ovabrw_product_slider.php:466
+#: elementor/widgets/ovabrw_product_list.php:357
+msgid "Tour Day"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:362
+msgid "Tour Excluded"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:518
+#: elementor/widgets/ovabrw_search_ajax.php:517
+msgid "Tour Found Text"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:344
+msgid "Tour Included"
+msgstr ""
+
+#: inc/ovabrw-cart.php:1391
+msgid "Tour isn't available for this time, Please book other time."
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_tabs.php:197
+#: elementor/widgets/ovabrw_product_tabs.php:207
+msgid "Tour Map"
+msgstr ""
+
+#: admin/custom-taxonomy/custom_taxonomy.php:381
+#: elementor/widgets/ovabrw_product_tabs.php:166
+#: elementor/widgets/ovabrw_product_tabs.php:176
+msgid "Tour Plan"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:21
+msgid "Tour Search Ajax"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:214
+msgid "Tour time (day)"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:238
+msgid "Tour time (hour)"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:178
+msgid "Tour: "
+msgstr ""
+
+#: elementor/ovabrw-register-elementor.php:34
+msgid "Tours"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:520
+#: elementor/widgets/ovabrw_search_ajax.php:519
+msgid "Tours found"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:104
+#: elementor/widgets/ovabrw_search_ajax.php:91
+msgid "Tours Per Page"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:143
+msgid "Traditional Chinese (繁體中文)"
+msgstr ""
+
+#. Name of the plugin
+msgid "Travel and Tour Booking"
+msgstr ""
+
+#: admin/class-ovabrw-admin-menus.php:29 admin/class-ovabrw-admin-menus.php:30
+msgid "Tripgo"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:161
+#: admin/metabox/fields/ovabrw_daily_price.php:21
+msgid "Tuesday"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:139
+msgid "Turkish"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:153
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:343
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:391
+#: elementor/widgets/ovabrw_search_ajax.php:390
+#: admin/metabox/fields/ovabrw_resources.php:60
+#: admin/metabox/fields/ovabrw_daily_price.php:71
+#: admin/metabox/fields/ovabrw_service.php:115
+#: admin/metabox/fields/ovabrw_service_group.php:57
+#: admin/guest-info-fields/views/html-guest-info-fields.php:52
+#: admin/guest-info-fields/views/html-guest-info-fields.php:136
+msgid "Type"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:711
+#: elementor/widgets/ovabrw_product_slider.php:823
+#: elementor/widgets/ovabrw_product_video_gallery.php:151
+#: elementor/widgets/ovabrw_product_list.php:712
+#: elementor/widgets/ovabrw_product_tabs.php:279
+msgid "Typography"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:140
+msgid "Ukrainian"
+msgstr ""
+
+#: admin/ovabrw-admin-core-functions.php:522
+msgid "Unavailable"
+msgstr ""
+
+#: elementor/widgets/ovabrw_unavailable_time.php:21
+#: elementor/widgets/ovabrw_unavailable_time.php:93
+msgid "Unavailable Time"
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:561
+msgid "Unavailable time (UT)"
+msgstr ""
+
+#: admin/metabox/fields/ovabrw_resources.php:34
+#: admin/metabox/fields/ovabrw_service.php:92
+#: admin/metabox/fields/ovabrw_service_group.php:34
+msgid "Unique ID"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:171
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:312
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:145
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:250
+msgid "Unique, only lowercase, not space"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:144
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:124
+msgid "Unit: MB (megabyte)"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1852 inc/ovabrw_deposit.php:1921
+#: inc/ovabrw_deposit.php:1958
+msgid "Update Insurance"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:61
+msgid "Update Order"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:67
+msgid "Update status"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1110
+msgid ""
+"Use tags to generate email template. For example: You booked the tour: "
+"[product-name] at [check-in]"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:624
+msgid ""
+"Use tags to generate email template. For example: You booked the tour: "
+"[product-name] from [check-in] to [check-out]. [order_details]"
+msgstr ""
+
+#: admin/custom-checkout-fields/class_custom_checkout_field.php:464
+#: elementor/widgets/ovabrw_product_custom_taxonomy.php:310
+msgid "Value"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_video_gallery.php:21
+msgid "Video & Gallery"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:123
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:104
+msgid "Video:"
+msgstr ""
+
+#: admin/menus/views/html-preview.php:35 admin/menus/views/html-preview.php:37
+msgid "Videos"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:141
+msgid "Vietnamese"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_categories.php:111
+msgid "View detail"
+msgstr ""
+
+#: inc/ovabrw_deposit.php:1915
+msgid "View Original Order"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:162
+#: admin/metabox/fields/ovabrw_daily_price.php:22
+msgid "Wednesday"
+msgstr ""
+
+#: admin/class-ovabrw-admin-bookings.php:344
+msgid "week"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:1976
+msgid "What are you going?"
+msgstr ""
+
+#: elementor/widgets/ovabrw_search_ajax.php:582
+#: elementor/widgets/ovabrw_search.php:188
+msgid "Where are you going?"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_related.php:1028
+#: elementor/widgets/ovabrw_product_related.php:1096
+#: elementor/widgets/ovabrw_product_slider.php:1155
+#: elementor/widgets/ovabrw_product_slider.php:1243
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:1303
+#: elementor/widgets/ovabrw_search_ajax.php:1410
+#: elementor/widgets/ovabrw_search.php:1024
+#: elementor/widgets/ovabrw_product_categories.php:926
+#: elementor/widgets/ovabrw_product_categories.php:1045
+msgid "Width"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:397
+#: elementor/widgets/ovabrw_product_list.php:288
+msgid "Wrap Background"
+msgstr ""
+
+#: elementor/widgets/ovabrw_product_slider.php:451
+#: elementor/widgets/ovabrw_product_list.php:342
+msgid "Wrap Padding"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:989
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1067
+msgid "X day before pick-up date"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:975
+msgid ""
+"X days before the customer's Check-in date, the order detail for Remaining "
+"Amount will be automatically created and sent to the customer's email (If "
+"the order detail has not been created manually)."
+msgstr ""
+
+#: admin/metabox/ovabrw-custom-fields.php:745
+msgid "X days preparation time"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:62
+msgid "Y-m-d"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:61
+msgid "Y/m/d"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:274
+#: admin/settings/class-ovabrw-booking-tours-settings.php:284
+#: admin/settings/class-ovabrw-booking-tours-settings.php:294
+#: admin/settings/class-ovabrw-booking-tours-settings.php:333
+#: admin/settings/class-ovabrw-booking-tours-settings.php:344
+#: admin/settings/class-ovabrw-booking-tours-settings.php:355
+#: admin/settings/class-ovabrw-booking-tours-settings.php:365
+#: admin/settings/class-ovabrw-booking-tours-settings.php:375
+#: admin/settings/class-ovabrw-booking-tours-settings.php:385
+#: admin/settings/class-ovabrw-booking-tours-settings.php:395
+#: admin/settings/class-ovabrw-booking-tours-settings.php:414
+#: admin/settings/class-ovabrw-booking-tours-settings.php:486
+#: admin/settings/class-ovabrw-booking-tours-settings.php:496
+#: admin/settings/class-ovabrw-booking-tours-settings.php:506
+#: admin/settings/class-ovabrw-booking-tours-settings.php:516
+#: admin/settings/class-ovabrw-booking-tours-settings.php:526
+#: admin/settings/class-ovabrw-booking-tours-settings.php:536
+#: admin/settings/class-ovabrw-booking-tours-settings.php:546
+#: admin/settings/class-ovabrw-booking-tours-settings.php:556
+#: admin/settings/class-ovabrw-booking-tours-settings.php:566
+#: admin/settings/class-ovabrw-booking-tours-settings.php:576
+#: admin/settings/class-ovabrw-booking-tours-settings.php:643
+#: admin/settings/class-ovabrw-booking-tours-settings.php:675
+#: admin/settings/class-ovabrw-booking-tours-settings.php:747
+#: admin/settings/class-ovabrw-booking-tours-settings.php:765
+#: admin/settings/class-ovabrw-booking-tours-settings.php:776
+#: admin/settings/class-ovabrw-booking-tours-settings.php:794
+#: admin/settings/class-ovabrw-booking-tours-settings.php:805
+#: admin/settings/class-ovabrw-booking-tours-settings.php:868
+#: admin/settings/class-ovabrw-booking-tours-settings.php:961
+#: admin/settings/class-ovabrw-booking-tours-settings.php:982
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1060
+#: admin/metabox/ovabrw-custom-fields.php:413
+#: admin/metabox/ovabrw-custom-fields.php:426
+#: admin/metabox/ovabrw-custom-fields.php:603
+#: admin/metabox/ovabrw-custom-fields.php:782
+#: admin/metabox/ovabrw-custom-fields.php:796
+#: admin/metabox/ovabrw-custom-fields.php:848
+#: elementor/widgets/ovabrw_product_related.php:196
+#: elementor/widgets/ovabrw_product_related.php:211
+#: elementor/widgets/ovabrw_product_related.php:225
+#: elementor/widgets/ovabrw_product_related.php:262
+#: elementor/widgets/ovabrw_product_related.php:276
+#: elementor/widgets/ovabrw_product_slider.php:68
+#: elementor/widgets/ovabrw_product_slider.php:79
+#: elementor/widgets/ovabrw_product_slider.php:90
+#: elementor/widgets/ovabrw_product_slider.php:260
+#: elementor/widgets/ovabrw_product_slider.php:274
+#: elementor/widgets/ovabrw_product_slider.php:288
+#: elementor/widgets/ovabrw_product_slider.php:325
+#: elementor/widgets/ovabrw_product_slider.php:339
+#: elementor/widgets/ovabrw_product_filter_ajax.php:69
+#: elementor/widgets/ovabrw_product_filter_ajax.php:117
+#: elementor/widgets/ovabrw_product_filter_ajax.php:128
+#: elementor/widgets/ovabrw_product_filter_ajax.php:139
+#: elementor/widgets/ovabrw_product_filter_ajax.php:150
+#: elementor/widgets/ovabrw_product_filter_ajax.php:161
+#: elementor/widgets/ovabrw_product_filter_ajax.php:172
+#: elementor/widgets/ovabrw_product_filter_ajax.php:183
+#: elementor/widgets/ovabrw_product_filter_ajax.php:194
+#: elementor/widgets/ovabrw_product_filter_ajax.php:316
+#: elementor/widgets/ovabrw_product_filter_ajax.php:330
+#: elementor/widgets/ovabrw_product_filter_ajax.php:344
+#: elementor/widgets/ovabrw_product_filter_ajax.php:381
+#: elementor/widgets/ovabrw_product_filter_ajax.php:395
+#: elementor/widgets/ovabrw_search_ajax_sidebar.php:692
+#: elementor/widgets/ovabrw_search_ajax.php:706
+#: elementor/widgets/ovabrw_product_list.php:69
+#: elementor/widgets/ovabrw_product_list.php:80
+#: elementor/widgets/ovabrw_product_list.php:91
+#: elementor/widgets/ovabrw_product_category_ajax.php:69
+#: elementor/widgets/ovabrw_search.php:320
+#: elementor/widgets/ovabrw_product_destination_ajax.php:69
+#: elementor/widgets/ovabrw_product_images.php:101
+#: elementor/widgets/ovabrw_product_images.php:115
+#: elementor/widgets/ovabrw_product_images.php:129
+#: elementor/widgets/ovabrw_product_images.php:166
+#: elementor/widgets/ovabrw_product_categories.php:210
+#: elementor/widgets/ovabrw_product_categories.php:224
+#: elementor/widgets/ovabrw_product_categories.php:238
+#: elementor/widgets/ovabrw_product_categories.php:275
+#: admin/metabox/fields/ovabrw_service.php:79
+#: admin/metabox/fields/ovabrw_service_group.php:21
+#: admin/guest-info-fields/views/html-guest-info-fields.php:97
+#: admin/guest-info-fields/views/html-guest-info-fields.php:102
+#: admin/guest-info-fields/views/html-guest-info-fields.php:104
+msgid "Yes"
+msgstr ""
+
+#: inc/ovabrw-get-data.php:3365
+msgid "Yesterday"
+msgstr ""
+
+#: inc/ovabrw-mail.php:12
+#: admin/settings/class-ovabrw-booking-tours-settings.php:1109
+msgid "You booked the tour: [product-name] at [check-in]"
+msgstr ""
+
+#: inc/ovabrw-extra-tab.php:482 inc/ovabrw-extra-tab.php:485
+#: admin/settings/class-ovabrw-booking-tours-settings.php:623
+msgid ""
+"You booked the tour: [product-name] from [check-in] to [check-out]. "
+"[order_details]"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:195
+#, php-format
+msgid "You can get API Key %s"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:424
+#: admin/settings/class-ovabrw-booking-tours-settings.php:685
+msgid "You can insert text or HTML"
+msgstr ""
+
+#: inc/ovabrw-functions.php:2047
+msgid "You can't book on this day!"
+msgstr ""
+
+#: admin/class-ovabrw-admin-orders.php:25
+msgid "You don't have permission to create order"
+msgstr ""
+
+#: admin/order/class_render_table_order.php:66
+msgid "You don't have permission to update"
+msgstr ""
+
+#: admin/guest-info-fields/views/html-popup-edit-guest-info-field.php:362
+#: admin/guest-info-fields/views/html-popup-new-guest-info-field.php:294
+msgid "your_email@gmail.com"
+msgstr ""
+
+#: inc/ovabrw-functions.php:351
+msgid "YYYY-MM-DD"
+msgstr ""
+
+#: inc/ovabrw-functions.php:355
+msgid "YYYY/MM/DD"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:198
+msgid "Zoom"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:99
+msgid "Čeština"
+msgstr ""
+
+#: admin/settings/class-ovabrw-booking-tours-settings.php:102
+msgid "Ελληνικά"
+msgstr ""

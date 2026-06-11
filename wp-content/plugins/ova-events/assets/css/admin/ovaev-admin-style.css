@@ -1,0 +1,66 @@
+#metabox-event-basic label {
+  min-width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#metabox-event-basic input, #metabox-event-basic select {
+  min-width: 308px;
+  display: inline-block;
+}
+#metabox-event-basic input[type=checkbox] {
+  min-width: 16px;
+}
+#metabox-event-basic #ovaev_book_link {
+  height: 28px;
+  padding-top: 1px;
+}
+#metabox-event-basic .ovaev_row .select2-container {
+  min-width: 308px;
+}
+#metabox-event-basic .ovaev_row .select2-container .select2-selection--single .select2-selection__rendered {
+  padding: 0 0.5em;
+}
+
+#metabox-event-contact label {
+  min-width: 120px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#metabox-event-contact input {
+  min-width: 330px;
+  display: inline-block;
+}
+
+#metabox-event-gallery ul#gallery-metabox-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+#metabox-event-gallery ul#gallery-metabox-list li {
+  width: auto;
+}
+#metabox-event-gallery li {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+#metabox-event-gallery li div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#metabox-event-gallery li a.change-image {
+  text-align: center;
+  width: 120px;
+  margin: 10px auto 5px auto;
+}
+#metabox-event-gallery li small {
+  text-align: center;
+}
+
+.ovaev_admin_settings th {
+  font-weight: 400;
+}
+.ovaev_admin_settings .ovaev_template_single .select2-selection {
+  min-width: 194px;
+}

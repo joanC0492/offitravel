@@ -1,0 +1,33 @@
+.ovaev-event-related {
+	margin: 0;
+
+	.content-event {
+		margin: 0;
+
+		.event-related {
+			display: grid;
+			grid-gap: 30px;
+
+			.ovaev-content {
+				&.content-grid {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+.single_event {
+	&.ovaev-shortcode-related {
+		.content-event {
+			display: block;
+
+			.event-related {
+				.archive_event {
+					display: flex;
+					flex-direction: column;
+					gap: 20px;
+				}
+			}
+		}
+	}
+}

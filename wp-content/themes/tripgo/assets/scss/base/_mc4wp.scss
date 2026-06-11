@@ -1,0 +1,127 @@
+.ova-mc4wp-form{
+    position: relative;
+    max-width: 435px;
+    .email {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        @media (max-width: 400px) {
+            margin-bottom: 16px;
+        }
+        input{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.2;
+            color: var(--text);
+            width: 100%;
+            box-shadow: 0px 10px 40px rgba(255, 176, 158, 0.12);
+            border-radius: 5px;
+            padding: 20.5px 45% 20.5px 20.5px;
+            letter-spacing: 0.3px;
+            caret-color: var(--primary);
+            border: none;
+            &::placeholder {
+                font-weight: 400;
+                color: var(--light);
+                opacity: 1;
+            }
+            @media (max-width: 400px) {
+                padding: 20px;
+            }
+        }
+    }
+
+    .submit{
+        position: absolute;
+        right: 0%;
+        top: 50%;
+        transform: translate(-8px, -50%);
+        @media (max-width: 400px) {
+            position: static;
+            transform: translate(0,0);
+        }
+        button{
+            transition: all .3s ease;
+            padding: 10px 32px;
+            border-radius: 5px;
+            span{
+                font-size: 16px;
+                color: #fff;
+                font-weight: 600;
+                text-transform: capitalize;
+                line-height: 1.2;
+            }
+            &:hover{
+                transition: all .3s ease;  
+                background-color: var(--secondary-hover);
+                border-color: var(--secondary-hover) ;
+            }
+            @media (max-width: 400px) {
+                width: 100%;
+                padding: 16px 32px;
+            }
+        }
+    }
+}
+
+.ova-mc4wp-form-template2 {
+    .ova-mc4wp-form {
+        max-width: 100%;
+         .email {
+            input {
+                border-radius: 0;
+            }
+        }
+        .submit {
+            transform: translate(0px,-50%); 
+            height: 100%;
+            @media (max-width: 400px) {
+                position: static;
+                transform: translate(0,0);
+            }
+            button {
+                padding: 16px 32px;
+                border-radius: 0;
+                border: 1px solid var(--secondary);
+                background-color: var(--secondary);
+                &:hover {
+                    border: 1px solid var(--primary);
+                    background-color: var(--primary); 
+                }
+            }
+        }
+    }
+}
+
+// message error
+.mc4wp-response{
+    p{
+        color: #fff;
+        margin: 15px 0px !important; 
+        a {
+            color: var(--primary) !important; 
+        }
+    }
+}
+
+.mc4wp_blog_sidebar {
+    .ova-mc4wp-form {
+        max-width: 600px;
+        margin: 0 auto;
+        .email {
+            margin-bottom: 16px;
+            input {
+                padding: 20px;
+            }
+        }
+        .submit {
+            position: static;
+            transform: translate(0,0); 
+            button {
+                width: 100%;
+                padding: 16px 32px;
+            }
+        }
+    }
+}

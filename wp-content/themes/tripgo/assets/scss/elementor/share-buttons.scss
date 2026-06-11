@@ -1,0 +1,70 @@
+@mixin transaction( $propertty, $duration, $timing ){
+	transition: $propertty $duration $timing;
+    -moz-transition: $propertty $duration $timing;
+    -webkit-transition: $propertty $duration $timing;
+    -o-transition: $propertty $duration $timing;
+}
+.ova-share-buttons {
+	display: inline-flex;
+	width: 100%;
+
+	.share-item {
+		display: block;
+		margin-bottom: 10px;
+
+		.share-btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 45px;
+			height: 45px;
+		    overflow: hidden;
+    		font-size: 16px;
+    		cursor: pointer;
+    		border-radius: 99.9em;
+    		color: #FFFFFF;
+    		background-color: var(--primary);
+    		background-image: linear-gradient(90deg,rgba(0,0,0,.12),transparent);
+    		@include transaction( all, .3s, ease );
+
+    		i {
+    			line-height: 1;
+    		}
+    		&:hover {
+    			filter: saturate(1.5) brightness(1.5);
+    		}
+		}
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+	&.share-grid {
+		display: grid;
+		grid-column-gap: 10px;
+		grid-row-gap: 10px;
+
+		.share-item {
+			margin: 0;
+
+			.share-btn {
+				width: 100%;
+				border-radius: 99.9em;
+			}
+		}
+		&.column_2 {
+			grid-template-columns: repeat(2,1fr);
+		}
+		&.column_3 {
+			grid-template-columns: repeat(3,1fr);
+		}
+		&.column_4 {
+			grid-template-columns: repeat(4,1fr);
+		}
+		&.column_5 {
+			grid-template-columns: repeat(5,1fr);
+		}
+		&.column_6 {
+			grid-template-columns: repeat(6,1fr);
+		}
+	}
+}

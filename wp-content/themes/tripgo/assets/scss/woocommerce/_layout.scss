@@ -1,0 +1,59 @@
+body{
+	&.woocommerce{
+
+		&.woo_layout_1c{
+			#woo_main{
+				max-width: 100%;
+				#primary{
+					flex: 0 0 100%;
+				}
+			}
+		}
+
+		&.woo_layout_2l{
+			#woo_main{
+				float: right;
+			}
+			#woo_sidebar{
+				float: left;
+			}
+		}
+		
+		&.woo_layout_2r{
+			#woo_main{
+				float: left;
+			}
+			#woo_sidebar{
+				float: right;
+			}
+		}
+
+		#woo_main{
+            max-width: calc( var(--woo-main-content) - 30px );
+            width: 100%;
+            @media( max-width: $desktop - 1 ){
+            	max-width: 100%;
+            }
+        }
+		#woo_sidebar{
+	        max-width: var(--woo-width-sidebar);
+	        width: 100%;
+	        @media( max-width: $desktop - 1 ){
+            	max-width: 100%;
+            }
+	    }
+
+	}
+
+	&.single-product-not-rental {
+		&.woocommerce {
+			#woo_main {
+				margin-top: 90px;
+				@media( max-width: $desktop - 1 ){
+	            	margin-top: 60px;
+	            }
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,202 @@
+<?php
+// phpcs:ignoreFile
+/**
+ * Plugin Name: Meta pixel for WordPress
+ * Plugin URI: https://www.facebook.com/business/help/881403525362441
+ * Description: <strong><em>***ATTENTION: After upgrade the plugin may be deactivated due to a known issue, to workaround please refresh this page and activate plugin.***</em></strong> The Facebook pixel is an analytics tool that helps you measure the effectiveness of your advertising. You can use the Facebook pixel to understand the actions people are taking on your website and reach audiences you care about.
+ * Author: Facebook
+ * Author URI: https://www.facebook.com/
+ * Version: 5.1.0
+ * Text Domain: official-facebook-pixel
+ *
+ * @package FacebookPixelPlugin
+ */
+
+/*
+* Copyright (C) 2017-present, Facebook, Inc.
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; version 2 of the License.
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*/
+
+namespace FacebookPixelPlugin;
+
+defined( 'ABSPATH' ) || die( 'Direct access not allowed' );
+
+// Load local dev overrides (gitignored) for staging/development environments
+$local_config = plugin_dir_path( __FILE__ ) . 'local-config.php';
+if ( file_exists( $local_config ) ) {
+    require_once $local_config;
+}
+
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+
+use FacebookPixelPlugin\Core\FacebookPixel;
+use FacebookPixelPlugin\Core\FacebookPluginConfig;
+use FacebookPixelPlugin\Core\FacebookPluginUtils;
+use FacebookPixelPlugin\Core\FacebookWordpressOpenBridge;
+use FacebookPixelPlugin\Core\FacebookWordpressOptions;
+use FacebookPixelPlugin\Core\FacebookWordpressPixelInjection;
+use FacebookPixelPlugin\Core\FacebookWordpressSettingsPage;
+use FacebookPixelPlugin\Core\FacebookWordpressSettingsRecorder;
+use FacebookPixelPlugin\Core\ServerEventAsyncTask;
+
+/**
+ * FacebookForWordpress root class.
+ */
+class FacebookForWordpress {
+    /**
+     * Plugin constructor. Initializes the plugin options, loads the translation files,
+     * sets up the Facebook pixel, sets up the pixel injection, and sets up the settings
+     * page. Also starts the server event async task.
+     */
+    public function __construct() {
+    FacebookWordpressOptions::initialize();
+
+    load_plugin_textdomain(
+        FacebookPluginConfig::TEXT_DOMAIN,
+        false,
+        dirname( plugin_basename( __FILE__ ) ) . '/languages/'
+    );
+
+    $options = FacebookWordpressOptions::get_options();
+    FacebookPixel::initialize( FacebookWordpressOptions::get_active_pixel_id() );
+
+    add_action( 'init', array( $this, 'register_pixel_injection' ), 0 );
+    add_action( 'parse_request', array( $this, 'handle_events_request' ), 0 );
+
+    $this->register_settings_page();
+    add_action( 'admin_init', array( $this, 'maybe_reset_upgrade_notice' ) );
+
+    new ServerEventAsyncTask();
+
+    self::update_db_for_wpcom();
+    }
+
+    /**
+     * Resets the FBL4B upgrade notice dismiss flag when the plugin is updated,
+     * so MBE users see the upgrade prompt again after each plugin update.
+     */
+    public function maybe_reset_upgrade_notice() {
+        if ( 'mbe' !== FacebookWordpressOptions::get_connection_type() ) {
+            return;
+        }
+        $stored_version = get_option( 'fb_pixel_plugin_version', '0' );
+        $current_version = FacebookPluginConfig::PLUGIN_VERSION;
+        if ( version_compare( $stored_version, $current_version, '<' ) ) {
+            delete_metadata(
+                'user',
+                0,
+                FacebookPluginConfig::ADMIN_IGNORE_FBL4B_UPGRADE_NOTICE,
+                '',
+                true
+            );
+            update_option( 'fb_pixel_plugin_version', $current_version );
+        }
+    }
+
+    private static function update_db_for_wpcom() {
+        if ( false !== get_transient( 'facebook_wpcom_check' ) ) {
+            return;
+        }
+
+        $is_wp_com_hosted = FacebookWordpressOptions::is_wordpress_com_hosted();
+
+        update_option( 'is_wordpress_com_hosted', $is_wp_com_hosted );
+        set_transient( 'facebook_wpcom_check', 1, WEEK_IN_SECONDS );
+    }
+
+    /**
+     * Registers the pixel injection. This method instantiates the
+     * FacebookWordpressPixelInjection and calls its inject method.
+     *
+     * The inject method is responsible for adding the necessary hooks to
+     * inject the Facebook pixel code into the footer of the WordPress page.
+     */
+    public function register_pixel_injection() {
+    $injection_obj = new FacebookWordpressPixelInjection();
+    $injection_obj->inject();
+    }
+
+
+    /**
+     * Registers the settings page for the Facebook for WordPress plugin. This method
+     * instantiates the FacebookWordpressSettingsPage and FacebookWordpressSettingsRecorder
+     * objects. The settings page object is responsible for adding the necessary hooks
+     * and rendering the settings page. The settings recorder object is responsible for
+     * recording data about the user's settings and sending it to Meta.
+     */
+    public function register_settings_page() {
+    if ( is_admin() ) {
+        $plugin_name = plugin_basename( __FILE__ );
+        new FacebookWordpressSettingsPage( $plugin_name );
+        ( new FacebookWordpressSettingsRecorder() )->init();
+    }
+    }
+
+
+    /**
+     * Handles incoming events requests by checking if the request URI
+     * ends with the configured open bridge path and if the request
+     * method is POST. If both conditions are met, it decodes the JSON
+     * payload from the request body and forwards it to the open bridge
+     * request handler. Additionally, it sets CORS headers to allow
+     * cross-origin requests if the origin is specified in the request
+     * headers.
+     */
+    public function handle_events_request() {
+    if ( isset( $_SERVER['REQUEST_URI'] ) ) {
+        $request_uri = sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) );
+
+        if (
+        FacebookPluginUtils::ends_with(
+            $request_uri,
+            FacebookPluginConfig::OPEN_BRIDGE_PATH
+        ) &&
+        isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD']
+        ) {
+        $data = json_decode( file_get_contents( 'php://input' ), true );
+        if ( ! is_null( $data ) ) {
+            FacebookWordpressOpenBridge::get_instance()->handle_open_bridge_req(
+                $data
+            );
+        }
+        if ( isset( $_SERVER['HTTP_ORIGIN'] ) ) {
+            $origin = wp_kses( wp_unslash( $_SERVER['HTTP_ORIGIN'] ), array() );
+            header( "Access-Control-Allow-Origin: $origin" );
+            header( 'Access-Control-Allow-Credentials: true' );
+            header( 'Access-Control-Max-Age: 86400' );
+        }
+        exit();
+        }
+    }
+    }
+
+    /**
+     * Declare WooCommerce HPOS (custom order tables) compatibility.
+     *
+     * @return void
+     */
+    public static function declare_hpos_compatibility() {
+    if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+        \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility(
+        'custom_order_tables',
+        plugin_basename( __FILE__ ),
+        true
+        );
+    }
+    }
+}
+
+// HPOS compatibility declaration.
+add_action(
+    'before_woocommerce_init',
+    array( '\\FacebookPixelPlugin\\FacebookForWordpress', 'declare_hpos_compatibility' )
+);
+
+new FacebookForWordpress();

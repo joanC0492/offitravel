@@ -1,0 +1,96 @@
+// Transaction
+@mixin transaction( $propertty, $duration, $timing ) {
+	transition: $propertty $duration $timing;
+    -moz-transition: $propertty $duration $timing;
+    -webkit-transition: $propertty $duration $timing;
+    -o-transition: $propertty $duration $timing;
+}
+.ova-special-offer-2 {
+	position: relative;
+	width: 100%;
+	min-height: 393px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+
+	&:hover {
+		.background-image {
+			transform: scale(1.1);
+		}
+	}
+	.background-image {
+		position: absolute;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		@include transaction( all, 0.3s, linear );
+	}
+	.content {
+		position: relative;
+		width: 50%;
+		padding-left: 50px;
+
+		@media screen and (max-width: 1024px) {
+			width: 100%;
+			padding-right: 50px;
+		}
+		@media screen and (max-width: 767px) {
+			padding: 40px 30px;
+		}
+		.subtitle {
+			margin: 0;
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 1;
+		}
+		.title {
+			margin: 0;
+			margin-top: 8px;
+			font-size: 42px;
+			line-height: 54px;
+
+			a {
+				color: var(--heading);
+				@include transaction( all, 0.3s, linear );
+
+				&:hover {
+					color: var(--primary);
+				}
+			}
+			@media screen and (max-width: 1024px) {
+				font-size: 36px;
+			}
+		}
+		.desc {
+			margin: 0;
+			margin-top: 33px;
+			color: var(--heading);
+		}
+		.link {
+			margin-top: 33px;
+			display: inline-block;
+			font-weight: 600;
+			background: var(--primary);
+			color: #fff;
+			padding: 12px 32px;
+			line-height: 24px;
+			border-radius: 5px;
+			@include transaction( all, 0.3s, linear );
+
+			&:hover {
+				background: #fff;
+				color: var(--primary);
+
+			}
+		}
+	}
+}
+.rtl {
+ 	.ova-special-offer-2 {
+ 		justify-content: flex-end;
+ 	}
+}

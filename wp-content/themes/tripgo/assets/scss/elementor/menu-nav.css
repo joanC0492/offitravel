@@ -1,0 +1,367 @@
+@media (max-width: 1023px) {
+  .elementor-widget-ova_menu .primary-navigation {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+.align_right > .elementor-container {
+  float: right;
+  width: 100%;
+}
+
+.ova_openNav {
+  display: none;
+}
+
+.ova_nav {
+  width: 100%;
+}
+.ova_nav .ova_closeNav {
+  display: none;
+}
+.ova_nav .dropdown-menu {
+  padding: 0px;
+  margin: 0;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.ova_nav .dropdown-menu > li {
+  width: 100%;
+  position: relative;
+}
+.ova_nav .dropdown-menu > li > a {
+  color: #343434;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+}
+.ova_nav ul.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ova_nav ul.menu > li {
+  padding: 0px 15px;
+}
+.ova_nav ul.menu > li > a {
+  color: #343434;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.ova_nav ul.menu button.dropdown-toggle {
+  display: none;
+}
+.ova_nav ul.menu button.dropdown-toggle:after {
+  display: none;
+}
+
+.sub_menu_dir_left .dropdown-menu li {
+  text-align: right;
+  position: relative;
+}
+.sub_menu_dir_left .dropdown-menu li.dropdown a i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -10px;
+}
+.sub_menu_dir_left .dropdown-menu li.dropdown a i:before {
+  content: "4";
+  font-family: "eleganticons";
+}
+.sub_menu_dir_left .dropdown-menu li .dropdown-menu {
+  position: absolute;
+  left: auto;
+  right: 100%;
+  top: 0;
+}
+
+.sub_menu_dir_right .dropdown-menu li {
+  text-align: left;
+}
+.sub_menu_dir_right .dropdown-menu li.dropdown a i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -10px;
+}
+.sub_menu_dir_right .dropdown-menu li.dropdown a i:before {
+  content: "5";
+  font-family: "eleganticons";
+}
+.sub_menu_dir_right .dropdown-menu li .dropdown-menu {
+  position: absolute;
+  right: auto;
+  left: 100%;
+  top: 0;
+}
+
+.ova_closeCanvas {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  visibility: hidden;
+}
+.ova_closeCanvas.show {
+  opacity: 1;
+  z-index: 9998;
+  visibility: visible;
+}
+
+@media (min-width: 1025px) {
+  .ova_wrap_nav.column ul.menu.sub_menu_dir_right > li.dropdown > a i:before {
+    content: "5";
+    font-family: "eleganticons";
+  }
+  .ova_wrap_nav.column ul.menu > li {
+    width: 100%;
+  }
+  .ova_wrap_nav.column ul.menu > li > .dropdown-menu {
+    left: 100%;
+    top: 0 !important;
+  }
+  .ova_nav ul.menu .dropdown-menu {
+    visibility: hidden;
+    display: block;
+    top: 110%;
+    z-index: -1;
+  }
+  .ova_nav ul.menu > li:hover > .dropdown-menu {
+    display: block;
+    z-index: 9999;
+    webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    visibility: visible;
+    top: 100%;
+  }
+  .ova_nav ul.menu > li:hover > .dropdown-menu > li:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    z-index: 9999;
+    webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    visibility: visible;
+    top: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .ova-wrapp {
+    transition: margin-left 0.5s;
+  }
+  .ova_openNav {
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .ova_openNav:focus {
+    outline: none;
+  }
+  .NavBtn_right {
+    float: right;
+    margin: 0;
+    padding: 0;
+  }
+  .NavBtn_left {
+    float: left;
+  }
+  .NavBtn_center {
+    justify-content: center;
+  }
+  .logged-in .ova_nav {
+    padding-top: 60px;
+  }
+  .ova_nav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 30px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .ova_nav ul.menu li {
+    width: 100%;
+    display: block;
+    align-items: center;
+  }
+  .ova_nav ul.menu li a {
+    width: 100%;
+  }
+  .ova_nav ul.menu li a i {
+    display: none;
+  }
+  .ova_nav ul.menu li button.dropdown-toggle {
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  .ova_nav ul.menu li.active_sub > .dropdown-menu {
+    display: block;
+  }
+  .ova_nav ul.menu li.active_sub > button.dropdown-toggle > i:before {
+    content: "2";
+    font-family: "eleganticons";
+  }
+  .ova_nav ul.menu .dropdown-menu {
+    position: relative !important;
+    transform: none !important;
+    left: 0;
+    top: 0;
+    right: auto;
+    border: none !important;
+    background: transparent !important;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+  }
+  .ova_nav.canvas_left {
+    left: 0;
+    -webkit-transform: translateX(-250px);
+    -ms-transform: translateX(-250px);
+    transform: translateX(-250px);
+  }
+  .ova_nav.canvas_left.show {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .ova_nav.canvas_left .ova_closeNav {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    color: #fff;
+    text-align: right;
+  }
+  .ova_nav.canvas_left ul.menu {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .ova_nav.canvas_left ul.menu button.dropdown-toggle {
+    right: 10px;
+  }
+  .ova_nav.canvas_left ul.menu .dropdown-menu {
+    transition: unset;
+  }
+  .ova_nav.canvas_left ul.menu .dropdown-menu li {
+    text-align: left;
+    border: none !important;
+    background: transparent !important;
+    clear: both;
+  }
+  .ova_nav.canvas_left ul.menu .dropdown-menu .dropdown-menu {
+    padding-left: 15px;
+  }
+  .ova_nav.canvas_right {
+    right: 0;
+    -webkit-transform: translateX(250px);
+    -ms-transform: translateX(250px);
+    transform: translateX(250px);
+  }
+  .ova_nav.canvas_right.show {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .ova_nav.canvas_right .ova_closeNav {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    color: #fff;
+    text-align: left;
+  }
+  .ova_nav.canvas_right ul.menu {
+    align-items: flex-end;
+    text-align: right;
+  }
+  .ova_nav.canvas_right ul.menu button.dropdown-toggle {
+    left: 10px;
+  }
+  .ova_nav.canvas_right ul.menu .dropdown-menu {
+    transition: unset;
+  }
+  .ova_nav.canvas_right ul.menu .dropdown-menu li {
+    text-align: right;
+    border: none !important;
+    background: transparent !important;
+  }
+  .ova_nav.canvas_right ul.menu .dropdown-menu .dropdown-menu {
+    padding-right: 15px;
+  }
+  .ova_nav.canvas_bg_gray {
+    background-color: #343434;
+  }
+  .ova_nav.canvas_bg_gray ul.menu li a,
+  .ova_nav.canvas_bg_gray ul.menu li .dropdown-toggle {
+    color: #fff !important;
+  }
+  .ova_nav.canvas_bg_white {
+    background-color: #fff;
+  }
+  .ova_nav.canvas_bg_white ul.menu li a,
+  .ova_nav.canvas_bg_white ul.menu li .dropdown-toggle {
+    color: #343434 !important;
+  }
+  .ova_nav ul.menu {
+    flex-direction: column !important;
+  }
+}
+@media (max-width: 767px) {
+  .NavBtn_right, .NavBtn_left {
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+  .NavBtn_right_m {
+    float: right;
+    margin: 0;
+    padding: 0;
+  }
+  .NavBtn_left_m {
+    float: left;
+  }
+  .NavBtn_center_m {
+    justify-content: center;
+  }
+  .mobi_no_shrink {
+    position: relative !important;
+  }
+}

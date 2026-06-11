@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "villatheme/woo-multi-currency-selector",
+	"version": "1.0.0",
+	"title": "Currency Selector",
+	"category": "woocommerce",
+	"keywords": [ "currency", "multi currency", "woo", "woocommerce", "switcher" ],
+	"description": "Display currency selector for WooCommerce Multi Currency",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": ""
+		},
+		"flagSize": {
+			"type": "number",
+			"default": 0.6
+		},
+		"direction": {
+			"type": "string",
+			"default": "bottom"
+		}
+	},
+	"textdomain": "woo-multi-currency"
+}

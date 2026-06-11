@@ -1,0 +1,73 @@
+.ova-progress {
+  width: 100%;
+}
+.ova-progress .ova-progress-title {
+  margin: 0;
+  color: var(--text);
+  margin-bottom: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.ova-progress .ctyl-progress-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text);
+}
+.ova-progress .ova-percent-view {
+  height: 13px;
+  width: 100%;
+  background-color: var(--border);
+  border-radius: 8px;
+  overflow: visible;
+  position: relative;
+}
+.ova-progress .ova-percent-view .ova-percent {
+  height: 100%;
+  float: left;
+  border-radius: 8px;
+  background-color: var(--secondary);
+}
+.ova-progress .ova-percent-view .percentage {
+  position: absolute;
+  color: #fff;
+  top: -40px;
+  right: 0%;
+  display: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--light);
+}
+.ova-progress .ova-notes {
+  display: flex;
+  margin-top: 18px;
+  width: 100%;
+}
+.ova-progress .ova-notes .item-note {
+  position: relative;
+  margin-left: 10%;
+}
+.ova-progress .ova-notes .item-note .note-text {
+  font-size: 14px;
+  line-height: 21px;
+  color: #fff;
+}
+.ova-progress .ova-notes .item-note:first-child {
+  margin-left: 0;
+}
+.ova-progress .ova-notes .item-note:last-child {
+  margin-left: 19%;
+}
+.ova-progress .ova-notes .item-note:before {
+  content: "";
+  width: 1px;
+  height: 35px;
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  border-left: 1px solid #414073;
+}

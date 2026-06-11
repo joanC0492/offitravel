@@ -1,0 +1,158 @@
+body{
+		background-color: #fff;
+
+		// When use Boxed Layout
+		&.container_boxed{
+			.wrap-fullwidth{
+				max-width: var(--container-width);
+	            margin: 0 auto;
+	            background-color: #fff;
+	        }
+	        .row_site{
+	            padding: var(--boxed-offset);
+	        }
+		}
+
+		&.rtl {
+			direction: rtl;
+		}
+
+		.row_site{
+			margin: 0 auto;
+		}
+
+		.container_site{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		// for ova mega menu
+		.ovamegamenu_container_default {
+			width: var(--container-width);
+		}
+
+		.row_site,
+		.elementor-section.elementor-section-boxed>.elementor-container{
+
+		    max-width: var(--container-width);
+
+			@media( max-width: $desktop - 1 ){
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+
+		}
+
+		&.page-template-default{
+			.elementor-section.elementor-section-boxed>.elementor-container{
+				
+				padding-left: 0px;
+				padding-right: 0px;
+				
+			}
+		}
+
+		&.layout_1c{
+			#main-content{
+				max-width: 100%;
+			}
+		}
+
+		&.layout_2l{
+			#main-content{
+				float: right;
+			}
+			#sidebar{
+				float: left;
+				margin-bottom: 60px;
+			}
+		}
+		
+		&.layout_2r{
+			#main-content{
+				float: left;
+			}
+			#sidebar{
+				float: right;
+				margin-bottom: 60px;
+			}
+		}
+
+		
+
+		#main-content{
+            max-width: calc( var(--main-content) - 60px );
+            width: 100%;
+            margin-bottom: 60px;
+            @media( max-width: $desktop - 1 ){
+            	max-width: 100%;
+            }
+        }
+		#sidebar{
+	        max-width: var(--width-sidebar);
+	        width: 100%;
+	        @media( max-width: $desktop - 1 ){
+            	max-width: 100%;
+            }
+	    }
+
+	    .wrap_footer{
+	    	clear: both;
+	    }
+
+	    .inside-content{
+			min-height: calc(100vh - 200px);
+		}
+
+	
+}
+
+// Fancybox
+.fancybox__container {
+	z-index: 9999 !important;
+	.fancybox__image {
+        border-radius: 10px;
+	}
+}
+.compensate-for-scrollbar {
+	padding: 0 !important;
+}
+
+// Key Burn Image Carousel ( Swiper Slider )
+.swiper-image-stretch .swiper-slide .swiper-slide-image {
+	display: block;
+	transform: scale(1);
+}
+.swiper-image-stretch .swiper-slide.swiper-slide-active .swiper-slide-image {
+	transition-delay: 0.2s;
+	transform: scale(1.06);
+	transform-origin: left bottom;
+	transition: transform 5s linear;
+}
+
+// class ova_responsive_margin_top
+.ova_responsive_margin_top {
+	.elementor-widget-container {
+		@media (min-width: 1550px) {
+			margin-top: -150px;
+		}
+		@media (max-width: 1549px) {
+			margin-top: -80px;
+		}
+		@media (max-width: 1200px) {
+			margin-top: 0;
+		}
+	}
+}
+
+// ova hide element
+.ova-hide-element-min1024-max1300{ 
+	@media (min-width: 1024px) and (max-width: 1300px) {
+		display: none;
+	}
+}
+.ova-hide-element-min1024-max1450{ 
+	@media (min-width: 1024px) and (max-width: 1450px) {
+		display: none;
+	}
+}

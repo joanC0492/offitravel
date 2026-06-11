@@ -1,0 +1,93 @@
+================================================================================
+OFFITRAVEL – Mapa de lógica de precios (circuitos / OVA BRW + modo habitaciones)
+Última revisión: rejillas CCKF + descuento triple/cuádruple habitación; eliminado precio adulto por día (v1.7.x).
+================================================================================
+
+OBJETIVO COMERCIAL (referencia tabla)
+-------------------------------------
+1) PVP base “por persona” según origen: SIN TREN (ej. 815 €); otros orígenes =
+   base + suplemento por tren/salida (Madrid +95 → 910 €; etc.).
+2) Suplemento habitación individual: +150 € aplicable por huésped en habitación
+   individual (ej. 1 hab. / 1 persona: 815 + 150 = 965 con SIN TREN).
+3) Pareja en doble: 2 × PVP origen (ej. 815 × 2 = 1.630 SIN TREN).
+4) Triple / cuádruple vs doble: descuento opcional €/persona según banda de **día de inicio**
+   (dos bandas en acordeón; por defecto banda 1 = domingo + martes–jueves → 5/12 € triple/cuádruple por pax,
+   banda 2 = viernes–sábado → 10/31 €). Sin descuento si el día no entra en ninguna banda.
+   Modo habitaciones activo + casilla «Aplicar descuento».
+
+-------------------------------------------------------------------------------
+IMPLEMENTADO en offitravel-ovabrw-room-mode.php (aprox. v1.5–1.7.x)
+-------------------------------------------------------------------------------
+- Filtro ovabrw_get_price_by_guests prio 850: suplemento opción pack_* (select) por
+  el resto de viajeros → suma (precio_opción × (adultos − 1)).
+- Mismo filtro: habitaciones con 1 persona × importe meta «Suplemento habitación
+  individual» (vacío = 150 €, 0 = desactivar). Solo con modo habitaciones activo.
+- Carrito/checkout/pedido: líneas informativas via offitravel_ovabrw_pricing_addon_display_rows.
+- Descuento triple/cuádruple (acordeón): dos bandas (CSV días + importes triple/cuádruple cada una); el día se toma de la
+  fecha de inicio (pickup), como la matriz PVP. Por habitación de 3: (triple_€ banda × 3); ≥4 personas: (quad_€ banda × n).
+  Imports por banda vacíos → tabla comercial (5/12 y 10/31). Legacy v1.7.0 (un solo triple/cuádruple): se muestra en banda 1 hasta re-guardar; al guardar el producto se migran metas nuevas y se borra lo antiguo.
+  Filtro ovabrw_get_price_by_guests prio **844** (tras matriz 815, antes pack 850). AJAX: ovabrw_price_per_guests **1015** reparte sobre adultos; usa `checkin_date` + POST habitaciones.
+- Si precio fijo por total de personas (+ días inicio opcional, prio 999) coincide con la suma de
+  adultos (reparto entre habitaciones irrelevante para esa tarifa), sustituye el total entero.
+- Dos rejillas CCKF (acordeón Habitaciones): banda 1 / banda 2 por día de inicio del tour + mapa opción→PVP
+  € por persona solo adultos; claves de fila = IDs del select en OVA (opcional alias sin_tren etc. cuando la opción elegida es la **primera** del select «Sin Tren»). Filtro ovabrw_get_price_by_guests prio 815 corrige línea (+ resta opción duplicada
+  en ovabrw_get_price_cckf). Prioridad posteriores (850 packs, etc.): cuando la rejilla aplicó ya el precio persona,
+  se omite el suplemento pack_* por otros adultos para no duplicar tren/origin. AJAX: ovabrw_price_per_guests prio 1010 matriz;
+  1015 descuento ocupación habitación.
+
+-------------------------------------------------------------------------------
+DÓNDE VIVE CADA PIEZA HOY (archivos / hooks)
+-------------------------------------------------------------------------------
+
+A) Precio base × adultos (Woo + OVA)
+   Archivo: wp-content/plugins/ova-brw/inc/ovabrw-cus-cal-cart.php
+   - get_price_by_guests() agrupa: ovabrw_price_global() (adult_price × adults…)
+     + recursos + servicios × quantity + custom checkout fields (CCKF).
+   - Filtro final: ovabrw_get_price_by_guests
+
+B) Campos “Paquete” / origen (pack_1, …)
+   Render: wp-content/themes/tripgo/woocommerce/rental/loop/fields/extra_fields.php
+   Cálculo €: ovabrw_get_price_cckf() mismo archivo ovabrw-cus-cal-cart.php (~834+)
+   - Suma el precio del option del select según clave elegida (ova_options_key /
+     ova_options_price).
+   - Filtro: ovabrw_get_price_cckf (pie de función, ~línea 926)
+   Complemento Offitravel: se añade en ovabrw_get_price_by_guests (850) el importe
+   faltante (precio opción pack_* × (adultos − 1)), porque OVA suma el pack 1 vez.
+
+C) Suplemento individual +150 €
+   offitravel-ovabrw-room-mode.php: habitaciones con 1 persona × importe configurable
+   (meta «Suplemento habitación individual», vacío = 150 €) con modo habitaciones ON.
+
+D) Modo habitaciones (UI + sync ovabrw_adults + POST para carrito/AJAX)
+   MU: wp-content/mu-plugins/offitravel-ovabrw-room-mode.php
+   - Sincroniza sum( personas por hab. ) → ovabrw_adults (JS inline).
+   - Inyecta offitravel_room_* en petición ovabrw_calculate_total (ajaxSend).
+   Tema: wp-content/themes/tripgo-child/…/fields/guests-rooms.php
+
+E) Total AJAX en ficha
+   wp-content/plugins/ova-brw/inc/ovabrw_ajax.php (ovabrw_calculate_total)
+   → get_price_by_guests() con cart_item armado desde POST (incluye custom_ckf).
+
+-------------------------------------------------------------------------------
+ORDEN SUGERIDO DE IMPLEMENTACIÓN (siguientes PRs / tareas)
+-------------------------------------------------------------------------------
+1) Verificar números pack: comparar (adult_price × adults) + CCKF con tabla PVP
+   para 1 y 2 adultos; si falla, ajustar ovabrw_get_price_cckf × adultos en pack_*.
+2) Añadir meta o convención por producto: suplemento individual (default 150 €) y
+   activación solo si room mode ON.
+3) Fórmula en filtro ovabrw_get_price_by_guests (prioridad < 999 del precio fijo
+   por ocupación, o extender lógica): line_total += single_rooms × suplemento.
+4) Copiar desglose en pedido (item meta) para “Suplemento individual” /
+   “Origen” si hace falta trazabilidad.
+5) Opcional: corregir texto en guests-rooms.php (“por persona y día”) si el
+   producto es precio por circuito, para no confundir.
+
+-------------------------------------------------------------------------------
+ARCHIVOS A TOCAR (probablemente; evitar editar ova-brw salvo imprescindible)
+-------------------------------------------------------------------------------
+- wp-content/mu-plugins/offitravel-ovabrw-room-mode.php … habitaciones + nuevo
+  cálculo suplemento + quizá filtro cckf si se centraliza aquí.
+- Quizá mu-plugin auxiliar offitravel-pricing-tours.php si se prefiere aislar.
+- Tema hijo: solo textos/UX (guests-rooms.php, traducciones).
+
+================================================================================

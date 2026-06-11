@@ -1,0 +1,221 @@
+.ova-product-location {
+	display: flex;
+	align-items: flex-start;
+	gap: 3px;
+	line-height: 1.2;
+	padding-bottom: 3px;
+	i {
+		font-size: 16px;
+		color: var(--secondary);
+	}
+	.location {
+		font-size: 14px;
+	}
+}
+
+.ova-is-featured {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	z-index: 1;
+	display: inline-block;
+	padding: 8px;
+	background-color: var(--primary);
+	color: #fff;
+	border-radius: 5px;
+	font-size: 14px;
+	line-height: 1;
+}
+
+.ova-product-wishlist {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	z-index: 1;
+
+	.yith-wcwl-add-to-wishlist {
+		margin: 0;
+		padding-left: 10px;
+		line-height: 1.2;
+
+		.yith-wcwl-add-button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			background-color: #fff;
+
+			.add_to_wishlist {
+				i {
+					font-size: 16px;
+					color: var(--light);
+					margin: 0;
+				}
+				svg {
+					width: 20px;
+					height: 20px;
+					color: var(--light);
+					margin: 0;
+				}
+				span {
+					display: none;
+				}
+			}
+		}
+
+		.feedback {
+			color: var(--primary)
+		}
+
+		a {
+			-webkit-transition: all .3s ease;
+			-moz-transition: all .3s ease;
+			-o-transition: all .3s ease;
+			transition: all .3s ease;
+			color: var(--heading);
+			font-weight: 500;
+
+			&:hover {
+				color: var(--primary);
+			}
+		}
+	}
+}
+
+.ova-tour-day {
+	position: absolute;
+    left: 20px;
+    top: -22px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3px;
+	border-radius: 5px;
+	line-height: 1;
+	z-index: 1;
+	border: 1px solid var(--secondary);
+	padding: 8px;
+	margin-top: 5px;
+	color: var(--secondary);
+	background-color: #fff;
+	i {
+		display: inline-flex;
+	}
+}
+
+.ova-product-review {
+	.star-rating {
+		color: #FFC83E;
+	    overflow: hidden;
+	    position: relative;
+	    float: none !important; 
+	    height: 1.1em;
+	    line-height: 1;
+	    font-size: 0.875em;
+	    width: 5.4em;
+	    font-family: star;
+	    margin-top: 8px;
+
+	    &:before {
+	    	content: "sssss";
+		    color: #e6e6e6;
+		    float: left;
+		    top: 0;
+		    left: 0;
+		    position: absolute;
+	    }
+
+	    .rating-percent {
+	    	overflow: hidden;
+		    float: left;
+		    top: 0;
+		    left: 0;
+		    position: absolute;
+		    padding-top: 1.5em;
+
+		    &:before {
+		    	content: "SSSSS";
+			    top: 0;
+			    position: absolute;
+			    left: 0;
+		    }
+	    }
+
+	    strong.rating {
+	    	display: none;
+	    }
+
+	    span.rating {
+	    	overflow: hidden;
+		    float: left;
+		    top: 0;
+		    left: 0;
+		    position: absolute;
+		    padding-top: 1.5em;
+
+		    &:before {
+	    	    content: "SSSSS";
+			    top: 0;
+			    position: absolute;
+			    left: 0;
+		    }
+	    }
+	}
+	.parentheses-rating {
+		color: #A49F9C;
+	}
+
+}
+
+.ova-product-wrapper-price {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	line-height: 1;
+	padding-top: 28px;
+	.ova-product-price {
+		.no-product-price {
+			font-size: 16px;
+			font-weight: bold;
+			line-height: 1;
+			color: var(--primary);
+			text-decoration: underline;
+		}
+		.new-product-price {
+			font-size: 20px;
+			font-weight: bold;
+			line-height: 1.5;
+			color: var(--heading);
+		}
+		.old-product-price {
+			font-size: 16px;
+			font-weight: bold;
+			line-height: 1.5;
+			color: var(--light);
+			text-decoration-line: line-through;
+		}
+	}
+	.product-btn-book-now {
+		transition: all .3s ease;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 5px;
+		background-color: var(--primary);
+		color: #fff;
+	    font-size: 16px;
+	    line-height: 1.5;
+	    padding: 4px 20px;
+	    text-transform: none;
+	    font-weight: 600;
+	    border: 1px solid transparent;
+	    &:hover {
+	    	border: 1px solid var(--primary);
+	    	background-color: #fff;
+	    	color: var(--primary);
+	    }
+	}
+}

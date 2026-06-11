@@ -1,0 +1,32 @@
+.ovaev-event-tabs {
+	margin: 0;
+
+	.content-event {
+		.tab-Location {
+			.tab-content {
+				#location {
+					.gm-svpc {
+						div {
+							width: 40px;
+						}
+					}
+				}
+			}
+			ul.event_nav {
+				li.event_nav-item {
+					-webkit-transition: all .3s ease;
+					-moz-transition: all .3s ease;
+					-o-transition: all .3s ease;
+					transition: all .3s ease;
+
+					a {
+						-webkit-transition: all .3s ease;
+						-moz-transition: all .3s ease;
+						-o-transition: all .3s ease;
+						transition: all .3s ease;
+					}
+				}
+			}
+		}
+	}
+}

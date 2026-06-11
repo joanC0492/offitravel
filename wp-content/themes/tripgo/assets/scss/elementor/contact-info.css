@@ -1,0 +1,59 @@
+.ova-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ova-contact-info .icon {
+  color: var(--text);
+  font-size: 16px;
+  margin-top: 10px;
+}
+.ova-contact-info .icon svg {
+  width: 16px;
+  height: auto;
+  fill: var(--text);
+}
+.ova-contact-info .icon svg path {
+  fill: var(--text);
+}
+.ova-contact-info .icon i {
+  display: flex;
+}
+.ova-contact-info .contact .label {
+  font-size: 24px;
+  margin: 0 0px 10px 0px;
+  padding: 0;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+.ova-contact-info .contact .info {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.ova-contact-info .contact .info .item {
+  color: var(--text);
+}
+.ova-contact-info .contact .info .item a {
+  color: var(--text);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.ova-contact-info .contact .info .item a:before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 1px;
+  left: 0px;
+  bottom: 0px;
+  transition: all 500ms ease;
+  background-color: var(--primary);
+}
+.ova-contact-info .contact .info .item a:hover {
+  color: var(--primary);
+}
+.ova-contact-info .contact .info .item a:hover:before {
+  width: 100%;
+}

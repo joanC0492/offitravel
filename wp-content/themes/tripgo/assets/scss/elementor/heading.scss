@@ -1,0 +1,49 @@
+// Transaction
+@mixin transaction( $propertty, $duration, $timing ) {
+    transition: $propertty $duration $timing;
+    -moz-transition: $propertty $duration $timing;
+    -webkit-transition: $propertty $duration $timing;
+    -o-transition: $propertty $duration $timing;
+}
+.ova-title {
+    .sub-title {
+        margin: 0;
+        margin-bottom: 13px;
+        color: var(--secondary);
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.2;
+        text-transform: capitalize;
+    }
+    .title {
+        display: inline-block;
+        margin: 0 0 15px 0;
+        color: var(--heading);
+        font-size: 42px;;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: capitalize;
+        white-space: pre-line;
+
+        @media(max-width: 767px) {
+            white-space: normal;
+        }
+        a {
+            color: var(--heading);
+            @include transaction(all, .3s, ease);
+
+            &:hover {
+                color: var(--primary);
+                @include transaction(all, .3s, ease);
+            }
+        } 
+    }
+    .description {
+        margin: 0 0 15px 0;
+        white-space: pre-line;
+
+        @media(max-width: 1024px) {
+            white-space: normal;
+        }
+    }
+}

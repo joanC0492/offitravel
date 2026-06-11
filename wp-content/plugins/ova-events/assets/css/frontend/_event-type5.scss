@@ -1,0 +1,72 @@
+.type5 {
+	height: 100%;
+	box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, .1);
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	padding: 20px;
+
+	.date-event {
+		min-width: 60px;
+	    background-color: var(--primary);
+	    text-align: center;
+	    display: inline-table;
+	    padding: 14px 10px;
+	    color: #fff;
+	    z-index: 99;
+
+		span {
+			padding: 0px 0px 0px 0px;
+		    font-size: 24px;
+		    line-height: 22px;
+		    font-weight: bold;
+		    display: block;
+		    margin-bottom: 3px;
+		    text-transform: uppercase;
+		}
+		.month {
+			font-size: 16px;
+		    border-bottom: 1px solid #fff;
+		}
+	}
+	.desc {
+		.event_post {
+			border-top: 0;
+			transition: all .3s;
+
+			@media(min-width: 1024px) and (max-width: 1099px) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			.event_title {
+				margin: 0 0 15px 0;
+				font-size: 25px;
+			}
+			.time-event {
+				line-height: 22px;
+				color: #444444;
+				font-size: 16px;
+				font-weight: 400;
+
+				.time {
+					margin-bottom: 7px;
+
+					.more_date_text {
+						&:hover {
+							color: var(--heading);
+						}
+					}
+				}
+				.time, .venue {
+					display: flex;
+					align-items: center;
+					gap: 5px;
+					
+					i {
+						color: var(--secondary);
+					}
+				}
+			}
+		}
+	}
+}

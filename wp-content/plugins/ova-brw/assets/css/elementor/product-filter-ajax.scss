@@ -1,0 +1,250 @@
+.ova-product-filter-ajax {
+	display: flex;
+	gap: 24px;
+	position: relative;
+	overflow: hidden;
+
+	@media(max-width: 1024px) {
+		flex-flow: column;
+	}
+	ul {
+		list-style-type: none;
+		padding: 30px;
+		margin: 0;
+		background: #F2FBFA;
+		width: calc(34% - 12px);
+
+		@media(max-width: 1024px) {
+			width: 100%;
+		}
+		li.filter-title {
+			position: relative;
+			display: inline-block;
+			margin: 0 0 40px 0;
+			padding: 0 0 16px 0;;
+			font-size: 28px;
+			font-weight: 600;
+			line-height: 1.2;
+			color: var(--heading);
+
+			&:after {
+				position: absolute;
+				content: "";
+				left: 0;
+				bottom: 0;
+				width: 60px;
+				height: 4px;
+				background-color: var(--primary);
+			}
+		}
+		li.product-filter-button {
+			transition: all .3s ease; 
+			cursor: pointer;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 18px;
+			font-weight: 600;
+			padding: 16px 20px;
+			color: var(--heading);
+			background-color: #fff;
+			margin: 0 5px 5px 0;
+
+			@media (max-width: 767px) {
+				font-size: 16px;
+			}
+			&.active-category {
+				transition: all .3s ease; 
+				background-color: var(--primary);
+				color: #fff;
+			}
+			&:hover {
+				transition: all .3s ease; 
+				background-color: var(--primary);
+				color: #fff;
+			}
+		}
+	}
+	.content-item {
+		width: calc(66% - 12px);
+		@media(max-width: 1024px) {
+			width: 100%;
+		}
+		.ova-product {
+			border-radius: 0;
+
+			.ova_head_product {
+				.ova-product-thumbnail {
+					border-radius: 0;
+					img {
+						min-height: 378px;
+					}
+				}
+			}
+			.ova_foot_product {
+				position: absolute;
+			    bottom: 0;
+			    right: 0;
+			    width: 100%;
+			    height: 100%;
+			    padding: 40px;
+			    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: flex-end;
+			    overflow: hidden;
+			    z-index: 1;
+
+			    @media (max-width: 767px) {
+			    	padding: 40px 30px;
+			    }
+			    .ova-product-title {
+			    	&:hover {
+			    		a {
+			    			color: var(--primary);
+			    		}
+			    	}
+			    	a {
+			    		color: #fff;
+			    	}
+			    }
+			}
+		}
+		.ova-tour-day {
+			position: static;
+			width: fit-content;
+			margin-bottom: 10px; 
+		}
+		.ova-product-day-title-location {
+			transition: all .5s ease;
+		}
+		.ova-product-review-and-price {
+			display: flex;
+			align-items: center;
+			@media (max-width: 500px) {
+				align-items: flex-start;
+				flex-direction: column; 
+			}
+		}
+ 		.ova-product-wrapper-price {
+			padding: 0;
+			.ova-product-price {
+				.new-product-price {
+					color: #fff;
+				}
+				.old-product-price {
+					color: rgba(255,255,255,0.8);
+				}
+			}
+		}
+		.ova-product-location {
+			padding-bottom: 20px;
+			.location {
+				color: #fff;
+			}
+		}
+		&.slide-product {
+			position: relative;
+
+			.swiper {
+		        &.swiper-loading {
+		            .swiper-wrapper {
+		                opacity: 0;
+		                visibility: hidden;
+		            }
+		        }
+		    }
+		    .button-dots {
+		        display: flex;
+		        align-items: center;
+		        justify-content: center;
+		        gap: 3px;
+		        position: relative;
+		        top: -20px;
+		        z-index: 2;
+
+		        &.swiper-pagination-bullets {
+		            width: 100% !important;
+		            left: 50% !important;
+		        }
+		        .swiper-pagination-bullet {
+		            display: block;
+		            width: 8px;
+				    height: 8px;
+		            border-radius: 50%;
+		            background-color: #89909D;
+		            opacity: 0.6;
+		            -webkit-backface-visibility: visible;
+		            -webkit-transition: all .3s ease;
+		            -moz-transition: all .3s ease;
+		            -ms-transition: all .3s ease;
+		            transition: all .3s ease;
+
+		            &.swiper-pagination-bullet-active, &:hover {
+						opacity: 1;
+						background-color: var(--primary);
+		            }
+		        }
+		    }
+			.button-nav {
+		        position: absolute;
+		        top: 50%;
+		        transform: translate(0, -50%);
+		        z-index: 1;
+		        display: flex;
+		        align-items: center;
+		        justify-content: center;
+		        opacity: 0;
+		        visibility: hidden;
+				background-color: transparent;
+			    border: 1px solid #fff; 
+				border-radius: 50%;
+				width: 46px;
+			    height: 46px;
+		        cursor: pointer;
+		        -webkit-transition: all .3s ease;
+		        -moz-transition: all .3s ease;
+		        -ms-transition: all .3s ease;
+		        transition: all .3s ease;
+
+		        &.button-prev {
+		            left: 40px;
+		        }
+		        &.button-next {
+		            right: 40px;
+		        }
+		        &:focus {
+		            outline: none;
+		        }
+		        i {
+		            display: flex;
+		            font-size: 26px;
+				    color: #FFFFFF;
+		            -webkit-transition: all .3s ease;
+		            -moz-transition: all .3s ease;
+		            -ms-transition: all .3s ease;
+		            transition: all .3s ease;
+		        }
+		        &:hover {
+		        	background-color: #FFFFFF;
+
+		        	i {
+		        		color: var(--heading);
+		        	}
+		        }
+		        @media screen and (max-width: 768px) {
+		            opacity: 1;
+		        	visibility: visible;
+		        }
+		    }
+		    &:hover {
+		        .button-nav {
+		            visibility: visible;
+					opacity: 1;
+					transition-duration: 0.3s;
+		        }
+		    }
+		}
+	}
+}

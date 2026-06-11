@@ -1,0 +1,19 @@
+.wrap_header{
+   
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @media( min-width: $desktop ){
+    	display: flex;
+	    justify-content: space-between;
+	    align-content: center;
+	    align-items: center;
+    }
+
+    a.navbar-brand{
+        img{
+            width: 120px;
+        }
+    }
+    
+}

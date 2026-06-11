@@ -1,0 +1,21 @@
+.ovaev-booking-btn {
+	a {
+		transition: all .3s ease;
+		display: inline-block;
+		font-size: 24px;
+	    font-weight: 500;
+	    color: var(--heading);
+	    line-height: 1;
+	    border: 2px solid var(--heading);
+	    border-radius: 3px;
+	    background-color: #fff;
+	    padding: 20px 30px;
+
+	    &:hover {
+	    	transition: all .3s ease;
+	    	color: #fff;
+	    	background-color: #e50000;
+	    	border-color: #e50000;
+	    }
+	}
+}

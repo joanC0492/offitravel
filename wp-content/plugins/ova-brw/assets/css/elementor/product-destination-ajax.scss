@@ -1,0 +1,341 @@
+.ovabrw-destination-ajax {
+	position: relative;
+	
+	.ovabrw-destination-list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		overflow-x: auto;
+		white-space: nowrap;
+		
+		@media only screen and (max-width: 768px) {
+			margin-bottom: 32px;
+			border-bottom: 1px solid var(--light);
+
+	  		&::-webkit-scrollbar {
+			  	height: 2px;
+			}
+			&::-webkit-scrollbar-thumb {
+			  background-color: var(--light);
+			}
+		}
+		.destination-item {
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 600;
+			color: var(--heading);
+			padding: 10px 25px;
+			margin: 0 10px 30px 0;
+			border-radius: 20px;
+			line-height: 1;
+			-webkit-transition: all .3s ease;
+			-moz-transition: all .3s ease;
+			transition: all .3s ease;
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.03);
+			}
+			&.active {
+				background-color: var(--primary);
+				color: #FFF;
+			}
+		}
+	}
+	.ovabrw-destination-products {
+		.ovabrw-products-result {
+			display: grid;
+			grid-gap: 24px;
+			padding: 0;
+			margin: 0;
+
+			.not_found_product {
+				.empty-list {
+					font-size: 42px;
+					line-height: 1.1;
+					color: var(--primary);
+					width: max-content;
+					margin: 0 0 10px 0;
+
+					@media (max-width: 767px) {
+						font-size: 32px;
+						width: auto;
+					}
+				}
+			}
+            &.ovabrw-products-result-grid {
+				grid-row-gap: 40px;
+
+				&.column1 {
+					grid-template-columns: 1fr;
+				}
+				&.column2 {
+					grid-template-columns: 1fr 1fr;
+				}
+				&.column3 {
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+				&.column4 {
+					grid-template-columns: 1fr 1fr 1fr 1fr;
+				}
+				@media screen and (max-width: 1200px) {
+					&.column4 {
+						grid-template-columns: 1fr 1fr 1fr;
+					}
+				}
+				@media screen and (max-width: 1024px) {
+					&.column3, &.column4 {
+						grid-template-columns: 1fr 1fr;
+					}
+				}
+				@media screen and (max-width: 768px) {
+					&.column2, &.column3, &.column4 {
+						grid-template-columns: 1fr;
+					}
+				}
+			}
+			.ovabrw-single-product {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				box-shadow: 0px 4px 40px rgba(43, 89, 255, 0.08);
+	            border-radius: 10px;
+	            overflow: hidden;
+
+	            @media (max-width: 900px) {
+	            	grid-template-columns: auto;
+	            }
+	            &:hover {
+	            	.product-img {
+	            		&:before {
+	            			transition: all .5s ease;
+	            			opacity: 1;
+	            			visibility: visible;
+	            			bottom: 0;
+	            		}
+	            		img {
+	            			transition: transform 0.7s ease-out;
+	            			transform: scale3d(1.05,1.05,1.05);
+	            		}
+	            		.ova-video-gallery {
+	            			transition: all .7s ease;
+	            			bottom: 20px;
+	            			opacity: 1;
+	            			visibility: visible;
+	            		}
+	            	}
+	            }
+				.product-img {
+					position: relative;
+					overflow: hidden;
+					border-radius: 10px;
+
+					&:before {
+						transition: all .5s ease;
+						position: absolute;
+						z-index: 1;
+						content: "";
+                        opacity: 0;
+                        visibility: hidden;
+						bottom: -20px;
+						left: 0;
+						background: linear-gradient(180deg, rgba(19, 23, 43, 0) 0.44%, rgba(19, 23, 43, 0.24) 38.3%, rgba(19, 23, 43, 0.5) 100%);
+						width: 100%;
+						height: 33%;
+					}
+					img {
+						transition: transform 0.7s ease-out;
+						display: block;
+						height: 100%;
+						width: 100%;
+						min-height: 230px;
+						object-fit: cover;
+					}
+					.ova-video-gallery {
+						top: unset;
+						right: unset;
+						left: 16px;
+						bottom: 40px;
+						border:none;
+						opacity: 0;
+						visibility: hidden;
+
+						@media (max-width: 900px) {
+							opacity: 1;
+							visibility: visible;
+							bottom: 20px;
+						}
+					}
+				}
+				.product-container {
+					display: flex;
+					flex-wrap: wrap;
+					background-color: #fff;
+					padding: 25px 30px;
+
+					@media (max-width: 460px) {
+						padding: 25px;
+					}
+					.product-container-left {
+                        flex: 0 0 64%;
+                        border-right: 1px solid var(--border);
+                        padding-right: 24px;
+
+                        .product-title {
+                        	transition: all .3s ease;
+                        	margin: 0;
+                        	padding-bottom: 10px;
+                        	font-size: 20px;
+                        	line-height: 1.2;
+
+                        	&:hover {
+                        		transition: all .3s ease;
+                        		color: var(--primary);
+                        	}
+                        }
+                        .product-short-description {
+                        	margin: 16px 0;
+
+                        	p, h1, h2, h3, h4, h5, h6 {
+                        		margin: 0;
+                        		font-size: 16px;
+                        	}
+                        	ul {
+                        		margin: 0;
+                        		padding: 0 0 0 12px;
+
+                        		li {
+                        			&::marker {
+                        				color: var(--secondary);
+                        			}
+                        		}
+                        	}
+                        }
+                        @media (max-width: 900px) {
+                        	flex: 0 0 100%;
+                        	border-right: 0;
+                        	padding-right: 0;
+                        }
+					}
+					.product-container-right {
+						flex: 0 0 36%;
+						text-align: right;
+						padding-left: 40px;
+
+						.ova-tour-day {
+							position: static;
+						}
+						.ova-product-wrapper-price {
+							flex-direction: column;
+							align-items: flex-end;
+							row-gap: 14px;
+						}
+						@media (max-width: 900px) {
+                        	flex: 0 0 100%;
+                        	padding-left: 0;
+
+                        	.ova-product-wrapper-price {
+                        		flex-direction: row;
+                        	}
+                        }
+					}
+
+				}
+			}
+		}
+		.ovabrw-pagination-ajax {
+			margin-top: 40px;
+
+			ul {
+			    padding: 0px;
+			    margin: 0px;
+			    list-style-type: none;
+			    display: flex;
+			    flex-wrap: wrap;
+			    justify-content: center;
+
+			    li {
+			    	cursor: pointer; 
+		    	    margin-right: 10px;
+		    	    background-color: var(--first-background);
+		    	    border-radius: 5px;
+
+		    	    &:last-child {
+		    	    	margin-right: 0;
+		    	    }
+		    	    span {
+		    	    	border-radius: 5px;
+		    	    	padding: 0px 18px;
+						min-width: 54px;
+						font-size: 14px;
+						color: var(--heading);
+					    height: 40px;
+					    display: inline-flex;
+					    justify-content: center;
+					    align-items: center;
+					    -webkit-transition: all .3s ease;
+					    -o-transition: all .3s ease;
+					    transition: all .3s ease;
+
+					    i {
+					    	font-size: 12px;
+					    }
+					    &:hover {
+					    	background-color: var(--primary);
+		    	    		color: #fff;
+					    }
+		    	    }
+		    	    .current {
+		    	    	background-color: var(--primary);
+		    	    	color: #fff;
+		    	    }
+			    }
+			}
+		}
+	}
+	.wrap-load-more {
+		width: 100%;
+		display: none;
+		position: absolute;
+		top: 100px;
+
+		.loader {
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			transform: translate(-50%);
+			stroke-linecap: round;
+
+			circle {
+				fill: none;
+				stroke-width: 1.5;
+				animation-duration: 1.5s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				transform-origin: 25px 25px;
+				will-change: transform;
+				stroke: var(--primary);
+
+				&:nth-of-type(1) {
+					stroke-dasharray: 40px;
+					animation-name: preloader_1;
+				}
+				&:nth-of-type(2) {
+					stroke-dasharray: 80px;
+					animation-name: preloader_2;
+				}
+			}
+			@keyframes preloader_1 {
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			@keyframes preloader_2 {
+				100% {
+					transform: rotate(-360deg);
+				}
+			}
+		}
+	}
+}

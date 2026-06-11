@@ -1,0 +1,45 @@
+.ova-icon-list {
+  margin: 0 15px;
+}
+.ova-icon-list .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 7px;
+  padding: 20px 34px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 10px 60px 0px rgba(253, 76, 92, 0.1);
+  border-left: 2px solid var(--primary);
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .ova-icon-list .item {
+    padding: 20px;
+  }
+}
+.ova-icon-list .item:last-child {
+  margin-bottom: 0;
+}
+.ova-icon-list .item i, .ova-icon-list .item svg {
+  display: inline-flex;
+  font-size: 44px;
+  width: 44px;
+  color: var(--secondary);
+  fill: var(--secondary);
+}
+.ova-icon-list .item svg {
+  min-width: 32px;
+}
+.ova-icon-list .item svg path {
+  fill: var(--secondary);
+}
+.ova-icon-list .item .title {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.ova-icon-list .item .desc {
+  margin: 0;
+  line-height: 1.4;
+}

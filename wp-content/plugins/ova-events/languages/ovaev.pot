@@ -1,0 +1,1791 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ovatheme Events\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 10:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.1.17\n"
+"X-Domain: ovaev"
+
+#: elementor/widgets/ovaev-event-time.php:59
+#: elementor/widgets/ovaev-event-date.php:61
+#: templates/shortcode/ovaev_event_time.php:18
+#: templates/shortcode/ovaev_event_date.php:21
+msgid " - "
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:82
+msgid "#"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-categories.php:45
+msgid ","
+msgstr ""
+
+#: templates/loop/date_event.php:53 templates/widgets/list_event.php:56
+msgid ", more"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-contact.php:33
+msgid "0123456789"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:69
+msgid "1 Column"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:432
+#: admin/class-ovaev-admin-settings.php:433
+msgid "12 hour"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:70
+msgid "2 Columns"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:431
+msgid "24 hour"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:71
+msgid "3 Columns"
+msgstr ""
+
+#: templates/single/time_loc_date_time.php:49 templates/loop/date_event.php:46
+#: templates/widgets/list_event.php:49
+msgid "@"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:153
+msgid "Active Title Options"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-gallery.php:14
+msgid "Add image(s)"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-gallery.php:14
+msgid "Add image(s) to gallery"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:31
+#: inc/class-ovaev-custom-post-type.php:32
+msgid "Add New Event"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:73
+msgid "Add New Event Category"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:116
+msgid "Add New Tag"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:172
+msgid "Additional Options"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:495
+msgid "Albanian"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:59
+#: elementor/widgets/ovaev-event-share.php:44
+#: elementor/widgets/ovaev-event-time.php:75
+#: elementor/widgets/ovaev-event-tabs.php:45
+#: elementor/widgets/ovaev-events-ajax.php:72
+#: elementor/widgets/ovaev-event-content.php:43
+#: elementor/widgets/ovaev-event-thumbnail.php:74
+#: elementor/widgets/ovaev-event-tags.php:44
+#: elementor/widgets/ovaev-event-title.php:78
+#: elementor/widgets/ovaev-event-location.php:52
+#: elementor/widgets/ovaev-event-date.php:77
+#: elementor/widgets/ovaev-event-categories.php:61
+msgid "Alignment"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:83
+#: elementor/widgets/ovaev-events-slide.php:106
+#: elementor/widgets/ovaev-events.php:85
+#: elementor/widgets/ovaev-events-search-ajax.php:111
+#: elementor/widgets/ovaev-events-calendar.php:83
+#: templates/elements/ovaev_events_calendar_content.php:42
+#: templates/elements/ovaev_events_ajax_content.php:24
+msgid "All"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:68 inc/class-ovaev-get-data.php:237
+msgid "All Categories"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:30
+msgid "All Events"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:273
+msgid "All Events Button"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:111
+msgid "All Tags"
+msgstr ""
+
+#: templates/elements/ovaev_events_calendar_content.php:23
+msgid "all-day"
+msgstr ""
+
+#: admin/class-ovaev-metaboxes.php:51 admin/class-ovaev-metaboxes.php:66
+msgid "Applies to [ovaev_event_filter] shortcode"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:455
+msgid "Arabic"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:82
+msgid "Archive Event Setting"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:157
+#: elementor/widgets/ovaev-events.php:184
+#: elementor/widgets/ovaev-events-ajax.php:137
+#: elementor/widgets/ovaev-events-search-ajax.php:151
+msgid "Ascending"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:242
+msgid "Autoplay"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:256
+msgid "Autoplay Speed"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:456
+msgid "Azerbaijanian"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:464
+msgid "Backgroud Color: Navigation Button Hover"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:123
+#: elementor/widgets/ovaev-event-button.php:154
+#: elementor/widgets/ovaev-event-share.php:109
+#: elementor/widgets/ovaev-event-share.php:140
+#: elementor/widgets/ovaev-event-share.php:171
+#: elementor/widgets/ovaev-event-share.php:202
+#: elementor/widgets/ovaev-event-share.php:242
+#: elementor/widgets/ovaev-event-share.php:273
+#: elementor/widgets/ovaev-event-share.php:304
+#: elementor/widgets/ovaev-event-share.php:335
+#: elementor/widgets/ovaev-event-tabs.php:108
+#: elementor/widgets/ovaev-event-tabs.php:139
+#: elementor/widgets/ovaev-event-tabs.php:173
+#: elementor/widgets/ovaev-event-tabs.php:234
+#: elementor/widgets/ovaev-event-tabs.php:316
+#: elementor/widgets/ovaev-events-ajax.php:368
+#: elementor/widgets/ovaev-events-ajax.php:378
+#: elementor/widgets/ovaev-events-search-ajax.php:170
+#: elementor/widgets/ovaev-event-tags.php:154
+#: elementor/widgets/ovaev-event-tags.php:185
+msgid "Background"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:418
+msgid "Background day Color"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:135
+msgid "Background Event"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:113
+msgid "Background Today"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event.php:16
+msgid "Basic"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:22
+msgid "Booking Button"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:81
+msgid "Booking Links:"
+msgstr ""
+
+#: templates/single-event.php:123 templates/single/booking_links.php:7
+#: templates/elements/ovaev_event_button.php:12
+msgid "Booking Now"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:169
+msgid "Border"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:178
+msgid "Border Color Hover"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:189
+#: elementor/widgets/ovaev-events-search-ajax.php:189
+#: elementor/widgets/ovaev-event-tags.php:215
+msgid "Border Radius"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:458
+msgid "Bosanski"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:276
+#: elementor/widgets/ovaev-event-tabs.php:358
+msgid "Bottom"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:457
+msgid "Bulgarian"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:42
+#: elementor/widgets/ovaev-event-button.php:87
+msgid "Button"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:442
+msgid "Button Color"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:296
+msgid "Button Fillter"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:69
+msgid "Calendar Language"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:459
+msgid "Català"
+msgstr ""
+
+#: admin/class-ovaev-admin-menu.php:32 admin/class-ovaev-admin-menu.php:33
+#: admin/widget/class-ovaev-category-widget.php:18
+#: elementor/widgets/ovaev-event-categories.php:36
+#: elementor/widgets/ovaev-event-categories.php:129
+msgid "Categories"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:69
+#: elementor/widgets/ovaev-events-slide.php:69
+#: elementor/widgets/ovaev-events.php:61
+#: elementor/widgets/ovaev-events-search-ajax.php:98
+#: elementor/widgets/ovaev-events-calendar.php:69
+msgid "Category"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:67
+#: elementor/widgets/ovaev-event-share.php:52
+#: elementor/widgets/ovaev-event-time.php:83
+#: elementor/widgets/ovaev-event-tabs.php:53
+#: elementor/widgets/ovaev-events-ajax.php:81
+#: elementor/widgets/ovaev-event-content.php:51
+#: elementor/widgets/ovaev-event-thumbnail.php:82
+#: elementor/widgets/ovaev-event-tags.php:52
+#: elementor/widgets/ovaev-event-title.php:86
+#: elementor/widgets/ovaev-event-location.php:60
+#: elementor/widgets/ovaev-event-date.php:85
+#: elementor/widgets/ovaev-event-categories.php:69
+msgid "Center"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-gallery.php:26
+msgid "Change image"
+msgstr ""
+
+#: templates/search_form.php:31 templates/search_form.php:48
+#: templates/elements/ovaev_events_search_ajax.php:36
+#: templates/elements/ovaev_events_search_ajax.php:51
+msgid "Choose Date"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:103
+#: elementor/widgets/ovaev-events.php:82
+#: elementor/widgets/ovaev-events-search-ajax.php:108
+msgid "Choose time"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:112
+#: elementor/widgets/ovaev-event-button.php:143
+#: elementor/widgets/ovaev-event-share.php:98
+#: elementor/widgets/ovaev-event-share.php:129
+#: elementor/widgets/ovaev-event-share.php:160
+#: elementor/widgets/ovaev-event-share.php:191
+#: elementor/widgets/ovaev-event-share.php:231
+#: elementor/widgets/ovaev-event-share.php:262
+#: elementor/widgets/ovaev-event-share.php:293
+#: elementor/widgets/ovaev-event-share.php:324
+#: elementor/widgets/ovaev-event-time.php:110
+#: elementor/widgets/ovaev-event-time.php:151
+#: elementor/widgets/ovaev-event-tabs.php:97
+#: elementor/widgets/ovaev-event-tabs.php:128
+#: elementor/widgets/ovaev-event-tabs.php:162
+#: elementor/widgets/ovaev-event-tabs.php:433
+#: elementor/widgets/ovaev-event-tabs.php:453
+#: elementor/widgets/ovaev-events-ajax.php:313
+#: elementor/widgets/ovaev-events-ajax.php:397
+#: elementor/widgets/ovaev-event-content.php:83
+#: elementor/widgets/ovaev-events-search-ajax.php:234
+#: elementor/widgets/ovaev-event-tags.php:80
+#: elementor/widgets/ovaev-event-tags.php:143
+#: elementor/widgets/ovaev-event-tags.php:174
+#: elementor/widgets/ovaev-event-title.php:114
+#: elementor/widgets/ovaev-event-title.php:140
+#: elementor/widgets/ovaev-event-title.php:166
+#: elementor/widgets/ovaev-event-location.php:87
+#: elementor/widgets/ovaev-event-location.php:128
+#: elementor/widgets/ovaev-event-date.php:112
+#: elementor/widgets/ovaev-event-date.php:153
+#: elementor/widgets/ovaev-event-related.php:72
+#: elementor/widgets/ovaev-event-categories.php:96
+#: elementor/widgets/ovaev-event-categories.php:146
+#: elementor/widgets/ovaev-event-categories.php:166
+#: elementor/widgets/ovaev-event-categories.php:210
+msgid "Color"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:335
+msgid "Color Active"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:324
+msgid "Color Hover"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:486
+msgid "Color Loading"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:475
+msgid "Color: Navigation Button Hover"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:119
+#: elementor/widgets/ovaev-events.php:131
+#: elementor/widgets/ovaev-events.php:147
+#: elementor/widgets/ovaev-events-search-ajax.php:66
+msgid "Column"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:394
+msgid "Column 1"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:395
+msgid "Column 2"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:396
+msgid "Column 3"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:97
+msgid "Columns"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event.php:17
+#: elementor/widgets/ovaev-event-tabs.php:416
+#: elementor/widgets/ovaev-event-tabs.php:546
+#: templates/shortcode/ovaev_event_tabs.php:22
+msgid "Contact Details"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:62
+#: elementor/widgets/ovaev-events-slide.php:62
+#: elementor/widgets/ovaev-events.php:54 elementor/widgets/ovaev-events.php:196
+#: elementor/widgets/ovaev-events-ajax.php:360
+#: elementor/widgets/ovaev-event-content.php:36
+#: elementor/widgets/ovaev-event-content.php:75
+#: elementor/widgets/ovaev-events-calendar.php:63
+msgid "Content"
+msgstr ""
+
+#: admin/widget/class-ovaev-event-feature-widget.php:112
+#: admin/widget/class-ovaev-list-event-widget.php:106
+msgid "Count:"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:107
+#: elementor/widgets/ovaev-events.php:86
+#: elementor/widgets/ovaev-events-search-ajax.php:112
+msgid "Current"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:338
+#: elementor/widgets/ovaev-events-slide.php:142
+#: elementor/widgets/ovaev-events.php:170
+#: elementor/widgets/ovaev-events-search-ajax.php:137
+msgid "Custom Sort"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:76
+msgid "Custom Sort:"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-date.php:47
+msgid "d-m-Y"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:462
+msgid "Dansk"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:123
+#: elementor/widgets/ovaev-event-date.php:36
+#: elementor/widgets/ovaev-event-date.php:145
+msgid "Date"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:53
+#: elementor/widgets/ovaev-event-date.php:43
+msgid "Date Format"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:94
+msgid "Days Of The Week"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:355
+msgid "Decreasing"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:547
+#: elementor/widgets/ovaev-event-date.php:46
+msgid "Default"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:559
+msgid "Default or Other (made in Templates of Elementor )"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:156
+#: elementor/widgets/ovaev-events.php:183
+#: elementor/widgets/ovaev-events-ajax.php:138
+#: elementor/widgets/ovaev-events-search-ajax.php:152
+msgid "Descending"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:444
+msgid "Description Options"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:485
+msgid "Dutch"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:34
+msgid "Edit Event"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:71
+msgid "Edit Event Category"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:114
+msgid "Edit Tag"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:468
+msgid "Eesti"
+msgstr ""
+
+#: templates/single-event.php:111 elementor/widgets/ovaev-event-tabs.php:590
+#: templates/shortcode/ovaev_event_tabs.php:65
+msgid "Email:"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_filter.php:38
+msgid "End date"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:51
+msgid "End date:"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:57
+msgid "End Time:"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:465
+msgid "English"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:466
+msgid "English(British)"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:469
+msgid "Euskara"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:26
+msgid "Event"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:374
+msgid "Event 1"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:375
+msgid "Event 2"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:376
+msgid "Event 3"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:377
+msgid "Event 4"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:378
+msgid "Event 5"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:379
+msgid "Event 6"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:75
+#: elementor/widgets/ovaev-event-categories.php:20
+msgid "Event Categories"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:80
+msgid "Event Category"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:91
+msgctxt "Event Category Slug"
+msgid "event_category"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:146
+msgid "Event Color"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-content.php:20
+msgid "Event Content"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-date.php:20
+msgid "Event Date"
+msgstr ""
+
+#: templates/loop/readmore2.php:14 templates/loop/readmore.php:14
+msgid "Event details"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:20
+msgid "Event Filter Ajax"
+msgstr ""
+
+#: templates/single-event.php:82
+msgid "Event Information"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-location.php:20
+msgid "Event Location"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-related.php:21
+msgid "Event Related"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:261
+#: admin/class-ovaev-admin-settings.php:272
+msgid "Event Settings"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-share.php:21
+msgid "Event Share"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:21
+msgid "Event Tabs"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:133
+msgctxt "Event Tag Slug"
+msgid "event_tag"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tags.php:21
+msgid "Event Tags"
+msgstr ""
+
+#: elementor/class-ova-register-elementor.php:81
+msgid "Event Template"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-thumbnail.php:20
+msgid "Event Thumbnail"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-time.php:20
+msgid "Event Time"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-title.php:20
+msgid "Event Title"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_filter.php:81
+msgid "EVENTS"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:25 admin/class-ovaev-admin-menu.php:21
+#: admin/class-ovaev-admin-menu.php:22 elementor/widgets/ovaev-events.php:21
+msgid "Events"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:22
+msgid "Events Slide"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:573
+msgid "Example: 700x450"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:146
+msgid "Excluded Categories"
+msgstr ""
+
+#: templates/single-event.php:160
+msgid "Explore Related Events"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-share.php:89
+#: elementor/widgets/ovaev-event-share.php:222
+msgid "Facebook Options"
+msgstr ""
+
+#: admin/widget/class-ovaev-event-feature-widget.php:13
+msgid "Feature Event"
+msgstr ""
+
+#: admin/widget/class-ovaev-event-feature-widget.php:20
+msgid "Featured Event"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:79
+#: elementor/widgets/ovaev-events-calendar.php:79
+#: templates/elements/ovaev_events_calendar_content.php:40
+msgid "Filter Event"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:162
+msgid "Filters"
+msgstr ""
+
+#: templates/search_form.php:65
+msgid "Find Event"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:470
+msgid "Finnish(Suomi)"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:153
+#: admin/class-ovaev-admin-settings.php:186
+msgid "Footer"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:471
+msgid "French"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-thumbnail.php:50
+msgid "Full"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-calendar.php:22
+msgid "Full Calendar"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-time.php:47
+msgid "g:i A 12 Hour"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-time.php:48
+msgid "g:i a 12 hour"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:472
+msgid "Galego"
+msgstr ""
+
+#: templates/single-event.php:133 admin/views/ovaev-metabox-event.php:18
+#: elementor/widgets/ovaev-event-tabs.php:491
+#: elementor/widgets/ovaev-event-tabs.php:554
+#: templates/shortcode/ovaev_event_tabs.php:30
+msgid "Gallery"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:46
+msgid "General Setting"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:271
+msgid "General Settings"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:463
+msgid "German"
+msgstr ""
+
+#: admin/widget/class-ovaev-event-feature-widget.php:10
+msgid "Get feature event"
+msgstr ""
+
+#: admin/widget/class-ovaev-category-widget.php:9
+msgid "Get list category event"
+msgstr ""
+
+#: admin/widget/class-ovaev-tag-widget.php:9
+msgid "Get list tag event"
+msgstr ""
+
+#: admin/widget/class-ovaev-list-event-widget.php:9
+msgid "Get list upcomming event"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:88
+msgid "Global"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:102
+msgid "Grid"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-time.php:46
+msgid "H:i 24 Hour\t"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:145
+#: admin/class-ovaev-admin-settings.php:178
+msgid "Header"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:473
+msgid "Hebrew"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:245
+#: elementor/widgets/ovaev-event-tabs.php:327
+msgid "Height"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:159
+#: elementor/widgets/ovaev-events-ajax.php:171
+#: elementor/widgets/ovaev-events-ajax.php:183
+msgid "Hide"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:136
+#: elementor/widgets/ovaev-event-share.php:215
+#: elementor/widgets/ovaev-event-tabs.php:121
+#: elementor/widgets/ovaev-event-tabs.php:309
+#: elementor/widgets/ovaev-events-ajax.php:408
+#: elementor/widgets/ovaev-event-tags.php:167
+#: elementor/widgets/ovaev-event-title.php:156
+#: elementor/widgets/ovaev-event-categories.php:159
+msgid "Hover"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:452
+msgid "Hover Button Color"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:474
+msgid "Hrvatski"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-title.php:58
+msgid "HTML Tag"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-contact.php:45
+msgid "https://ovatheme.com"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://themeforest.net/user/ovatheme"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://themeforest.net/user/ovatheme/portfolio"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:475
+msgid "Hungarian"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-share.php:72
+#: elementor/widgets/ovaev-event-time.php:66
+#: elementor/widgets/ovaev-event-time.php:102
+#: elementor/widgets/ovaev-event-location.php:43
+#: elementor/widgets/ovaev-event-location.php:79
+#: elementor/widgets/ovaev-event-date.php:68
+#: elementor/widgets/ovaev-event-date.php:104
+#: elementor/widgets/ovaev-event-categories.php:52
+#: elementor/widgets/ovaev-event-categories.php:88
+msgid "Icon"
+msgstr ""
+
+#: admin/class-ovaev-metaboxes.php:49 admin/class-ovaev-metaboxes.php:63
+msgid "Icon Class"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:429
+msgid "Icon Color"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:340
+#: elementor/widgets/ovaev-events-slide.php:144
+#: elementor/widgets/ovaev-events.php:168
+#: elementor/widgets/ovaev-events-ajax.php:124
+#: elementor/widgets/ovaev-events-search-ajax.php:139
+msgid "ID"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:354
+msgid "Increasing"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:476
+msgid "Indonesian"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:228
+msgid "Infinite Loop"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-contact.php:39
+msgid "info@company.com"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:477
+msgid "Italian"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:27
+msgid "Item Archives"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:28
+msgid "Item Attributes"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:191
+msgid "Item Number"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tags.php:126
+msgid "Items"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:478
+msgid "Japanese"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-content.php:59
+msgid "Justify"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:479
+#: admin/class-ovaev-admin-settings.php:480
+msgid "Korean"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:225
+msgid "Label"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-thumbnail.php:49
+msgid "Large"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:482
+msgid "Latvian"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:79
+#: elementor/widgets/ovaev-events-ajax.php:51
+#: elementor/widgets/ovaev-events-ajax.php:59
+#: elementor/widgets/ovaev-events-search-ajax.php:49
+msgid "Layout"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:82
+#: elementor/widgets/ovaev-events-ajax.php:62
+#: elementor/widgets/ovaev-events-search-ajax.php:52
+msgid "Layout 1"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:83
+#: elementor/widgets/ovaev-events-ajax.php:63
+#: elementor/widgets/ovaev-events-search-ajax.php:53
+msgid "Layout 2"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:54
+msgid "Layout 3"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:55
+msgid "Layout 4"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:56
+msgid "Layout 5"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:57
+msgid "Layout 6"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:63
+#: elementor/widgets/ovaev-event-share.php:48
+#: elementor/widgets/ovaev-event-time.php:79
+#: elementor/widgets/ovaev-event-tabs.php:49
+#: elementor/widgets/ovaev-events-ajax.php:77
+#: elementor/widgets/ovaev-event-content.php:47
+#: elementor/widgets/ovaev-event-thumbnail.php:78
+#: elementor/widgets/ovaev-event-tags.php:48
+#: elementor/widgets/ovaev-event-title.php:82
+#: elementor/widgets/ovaev-event-location.php:56
+#: elementor/widgets/ovaev-event-date.php:81
+#: elementor/widgets/ovaev-event-categories.php:65
+msgid "Left"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:216
+msgid "Line Options"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-thumbnail.php:59
+#: elementor/widgets/ovaev-event-title.php:43
+msgid "Link"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-share.php:182
+#: elementor/widgets/ovaev-event-share.php:315
+msgid "Linkedin Options"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:101
+msgid "List"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:481
+msgid "Lithuanian"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:394
+#: elementor/widgets/ovaev-event-location.php:36
+#: elementor/widgets/ovaev-event-location.php:120
+msgid "Location"
+msgstr ""
+
+#: templates/single-event.php:93 admin/views/ovaev-metabox-event-basic.php:64
+msgid "Location:"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-date.php:48
+msgid "m/d/Y"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:483
+msgid "Macedonian"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:213
+#: elementor/widgets/ovaev-event-time.php:129
+#: elementor/widgets/ovaev-event-time.php:170
+#: elementor/widgets/ovaev-event-tabs.php:204
+#: elementor/widgets/ovaev-event-tabs.php:402
+#: elementor/widgets/ovaev-event-tabs.php:477
+#: elementor/widgets/ovaev-events.php:204
+#: elementor/widgets/ovaev-event-content.php:102
+#: elementor/widgets/ovaev-events-search-ajax.php:213
+#: elementor/widgets/ovaev-events-search-ajax.php:253
+#: elementor/widgets/ovaev-event-tags.php:112
+#: elementor/widgets/ovaev-event-tags.php:239
+#: elementor/widgets/ovaev-event-title.php:204
+#: elementor/widgets/ovaev-event-location.php:106
+#: elementor/widgets/ovaev-event-location.php:147
+#: elementor/widgets/ovaev-event-date.php:131
+#: elementor/widgets/ovaev-event-date.php:172
+#: elementor/widgets/ovaev-event-related.php:91
+#: elementor/widgets/ovaev-event-categories.php:115
+#: elementor/widgets/ovaev-event-categories.php:188
+#: elementor/widgets/ovaev-event-categories.php:229
+msgid "Margin"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:181
+msgid "Margin Right Items"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-thumbnail.php:47
+msgid "Medium"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-thumbnail.php:48
+msgid "Medium Large"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:484
+msgid "Mongolian"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:74
+msgid "New Event Category"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:33
+msgid "New Item"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:117
+msgid "New Tag"
+msgstr ""
+
+#: inc/ovaev-data-ajax.php:387 templates/archive-event.php:43
+#: templates/elements/ovaev_events_search_ajax.php:149
+msgid "Next"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:307
+#: admin/class-ovaev-admin-settings.php:531
+#: elementor/widgets/ovaev-event-button.php:52
+#: elementor/widgets/ovaev-events-slide.php:218
+#: elementor/widgets/ovaev-events-slide.php:233
+#: elementor/widgets/ovaev-events-slide.php:247
+#: elementor/widgets/ovaev-events-slide.php:284
+#: elementor/widgets/ovaev-events-slide.php:298
+#: elementor/widgets/ovaev-events-calendar.php:99
+msgid "No"
+msgstr ""
+
+#: inc/ovaev-data-ajax.php:832 inc/ovaev-data-ajax.php:1048
+#: templates/shortcode/ovaev_event_filter.php:128
+msgid "No event found"
+msgstr ""
+
+#: templates/elements/ovaev_events_calendar_content.php:24
+msgid "No events to display"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:65
+msgid "No. 1, Broadway, New York"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:105
+#: elementor/widgets/ovaev-event-share.php:82
+#: elementor/widgets/ovaev-event-tabs.php:90
+#: elementor/widgets/ovaev-event-tabs.php:227
+#: elementor/widgets/ovaev-event-tags.php:136
+#: elementor/widgets/ovaev-event-title.php:130
+#: elementor/widgets/ovaev-event-categories.php:139
+msgid "Normal"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:486
+msgid "Norwegian"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:38
+msgid "Not found"
+msgstr ""
+
+#: templates/elements/ovaev_events_ajax_content.php:98
+msgid "Not Found Event"
+msgstr ""
+
+#: inc/ovaev-data-ajax.php:329 inc/ovaev-data-ajax.php:616
+#: templates/archive-event.php:23 templates/elements/ovaev_events.php:48
+#: templates/elements/ovaev_events_search_ajax.php:97
+msgid "Not Found Events"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:39
+msgid "Not found in Trash"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:193
+msgid "Number Item"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:110
+msgid "Number Post"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:151
+msgid "One Column"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:49
+msgid "Open in new window"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:129
+#: elementor/widgets/ovaev-events-slide.php:152
+#: elementor/widgets/ovaev-events.php:179
+msgid "Order"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:121
+#: elementor/widgets/ovaev-events-slide.php:137
+#: elementor/widgets/ovaev-events.php:164
+#: elementor/widgets/ovaev-events-search-ajax.php:132
+msgid "Order By"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:133
+#: elementor/widgets/ovaev-events-search-ajax.php:147
+msgid "Order Post"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:119
+msgid "OrderBy Post"
+msgstr ""
+
+#: templates/single-event.php:99 elementor/widgets/ovaev-event-tabs.php:572
+#: templates/shortcode/ovaev_event_tabs.php:47
+msgid "Organizer Name:"
+msgstr ""
+
+#. Author of the plugin
+#: elementor/class-ova-register-elementor.php:73
+msgid "Ovatheme"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-contact.php:26
+msgid "Ovatheme Company"
+msgstr ""
+
+#. Name of the plugin
+#. Description of the plugin
+msgid "Ovatheme Events"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:201
+#: elementor/widgets/ovaev-event-tabs.php:192
+#: elementor/widgets/ovaev-event-tabs.php:465
+#: elementor/widgets/ovaev-events.php:218
+#: elementor/widgets/ovaev-events-ajax.php:346
+#: elementor/widgets/ovaev-events-search-ajax.php:201
+#: elementor/widgets/ovaev-event-tags.php:100
+#: elementor/widgets/ovaev-event-tags.php:227
+#: elementor/widgets/ovaev-event-title.php:192
+msgid "Padding"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:69
+msgid "Parent Event Category"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:70
+msgid "Parent Event Category:"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:29
+msgid "Parent Item:"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:112
+msgid "Parent Tag"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:113
+msgid "Parent Tag:"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:109
+#: elementor/widgets/ovaev-events.php:88
+#: elementor/widgets/ovaev-events-search-ajax.php:114
+msgid "Past"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:84
+#: elementor/widgets/ovaev-events-calendar.php:84
+#: templates/elements/ovaev_events_calendar_content.php:43
+msgid "Past Event"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:213
+msgid "Pause on Hover"
+msgstr ""
+
+#: templates/single-event.php:105 elementor/widgets/ovaev-event-tabs.php:578
+#: templates/shortcode/ovaev_event_tabs.php:53
+msgid "Phone:"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-share.php:151
+#: elementor/widgets/ovaev-event-share.php:284
+msgid "Pinterest Options"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:487
+msgid "Polish"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:488
+msgid "Portuguese"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:489
+msgid "Português"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:93
+#: elementor/widgets/ovaev-events.php:72
+msgid "Post Total"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:42
+msgid "Post Type Description"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:23
+msgctxt "Post Type General Name"
+msgid "Events"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:24
+msgctxt "Post Type Singular Name"
+msgid "Event"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:123
+msgid "Posts Per Page"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:113
+msgid "Posts per page"
+msgstr ""
+
+#: inc/ovaev-data-ajax.php:371 templates/archive-event.php:42
+#: templates/elements/ovaev_events_search_ajax.php:133
+msgid "Previous"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-related.php:37
+msgid "Related"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_related.php:14
+msgid "Related Events"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-gallery.php:27
+msgid "Remove image"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-button.php:71
+#: elementor/widgets/ovaev-event-share.php:56
+#: elementor/widgets/ovaev-event-time.php:87
+#: elementor/widgets/ovaev-event-tabs.php:57
+#: elementor/widgets/ovaev-events-ajax.php:85
+#: elementor/widgets/ovaev-event-content.php:55
+#: elementor/widgets/ovaev-event-thumbnail.php:86
+#: elementor/widgets/ovaev-event-tags.php:56
+#: elementor/widgets/ovaev-event-title.php:90
+#: elementor/widgets/ovaev-event-location.php:64
+#: elementor/widgets/ovaev-event-date.php:89
+#: elementor/widgets/ovaev-event-categories.php:73
+msgid "Right"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:490
+msgid "Romanian"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:491
+msgid "Russian"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_filter.php:75
+msgid "Search"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-search-ajax.php:20
+msgid "Search Ajax"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_filter.php:46
+msgid "Search by keyword(optional)"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:67
+msgid "Search Event Categorys"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:37
+msgid "Search Item"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:110
+msgid "Search Tags"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:275
+msgid "See All Events"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-time.php:57
+#: elementor/widgets/ovaev-event-date.php:59
+#: elementor/widgets/ovaev-event-categories.php:43
+#: elementor/widgets/ovaev-event-categories.php:202
+msgid "Separator"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:496
+msgid "Serbian"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:497
+msgid "Serbian (Srpski)"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:205
+msgid "Set how many slides are scrolled per swipe."
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:101
+msgid "Setting Post"
+msgstr ""
+
+#: admin/class-ovaev-admin-menu.php:49 admin/class-ovaev-admin-menu.php:50
+#: elementor/widgets/ovaev-events-ajax.php:44
+#: elementor/widgets/ovaev-events-search-ajax.php:42
+msgid "Settings"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-share.php:37
+msgid "Share"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:158
+#: elementor/widgets/ovaev-events-ajax.php:170
+#: elementor/widgets/ovaev-events-ajax.php:182
+msgid "Show"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:168
+msgid "Show All"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:282
+msgid "Show All Events Button"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:279
+msgid "Show Dots"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:105
+msgid "Show event in past"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:156
+msgid "Show Filter"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-calendar.php:94
+msgid "Show Filter Event"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:293
+msgid "Show Nav"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:180
+msgid "Show Only Featured"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:170
+msgid "Show title"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:22
+msgid "Simple Calendar"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:460
+msgid "Simplified Chinese"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:503
+msgid "Simplified Chinese "
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:163
+msgid "Single Event Setting"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-thumbnail.php:43
+msgid "Size"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:203
+msgid "Slides to Scroll"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:493
+msgid "Slovenčina"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:494
+msgid "Slovenščina"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:270
+msgid "Smart Speed"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:499
+#: elementor/widgets/ovaev-event-related.php:45
+msgid "Space Between"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:467
+msgid "Spanish"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:86
+#: elementor/widgets/ovaev-events-calendar.php:86
+#: templates/elements/ovaev_events_calendar_content.php:45
+msgid "Special Event"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:70
+msgid "Special Event:"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:339
+#: elementor/widgets/ovaev-events-slide.php:143
+#: elementor/widgets/ovaev-events.php:171
+#: elementor/widgets/ovaev-events-search-ajax.php:138
+msgid "Start Date"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_filter.php:29
+msgid "Start date"
+msgstr ""
+
+#: templates/single-event.php:87 admin/views/ovaev-metabox-event-basic.php:39
+msgid "Start date:"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:45
+msgid "Start Time:"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:105
+msgid "Style"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:498
+msgid "Svenska"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:492
+msgid "Swedish"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:96
+msgid "S|M|T|W|T|F|S"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:37
+msgid "Tabs"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:118 admin/class-ovaev-admin-menu.php:41
+#: admin/class-ovaev-admin-menu.php:42
+#: admin/widget/class-ovaev-tag-widget.php:17
+#: elementor/widgets/ovaev-event-tags.php:37
+#: elementor/widgets/ovaev-event-tags.php:72
+msgid "Tags"
+msgstr ""
+
+#: inc/ovaev-core-functions.php:106
+msgid "Tags: "
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:65
+msgctxt "taxonomy general name"
+msgid "Event Categories"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:108
+msgctxt "taxonomy general name"
+msgid "Tags"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:66
+msgctxt "taxonomy singular name"
+msgid "Event Category"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:109
+msgctxt "taxonomy singular name"
+msgid "Tag"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:111
+msgid "Template"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:115
+msgid "Template 1"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:116
+msgid "Template 2"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:117
+msgid "Template 3"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:118
+msgid "Template 4"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:119
+msgid "Template 5"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:120
+msgid "Template 6"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:89
+#: admin/class-ovaev-admin-settings.php:194
+#: elementor/widgets/ovaev-events.php:103
+msgid "Templates"
+msgstr ""
+
+#: admin/views/ovaev-metabox-event-basic.php:86
+msgid "Templates:"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:499
+msgid "Thai"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:124
+#: elementor/widgets/ovaev-events.php:136
+#: elementor/widgets/ovaev-events.php:153
+msgid "Three Columns"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:137
+#: elementor/widgets/ovaev-event-thumbnail.php:36
+#: elementor/widgets/ovaev-event-thumbnail.php:46
+#: elementor/widgets/ovaev-event-thumbnail.php:101
+msgid "Thumbnail"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-time.php:36
+#: elementor/widgets/ovaev-event-time.php:143
+msgid "Time"
+msgstr ""
+
+#. ID
+#: admin/class-ovaev-admin-settings.php:61
+#: elementor/widgets/ovaev-event-time.php:43
+msgid "Time Format"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:337
+#: elementor/widgets/ovaev-events-slide.php:141
+#: elementor/widgets/ovaev-events.php:169
+#: elementor/widgets/ovaev-events-ajax.php:125
+#: elementor/widgets/ovaev-events-ajax.php:387
+#: elementor/widgets/ovaev-events-search-ajax.php:136
+#: elementor/widgets/ovaev-event-title.php:36
+#: elementor/widgets/ovaev-event-title.php:106
+#: elementor/widgets/ovaev-event-related.php:64
+msgid "Title"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-tabs.php:79
+#: elementor/widgets/ovaev-event-tabs.php:424
+msgid "Title Options"
+msgstr ""
+
+#: admin/widget/class-ovaev-event-feature-widget.php:105
+msgid "Title:"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_filter.php:53
+#: templates/shortcode/ovaev_event_filter.php:55
+msgid "Today"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:124
+msgid "Today Color"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:504
+msgid "Traditional Chinese"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:500
+msgid "Turkish"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-share.php:120
+#: elementor/widgets/ovaev-event-share.php:253
+msgid "Twitter Options"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:123
+#: elementor/widgets/ovaev-events.php:135
+#: elementor/widgets/ovaev-events.php:152
+msgid "Two Columns"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-ajax.php:305
+msgid "Typography"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:501
+msgid "Ukrainian"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-slide.php:108
+#: elementor/widgets/ovaev-events.php:87
+#: elementor/widgets/ovaev-events-search-ajax.php:113
+msgid "Upcoming"
+msgstr ""
+
+#: elementor/widgets/ovaev-events-simple-calendar.php:85
+#: elementor/widgets/ovaev-events-calendar.php:85
+#: templates/elements/ovaev_events_calendar_content.php:44
+msgid "Upcoming Event"
+msgstr ""
+
+#: admin/widget/class-ovaev-list-event-widget.php:17
+msgid "Upcoming Events"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:72
+msgid "Update Event Category"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:115
+msgid "Update Tag"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:55
+msgctxt "URL slug"
+msgid "event"
+msgstr ""
+
+#: elementor/widgets/ovaev-events.php:97
+msgid "Version"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:502
+msgid "Vietnamese"
+msgstr ""
+
+#: templates/widgets/list_event.php:72
+msgid "View All Events"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:35
+msgid "View Item"
+msgstr ""
+
+#: inc/class-ovaev-custom-post-type.php:36
+msgid "View Items"
+msgstr ""
+
+#: templates/single-event.php:117 elementor/widgets/ovaev-event-tabs.php:597
+#: templates/shortcode/ovaev_event_tabs.php:72
+msgid "Website:"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_filter.php:60
+#: templates/shortcode/ovaev_event_filter.php:62
+msgid "Week"
+msgstr ""
+
+#: templates/shortcode/ovaev_event_filter.php:67
+#: templates/shortcode/ovaev_event_filter.php:69
+msgid "Weekend"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-thumbnail.php:109
+#: elementor/widgets/ovaev-event-thumbnail.php:140
+msgid "Width"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-date.php:50
+msgid "Y-m-d"
+msgstr ""
+
+#: elementor/widgets/ovaev-event-date.php:49
+msgid "Y/m/d"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:306
+#: admin/class-ovaev-admin-settings.php:530
+#: elementor/widgets/ovaev-event-button.php:51
+#: elementor/widgets/ovaev-events-slide.php:217
+#: elementor/widgets/ovaev-events-slide.php:232
+#: elementor/widgets/ovaev-events-slide.php:246
+#: elementor/widgets/ovaev-events-slide.php:283
+#: elementor/widgets/ovaev-events-slide.php:297
+#: elementor/widgets/ovaev-events-calendar.php:98
+msgid "Yes"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:461
+msgid "Čeština"
+msgstr ""
+
+#: admin/class-ovaev-admin-settings.php:464
+msgid "Ελληνικά"
+msgstr ""

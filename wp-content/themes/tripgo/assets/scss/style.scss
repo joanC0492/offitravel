@@ -1,0 +1,153 @@
+/*
+Theme Name: Tripgo
+Theme URI: https://themeforest.net/user/ovatheme/portfolio
+Version: 1.6.0
+Description: Tripgo is a modernized take on an ever-popular WordPress. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Tripgo will make your WordPress look beautiful everywhere. Created by <a href="https://themeforest.net/user/ovatheme">Ovatheme</a>
+Author: Ovatheme
+Author URI: <a href="https://themeforest.net/user/ovatheme/portfolio">Ovatheme</a>
+License: GNU General Public License
+License URI: license.txt
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: tripgo
+Domain Path: /languages/
+*/
+
+@import 'utils/variables';
+@import 'utils/mixins';
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+1.0 Normalize
+	1.1 Typography
+
+2.0 Layout
+	2.1 Header
+		2.1.1 Brand
+		2.1.2 Menu
+	2.2 Footer
+	
+3.0 Blog
+
+3.1 Page
+
+4.0 Widgets
+
+5.0 Table
+
+6.0 Form
+
+7.0 Galleries
+
+8.0 Image
+
+9.0 Embed
+
+10.0 Comment
+
+11.0 Pagination
+
+12.0 Breadcrumbs
+
+13.0 Toup
+
+14.0 Caption
+
+15.0 Block
+
+16.0 Sticky
+
+17.0 404
+
+18.0 WooCommerce
+	
+--------------------------------------------------------------*/
+
+/* 1.0 Normalize Get from https://github.com/necolas/normalize.css*/
+@import 'vendor/normalize';
+	/*1.1 Font*/
+	@import 'base/font';
+	
+	/*1.2 Typography*/
+	@import 'base/typography';
+
+/*2.0 Layout*/
+@import 'base/layout';
+
+	/*2.1 Header*/
+	@import 'base/header';
+
+		/*2.1.1 Brand*/
+		@import 'base/brand';
+
+		/*2.1.2 Menu*/
+		@import 'base/menu';
+
+	/*2.2 Footer	*/
+	@import 'base/footer';
+
+/*3.0 Blog*/
+@import 'base/blog';
+
+/* 3.1 */
+@import 'base/page';
+
+/*4.0 Widgets*/
+@import 'base/widgets';
+
+/*5.0 Table*/
+@import 'base/table';
+
+/*6.0 Form*/
+@import 'base/form';
+
+/*7.0 Galleries*/
+@import 'base/galleries';
+
+/*8.0 Image*/
+@import 'base/img';
+
+/*9.0 Embed*/
+@import 'base/embed';
+
+/*10.0 Comment*/
+@import 'base/comments';
+
+/*11.0 Pagination*/
+@import 'base/pagination';
+
+/*12.0 Breadcrumbs*/
+@import 'base/breadcrumbs';
+
+/*13.0 Toup*/
+@import 'base/toup';
+
+/*14.0 Caption*/
+@import 'base/caption';
+
+/*15.0 Block*/
+@import 'base/block';
+
+/*16.0 Sticky*/
+@import 'base/sticky';
+
+/*17.0 404*/
+@import 'base/404';
+
+/*18.0 WooCommerce*/
+@import 'woocommerce';
+
+/* 19.0 Recent Post Thumbnails Plugin */
+@import 'base/recent_post_thumbs_plugin';
+
+// Elementor
+@import 'base/contact-page';
+@import 'base/custom-animations';
+@import 'base/faq';
+@import 'base/mc4wp';
+@import 'base/rtl';
+@import 'base/tabs';
+@import 'base/toggle';
+
+

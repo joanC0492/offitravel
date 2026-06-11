@@ -1,0 +1,212 @@
+// Transaction
+@mixin transaction( $propertty, $duration, $timing ) {
+    transition: $propertty $duration $timing;
+    -moz-transition: $propertty $duration $timing;
+    -webkit-transition: $propertty $duration $timing;
+    -o-transition: $propertty $duration $timing;
+}
+.ova-special-offer {
+    position: relative; 
+    overflow: hidden;
+
+    &:hover {
+        .special-offer-img {
+            transform: scale(1.04);
+        }
+        .special-offer-content {
+            @include transaction(all, .5s, ease);
+
+            .btn-special-offer {
+                @include transaction(all, .5s, ease);
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+    }
+    .mask {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(270deg, rgba(19, 23, 43, 0) 0.44%, rgba(19, 23, 43, 0.24) 38.35%, rgba(19, 23, 43, 0.8) 100%);
+        z-index: 1;
+    }
+    .special-offer-img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: transform 1s ease-out;
+        transform-origin: bottom right;
+    }
+    .special-offer-content {
+        @include transaction(all, .5s, ease);
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 60px;
+        left: 40px;
+
+        .sub-title-wrapper{
+            .sub-title {
+                margin: 0;
+                color: #fff;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+                text-transform: uppercase;
+            }
+            .discount {
+                font-weight: 600;
+                font-size: 24px;
+                color: #fff;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+        .title {
+            margin: 0;
+            padding-bottom: 14px;
+            color: #fff;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-transform: capitalize;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        }
+        .btn-special-offer {
+            @include transaction(all, .5s, ease);
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0);
+            margin-top: 24px;
+            padding: 12px 25px; 
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+            font-size: var(--font-size);
+            font-weight: 600;
+            font-family: var(--secondary-font);
+            color: var(--primary);
+            background-color: #fff;
+            border: none;
+
+            i {
+                @include transaction(all, .3s, ease);
+                margin-left: 8px;
+            }
+            &:hover {
+                @include transaction(all, .3s, ease);
+                background-color: var(--primary-hover);
+                color: #FFFFFF;
+            }
+        }
+    }
+    &.ova-special-offer-version_1 {
+        &:hover {
+            .special-offer-content {
+                top: 48px;
+            }
+        }
+        .special-offer-content {
+           .title {
+                font-size: 48px;
+           }
+        }
+    }
+    &.ova-special-offer-version_2 {
+        &:hover {
+            .special-offer-content {
+                top: 48px;
+            }
+        }
+        .mask {
+            width: 100%;
+        }
+        .special-offer-content {
+            text-align: center;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%); 
+        }
+    }
+    &.ova-special-offer-version_3 {
+        &:hover {
+             .special-offer-content {
+                bottom: 55px;
+             }
+        }
+        .mask {
+            width: 100%;
+        }
+        .special-offer-content {
+            text-align: center;
+            top: unset;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%); 
+        }
+    }
+    &.ova-special-offer-version_4 {
+        .mask {
+            width: 100%;
+            background: #008dd0c7;
+        }
+        .special-offer-content {
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+        }
+    }
+    &.ova-special-offer-version_5 {
+        &:hover {
+            .special-offer-content {
+                .btn-special-offer {
+                    background-color: var(--primary);
+                    color: #fff;
+                    i {
+                        @include transaction(all, .3s, ease);
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .mask {
+            width: 100%;
+            background: transparent;
+        }
+        .special-offer-content {
+            position: relative; 
+            top: unset;
+            left: unset;
+            text-align: center;
+            padding: 40px 50px;
+            background-color: #fff;
+            @media (max-width: 767px) {
+                padding: 30px 20px;
+            }
+            .sub-title-wrapper {
+                .sub-title {
+                    color: var(--text);
+                }
+                .discount {
+                    color: var(--secondary);
+                }
+            }
+            .title {
+                color: var(--heading);
+            }
+            .btn-special-offer {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+                i {
+                    font-size: 0;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

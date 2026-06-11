@@ -1,0 +1,30 @@
+.container-event {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0px 10px;
+    flex-wrap: wrap;
+
+    .archive-event-page {
+    	margin: 100px 0;
+
+    	@media (max-width: 767px) {
+    		margin: 70px 0;
+    	}
+    }
+    #main-event {
+		width: 100%;
+	}
+	.ovaev-content {
+		position: relative;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}
+.icon_event {
+	font-size: 18px;
+	margin-right: 6px;
+	width: 18px;
+	color: #444444;
+}

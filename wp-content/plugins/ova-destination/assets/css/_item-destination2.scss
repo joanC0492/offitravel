@@ -1,0 +1,58 @@
+.content {
+	.item-destination {
+		&.item-destination-template2 {
+			width: 25%;
+			padding: 12px;
+
+		    @media (max-width: 1200px) {
+				width: 50%;
+			}
+			@media (max-width: 767px) {
+				width: 100%;
+			}
+			&.item-destination-3, &.item-destination-4 {
+				width: 50%;
+
+				@media (max-width: 767px) {
+					width: 100%;
+				}
+			}
+			.img {
+				border-radius: 0;
+
+				.mask {
+	                border-radius: 0;
+	                background: linear-gradient(180deg, rgba(17, 27, 25, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
+		        }
+			}
+			.info {
+			    width: 100%;
+
+			    .name {
+					font-size: 20px;
+				}
+				.count-tour {
+					position: absolute;
+					right: 40px;
+					bottom: 40px;
+					font-size: 14px;
+					border-radius: 0;
+
+					@media (max-width: 1200px) {
+						right: 30px;
+						bottom: 30px;
+					}
+				}
+				.rating {
+					font-size: 14px;
+					color: #fff;
+					line-height: 1;
+
+					i {
+						color: #FFC83E
+					}
+				}
+			}
+		}
+	}
+}

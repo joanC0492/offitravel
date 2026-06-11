@@ -1,0 +1,61 @@
+# Translation of Plugins - Meta pixel for WordPress - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Meta pixel for WordPress - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-05-26 19:19:48+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Meta pixel for WordPress - Stable (latest release)\n"
+
+#. translators: %s: WordPress.org plugin page URL
+#: core/class-facebookwordpresssettingspage.php:977
+msgid "Meta Pixel for WordPress is expected to be removed from the WordPress.com marketplace soon. When this happens, it will no longer receive automatic updates on WordPress.com-hosted websites. <a href=\"%s\">Download the latest version from WordPress.org</a> and install it manually via <strong>Plugins</strong> &rsaquo; <strong>Add New Plugin</strong> &rsaquo; <strong>Upload Plugin</strong> to ensure you receive future updates."
+msgstr "Se espera que Meta Pixel para WordPress sea retirado pronto del mercado de WordPress.com. Cuando esto ocurra, dejará de recibir actualizaciones automáticas en los sitios web alojados en WordPress.com. <a href=\"%s\">Descarga la última versión desde WordPress.org</a> e instálala manualmente a través de <strong>Plugins</strong> &rsaquo; <strong>Añadir nuevo plugin</strong> &rsaquo; <strong>Subir plugin</strong> para asegurarte de recibir futuras actualizaciones."
+
+#. translators: %1$s: Plugin name, %2$s: Review page URL
+#: core/class-facebookwordpresssettingspage.php:1044
+msgid ""
+"Let us know what you think about <strong>%1$s</strong>.\n"
+"                Leave a review on <a href=\"%2$s\" target=\"_blank\">\n"
+"                this page</a>."
+msgstr ""
+"Permítenos saber qué piensas de <strong>%1$s</strong>.\n"
+"                Deja una reseña en <a href=\"%2$s\" target=\"_blank\">\n"
+"                esta página</a>."
+
+#: core/class-facebookwordpresssettingspage.php:150
+msgid "You do not have permissions to access this page"
+msgstr "No tienes permisos para acceder a esta página"
+
+#. Plugin Name of the plugin
+#: facebook-for-wordpress.php
+msgid "Meta pixel for WordPress"
+msgstr "Meta pixel for WordPress"
+
+#. Description of the plugin
+#: facebook-for-wordpress.php
+msgid "<strong><em>***ATTENTION: After upgrade the plugin may be deactivated due to a known issue, to workaround please refresh this page and activate plugin.***</em></strong> The Facebook pixel is an analytics tool that helps you measure the effectiveness of your advertising. You can use the Facebook pixel to understand the actions people are taking on your website and reach audiences you care about."
+msgstr "<strong><em>***ATENCIÓN: Después de actualizar el plugin, es posible que se desactive debido a un problema conocido. Para solucionarlo, por favor, recarga esta página y activa el plugin.***</em></strong> El píxel de Facebook es una herramienta de análisis que te ayuda a medir la efectividad de tu publicidad. Puedes usar el píxel de Facebook para entender las acciones que realiza la gente en tu web y llegar a las audiencias que te importan."
+
+#. Author URI of the plugin
+#: facebook-for-wordpress.php
+msgid "https://www.facebook.com/"
+msgstr "https://www.facebook.com/"
+
+#. Author of the plugin
+#: facebook-for-wordpress.php
+msgid "Facebook"
+msgstr "Facebook"
+
+#. Plugin URI of the plugin
+#: facebook-for-wordpress.php
+msgid "https://www.facebook.com/business/help/881403525362441"
+msgstr "https://www.facebook.com/business/help/881403525362441"
+
+#: core/class-facebookwordpresssettingspage.php:1025
+msgid "Dismiss this notice."
+msgstr "Descartar este aviso."

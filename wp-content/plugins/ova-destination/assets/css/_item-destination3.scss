@@ -1,0 +1,129 @@
+.content {
+	&.content-template3 {
+		.grid-sizer {
+			width: 33.33%;
+			@media (max-width: 1200px) {
+				width: 50%;
+			}
+		}
+	}
+	.item-destination {
+		.item-wrapper {
+			box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+			background: #fff;
+			padding: 10px;
+		}
+		&.item-destination-template3 {
+			width: 33.33%;
+
+		    @media (max-width: 1200px) {
+				width: 50%;
+			}
+			@media (max-width: 767px) {
+				width: 100%;
+			}
+			&:hover {
+				.img {
+					.mask {
+				        opacity: 1;
+					}
+				}
+				.count-tour {
+					transition: all .3s ease;
+					top: 50%;
+					opacity: 1;
+				}
+			}
+			.img {
+				border-radius: 0;
+
+				.destination-img {
+					min-height: 100%;
+				}
+				.mask {
+	                border-radius: 0;
+	                opacity: 0;
+	                background: rgba(26, 26, 61, 0.8);
+		        }
+			}
+            .count-tour {
+            	transition: all .3s ease;
+            	position: absolute;;
+            	top: 45%;
+            	left: 50%;
+            	opacity: 0;
+            	transform: translate(-50%,-50%); 
+            	font-size: 18px;
+            	line-height: 1; 
+            	font-weight: 600;
+            	color: #fff;
+            }
+			.info {
+			    position: static;
+			    padding: 20px 10px 10px 10px;
+			    display: flex;
+			    align-items: center;
+			    justify-content: space-between;
+			    column-gap: 10px;
+
+			    .name {
+			    	padding-bottom: 0;
+					font-size: 18px;
+					font-weight: 600;
+					color: var(--heading);
+
+					&:hover {
+						color: var(--primary);
+					}
+				}
+				.rating {
+					font-size: 14px;
+					color: var(--text);
+					line-height: 1;
+
+					i {
+						color: #FFC83E
+					}
+				}
+			}
+			&.template3-circle {
+				.item-wrapper {
+					box-shadow: none;
+					background-color: transparent;
+					padding: 0;
+					text-align: center;
+				}
+				.img {
+					display: inline-block;
+					vertical-align: middle;
+					overflow: visible;
+					width: 172px;
+					height: 172px;
+
+					.destination-img {
+						transform: none; 
+						border-radius: 50%;
+					}
+					.mask {
+						background: none;
+					}
+				}
+				.count-tour {
+					opacity: 1;
+					top: 6px;
+					font-size: 15px;
+					padding: 6px 12px;
+					background-color: var(--primary);
+					border-radius: 5px;
+				}
+				.info {
+					justify-content: center;
+
+					.rating {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

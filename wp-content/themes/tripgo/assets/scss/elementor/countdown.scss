@@ -1,0 +1,42 @@
+.ova-countdown {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+
+	.item {
+		display: inline-flex;
+		align-items: flex-end;
+
+		@media screen and (max-width: 767px) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			row-gap: 15px;
+		}
+		@media screen and (max-width: 600px) {
+			row-gap: 0px;
+		}
+		.number {
+			line-height: 60px;
+			font-weight: 600;
+			font-size: 85px;
+			
+			@media screen and (max-width: 600px) {
+				font-size: 48px;
+			}
+		}
+		.text {
+			margin-left: 15px;
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 17px;
+
+			@media screen and (max-width: 767px) {
+				margin-left: 0;
+			}
+			@media screen and (max-width: 600px) {
+				font-size: 18px;
+			}
+		}
+	}
+}

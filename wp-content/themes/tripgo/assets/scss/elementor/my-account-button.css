@@ -1,0 +1,40 @@
+.ova-my-account-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.ova-my-account-button img {
+  border-radius: 50% !important;
+}
+.ova-my-account-button a {
+  transition: all 0.3s ease;
+  color: var(--heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.ova-my-account-button a:hover {
+  transition: all 0.3s ease;
+  color: var(--primary);
+}
+.ova-my-account-button a.ma-button {
+  border-radius: 5px;
+  padding: 12px 30px;
+  border: 1px solid transparent;
+}
+@media (max-width: 1300px) {
+  .ova-my-account-button a.ma-button {
+    font-size: 15px;
+    padding: 10px 25px;
+  }
+}
+.ova-my-account-button a.ma-button:hover {
+  border: 1px solid var(--primary);
+}
+.ova-my-account-button a.ma-button.singup-button {
+  color: #fff;
+  background-color: var(--primary);
+}
+.ova-my-account-button a.ma-button.singup-button:hover {
+  color: var(--primary);
+  background-color: transparent;
+}

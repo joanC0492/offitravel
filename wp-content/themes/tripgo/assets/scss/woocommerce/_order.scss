@@ -1,0 +1,32 @@
+.woocommerce{
+	.woocommerce-order{
+		h2{
+			font-size: 1.3em;
+			text-transform: uppercase;
+			margin-bottom: 15px;
+		}
+
+		.order_details {
+			
+			li{
+				margin-bottom: 10px;
+				@media(max-width: 767px){
+				    display: block;
+				    width: 100%;
+				    margin: 0 0 15px 0px;
+				    padding: 0;
+				    border-right: none;
+				}
+			}
+
+			.order_item {
+				.product-name {
+					a {
+						border: none;
+						color: var(--primary);
+					}
+				}
+			}
+		}
+	}	
+}

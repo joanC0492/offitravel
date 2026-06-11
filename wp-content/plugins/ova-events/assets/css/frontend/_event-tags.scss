@@ -1,0 +1,36 @@
+.ovaev-event-tags {
+	.ovatags {
+		display: inline-block;
+	    text-transform: capitalize;
+	    font-size: 100%;
+	    line-height: 22px;
+	    letter-spacing: 0.3px;
+	    color: var(--heading);
+	    font-weight: bold;
+	    margin-right: 10px;
+	    margin-bottom: 10px;
+	}
+	.ovaev-tag {
+		font-size: 15px;
+	    line-height: 22px;
+	    letter-spacing: 0.3px;
+	    color: #444444;
+	    padding: 2px 10px 1px 10px;
+	    background: transparent;
+	    border-radius: 3px;
+	    border: 1px solid #e0e0e0;
+	    margin-bottom: 10px;
+	    text-decoration: none;
+	    -webkit-transition: all .3s ease;
+	    -moz-transition: all .3s ease;
+	    -o-transition: all .3s ease;
+	    transition: all .3s ease;
+
+	    &:not(:last-child) {
+	    	margin-right: 10px;
+	    }
+	    &:hover {
+	    	color: #dd3333;
+	    }
+	}
+}

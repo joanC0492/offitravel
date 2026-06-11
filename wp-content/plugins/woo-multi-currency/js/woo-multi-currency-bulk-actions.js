@@ -1,0 +1,234 @@
+'use strict';
+
+jQuery(document).ready(function () {
+    var currencies = wmc_params.currencies;
+    var wmcBulkVariationActionRunning = false;
+    var wmcSuppressUnloadWarningUntil = 0;
+    var wmcSuppressSaveConfirmUntil = 0;
+    var wmcBlockWooSaveVariationsUntil = 0;
+
+    function resetVariationDirtyState() {
+        if (typeof woocommerce_admin_meta_boxes_variations === 'undefined') {
+            return;
+        }
+
+        if (Object.prototype.hasOwnProperty.call(woocommerce_admin_meta_boxes_variations, 'variations_changed')) {
+            woocommerce_admin_meta_boxes_variations.variations_changed = false;
+        }
+
+        if (Object.prototype.hasOwnProperty.call(woocommerce_admin_meta_boxes_variations, 'needs_update')) {
+            woocommerce_admin_meta_boxes_variations.needs_update = false;
+        }
+    }
+
+    function isWmcBulkAction(actionName) {
+        return typeof actionName === 'string' && (actionName.indexOf('wbs_regular_price-') === 0 || actionName.indexOf('wbs_sale_price-') === 0);
+    }
+
+    function disableWooVariationSaveRequirement() {
+        if (typeof woocommerce_admin_meta_boxes_variations !== 'undefined') {
+            if (Object.prototype.hasOwnProperty.call(woocommerce_admin_meta_boxes_variations, 'needs_update')) {
+                woocommerce_admin_meta_boxes_variations.needs_update = false;
+            }
+            if (Object.prototype.hasOwnProperty.call(woocommerce_admin_meta_boxes_variations, 'variations_changed')) {
+                woocommerce_admin_meta_boxes_variations.variations_changed = false;
+            }
+        }
+    }
+
+    function isVariationBulkEditRequest(ajaxData) {
+        if (!ajaxData) {
+            return false;
+        }
+
+        if (typeof ajaxData === 'string') {
+            return ajaxData.indexOf('action=woocommerce_bulk_edit_variations') !== -1;
+        }
+
+        return ajaxData.action === 'woocommerce_bulk_edit_variations';
+    }
+
+    function getAjaxActionFromSettings(settings) {
+        if (!settings) {
+            return '';
+        }
+
+        var action = '';
+        var data = settings.data;
+        var url = settings.url || '';
+
+        if (typeof data === 'string' && data) {
+            var params = new URLSearchParams(data);
+            action = params.get('action') || '';
+        } else if (data && typeof data === 'object' && data.action) {
+            action = data.action;
+        }
+
+        if (!action && url.indexOf('?') !== -1) {
+            var query = url.slice(url.indexOf('?') + 1);
+            var queryParams = new URLSearchParams(query);
+            action = queryParams.get('action') || '';
+        }
+
+        return action;
+    }
+
+    function shouldBlockWooSaveVariations(settings) {
+        if (Date.now() > wmcBlockWooSaveVariationsUntil) {
+            return false;
+        }
+
+        return getAjaxActionFromSettings(settings) === 'woocommerce_save_variations';
+    }
+
+    function suppressUnloadWarningForBulkAction() {
+        wmcSuppressUnloadWarningUntil = Date.now() + 3000;
+        wmcSuppressSaveConfirmUntil = Date.now() + 3000;
+
+        // WooCommerce can attach unload warnings using both native and jQuery handlers.
+        // Remove them after this custom bulk action so the extra warning does not appear.
+        window.onbeforeunload = null;
+        jQuery(window).off('beforeunload');
+        jQuery(window).off('beforeunload.edit-variations');
+        jQuery(window).off('beforeunload.edit_variations');
+        jQuery(window).off('beforeunload.wc-variations');
+        jQuery(window).off('beforeunload.wc_variations');
+    }
+
+    function startBulkActionSuppression() {
+        wmcSuppressSaveConfirmUntil = Date.now() + 15000;
+        wmcBlockWooSaveVariationsUntil = Date.now() + 15000;
+    }
+
+    function shouldSuppressWooSaveConfirm(message) {
+        if (Date.now() > wmcSuppressSaveConfirmUntil && !wmcBulkVariationActionRunning) {
+            return false;
+        }
+
+        if (typeof message !== 'string' || !message) {
+            return false;
+        }
+
+        var variationSaveAlert = '';
+        var productSaveAlert = '';
+
+        if (typeof woocommerce_admin_meta_boxes_variations !== 'undefined' && woocommerce_admin_meta_boxes_variations.i18n_save_alert) {
+            variationSaveAlert = woocommerce_admin_meta_boxes_variations.i18n_save_alert;
+        }
+
+        if (typeof woocommerce_admin_meta_boxes !== 'undefined' && woocommerce_admin_meta_boxes.i18n_save_alert) {
+            productSaveAlert = woocommerce_admin_meta_boxes.i18n_save_alert;
+        }
+
+        var isWooSaveAlert = message === variationSaveAlert || message === productSaveAlert;
+        return isWooSaveAlert;
+    }
+
+    window.addEventListener('beforeunload', function (event) {
+        if (Date.now() > wmcSuppressUnloadWarningUntil) {
+            return;
+        }
+
+        wmcSuppressUnloadWarningUntil = 0;
+        event.stopImmediatePropagation();
+        event.preventDefault();
+        event.returnValue = undefined;
+    }, true);
+
+    var originalWindowConfirm = window.confirm;
+    window.confirm = function (message) {
+        if (wmcBulkVariationActionRunning) {
+            return true;
+        }
+
+        if (shouldSuppressWooSaveConfirm(message)) {
+            wmcSuppressSaveConfirmUntil = 0;
+            return true;
+        }
+
+        return originalWindowConfirm.call(window, message);
+    };
+
+    jQuery(document).ajaxSend(function (event, jqXHR, settings) {
+        if (shouldBlockWooSaveVariations(settings)) {
+            jqXHR.abort('wmc_blocked_custom_bulk_action');
+            return;
+        }
+    });
+
+    // Run in capture phase so this executes before WooCommerce's jQuery change handlers.
+    document.addEventListener('change', function (event) {
+        var target = event.target;
+        if (!target || !target.matches || !target.matches('select.variation_actions')) {
+            return;
+        }
+
+        if (isWmcBulkAction(target.value)) {
+            disableWooVariationSaveRequirement();
+        }
+    }, true);
+
+    jQuery(document).ajaxComplete(function (event, xhr, settings) {
+        if (!wmcBulkVariationActionRunning) {
+            return;
+        }
+
+        if (!settings || !settings.url || settings.url.indexOf('admin-ajax.php') === -1) {
+            return;
+        }
+
+        if (!isVariationBulkEditRequest(settings.data)) {
+            return;
+        }
+
+        suppressUnloadWarningForBulkAction();
+        resetVariationDirtyState();
+        wmcBulkVariationActionRunning = false;
+        wmcBlockWooSaveVariationsUntil = 0;
+    });
+
+    if (currencies.length > 0) {
+        jQuery.each(currencies, function (index, currency) {
+            var do_variation_action = 'wbs_regular_price-' + currency;
+            jQuery(document).on(do_variation_action, 'select.variation_actions', function () {
+                var regularPriceValue;
+                var variationActionsSelect = jQuery(this);
+                disableWooVariationSaveRequirement();
+                regularPriceValue = window.prompt(woocommerce_admin_meta_boxes_variations.i18n_enter_a_value);
+                if (regularPriceValue === null) {
+                    wmcBulkVariationActionRunning = false;
+                    return;
+                }
+
+                wmcBulkVariationActionRunning = true;
+                startBulkActionSuppression();
+
+                variationActionsSelect.one(do_variation_action + '_ajax_data', function (event, data) {
+                    data.value = regularPriceValue;
+                    return data;
+                });
+            });
+        });
+        jQuery.each(currencies, function (index, currency) {
+            var do_variation_action = 'wbs_sale_price-' + currency;
+            jQuery(document).on(do_variation_action, 'select.variation_actions', function () {
+                var salePriceValue;
+                var variationActionsSelect = jQuery(this);
+                disableWooVariationSaveRequirement();
+                salePriceValue = window.prompt(woocommerce_admin_meta_boxes_variations.i18n_enter_a_value);
+                if (salePriceValue === null) {
+                    wmcBulkVariationActionRunning = false;
+                    return;
+                }
+
+                wmcBulkVariationActionRunning = true;
+                startBulkActionSuppression();
+
+                variationActionsSelect.one(do_variation_action + '_ajax_data', function (event, data) {
+                    data.value = salePriceValue;
+                    return data;
+                });
+            });
+        });
+    }
+});

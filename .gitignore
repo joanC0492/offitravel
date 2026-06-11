@@ -1,0 +1,28 @@
+# WordPress local configuration
+/wp-config.php
+/wp-content/object-cache.php
+/wp-content/advanced-cache.php
+
+# Generated content
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/uploads/
+/wp-content/wflogs/
+
+# Environment and editor files
+.env
+.env.*
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and backups
+*.log
+*.sql
+*.sqlite
+*.zip
+*.tar
+*.gz

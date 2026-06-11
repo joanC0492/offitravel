@@ -1,0 +1,109 @@
+.ova-menu-cart {
+  position: relative;
+  line-height: 1;
+}
+.ova-menu-cart .cart-total {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.ova-menu-cart .cart-total i {
+  display: inline-flex;
+  font-size: 24px;
+  margin-right: 2px;
+}
+.ova-menu-cart .cart-total .items {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #FF6159;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.9em;
+  line-height: 1;
+  margin-top: -15px;
+}
+.ova-menu-cart .minicart {
+  transition: all 0.5s ease;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 280px;
+  color: #000;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 1.5em 1em;
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+}
+.ova-menu-cart .minicart p.woocommerce-mini-cart__buttons {
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  clear: both;
+}
+.ova-menu-cart .minicart p.woocommerce-mini-cart__buttons a {
+  transition: all 0.3s ease;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: var(--primary);
+  border-radius: 0;
+  border: 1px solid var(--primary);
+}
+.ova-menu-cart .minicart p.woocommerce-mini-cart__buttons a:hover {
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: var(--primary);
+}
+.ova-menu-cart .minicart p.woocommerce-mini-cart__empty-message {
+  margin: 0;
+}
+.ova-menu-cart .minicart ul.woocommerce-mini-cart {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ova-menu-cart .minicart ul.woocommerce-mini-cart li:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.ova-menu-cart .minicart ul.woocommerce-mini-cart li a {
+  display: inline;
+  padding: 0;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.ova-menu-cart .minicart ul.woocommerce-mini-cart li a.remove {
+  padding: 0 5px 0 0;
+  background-color: transparent;
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+}
+.ova-menu-cart .minicart ul.woocommerce-mini-cart li a.remove:hover {
+  background-color: transparent;
+  color: var(--primary-hover);
+}
+.ova-menu-cart .minicart ul.woocommerce-mini-cart li img {
+  width: 90px;
+  float: right;
+  margin-bottom: 20px;
+}
+.ova-menu-cart .minicart ul.woocommerce-mini-cart li dl.variation {
+  display: none;
+}
+.ova-menu-cart:hover .minicart {
+  transition: all 0.5s ease;
+  z-index: 9999;
+  top: 32px;
+  visibility: visible;
+  opacity: 1;
+}

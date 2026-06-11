@@ -1,0 +1,79 @@
+// Transaction
+@mixin transaction( $propertty, $duration, $timing ) {
+	transition: $propertty $duration $timing;
+    -moz-transition: $propertty $duration $timing;
+    -webkit-transition: $propertty $duration $timing;
+    -o-transition: $propertty $duration $timing;
+}
+.switch-languages {
+	line-height: 1.3;
+	color: #fff;
+	position: relative;
+
+	&:hover {
+		.current-language {
+			.first-icon {
+				transform: rotate(0deg);
+			}
+			i {
+				@include transaction( all, 0.3s, linear );
+				transform: rotate(-180deg);
+			}
+		}
+		.dropdown-language {
+			display: inline-block;
+
+			.dropdown-item {
+				&:hover {
+					@include transaction( all, 0.3s, linear );
+					color: var(--secondary);
+				}
+			}
+		}
+	}
+	.current-language {
+		.text {
+			color: var(--heading);
+			margin-right: 2px;
+		}
+		.first-icon {
+			font-size: 15px;
+			width: 15px;
+			height: 15px;
+			vertical-align: middle;
+		}
+		i {
+			@include transaction( all, 0.3s, linear );
+			display: inline-flex;
+			font-size: 10px;
+			color: var(--heading);
+		}
+	}
+	.dropdown-language {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		display: none;
+		background-color: #fff;
+		border-radius: 5px;
+		padding: 10px;
+		z-index: 999;
+
+		.dropdown-item {
+			@include transaction( all, 0.3s, linear );
+			display: block;
+			color: var(--heading);
+
+			&:hover {
+				@include transaction( all, 0.3s, linear );
+				color: var(--secondary);
+			}
+		}
+	}
+}
+
+// Custom max-width section 1460px
+.section-max-width-1460 {
+	max-width: 1460px;
+	margin: 0 auto;
+}

@@ -1,0 +1,238 @@
+.ova-gallery-slide .gallery-slide-img {
+  position: relative;
+  overflow: hidden;
+}
+.ova-gallery-slide .gallery-slide-img:hover img {
+  transition: all 0.4s ease-out 0s;
+  transform: scale(1.05);
+}
+.ova-gallery-slide .gallery-slide-img:hover .info-wrapper {
+  transition: all 0.4s ease-out 0s;
+}
+.ova-gallery-slide .gallery-slide-img .gallery-img {
+  position: relative;
+  overflow: hidden;
+}
+.ova-gallery-slide .gallery-slide-img .overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(216, 34, 33, 0.1) 100%);
+  cursor: pointer;
+}
+.ova-gallery-slide .gallery-slide-img img {
+  transition: all 0.4s ease-out 0s;
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .ova-gallery-slide .gallery-slide-img img {
+    height: 380px;
+  }
+}
+.ova-gallery-slide .gallery-slide-img .info-wrapper {
+  transition: all 0.4s ease;
+  position: absolute;
+  bottom: 35px;
+  left: 30px;
+  width: calc(100% - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 20px;
+  z-index: 1;
+}
+.ova-gallery-slide .gallery-slide-img .info {
+  width: 100%;
+}
+.ova-gallery-slide .gallery-slide-img .info a:hover .title {
+  color: var(--primary);
+}
+.ova-gallery-slide .gallery-slide-img .info .title {
+  margin: 7px 0 0 0;
+  font-size: 27px;
+  line-height: 1.2;
+  color: #fff;
+}
+.ova-gallery-slide .gallery-slide-img .info .category {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+}
+.ova-gallery-slide .gallery-slide-img .view-detail {
+  -webkit-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.ova-gallery-slide .gallery-slide-img .view-detail i {
+  -webkit-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+  display: inline-flex;
+  font-size: 22px;
+  transform: rotate(-45deg);
+}
+.ova-gallery-slide .gallery-slide-img .view-detail:hover {
+  transition: all 0.3s ease;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.ova-gallery-slide.template2 .gallery-slide-img:hover .overlay {
+  opacity: 1;
+}
+.ova-gallery-slide.template2 .gallery-slide-img:hover .info-wrapper {
+  bottom: 160px;
+  opacity: 1;
+  visibility: visible;
+}
+.ova-gallery-slide.template2 .gallery-slide-img .overlay {
+  background: rgba(26, 26, 61, 0.75);
+  opacity: 0;
+}
+@media (max-width: 767px) {
+  .ova-gallery-slide.template2 .gallery-slide-img .overlay {
+    opacity: 1;
+  }
+}
+.ova-gallery-slide.template2 .gallery-slide-img .info-wrapper {
+  flex-direction: column;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+}
+@media (max-width: 767px) {
+  .ova-gallery-slide.template2 .gallery-slide-img .info-wrapper {
+    bottom: 100px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.ova-gallery-slide.template2 .gallery-slide-img .info .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.ova-gallery-slide .swiper.swiper-loading .swiper-wrapper {
+  opacity: 0;
+  visibility: hidden;
+}
+.ova-gallery-slide .button-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 50px;
+}
+.ova-gallery-slide .button-dots.swiper-pagination-bullets {
+  width: 100% !important;
+  left: 50% !important;
+  transform: translate(0, -50%) !important;
+}
+.ova-gallery-slide .button-dots .swiper-pagination-bullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 50%;
+  opacity: 0.6;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-gallery-slide .button-dots .swiper-pagination-bullet:after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: var(--heading);
+  display: block;
+  border-radius: inherit;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-gallery-slide .button-dots .swiper-pagination-bullet.swiper-pagination-bullet-active, .ova-gallery-slide .button-dots .swiper-pagination-bullet:hover {
+  opacity: 1;
+  transform: scale(1);
+  border: 1px solid var(--primary);
+}
+.ova-gallery-slide .button-dots .swiper-pagination-bullet.swiper-pagination-bullet-active:after, .ova-gallery-slide .button-dots .swiper-pagination-bullet:hover:after {
+  background-color: var(--primary);
+}
+.ova-gallery-slide .button-nav {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, 0.1);
+  background-color: #FFF;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-gallery-slide .button-nav.button-prev {
+  left: -25px;
+}
+.ova-gallery-slide .button-nav.button-next {
+  right: -25px;
+}
+.ova-gallery-slide .button-nav:focus {
+  outline: none;
+}
+.ova-gallery-slide .button-nav i {
+  display: flex;
+  font-size: 30px;
+  color: var(--text);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-gallery-slide .button-nav:hover {
+  background-color: var(--primary);
+}
+.ova-gallery-slide .button-nav:hover i {
+  color: #FFF;
+}
+@media screen and (max-width: 768px) {
+  .ova-gallery-slide .button-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.ova-gallery-slide:hover .button-nav {
+  visibility: visible;
+  opacity: 1;
+  transition-duration: 0.3s;
+}

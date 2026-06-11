@@ -1,0 +1,47 @@
+.elementor-widget-toggle {
+	.elementor-toggle {
+		.elementor-toggle-item {
+			.elementor-tab-title {
+				.ova-toggle-title {
+					display: flex;
+					padding-right: 5px;
+				}
+
+				.ova-icon {
+					i {
+						line-height: 26px;
+					}
+				}
+				
+				.ova-before-title {
+					position: relative;
+
+					&:before {
+						position: absolute;
+						content: "";
+						width: 4px;
+						height: 24px;
+						top: 50%;
+						left: -12px;
+						margin-top: -12px;
+						background-color: var(--secondary);
+					}
+				}
+
+				.ova-boxes-icon {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					width: 28px;
+					height: 28px;
+					background-color: #E9E9E9;
+					border-radius: 2px;
+
+					i {
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,250 @@
+@charset "UTF-8";
+.elementor-widget-tripgo_elementor_testimonial_2 .elementor-widget-container {
+  min-height: 1px;
+}
+
+.ova-testimonial.version-2 .slide-testimonials {
+  width: 100%;
+  padding-right: 0;
+}
+.ova-testimonial.version-2 .slide-testimonials .item {
+  padding: 40px;
+}
+@media (max-width: 479px) {
+  .ova-testimonial.version-2 .slide-testimonials .item {
+    padding: 15px;
+  }
+}
+.ova-testimonial.version-2 .slide-testimonials .item .evaluate {
+  margin: 0;
+  margin-bottom: 40px;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 371px) {
+  .ova-testimonial.version-2 .slide-testimonials .item .info-content {
+    display: block;
+  }
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .client-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 830px) {
+  .ova-testimonial.version-2 .slide-testimonials .item .info-content .client-info {
+    flex-direction: unset;
+  }
+}
+@media (max-width: 479px) {
+  .ova-testimonial.version-2 .slide-testimonials .item .info-content .client-info {
+    align-items: start;
+  }
+}
+@media (max-width: 830px) {
+  .ova-testimonial.version-2 .slide-testimonials .item .info-content .client-info .client {
+    margin-bottom: 0px;
+  }
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .client-info .client img {
+  width: 60px;
+  height: 60px;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .client-info .name-job .name {
+  margin: 0;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .client-info .name-job .job {
+  margin: 0;
+  font-size: 14px;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating {
+  justify-content: center;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating {
+  font-size: 16px;
+  color: #ccd6df;
+  font-family: eicons;
+  display: inline-block;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating .elementor-star-full::before {
+  content: "\e934";
+  display: block;
+  font-size: inherit;
+  font-family: inherit;
+  position: absolute;
+  color: #FFBF48;
+  top: 0;
+  left: 0;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+  cursor: default;
+  line-height: 100%;
+  vertical-align: middle;
+  font-family: eicons;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i::before {
+  display: block;
+  font-size: inherit;
+  font-family: inherit;
+  position: absolute;
+  overflow: hidden;
+  color: #FFBF48;
+  top: 0;
+  left: 0;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-1::before {
+  content: "\e934";
+  width: 10%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-2::before {
+  content: "\e934";
+  width: 20%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-3::before {
+  content: "\e934";
+  width: 30%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-4::before {
+  content: "\e934";
+  width: 40%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-5::before {
+  content: "\e934";
+  width: 50%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-6::before {
+  content: "\e934";
+  width: 60%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-7::before {
+  content: "\e934";
+  width: 70%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-8::before {
+  content: "\e934";
+  width: 80%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating .elementor-star-rating i.elementor-star-9::before {
+  content: "\e934";
+  width: 90%;
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-1::before,
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-2::before,
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-3::before,
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-4::before,
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-5::before,
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-6::before,
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-7::before,
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-8::before,
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating i.elementor-star-9::before {
+  content: "★";
+}
+.ova-testimonial.version-2 .slide-testimonials .item .info-content .ova-rating.star_unicode .elementor-star-rating .elementor-star-full::before {
+  content: "★";
+}
+.ova-testimonial.version-2 .slide-testimonials .swiper {
+  padding: 50px 30px;
+  margin-right: -30px;
+  margin-left: -30px;
+  width: calc(100% + 60px);
+}
+.ova-testimonial.version-2 .slide-testimonials .swiper.swiper-loading .swiper-wrapper {
+  opacity: 0;
+  visibility: hidden;
+}
+.ova-testimonial.version-2 .slide-testimonials .swiper .swiper-wrapper .swiper-slide {
+  box-shadow: 0px 4px 40px rgba(43, 89, 255, 0.08);
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 3px;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-dots.swiper-pagination-bullets {
+  width: 100% !important;
+  left: 50% !important;
+  transform: translate(0, -50%) !important;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-dots .swiper-pagination-bullet {
+  display: block;
+  width: 17px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 4px;
+  opacity: 0.6;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-dots .swiper-pagination-bullet.swiper-pagination-bullet-active, .ova-testimonial.version-2 .slide-testimonials .button-dots .swiper-pagination-bullet:hover {
+  width: 45px;
+  opacity: 1;
+  background-color: var(--primary);
+}
+.ova-testimonial.version-2 .slide-testimonials .button-nav {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, 0.1);
+  background: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-nav.button-prev {
+  left: -25px;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-nav.button-next {
+  right: -25px;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-nav:focus {
+  outline: none;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-nav i {
+  display: flex;
+  font-size: 26px;
+  color: #42516d;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-testimonial.version-2 .slide-testimonials .button-nav:hover i {
+  color: #ff3514;
+}
+@media screen and (max-width: 768px) {
+  .ova-testimonial.version-2 .slide-testimonials .button-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.ova-testimonial.version-2 .slide-testimonials:hover .button-nav {
+  visibility: visible;
+  opacity: 1;
+  transition-duration: 0.3s;
+}

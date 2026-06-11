@@ -1,0 +1,66 @@
+.xdsoft_datetimepicker {
+	border-radius: 5px;
+	margin-top: 3px;
+
+	.xdsoft_label>.xdsoft_select>div>.xdsoft_option {
+
+		&.xdsoft_current {
+			@include transaction( all, 0.3s, ease );
+			background: var(--secondary);
+			box-shadow: 0px 4px 40px rgba(43, 89, 255, 0.08);
+		}
+		
+		&:hover {
+			background: var(--secondary);
+		}
+	}
+
+	.xdsoft_calendar {
+		th {
+			color:var(--heading);
+		}
+
+		td>div {
+			text-align: center;
+			padding: 0;
+		}
+
+		td {
+			@include transaction( all, 0.3s, ease );
+			color: var(--heading);
+
+			&.xdsoft_disabled {
+				color: #FFFFFF;
+			    opacity: 1 !important;
+    			cursor: not-allowed !important;
+    			background: var(--primary) !important; 
+
+    			&:hover {
+    				background: var(--primary) !important;
+    				color: #FFFFFF !important;
+    			}
+			}
+
+			&.xdsoft_other_month {
+				opacity: 1 !important;
+				&.xdsoft_disabled {
+					opacity: 1 !important;
+				}
+			}
+
+			&.xdsoft_current {
+				color: #FFFFFF !important;
+				background: var(--secondary) !important;  
+				box-shadow: 0px 4px 40px rgba(43, 89, 255, 0.08);
+			}
+
+			&.xdsoft_today {
+				color: var(--secondary);
+			}
+
+			&:hover {
+				background: var(--secondary) !important;
+			}
+		}
+	}
+}

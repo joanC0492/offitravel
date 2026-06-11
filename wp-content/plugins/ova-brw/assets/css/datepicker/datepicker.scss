@@ -1,0 +1,161 @@
+:host{
+    --color-fg-primary: var(--ovabrw-primary-calendar);
+    --color-fg-accent: var(--ovabrw-primary-calendar);
+    --color-fg-locked: var(--ovabrw-disable-color);
+    --color-bg-locked: var(--ovabrw-disable-background);
+    --color-bg-disable: var(--ovabrw-disable-background);
+    --color-bg-booked: var(--ovabrw-booked-background);
+    --color-bg-inrange: var(--ovabrw-primary-calendar);
+    --color-btn-primary-fg: var(--ovabrw-primary-calendar);
+    --color-btn-primary-border: var(--ovabrw-primary-calendar);
+    --color-btn-primary-disabled-bg: var(--ovabrw-primary-calendar);
+    --color-btn-primary-disabled-border: var(--ovabrw-primary-calendar);
+    --color-btn-primary-hover-bg: var(--ovabrw-primary-calendar);
+    --color-btn-primary-hover-border: var(--ovabrw-primary-calendar);
+}
+
+// Customize
+.calendar>.daynames-row, .calendar>.days-grid {
+    grid-row: unset;
+    grid-gap: 2px;
+}
+.calendar>.days-grid>.day {
+    color: var(--ovabrw-available-color);
+    background-color: var(--ovabrw-available-background);
+    line-height: 1.2em;
+    cursor: pointer;
+
+    &.today {
+        &.selected {
+            color: var(--color-fg-accent);
+            background-color: var(--ovabrw-available-background);
+
+            .day-price {
+                .ovabrw-day-price {
+                    color: var(--color-fg-accent);
+                }
+            }
+        }
+        .day-price {
+            .ovabrw-day-price {
+                color: var(--color-fg-accent);
+            }
+        }
+    }
+    &.selected {
+        .day-price {
+            .ovabrw-day-price {
+                color: #FFFFFF;
+            }
+        }
+    }
+    &.locked, &.not-available {
+        .day-price {
+            display: none;
+        }
+    }
+    .day-price {
+        .ovabrw-day-price {
+            color: #8e8e8e;
+        }
+    }
+}
+.easepick-container {
+    // Range plugin
+    &.range-plugin {
+        .calendar {
+            & > .days-grid {
+                & > .day {
+                    &.in-range, &.start, &.end {
+                        color: #FFFFFF;
+
+                        .day-price {
+                            .ovabrw-day-price {
+                                color: #FFFFFF;
+                            }
+                        }
+                    }
+                    &.start:after, &.end:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // Locked
+    &.lock-plugin {
+        .calendar {
+            & > .days-grid {
+                & > .day {
+                    &.not-available, &.disabled-day, &.locked {
+                        color: var(--ovabrw-disable-color);
+                        background-color: var(--color-bg-disable);
+                        background-image: repeating-linear-gradient( 135deg, var(--color-bg-disable), var(--color-bg-disable) 2px, var(--ovabrw-color-streak) 4px, var(--ovabrw-color-streak) 4px )!important;
+                        border: none;
+                    }
+                    &.booked-day {
+                        color: var(--ovabrw-booked-color);
+                        background-color: var(--color-bg-booked);
+                        background-image: repeating-linear-gradient( 135deg, var(--color-bg-booked), var(--color-bg-booked) 2px, var(--ovabrw-color-streak) 4px, var(--ovabrw-color-streak) 4px )!important;
+                    }
+                    &.selected.not-available {
+                        background-color: var(--color-fg-primary);
+                        color: var(--color-fg-selected);
+                        background-image: none !important;
+
+                        .day-price {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Amp plugin
+    &.amp-plugin {
+        .calendars {
+            .calendar {
+                & > .header {
+                    .month-name {
+                        select {
+                            cursor: pointer;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Preset plugin
+    .time-plugin-container {
+        padding: 10px 0;
+        
+        .timepicker-wrap {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            font-size: 14px;
+
+            svg {
+                margin: 0 5px;
+            }
+            select {
+                font-size: 14px;
+                font-weight: 600;
+                padding: 3px 0;
+                outline: none;
+            }
+        }
+    }
+
+    // Footer
+    footer .footer-buttons {
+        button.apply-button:disabled {
+            opacity: 0.5;
+        }
+    }
+}
+// End

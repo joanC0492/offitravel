@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    bootstrap="./__tests_sdk__/init_integration.php"
+    colors="true"
+    backupGlobals="true"
+>
+    <testsuites>
+        <testsuite name="Facebook AdsAPI PHP SDK">
+            <directory>./__tests_sdk__/FacebookAdsTest</directory>
+        </testsuite>
+    </testsuites>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">FacebookAds/</directory>
+        </include>
+        <report>
+            <text outputFile="php://stdout" showUncoveredFiles="false"/>
+            <html outputDirectory="report/" lowUpperBound="60" highLowerBound="99"/>
+        </report>
+    </coverage>
+</phpunit>

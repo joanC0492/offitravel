@@ -1,0 +1,219 @@
+// Transaction
+@mixin transaction( $propertty, $duration, $timing ) {
+	transition: $propertty $duration $timing;
+    -moz-transition: $propertty $duration $timing;
+    -webkit-transition: $propertty $duration $timing;
+    -o-transition: $propertty $duration $timing;
+}
+.ova-icon-box {
+	&:hover {
+		.iconbox {
+			@include transaction( all, 0.3s, linear );
+
+			.icon {
+				@include transaction( all, 0.3s, linear );
+				background-color: var(--primary);
+				box-shadow: 0px 4px 60px rgba(253, 76, 92, 0.7);
+
+				i {
+					@include transaction( all, 0.3s, linear );
+					color: #fff;
+				}
+			}
+			.title {
+				@include transaction( all, 0.3s, linear );
+			}
+			.description {
+				@include transaction( all, 0.3s, linear );
+			}
+			.button-readmore {
+				.text-button {
+					@include transaction( all, 0.3s, linear );
+					color: var(--secondary);
+				}
+				.icon-button {
+					i {
+						@include transaction( all, 0.3s, linear );
+						color: var(--secondary);
+					}
+				}
+			}
+		}
+	}
+	i {
+		display: inline-flex;
+	}
+	.iconbox {
+		@include transaction( all, 0.3s, linear );
+		display: block;
+		background-color: #fff;
+		padding: 40px 40px 32px;
+		box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.1);
+
+		@media(max-width: 1200px) {
+			padding: 40px 30px 32px;
+		}
+		@media(max-width: 400px) {
+			padding: 40px 20px 32px;
+		}
+		.icon {
+			@include transaction( all, 0.3s, linear );
+			margin:0 0 32px 0;
+			display: inline-flex;
+			background-color: #3BC1B1;
+			box-shadow: 0px 4px 30px rgba(59, 193, 177, 0.7);
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			justify-content: center;
+	    	align-items: center;
+
+			i {
+				@include transaction( all, 0.3s, linear );
+				display: inline-flex;
+				font-size: 26px;
+				color: #fff;
+			}
+		}
+		.title {
+			@include transaction( all, 0.3s, linear );
+			margin: 0 0 14px 0;
+			font-size: 22px;
+			font-weight: 600;
+			line-height: 1.4;
+		}
+		.description {
+			@include transaction( all, 0.3s, linear );
+			margin: 0 0 20px;
+			color: var(--text);
+		}
+		.line-decoration {
+			@include transaction( all, 0.3s, linear );
+			width: 100%;
+			height: 1px;
+			background-color: #0000001a;
+			margin: 0 0 20px 0;
+		}
+		.button-readmore {
+			display: inline-flex;
+			align-items:center;
+
+			.text-button {
+				@include transaction( all, 0.3s, linear );
+				font-weight: 600;
+				color: var(--primary);
+				line-height: 1.5;
+				text-transform: capitalize;
+				margin-right: 5px;
+			}
+			.icon-button {
+				display: inline-flex;
+
+				i {
+					@include transaction( all, 0.3s, linear );
+					font-size: 14px;
+					line-height: 1;
+					color: var(--primary);
+				}
+			}
+		}
+	}
+	&.template2 {
+		&:hover {
+			.iconbox {
+				background-color: var(--primary);
+				box-shadow: 0px 4px 60px rgba(253, 76, 92, 0.3);
+				
+				.wrap-icon {
+					.icon {
+						i {
+							color: #fff;
+						}
+					}
+					.title {
+						color: #fff;
+					}
+				}
+				.description {
+					color: #fff;
+				}
+				.line-decoration {
+					background-color: #fff;
+				}
+			}
+		}
+		.iconbox {
+			padding: 35px 40px 27px;
+			border: none;
+			box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.05);
+
+			@media(max-width: 1200px) {
+				padding: 35px 25px 27px;
+			}
+			.wrap-icon {
+				display: inline-flex;
+				align-items:center;
+				gap: 30px;
+
+				.icon {
+					box-shadow: none;
+					background: none;
+					width: auto; 
+					height: auto;
+
+					i {
+						font-size: 50px;
+						color: var(--primary);
+					}
+				}
+				.title {
+					margin: 0;
+				}
+			}
+			.line-decoration {
+				width: 100%;
+				height: 1px;
+				margin: 30px 0 23px;
+				background-color: #111b191a;
+			}
+			.description {
+				margin: 0;
+				color: var(--text);
+			}
+		}
+	}
+	&.template3 {
+		&:hover {
+			.iconbox {
+				background-color: var(--primary);
+
+				.title {
+					color: #fff;
+				}
+				.description {
+					color: #fff;
+				}
+			}
+		}
+		.iconbox {
+			padding: 28px 28px 12px 28px;
+			text-align: center;
+
+			.icon {
+				margin: 0 0 20px 0; 
+				width: 96px;
+				height: 96px;
+				background-color: #fff2f3;
+				box-shadow: none;
+				
+				i {
+					font-size: 52px;
+					color: var(--primary);
+				}
+			}
+			.title {
+				font-size: 18px;
+			}
+		}
+	}
+}

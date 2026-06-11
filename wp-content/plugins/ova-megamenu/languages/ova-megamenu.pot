@@ -1,0 +1,110 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ovatheme MegaMenu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 10:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.1.17\n"
+"X-Domain: ova-megamenu"
+
+#: inc/class-process.php:179
+msgid "CSS Classes (optional)"
+msgstr ""
+
+#: inc/class-process.php:127
+msgid "Edit Menu Item"
+msgstr ""
+
+#: inc/class-process.php:210
+msgid "Five Columns"
+msgstr ""
+
+#: inc/class-process.php:209
+msgid "Four Columns"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://themeforest.net/user/ovatheme"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://themeforest.net/user/ovatheme/portfolio"
+msgstr ""
+
+#: inc/class-process.php:188
+msgid "Link Relationship (XFN)"
+msgstr ""
+
+#: inc/class-process.php:200
+msgid "Menu Column (for mega menu)"
+msgstr ""
+
+#: inc/class-process.php:221
+msgid "Menu height (for mega menu). Ex: 830px"
+msgstr ""
+
+#: inc/class-process.php:125
+msgid "Move down"
+msgstr ""
+
+#. %s: title of menu item in draft status
+#: inc/class-process.php:112
+msgid "Move up"
+msgstr ""
+
+#: inc/class-process.php:152
+msgid "Navigation Label"
+msgstr ""
+
+#: inc/class-process.php:206
+msgid "One Column"
+msgstr ""
+
+#: inc/class-process.php:165
+msgid "Open link in a new window/tab"
+msgstr ""
+
+#. Author of the plugin
+msgid "Ovatheme"
+msgstr ""
+
+#. Description of the plugin
+msgid "OvaTheme MegaMenu"
+msgstr ""
+
+#. Name of the plugin
+msgid "Ovatheme MegaMenu"
+msgstr ""
+
+#: inc/class-process.php:231
+msgid "Shortcode"
+msgstr ""
+
+#: inc/class-process.php:246
+msgid "Show as a heading"
+msgstr ""
+
+#: inc/class-process.php:208
+msgid "Three Columns"
+msgstr ""
+
+#: inc/class-process.php:170
+msgid "Title Attribute"
+msgstr ""
+
+#: inc/class-process.php:207
+msgid "Two Columns"
+msgstr ""
+
+#: inc/class-process.php:142
+msgid "URL"
+msgstr ""

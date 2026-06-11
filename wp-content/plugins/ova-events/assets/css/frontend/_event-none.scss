@@ -1,0 +1,21 @@
+// CSS no product
+.ovaev_elementor_none {
+	background-color: rgba(213,218,223,.8);
+	
+	&:not(:lass-child) {
+		margin-bottom: 20px;
+	}
+	span {
+		color: #6d6d6d;
+	    font-size: 22px;
+	    display: block;
+	    text-align: center;
+	    padding: 10px 0;
+	    font-weight: 400;
+	    font-style: normal;
+	    font-variant: normal;
+	    line-height: 1;
+	    text-rendering: auto;
+	    -webkit-font-smoothing: antialiased;
+	}
+}

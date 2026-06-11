@@ -1,0 +1,66 @@
+.ova-contact-page {
+	position: relative;
+
+	p {
+		margin: 0;
+	}
+	.text-email {
+		display: flex;
+		column-gap: 24px;
+		margin-bottom: 24px;
+		
+		@media(max-width: 479px) {
+			flex-flow:column;
+		}
+		.ova-text {
+			width: 50%;
+			overflow: hidden;
+
+			@media(max-width: 479px) {
+				width: 100%;
+				margin-bottom: 24px;
+			}
+		}
+		.ova-email {
+			width: 50%;
+			overflow: hidden;
+
+			@media(max-width: 479px) {
+				width: 100%;
+			}
+		}
+		input {
+			width: 100%;
+			border-color: var(--border);
+			padding: 17px 15px;
+		}
+	}
+	.ova-subject {
+		margin-bottom: 24px;
+
+		input {
+			width: 100%;
+			border-color: var(--border);
+    		padding: 17px 15px;
+		}
+	}
+	.ova-textarea {
+		margin-bottom: 30px;
+
+		textarea{
+			max-height: 120px;
+			width: 100%;
+			border-color: var(--border);
+			padding: 17px 15px;
+		}
+	}
+	.ova-submit {
+		button {
+			padding: 17px 31px;
+		}
+	}
+}
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output{
+	border-color: var(--primary);
+	color: var(--primary);
+}

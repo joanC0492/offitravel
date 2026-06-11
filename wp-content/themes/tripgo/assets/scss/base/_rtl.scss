@@ -1,0 +1,35 @@
+.ova-mask-image {
+	-webkit-mask-image: url('assets/img/base/vector1.png');
+	mask-image:  url('assets/img/base/vector1.png');
+	-webkit-mask-size: contain;
+	mask-size: contain;
+	-webkit-mask-position: center center;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+}
+.rtl {
+	.ovartl-bg-center-right {
+		.elementor-widget-wrap {
+			background-position: center right!important;
+		}
+	}
+	.ovartl-bg-overlay-center-left {
+		.elementor-background-overlay {
+			background-position: center left!important;
+		}
+	}
+	.ova-mask-image {
+		-webkit-mask-image: url('assets/img/base/vector1-rtl.png');
+		mask-image:  url('assets/img/base/vector1-rtl.png');
+	}
+	.ova-testimonial {
+		.slide-testimonials {
+			.slick-dots {
+				justify-content: flex-start;
+			}
+		}
+	} 
+	.elementor-widget-image-carousel .swiper-slide {
+		text-align: right;
+	}
+}

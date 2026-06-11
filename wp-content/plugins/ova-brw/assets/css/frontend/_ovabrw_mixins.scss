@@ -1,0 +1,20 @@
+/**
+ * Transition
+ */
+@mixin transition( $selector: all, $animation: ease, $duration: 0.3s ) {
+	-webkit-transition: $selector $animation $duration;
+	-moz-transition: $selector $animation $duration;
+	-o-transition: $selector $animation $duration;
+	transition: $selector $animation $duration;
+}
+
+/**
+ * Transform
+ */
+@mixin transform( $x: -50%, $y: -50% ) {
+	-webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}

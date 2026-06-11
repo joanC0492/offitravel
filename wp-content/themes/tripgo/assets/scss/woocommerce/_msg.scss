@@ -1,0 +1,6 @@
+.woocommerce-error, .woocommerce-info, .woocommerce-message{
+	line-height: 3em;
+	@media(max-width: 767px){
+		line-height: 1.6em;
+	}
+}

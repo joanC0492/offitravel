@@ -1,0 +1,100 @@
+:host {
+  --color-fg-primary: var(--ovabrw-primary-calendar);
+  --color-fg-accent: var(--ovabrw-primary-calendar);
+  --color-fg-locked: var(--ovabrw-disable-color);
+  --color-bg-locked: var(--ovabrw-disable-background);
+  --color-bg-disable: var(--ovabrw-disable-background);
+  --color-bg-booked: var(--ovabrw-booked-background);
+  --color-bg-inrange: var(--ovabrw-primary-calendar);
+  --color-btn-primary-fg: var(--ovabrw-primary-calendar);
+  --color-btn-primary-border: var(--ovabrw-primary-calendar);
+  --color-btn-primary-disabled-bg: var(--ovabrw-primary-calendar);
+  --color-btn-primary-disabled-border: var(--ovabrw-primary-calendar);
+  --color-btn-primary-hover-bg: var(--ovabrw-primary-calendar);
+  --color-btn-primary-hover-border: var(--ovabrw-primary-calendar);
+}
+
+.calendar > .daynames-row, .calendar > .days-grid {
+  grid-row: unset;
+  grid-gap: 2px;
+}
+
+.calendar > .days-grid > .day {
+  color: var(--ovabrw-available-color);
+  background-color: var(--ovabrw-available-background);
+  line-height: 1.2em;
+  cursor: pointer;
+}
+.calendar > .days-grid > .day.today.selected {
+  color: var(--color-fg-accent);
+  background-color: var(--ovabrw-available-background);
+}
+.calendar > .days-grid > .day.today.selected .day-price .ovabrw-day-price {
+  color: var(--color-fg-accent);
+}
+.calendar > .days-grid > .day.today .day-price .ovabrw-day-price {
+  color: var(--color-fg-accent);
+}
+.calendar > .days-grid > .day.selected .day-price .ovabrw-day-price {
+  color: #FFFFFF;
+}
+.calendar > .days-grid > .day.locked .day-price, .calendar > .days-grid > .day.not-available .day-price {
+  display: none;
+}
+.calendar > .days-grid > .day .day-price .ovabrw-day-price {
+  color: #8e8e8e;
+}
+
+.easepick-container.range-plugin .calendar > .days-grid > .day.in-range, .easepick-container.range-plugin .calendar > .days-grid > .day.start, .easepick-container.range-plugin .calendar > .days-grid > .day.end {
+  color: #FFFFFF;
+}
+.easepick-container.range-plugin .calendar > .days-grid > .day.in-range .day-price .ovabrw-day-price, .easepick-container.range-plugin .calendar > .days-grid > .day.start .day-price .ovabrw-day-price, .easepick-container.range-plugin .calendar > .days-grid > .day.end .day-price .ovabrw-day-price {
+  color: #FFFFFF;
+}
+.easepick-container.range-plugin .calendar > .days-grid > .day.start:after, .easepick-container.range-plugin .calendar > .days-grid > .day.end:after {
+  display: none;
+}
+.easepick-container.lock-plugin .calendar > .days-grid > .day.not-available, .easepick-container.lock-plugin .calendar > .days-grid > .day.disabled-day, .easepick-container.lock-plugin .calendar > .days-grid > .day.locked {
+  color: var(--ovabrw-disable-color);
+  background-color: var(--color-bg-disable);
+  background-image: repeating-linear-gradient(135deg, var(--color-bg-disable), var(--color-bg-disable) 2px, var(--ovabrw-color-streak) 4px, var(--ovabrw-color-streak) 4px) !important;
+  border: none;
+}
+.easepick-container.lock-plugin .calendar > .days-grid > .day.booked-day {
+  color: var(--ovabrw-booked-color);
+  background-color: var(--color-bg-booked);
+  background-image: repeating-linear-gradient(135deg, var(--color-bg-booked), var(--color-bg-booked) 2px, var(--ovabrw-color-streak) 4px, var(--ovabrw-color-streak) 4px) !important;
+}
+.easepick-container.lock-plugin .calendar > .days-grid > .day.selected.not-available {
+  background-color: var(--color-fg-primary);
+  color: var(--color-fg-selected);
+  background-image: none !important;
+}
+.easepick-container.lock-plugin .calendar > .days-grid > .day.selected.not-available .day-price {
+  display: inline-block;
+}
+.easepick-container.amp-plugin .calendars .calendar > .header .month-name select {
+  cursor: pointer;
+  outline: none;
+}
+.easepick-container .time-plugin-container {
+  padding: 10px 0;
+}
+.easepick-container .time-plugin-container .timepicker-wrap {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 14px;
+}
+.easepick-container .time-plugin-container .timepicker-wrap svg {
+  margin: 0 5px;
+}
+.easepick-container .time-plugin-container .timepicker-wrap select {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 3px 0;
+  outline: none;
+}
+.easepick-container footer .footer-buttons button.apply-button:disabled {
+  opacity: 0.5;
+}

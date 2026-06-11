@@ -1,0 +1,127 @@
+.search_archive_event {
+	background-color: #F2FBFA;
+	padding: 30px 20px;
+	margin-bottom: 50px;
+
+	form {
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		input {
+			height: 50px;
+			display: inline-block;
+		}
+		.ovaev_cat_search {
+			width: 30%;
+			position: relative;
+			margin-right: 30px;
+
+			@media (max-width: 768px) {
+				width: 100%;
+				margin-bottom: 20px;
+				margin-right: 0px;
+			}
+			i {
+				font-size: 22px;
+				color: var(--primary);
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 20px;
+			}
+		}
+		.select2-selection {
+            width: 100% !important;
+			outline: none;
+			height: 50px;
+			border: none;
+			border-radius: 5px;
+
+			&.select2-selection--single {
+				box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, 0.05);
+				
+				.select2-selection__rendered {
+					line-height: 35px;
+					opacity: 1;
+				}
+			}
+			.select2-selection__arrow {
+				height: 100%;
+				top: 0;
+				display: none;
+			}
+		}
+		.start_date, .end_date {
+			width: 30%;
+			position: relative;
+			margin: 0 30px 0 0;
+
+			@media (max-width: 768px) {
+				width: 100%;
+			    margin: 0 0 30px 0;
+			}
+			input {
+				border: 0;
+				width: 100%;
+				color: #333;
+				line-height: 50px;
+			    box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, 0.05);
+
+				&::placeholder {
+					opacity: 1;
+				}
+			}
+			i {
+				font-size: 16px;
+				color: var(--primary);
+				position: absolute;
+				bottom: 16px;
+				right: 20px;
+			}
+		}
+		.wrap-ovaev_submit {
+			width: 16%;
+
+			@media( max-width: 767px ) {
+				width: 100%;
+			}
+			.ovaev_submit {
+				transition: 0.3s all linear;
+				background-color: var(--secondary);
+				width: 100%;
+				border: none;
+				cursor: pointer;
+
+				&:hover {
+					background-color: var(--primary);
+					transition: 0.3s all linear;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+.rtl {
+	.search_archive_event {
+		form {
+			.ovaev_cat_search {
+				i {
+					right: unset;
+					left: 20px;
+				}
+			}
+			.end_date, .start_date {
+				i {
+					right: unset;
+					left: 20px;
+				}
+			}
+		}
+	} 
+}

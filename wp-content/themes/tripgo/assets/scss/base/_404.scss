@@ -1,0 +1,51 @@
+.ova_404_page{
+    
+    margin: 120px 0px;
+	display: block;
+    text-align: center;
+   
+	@media(max-width: 1024px){
+		margin: 90px 0px;
+		padding: 0 20px;
+	}
+
+	@media(max-width: 479px){
+		margin: 60px 0px;
+	}
+
+    img{
+    	margin-bottom: 36px;
+    }
+
+    .title{
+    	margin: 0 0 15px 0;
+	    font-size: 42px;
+	    line-height: 1.2;
+    }
+
+    .description{
+    	display: inline-block;
+    	margin: 0 0 36px 0;
+		max-width: 420px;
+		font-size: 20px;
+		line-height: 1.4;	
+    }
+
+    .ova-go-home{
+    	a{
+    		transition: all .3s ease;
+			padding: 18px 32px;
+			background-color: var(--primary);
+			color: #fff;
+			display: inline-block;
+			border: 1px solid var(--primary);
+			font-weight: 600;
+			border-radius: 10px;
+			&:hover{
+				transition: all .3s ease;
+				background-color: #fff;
+				color: var(--primary);
+			}
+    	}
+    }
+}

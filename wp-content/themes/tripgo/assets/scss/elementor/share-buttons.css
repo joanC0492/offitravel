@@ -1,0 +1,62 @@
+.ova-share-buttons {
+  display: inline-flex;
+  width: 100%;
+}
+.ova-share-buttons .share-item {
+  display: block;
+  margin-bottom: 10px;
+}
+.ova-share-buttons .share-item .share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 99.9em;
+  color: #FFFFFF;
+  background-color: var(--primary);
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.12), transparent);
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-share-buttons .share-item .share-btn i {
+  line-height: 1;
+}
+.ova-share-buttons .share-item .share-btn:hover {
+  filter: saturate(1.5) brightness(1.5);
+}
+.ova-share-buttons .share-item:not(:last-child) {
+  margin-right: 10px;
+}
+.ova-share-buttons.share-grid {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.ova-share-buttons.share-grid .share-item {
+  margin: 0;
+}
+.ova-share-buttons.share-grid .share-item .share-btn {
+  width: 100%;
+  border-radius: 99.9em;
+}
+.ova-share-buttons.share-grid.column_2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.ova-share-buttons.share-grid.column_3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.ova-share-buttons.share-grid.column_4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.ova-share-buttons.share-grid.column_5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.ova-share-buttons.share-grid.column_6 {
+  grid-template-columns: repeat(6, 1fr);
+}

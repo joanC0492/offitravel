@@ -1,0 +1,224 @@
+.woocommerce{
+
+	#woo_main{
+		
+		padding: 0 10px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		
+		@media(max-width: 767px){
+			padding: 0 20px;
+			flex-direction: column;
+		}
+
+		.content-area{
+			
+			
+			@media(max-width: $desktop -1 ){
+				flex: 0 0 100%;
+				padding-left: 0px;
+				width: 100%;
+			}
+
+			// Show Result 
+			.woocommerce-result-count{
+				margin: 6px 0 0 0 ;
+				font-size: 18px;
+				line-height: 26px;
+				font-weight: 400;
+			}
+
+			// Sorting
+			.woocommerce-ordering{
+				width: 245px;
+				margin-bottom: 40px;
+			}
+
+
+			// Listing
+			ul.products{
+
+				margin-bottom: 80px;
+				@media(max-width: 991px){
+					margin-bottom: 0px;
+				}
+				li.product{
+					text-align: center;
+					position: relative;
+					overflow: hidden;
+					padding-bottom: 30px;
+					border-radius: 10px;
+					width: 100%;
+					.cat_product{
+						color: var(--text);
+						font-size: 17px;
+						font-weight: 500;
+						line-height: 50px;
+						display: inline-block;
+						padding: 0px 15px 0px 15px;
+					}
+					.button{
+							visibility: visible;
+							opacity: 1;
+						}
+					&:hover{
+						box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, 0.1);
+						
+					}
+					
+					.onsale{
+						display: inline-block;
+						top: 10px;
+						right: 10px;
+						left: auto;
+						background: var(--primary);
+						padding: 0 10px;
+						margin: 0;
+						min-height: 25px;
+						line-height: 25px;
+						font-size: 14px;
+						font-weight: 600;
+						min-width: unset;
+						border-radius: 3px;
+						text-transform: uppercase;
+					}
+					a.woocommerce-loop-product__link{
+						img{
+							margin: 0;
+						}
+					}
+					.woocommerce-loop-product__title{
+						font-size: 18px;
+						line-height: 26px;
+						color: var(--heading);
+						margin-top: -20px;
+						padding: 20px 15px 7px 15px;
+						z-index: 3;
+						font-weight: 600;
+					}
+					.price{
+						font-size: 16px;
+						line-height: 26px;
+						color: var(--primary);
+						font-weight: 600;
+						padding: 0px 15px 0px 15px;
+						ins{
+							font-weight: 600;
+							margin-left: 6px;
+							text-decoration: none;
+						}
+					}
+					
+					.button, 
+					a.add_to_cart_button{
+
+						margin-top: 10px;
+					    color: #fff;
+					    margin: 0px;
+					    transition: 0.4s;
+					    z-index: 2;
+					    margin: 10px 15px 0px 15px;
+					    background: var(--heading);
+					    border: 1px solid var(--heading);
+					    
+					    &.loading:after{
+							right: 0.5em;
+						}
+						
+						&:hover{
+							background: var(--primary);
+							border-color: var(--primary);
+						}
+
+					}
+
+					a.added_to_cart{
+						margin-top: 20px;
+						display: inline-block;
+						visibility: visible;
+						opacity: 1;
+						background-color: transparent !important;
+						color: var(--heading);
+						text-decoration: underline;
+						text-transform: capitalize;
+						padding: 0px 15px 0px 15px;
+						&:hover{
+							color: var(--primary);
+							transition: 0.3s ease;
+						};	
+						&:after{
+							padding-left: 5px;
+						}	
+					}
+
+					.product_type_external,
+					.product_type_grouped,
+					.product_type_variable{
+						&:after{
+							position: absolute;
+						    top: 0;
+						    right: 10px;	
+						}
+						
+					}
+					
+					.star-rating {
+					    text-align: center;
+					    margin: 0 auto;
+					    margin-bottom: 10px;
+					}
+
+				}
+			}
+			
+			
+		}
+		
+	}
+
+	&.elementor-default #woo_main{
+		padding: 0 10px;
+	}
+    
+    // Override css Shop Page Default Woo 
+	ul.products {
+		display: grid;
+        grid-column-gap: 24px;
+        grid-row-gap: 40px;
+        &.columns-4 {
+            grid-template-columns: repeat(4, 1fr) ;   
+		}
+		&.columns-3 {
+            grid-template-columns: repeat(3, 1fr) ;   
+		}
+		&.columns-2 {
+            grid-template-columns: repeat(2, 1fr) ;   
+		}
+		@media screen and (max-width: 1200px) {
+			&.columns-4 {
+				grid-template-columns: repeat(3, 1fr) ;
+			}
+		} 
+
+		@media screen and (max-width: 1024px) {
+			&.columns-3, &.columns-4 {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			&.columns-2, &.columns-3, &.columns-4 {
+				grid-template-columns: 1fr;
+			}
+		}
+		&:before {
+			display: none;
+		}
+		li.ova-product {
+			width: 100% !important; 
+            margin: 0;
+		}
+	}
+
+}

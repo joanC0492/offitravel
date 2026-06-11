@@ -1,0 +1,87 @@
+.tripgo-our-team .team-img, .tripgo-our-team .socials, .tripgo-our-team a {
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+.tripgo-our-team .item-team .img {
+  position: relative;
+  overflow: hidden;
+}
+.tripgo-our-team .item-team .img .team-img {
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  display: block;
+  width: 100%;
+  height: 315px;
+  object-fit: cover;
+  object-position: center;
+}
+.tripgo-our-team .item-team .img:hover .socials {
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  bottom: 0;
+  opacity: 1;
+}
+.tripgo-our-team .item-team .info {
+  padding-top: 30px;
+}
+.tripgo-our-team .item-team .info .name {
+  margin: 0;
+  font-size: 20px;
+}
+.tripgo-our-team .item-team .info .name a {
+  color: var(--heading);
+}
+.tripgo-our-team .item-team .info .job {
+  margin: 0;
+  margin-top: 3px;
+}
+.tripgo-our-team .item-team .socials {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: -50px;
+  left: 0;
+  height: 50px;
+  column-gap: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  list-style: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary);
+  opacity: 0;
+}
+.tripgo-our-team .item-team .socials .item a {
+  color: #fff;
+}
+.tripgo-our-team .item-team .socials .item a:hover {
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  color: var(--heading);
+}
+.tripgo-our-team.our-team-version_2 .item-team:hover .socials {
+  bottom: 20px;
+}
+.tripgo-our-team.our-team-version_2 .item-team .img .team-img {
+  border-radius: 12px;
+}
+.tripgo-our-team.our-team-version_2 .item-team .info {
+  text-align: center;
+}
+.tripgo-our-team.our-team-version_2 .item-team .info .name {
+  font-size: 22px;
+}
+.tripgo-our-team.our-team-version_2 .item-team .socials {
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}

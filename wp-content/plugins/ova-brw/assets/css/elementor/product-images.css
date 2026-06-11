@@ -1,0 +1,126 @@
+.woocommerce-product-gallery {
+  max-width: 600px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 99;
+}
+.woocommerce-product-gallery a img {
+  width: 100%;
+  height: auto;
+}
+.woocommerce-product-gallery .flex-viewport {
+  margin-bottom: 20px;
+}
+.woocommerce-product-gallery .flex-control-nav.flex-control-thumbs {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.elementor-product-image .ova-gallery-slideshow {
+  position: relative;
+}
+.elementor-product-image .ova-gallery-slideshow .swiper.swiper-loading .swiper-wrapper {
+  opacity: 0;
+  visibility: hidden;
+}
+.elementor-product-image .ova-gallery-slideshow .button-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 30px;
+}
+.elementor-product-image .ova-gallery-slideshow .button-dots.swiper-pagination-bullets {
+  width: 100% !important;
+  left: 50% !important;
+  transform: translate(0, -50%) !important;
+}
+.elementor-product-image .ova-gallery-slideshow .button-dots .swiper-pagination-bullet {
+  display: block;
+  width: 7px;
+  height: 7px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  opacity: 0.6;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.elementor-product-image .ova-gallery-slideshow .button-dots .swiper-pagination-bullet.swiper-pagination-bullet-active, .elementor-product-image .ova-gallery-slideshow .button-dots .swiper-pagination-bullet:hover {
+  opacity: 1;
+  width: 16px;
+  border-radius: 5px;
+  background-color: var(--primary);
+}
+.elementor-product-image .ova-gallery-slideshow .button-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0px 4px 40px rgba(43, 89, 255, 0.08);
+  background: #FFFFFF;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.elementor-product-image .ova-gallery-slideshow .button-nav.button-prev {
+  left: 110px;
+}
+.elementor-product-image .ova-gallery-slideshow .button-nav.button-next {
+  right: 110px;
+}
+.elementor-product-image .ova-gallery-slideshow .button-nav:focus {
+  outline: none;
+}
+.elementor-product-image .ova-gallery-slideshow .button-nav i {
+  display: flex;
+  color: var(--secondary);
+  font-size: 20px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.elementor-product-image .ova-gallery-slideshow .button-nav:hover i {
+  color: #ff3514;
+}
+@media screen and (max-width: 768px) {
+  .elementor-product-image .ova-gallery-slideshow .button-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+  .elementor-product-image .ova-gallery-slideshow .button-nav.button-prev {
+    left: 30px;
+  }
+  .elementor-product-image .ova-gallery-slideshow .button-nav.button-next {
+    right: 30px;
+  }
+}
+.elementor-product-image .ova-gallery-slideshow:hover .button-nav {
+  visibility: visible;
+  opacity: 1;
+  transition-duration: 0.3s;
+  background-color: var(--secondary);
+}
+.elementor-product-image .ova-gallery-slideshow:hover .button-nav i {
+  color: #FFFFFF;
+}

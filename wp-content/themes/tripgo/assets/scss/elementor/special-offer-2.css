@@ -1,0 +1,95 @@
+.ova-special-offer-2 {
+  position: relative;
+  width: 100%;
+  min-height: 393px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.ova-special-offer-2:hover .background-image {
+  transform: scale(1.1);
+}
+.ova-special-offer-2 .background-image {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+.ova-special-offer-2 .content {
+  position: relative;
+  width: 50%;
+  padding-left: 50px;
+}
+@media screen and (max-width: 1024px) {
+  .ova-special-offer-2 .content {
+    width: 100%;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .ova-special-offer-2 .content {
+    padding: 40px 30px;
+  }
+}
+.ova-special-offer-2 .content .subtitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1;
+}
+.ova-special-offer-2 .content .title {
+  margin: 0;
+  margin-top: 8px;
+  font-size: 42px;
+  line-height: 54px;
+}
+.ova-special-offer-2 .content .title a {
+  color: var(--heading);
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+.ova-special-offer-2 .content .title a:hover {
+  color: var(--primary);
+}
+@media screen and (max-width: 1024px) {
+  .ova-special-offer-2 .content .title {
+    font-size: 36px;
+  }
+}
+.ova-special-offer-2 .content .desc {
+  margin: 0;
+  margin-top: 33px;
+  color: var(--heading);
+}
+.ova-special-offer-2 .content .link {
+  margin-top: 33px;
+  display: inline-block;
+  font-weight: 600;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 32px;
+  line-height: 24px;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+.ova-special-offer-2 .content .link:hover {
+  background: #fff;
+  color: var(--primary);
+}
+
+.rtl .ova-special-offer-2 {
+  justify-content: flex-end;
+}

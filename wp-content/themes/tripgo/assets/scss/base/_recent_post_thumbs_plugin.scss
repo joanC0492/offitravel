@@ -1,0 +1,30 @@
+.rpwwt-widget{
+	ul{
+		li{
+			margin: 0 !important; 
+			img {
+				border-radius: 10px;
+				margin: 0 15px 10px 0 !important; 
+			}
+			a {
+                .rpwwt-post-title{
+					font-weight: 700;
+					line-height: 1.3;
+					color: var(--heading);
+				}
+				&:hover {
+					.rpwwt-post-title {
+						color: var(--primary);
+					}
+				}
+			}
+		    
+			.rpwwt-post-date, .rpwwt-post-comments-number{
+			    font-size: 14px;
+			    line-height: 1.3;
+			    margin-top: 5px;
+			    color: var(--light);
+			}
+		}
+	}
+}

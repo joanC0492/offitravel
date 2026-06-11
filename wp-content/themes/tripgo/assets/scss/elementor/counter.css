@@ -1,0 +1,87 @@
+.ova-counter {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  text-align: left;
+  background-color: var(--secondary);
+}
+.ova-counter:hover {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-counter:hover .title, .ova-counter:hover .odometer, .ova-counter:hover .suffix {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-counter:hover .icon {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transform: scale(1.1);
+}
+.ova-counter .icon {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 86px;
+  height: 95px;
+  background-color: rgba(253, 76, 92, 0.15);
+  border-radius: 4px;
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 26px;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transform: scale(1);
+}
+.ova-counter .icon i {
+  display: inline-flex;
+}
+.ova-counter .odometer-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+.ova-counter .odometer {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.ova-counter .odometer.odometer-auto-theme, .ova-counter .odometer .odometer-value {
+  line-height: 1;
+}
+.ova-counter .suffix {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
+}
+.ova-counter .title {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.7);
+}

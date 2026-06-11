@@ -1,0 +1,243 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?qbhq44');
+  src:  url('fonts/icomoon.eot?qbhq44#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?qbhq44') format('truetype'),
+    url('fonts/icomoon.woff?qbhq44') format('woff'),
+    url('fonts/icomoon.svg?qbhq44#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-gird:before {
+  content: "\e927";
+}
+.icomoon-list:before {
+  content: "\e928";
+}
+.icomoon-flig-outline:before {
+  content: "\e925";
+}
+.icomoon-location-2:before {
+  content: "\e926";
+}
+.icomoon-angle-double-right:before {
+  content: "\e900";
+}
+.icomoon-angle-left:before {
+  content: "\e901";
+}
+.icomoon-angle-right:before {
+  content: "\e902";
+}
+.icomoon-arrow-left:before {
+  content: "\e903";
+}
+.icomoon-arrow-right:before {
+  content: "\e904";
+}
+.icomoon-briefcase:before {
+  content: "\e905";
+}
+.icomoon-calander:before {
+  content: "\e906";
+}
+.icomoon-call:before {
+  content: "\e907";
+}
+.icomoon-car:before {
+  content: "\e908";
+}
+.icomoon-caret-circle-right:before {
+  content: "\e909";
+}
+.icomoon-caret-down:before {
+  content: "\e90a";
+}
+.icomoon-chat:before {
+  content: "\e90b";
+}
+.icomoon-check:before {
+  content: "\e90c";
+}
+.icomoon-check-circle:before {
+  content: "\e90d";
+}
+.icomoon-check-circle-2:before {
+  content: "\e90e";
+}
+.icomoon-checked:before {
+  content: "\e90f";
+}
+.icomoon-check-square:before {
+  content: "\e910";
+}
+.icomoon-chevron-down:before {
+  content: "\e911";
+}
+.icomoon-chevron-down-r:before {
+  content: "\e912";
+}
+.icomoon-chevron-up:before {
+  content: "\e913";
+}
+.icomoon-clock:before {
+  content: "\e914";
+}
+.icomoon-close:before {
+  content: "\e915";
+}
+.icomoon-coconut-tree:before {
+  content: "\e916";
+}
+.icomoon-compass:before {
+  content: "\e917";
+}
+.icomoon-crown:before {
+  content: "\e918";
+}
+.icomoon-dot:before {
+  content: "\e919";
+}
+.icomoon-envelope:before {
+  content: "\e91a";
+}
+.icomoon-exceeds:before {
+  content: "\e91b";
+}
+.icomoon-experienced:before {
+  content: "\e91c";
+}
+.icomoon-facebook:before {
+  content: "\e91d";
+}
+.icomoon-flig:before {
+  content: "\e91e";
+}
+.icomoon-gallery:before {
+  content: "\e91f";
+}
+.icomoon-heart:before {
+  content: "\e920";
+}
+.icomoon-heart-fill:before {
+  content: "\e921";
+}
+.icomoon-info-circle:before {
+  content: "\e922";
+}
+.icomoon-instagram:before {
+  content: "\e923";
+}
+.icomoon-location:before {
+  content: "\e924";
+}
+.icomoon-map:before {
+  content: "\e94c";
+}
+.icomoon-minus:before {
+  content: "\e94d";
+}
+.icomoon-next:before {
+  content: "\e94e";
+}
+.icomoon-next-small:before {
+  content: "\e94f";
+}
+.icomoon-people:before {
+  content: "\e950";
+}
+.icomoon-pin:before {
+  content: "\e951";
+}
+.icomoon-plane:before {
+  content: "\e952";
+}
+.icomoon-plus:before {
+  content: "\e955";
+}
+.icomoon-pre:before {
+  content: "\e956";
+}
+.icomoon-pre-small:before {
+  content: "\e957";
+}
+.icomoon-profile-2user:before {
+  content: "\e958";
+}
+.icomoon-profile-circle:before {
+  content: "\e959";
+}
+.icomoon-quote:before {
+  content: "\e95a";
+}
+.icomoon-quote-outline:before {
+  content: "\e95b";
+}
+.icomoon-reliable:before {
+  content: "\e95c";
+}
+.icomoon-routing:before {
+  content: "\e95d";
+}
+.icomoon-search:before {
+  content: "\e95e";
+}
+.icomoon-search-zoom-in:before {
+  content: "\e95f";
+}
+.icomoon-share:before {
+  content: "\e960";
+}
+.icomoon-star:before {
+  content: "\e961";
+}
+.icomoon-star-2:before {
+  content: "\e962";
+}
+.icomoon-star-fill:before {
+  content: "\e963";
+}
+.icomoon-star-outline:before {
+  content: "\e964";
+}
+.icomoon-suitcase:before {
+  content: "\e965";
+}
+.icomoon-tag:before {
+  content: "\e966";
+}
+.icomoon-teacher:before {
+  content: "\e967";
+}
+.icomoon-tiktok:before {
+  content: "\e968";
+}
+.icomoon-twitte:before {
+  content: "\e969";
+}
+.icomoon-user:before {
+  content: "\e96a";
+}
+.icomoon-view:before {
+  content: "\e96b";
+}
+.icomoon-youtube:before {
+  content: "\e96c";
+}

@@ -1,0 +1,77 @@
+$flaticon_tripgo2-font: "flaticon_tripgo2";
+
+@font-face {
+    font-family: $flaticon_tripgo2-font;
+    src: url("./flaticon_tripgo2.ttf?433b8237a9530b343e70b77a1356cbc2") format("truetype"),
+url("./flaticon_tripgo2.woff?433b8237a9530b343e70b77a1356cbc2") format("woff"),
+url("./flaticon_tripgo2.woff2?433b8237a9530b343e70b77a1356cbc2") format("woff2"),
+url("./flaticon_tripgo2.eot?433b8237a9530b343e70b77a1356cbc2#iefix") format("embedded-opentype"),
+url("./flaticon_tripgo2.svg?433b8237a9530b343e70b77a1356cbc2#flaticon_tripgo2") format("svg");
+}
+
+i[class^="flaticon2-"]:before, i[class*=" flaticon2-"]:before {
+    font-family: flaticon_tripgo2 !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_tripgo2-map: (
+    "school-bag": "\f101",
+    "travel-insurance": "\f102",
+    "sunbed": "\f103",
+    "tent": "\f104",
+    "right-quote": "\f105",
+    "teamwork": "\f106",
+    "hiking": "\f107",
+    "social": "\f108",
+    "beach-chair": "\f109",
+    "trophy": "\f10a",
+    "ufo": "\f10b",
+    "giftbox": "\f10c",
+    "photo-camera": "\f10d",
+);
+
+.flaticon2-school-bag:before {
+    content: map-get($flaticon_tripgo2-map, "school-bag");
+}
+.flaticon2-travel-insurance:before {
+    content: map-get($flaticon_tripgo2-map, "travel-insurance");
+}
+.flaticon2-sunbed:before {
+    content: map-get($flaticon_tripgo2-map, "sunbed");
+}
+.flaticon2-tent:before {
+    content: map-get($flaticon_tripgo2-map, "tent");
+}
+.flaticon2-right-quote:before {
+    content: map-get($flaticon_tripgo2-map, "right-quote");
+}
+.flaticon2-teamwork:before {
+    content: map-get($flaticon_tripgo2-map, "teamwork");
+}
+.flaticon2-hiking:before {
+    content: map-get($flaticon_tripgo2-map, "hiking");
+}
+.flaticon2-social:before {
+    content: map-get($flaticon_tripgo2-map, "social");
+}
+.flaticon2-beach-chair:before {
+    content: map-get($flaticon_tripgo2-map, "beach-chair");
+}
+.flaticon2-trophy:before {
+    content: map-get($flaticon_tripgo2-map, "trophy");
+}
+.flaticon2-ufo:before {
+    content: map-get($flaticon_tripgo2-map, "ufo");
+}
+.flaticon2-giftbox:before {
+    content: map-get($flaticon_tripgo2-map, "giftbox");
+}
+.flaticon2-photo-camera:before {
+    content: map-get($flaticon_tripgo2-map, "photo-camera");
+}

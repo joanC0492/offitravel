@@ -1,0 +1,30 @@
+.brand_el {
+  display: flex;
+}
+.brand_el .logo_desktop {
+  display: block;
+}
+@media (max-width: 1023px) {
+  .brand_el .logo_desktop {
+    display: none;
+  }
+}
+.brand_el .logo_mobile {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .brand_el .logo_mobile {
+    display: block;
+  }
+}
+.brand_el .logo_sticky {
+  display: none;
+}
+
+.header_sticky.active_sticky .brand_el .logo_desktop,
+.header_sticky.active_sticky .brand_el .logo_mobile {
+  display: none;
+}
+.header_sticky.active_sticky .brand_el .logo_sticky {
+  display: block;
+}

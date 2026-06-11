@@ -1,0 +1,196 @@
+.ova-special-offer {
+  position: relative;
+  overflow: hidden;
+}
+.ova-special-offer:hover .special-offer-img {
+  transform: scale(1.04);
+}
+.ova-special-offer:hover .special-offer-content {
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.ova-special-offer:hover .special-offer-content .btn-special-offer {
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.ova-special-offer .mask {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(19, 23, 43, 0) 0.44%, rgba(19, 23, 43, 0.24) 38.35%, rgba(19, 23, 43, 0.8) 100%);
+  z-index: 1;
+}
+.ova-special-offer .special-offer-img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 1s ease-out;
+  transform-origin: bottom right;
+}
+.ova-special-offer .special-offer-content {
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 60px;
+  left: 40px;
+}
+.ova-special-offer .special-offer-content .sub-title-wrapper .sub-title {
+  margin: 0;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+.ova-special-offer .special-offer-content .sub-title-wrapper .discount {
+  font-weight: 600;
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.ova-special-offer .special-offer-content .title {
+  margin: 0;
+  padding-bottom: 14px;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.ova-special-offer .special-offer-content .btn-special-offer {
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  margin-top: 24px;
+  padding: 12px 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  font-size: var(--font-size);
+  font-weight: 600;
+  font-family: var(--secondary-font);
+  color: var(--primary);
+  background-color: #fff;
+  border: none;
+}
+.ova-special-offer .special-offer-content .btn-special-offer i {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  margin-left: 8px;
+}
+.ova-special-offer .special-offer-content .btn-special-offer:hover {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  background-color: var(--primary-hover);
+  color: #FFFFFF;
+}
+.ova-special-offer.ova-special-offer-version_1:hover .special-offer-content {
+  top: 48px;
+}
+.ova-special-offer.ova-special-offer-version_1 .special-offer-content .title {
+  font-size: 48px;
+}
+.ova-special-offer.ova-special-offer-version_2:hover .special-offer-content {
+  top: 48px;
+}
+.ova-special-offer.ova-special-offer-version_2 .mask {
+  width: 100%;
+}
+.ova-special-offer.ova-special-offer-version_2 .special-offer-content {
+  text-align: center;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ova-special-offer.ova-special-offer-version_3:hover .special-offer-content {
+  bottom: 55px;
+}
+.ova-special-offer.ova-special-offer-version_3 .mask {
+  width: 100%;
+}
+.ova-special-offer.ova-special-offer-version_3 .special-offer-content {
+  text-align: center;
+  top: unset;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ova-special-offer.ova-special-offer-version_4 .mask {
+  width: 100%;
+  background: rgba(0, 141, 208, 0.7803921569);
+}
+.ova-special-offer.ova-special-offer-version_4 .special-offer-content {
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ova-special-offer.ova-special-offer-version_5:hover .special-offer-content .btn-special-offer {
+  background-color: var(--primary);
+  color: #fff;
+}
+.ova-special-offer.ova-special-offer-version_5:hover .special-offer-content .btn-special-offer i {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  font-size: 16px;
+}
+.ova-special-offer.ova-special-offer-version_5 .mask {
+  width: 100%;
+  background: transparent;
+}
+.ova-special-offer.ova-special-offer-version_5 .special-offer-content {
+  position: relative;
+  top: unset;
+  left: unset;
+  text-align: center;
+  padding: 40px 50px;
+  background-color: #fff;
+}
+@media (max-width: 767px) {
+  .ova-special-offer.ova-special-offer-version_5 .special-offer-content {
+    padding: 30px 20px;
+  }
+}
+.ova-special-offer.ova-special-offer-version_5 .special-offer-content .sub-title-wrapper .sub-title {
+  color: var(--text);
+}
+.ova-special-offer.ova-special-offer-version_5 .special-offer-content .sub-title-wrapper .discount {
+  color: var(--secondary);
+}
+.ova-special-offer.ova-special-offer-version_5 .special-offer-content .title {
+  color: var(--heading);
+}
+.ova-special-offer.ova-special-offer-version_5 .special-offer-content .btn-special-offer {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.ova-special-offer.ova-special-offer-version_5 .special-offer-content .btn-special-offer i {
+  font-size: 0;
+  color: #fff;
+}

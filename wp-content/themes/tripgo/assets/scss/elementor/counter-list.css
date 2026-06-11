@@ -1,0 +1,145 @@
+.ova-counter-list-wrapper {
+  display: grid;
+  gap: 30px;
+}
+.ova-counter-list-wrapper.two_column {
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 767px) {
+  .ova-counter-list-wrapper.two_column {
+    grid-template-columns: auto;
+  }
+}
+.ova-counter-list-wrapper.three_column {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.ova-counter-list-wrapper.four_column {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 1200px) {
+  .ova-counter-list-wrapper.four_column {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 1024px) {
+  .ova-counter-list-wrapper.three_column, .ova-counter-list-wrapper.four_column {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .ova-counter-list-wrapper.three_column, .ova-counter-list-wrapper.four_column {
+    grid-template-columns: auto;
+  }
+}
+
+.ova-counter-list {
+  padding: 40px;
+  background-color: #F2FBFA;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+@media (max-width: 767px) {
+  .ova-counter-list {
+    text-align: center;
+  }
+}
+.ova-counter-list:hover {
+  background-color: var(--secondary);
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-counter-list:hover .title, .ova-counter-list:hover .odometer, .ova-counter-list:hover .suffix {
+  color: #fff;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-counter-list:hover .icon {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-counter-list.columns-offsets:nth-child(odd) {
+  position: relative;
+  top: -30px;
+}
+@media (max-width: 767px) {
+  .ova-counter-list.columns-offsets:nth-child(odd) {
+    top: 0;
+  }
+}
+.ova-counter-list .icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 66px;
+  height: 75px;
+  background-color: var(--secondary);
+  border-radius: 4px;
+  font-size: 38px;
+  color: #fff;
+  margin-bottom: 26px;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transform: scale(1);
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-counter-list .icon i {
+  display: inline-flex;
+}
+.ova-counter-list .odometer-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+.ova-counter-list .odometer {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-counter-list .odometer.odometer-auto-theme, .ova-counter-list .odometer .odometer-value {
+  line-height: 1;
+}
+@media (max-width: 767px) {
+  .ova-counter-list .odometer {
+    font-size: 40px;
+  }
+}
+.ova-counter-list .suffix {
+  font-size: 60px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+@media (max-width: 767px) {
+  .ova-counter-list .suffix {
+    font-size: 40px;
+  }
+}
+.ova-counter-list .title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}

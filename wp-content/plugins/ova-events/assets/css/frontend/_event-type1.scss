@@ -1,0 +1,138 @@
+//css .type1
+.type1 {
+	height: 100%;
+	box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, .1);
+	border: 1px solid #e8e8e8;
+	position: relative;
+
+	&:hover {
+		img {
+		    transform: scale(1.05);
+		}
+	}
+	.date-event {
+		position: absolute;
+		top: 20px;
+		display: flex;
+		z-index: 2;
+
+		.date {
+			color: #fff;
+			font-size: 20px;
+			padding: 0px 8px 0px 10px;
+			height: 36px;
+			line-height: 36px;
+			font-weight: 700;
+			background-color: #ff3514;
+		}
+		.month-year {
+			background: #fff;
+			color: var(--heading);
+			font-weight: 600;
+			font-size: 16px;
+			text-transform: uppercase;
+			padding: 0px 15px 0px 12px;
+			height: 36px;
+			line-height: 36px;
+			letter-spacing: 0.2px;
+
+			.month {
+				margin-right: 5px;
+			}
+		}
+	}
+	.desc {
+		.event-thumbnail {
+			overflow: hidden;
+
+			a {
+				img {
+					width: 100%;
+					transition: .3s all ease;
+					-o-transition: .3s all ease;
+					-webkit-transition: .3s all ease;
+				}
+			}
+		}
+		.event_post {
+			padding: 23px 25px 40px 25px;
+			border-top: 0;
+			transition: all .3s;
+
+			@media(min-width: 1024px) and (max-width: 1099px) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			.post_cat {
+				margin-bottom: 12px;
+
+				.event_type {
+					color: #fff;
+					line-height: 1.2;
+					font-weight: 500;
+					border-radius: 5px;
+					padding: 5px 10px;
+					background-color: var(--primary);
+
+					&:hover {
+						background-color: var(--secondary);
+					}
+				}
+			}
+			.event_title {
+				margin: 0 0 18px 0;
+
+				&:hover {
+					color: var(--primary);
+				}
+			}
+			.time-event {
+				color: #444444;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 1.2;
+
+				.time {
+					margin-bottom: 7px;
+
+					.more_date_text {
+						&:hover {
+							color: var(--heading);
+						}
+					}
+				}
+				.time, .venue {
+					display: flex;
+					align-items: center;
+					gap: 5px;
+
+					i {
+						color: var(--secondary);
+					}
+				}
+			}
+			.button_event {
+				margin-top: 30px;
+				display: inline-flex;
+				align-items: center;
+
+				.view_detail {
+					transition: all .3s;
+					background: #fff;
+					border: 1px solid #e0e0e0;
+					font-weight: 500;
+					color: var(--heading);
+					font-size: 16px;
+					line-height: 1.2;
+					padding: 8px 20px;
+					
+					&:hover {
+						color: #fff;
+						background-color: var(--primary);
+                        border-color: var(--primary);
+					}
+				}
+			}
+		}
+	}
+}

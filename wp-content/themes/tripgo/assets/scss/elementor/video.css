@@ -1,0 +1,155 @@
+.ova-video .icon-content-view {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+.ova-video .icon-content-view.video_active {
+  cursor: pointer;
+}
+.ova-video .icon-content-view .content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 90px;
+  height: 90px;
+  min-width: 64px;
+  min-height: 64px;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 16px;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0px 21px 30px 0px rgba(0, 0, 0, 0.1);
+}
+.ova-video .icon-content-view .content i {
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 23px;
+  z-index: 1;
+  color: var(--primary);
+  border-radius: 50%;
+}
+.ova-video .icon-content-view .content svg {
+  width: 23px;
+  height: 23px;
+  fill: var(--primary);
+}
+.ova-video .icon-content-view .content svg path {
+  fill: var(--primary);
+}
+.ova-video .icon-content-view .content:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  width: 180%;
+  height: 180%;
+  border: 2px dashed var(--border);
+  -webkit-animation: lineScale 2.5s linear infinite;
+  -moz-animation: lineScale 2.5s linear infinite;
+  animation: lineScale 2.5s linear infinite;
+}
+.ova-video .icon-content-view .content:hover {
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-video .icon-content-view .ova-text {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--heading);
+}
+.ova-video .icon-content-view .ova-text a {
+  color: var(--heading);
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-video .modal-container {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+}
+.ova-video .modal-container .modal {
+  width: 900px;
+  height: 500px;
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .ova-video .modal-container .modal {
+    width: 768px;
+    height: 450px;
+  }
+}
+@media screen and (max-width: 788px) {
+  .ova-video .modal-container .modal {
+    width: 600px;
+    height: 350px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .ova-video .modal-container .modal {
+    width: 400px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .ova-video .modal-container .modal {
+    width: 320px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .ova-video .modal-container .modal {
+    width: 300px;
+    height: 180px;
+  }
+}
+.ova-video .modal-container .modal i {
+  position: absolute;
+  right: -10px;
+  top: -35px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-video .modal-container .modal i:hover {
+  color: #000;
+}
+.ova-video .modal-container .modal .modal-video {
+  width: 100%;
+  height: 100%;
+}
+@keyframes lineScale {
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5);
+    -moz-animation: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(0.35);
+    -moz-animation: translate(-50%, -50%) scale(0.35);
+    transform: translate(-50%, -50%) scale(0.35);
+  }
+}

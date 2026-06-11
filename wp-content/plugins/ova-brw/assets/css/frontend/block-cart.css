@@ -1,0 +1,22 @@
+.wc-block-cart .ovabrw-cart-blocks .wc-block-cart-item__product .wc-block-cart-item__wrap .wc-block-cart-item__prices .wc-block-components-product-price__regular, .wc-block-checkout .ovabrw-cart-blocks .wc-block-cart-item__product .wc-block-cart-item__wrap .wc-block-cart-item__prices .wc-block-components-product-price__regular {
+  display: none;
+}
+.wc-block-cart .ovabrw-cart-blocks .wc-block-cart-item__product .wc-block-cart-item__wrap .wc-block-cart-item__prices .wc-block-components-product-price__value, .wc-block-checkout .ovabrw-cart-blocks .wc-block-cart-item__product .wc-block-cart-item__wrap .wc-block-cart-item__prices .wc-block-components-product-price__value {
+  margin-left: 0;
+}
+.wc-block-cart .ovabrw-cart-blocks .wc-block-cart-item__product .wc-block-cart-item__wrap .wc-block-components-product-badge, .wc-block-checkout .ovabrw-cart-blocks .wc-block-cart-item__product .wc-block-cart-item__wrap .wc-block-components-product-badge {
+  display: none;
+}
+.wc-block-cart .ovabrw-cart-blocks .wc-block-cart-item__product .wc-block-cart-item__wrap .wc-block-cart-item__quantity .wc-block-components-quantity-selector, .wc-block-checkout .ovabrw-cart-blocks .wc-block-cart-item__product .wc-block-cart-item__wrap .wc-block-cart-item__quantity .wc-block-components-quantity-selector {
+  display: none;
+}
+.wc-block-cart .ovabrw-cart-blocks .wc-block-cart-item__total .wc-block-components-product-price, .wc-block-cart .ovabrw-cart-blocks .wc-block-components-order-summary-item__total-price .wc-block-components-product-price, .wc-block-checkout .ovabrw-cart-blocks .wc-block-cart-item__total .wc-block-components-product-price, .wc-block-checkout .ovabrw-cart-blocks .wc-block-components-order-summary-item__total-price .wc-block-components-product-price {
+  text-align: left;
+}
+.wc-block-cart .ovabrw-cart-blocks .wc-block-cart-item__total .wc-block-components-product-price .variation, .wc-block-cart .ovabrw-cart-blocks .wc-block-components-order-summary-item__total-price .wc-block-components-product-price .variation, .wc-block-checkout .ovabrw-cart-blocks .wc-block-cart-item__total .wc-block-components-product-price .variation, .wc-block-checkout .ovabrw-cart-blocks .wc-block-components-order-summary-item__total-price .wc-block-components-product-price .variation {
+  margin: 0;
+  text-align: left;
+}
+.wc-block-cart .ovabrw-block-totals-remaining, .wc-block-cart .ovabrw-block-totals-payable, .wc-block-checkout .ovabrw-block-totals-remaining, .wc-block-checkout .ovabrw-block-totals-payable {
+  margin-top: 15px !important;
+}

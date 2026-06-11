@@ -1,0 +1,62 @@
+.ova-image-gallery .title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 36px 0;
+}
+.ova-image-gallery .ova-image-gallery-ft {
+  display: inline-grid;
+  gap: 10px;
+}
+.ova-image-gallery .ova-image-gallery-ft.two_column {
+  grid-template-columns: 1fr 1fr;
+}
+.ova-image-gallery .ova-image-gallery-ft.three_column {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.ova-image-gallery .ova-image-gallery-ft.four_column {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.ova-image-gallery .ova-image-gallery-ft .item-fancybox-ft {
+  display: inline-flex;
+  position: relative;
+}
+.ova-image-gallery .ova-image-gallery-ft .item-fancybox-ft img {
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.ova-image-gallery .ova-image-gallery-ft .item-fancybox-ft .overlay {
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  position: absolute;
+  opacity: 0;
+}
+.ova-image-gallery .ova-image-gallery-ft .item-fancybox-ft .overlay .icon {
+  display: inline-flex;
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ova-image-gallery .ova-image-gallery-ft .item-fancybox-ft .overlay .icon i {
+  font-size: 20px;
+  display: inherit;
+}
+.ova-image-gallery .ova-image-gallery-ft .item-fancybox-ft:hover {
+  cursor: pointer;
+}
+.ova-image-gallery .ova-image-gallery-ft .item-fancybox-ft:hover .overlay {
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  opacity: 0.85;
+}

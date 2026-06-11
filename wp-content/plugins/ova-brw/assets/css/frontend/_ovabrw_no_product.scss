@@ -1,0 +1,39 @@
+// CSS no product
+.ovabrw_elementor_no_product {
+	background-color: rgba(213,218,223,.8);
+	&:not(:lass-child) {
+		margin-bottom: 20px;
+	}
+	span {
+		color: #6d6d6d;
+	    font-size: 22px;
+	    display: block;
+	    text-align: center;
+	    padding: 10px 0;
+	    font-weight: 400;
+	    font-style: normal;
+	    font-variant: normal;
+	    line-height: 1;
+	    text-rendering: auto;
+	    -webkit-font-smoothing: antialiased;
+	}
+}
+
+.woocommerce-help-tip {
+	&:after {
+		font-family: Dashicons;
+	    speak: never;
+	    font-weight: 400;
+	    font-variant: normal;
+	    text-transform: none;
+	    line-height: 1;
+	    -webkit-font-smoothing: antialiased;
+	    margin: 0;
+	    text-indent: 0;
+	    width: 100%;
+	    height: 100%;
+	    text-align: center;
+	    content: "\f223";
+	    cursor: help
+	}
+}

@@ -1,0 +1,70 @@
+/*Message*/
+.woocommerce-message,
+.woocommerce-info{
+	border-top-color: var(--primary);
+}
+.woocommerce-message::before{
+	color: var(--primary);	
+}
+.woocommerce-info{
+	&::before{
+		color: var(--primary);
+	}
+}
+
+/*Select2*/
+.woocommerce .select2-container .select2-selection--single .select2-selection__arrow{
+
+	background-image: url(./assets/img/base/select-arrow.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+
+    b{
+    	display: none;
+    }
+}
+
+.woocommerce{
+	a.button, 
+	button.button, 
+	input.button, 
+	a.checkout-button,
+	#review_form #submit {
+	 	line-height: $line-height-form;
+		border-radius: $border-radius-btn;
+		padding: $padding-btn;
+		font-size: 1em;
+		font-weight: 600;
+	}
+	.star-rating {
+		span {
+			&:before {
+				color: #FFC83E;
+			}
+		}
+	}
+	p.stars {
+		a:before {
+			color: #FFC83E;
+		}
+	}
+	#respond {
+		input#submit {
+			color: #FFF;
+			background-color: var(--primary);
+			border-radius: 5px;
+			padding: 16px 32px;
+
+			&:hover {
+				color: #FFF;
+				background-color: var(--primary-hover);
+			}
+		}
+	} 
+	.woocommerce-MyAccount-content {
+		.rx-media-button {
+			margin-bottom: 35px;
+		}
+	}		
+}

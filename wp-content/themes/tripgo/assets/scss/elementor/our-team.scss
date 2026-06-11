@@ -1,0 +1,103 @@
+// Transaction
+@mixin transaction( $propertty, $duration, $timing ) {
+	transition: $propertty $duration $timing;
+    -moz-transition: $propertty $duration $timing;
+    -webkit-transition: $propertty $duration $timing;
+    -o-transition: $propertty $duration $timing;
+}
+.tripgo-our-team {
+	.team-img, .socials, a {
+		@include transaction( all, 0.3s, linear );
+	}
+	.item-team {
+		.img {
+			position: relative;
+			overflow: hidden;
+
+			.team-img {
+				@include transaction( all, 0.3s, linear );
+				display: block;
+				width: 100%;
+				height: 315px;
+				object-fit: cover;
+				object-position: center;
+			}
+			&:hover {
+				.socials {
+					@include transaction( all, 0.3s, linear );
+					bottom: 0;
+					opacity: 1;
+				}
+			}
+		}
+		.info {
+			padding-top: 30px;
+
+			.name {
+				margin: 0;
+				font-size: 20px;
+
+				a {
+					color: var(--heading);
+				}
+			}
+			.job {
+				margin: 0;
+				margin-top: 3px;
+			}
+		}
+		.socials {
+			position: absolute;
+			margin: 0;
+			padding: 0;
+			bottom: -50px;
+			left: 0;
+			height: 50px;
+			column-gap: 25px;
+			padding-left: 25px;
+			padding-right: 25px;
+			list-style: none;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			background: var(--primary);
+			opacity: 0;
+
+			.item {
+				a {
+					color: #fff;
+
+					&:hover {
+						@include transaction( all, 0.3s, linear );
+						color: var(--heading);
+					}
+				}
+			}
+		}
+	}
+	&.our-team-version_2 {
+		.item-team {
+			&:hover {
+				.socials {
+					bottom: 20px;
+				}
+			}
+			.img {
+				.team-img {
+					border-radius: 12px;
+				}
+			}
+			.info {
+				text-align: center;
+				.name {
+					font-size: 22px;
+				}
+			}
+			.socials {
+				border-radius: 10px;
+				left: 50%;
+				transform: translateX(-50%); 
+			}
+		}
+	}
+}

@@ -1,0 +1,125 @@
+.woocommerce{
+	.woo-sidebar{
+		flex : 0 0 320px;
+		@media(max-width: 991px){
+			flex: 0 0 100%;
+		}
+		.widget_product_categories{
+			padding: 50px 30px 40px 30px;
+			background-color: #f7f4f2;
+			border-radius: 10px;
+		}
+		.woo_widget {
+			ul{
+				margin: 0;
+			}
+		}
+		.widget_products{
+			    padding: 50px 30px 40px 30px;
+			    background-color: #f7f4f2;
+			    border-radius: 10px;
+			ul.product_list_widget{
+				@media(max-width: 991px){
+					padding: 0 20px 0 0;
+				}
+				li{
+					&:not(:last-child){
+						border-bottom: 1px solid #e5e5e5;
+						margin: 0 0 20px 0;
+						padding: 0 0 40px 0;
+					}
+					a{
+						display: flex;
+						margin-bottom: -47px;
+						img{
+							float: unset;
+							width: 80px;
+							flex: 0 0 80px;
+							border: 1px solid #e5e5e5;
+							border-radius: 5px;
+						}
+						.product-title{
+							flex: 0 0 calc(100% - 100px);
+							font-size: 18px;
+							line-height: 26px;
+							letter-spacing: 0.2px;
+							font-weight: 400;
+							color: #2c2734;
+							margin-left: 20px;
+						}
+					}
+					.star-rating{
+						margin: 0 0 8px 104px;
+						font-size: 13px;
+					}
+					.woocommerce-Price-amount{
+						font-size: 20px;
+						line-height: 26px;
+						color: #88858e;
+						font-weight: 400;
+						margin-left: 104px;
+						position: relative;
+						bottom: -20px;
+						
+					}
+					del{
+
+					}
+					ins{
+						.woocommerce-Price-amount{
+							margin-left: 2px;
+						}
+					}
+				}
+			}
+		}
+		.widget_product_tag_cloud{
+			.tagcloud{
+				a{
+					float: left;
+					display: block;
+					margin: 0 10px 10px 0;
+				}
+			}
+		}
+		.widget_price_filter{
+			.price_slider_wrapper{
+				.price_slider{
+					border-radius: 0;
+					background: #e5e5e5;
+					margin: 0 0 25px 0;
+					.ui-slider-range{
+					}
+					.ui-slider-handle{
+						background: #fff;
+						border: 1px solid #e5e5e5;
+					}
+				}
+				.price_slider_amount{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					.button{
+						font-size: 18px;
+						color: #fff;
+						font-weight: 500;
+						background: #2c2734;
+						height: 35px;
+						line-height: 35px;
+						padding: 0 20px;
+						border-radius: 20px;
+					}
+					.price_label{
+						font-size: 16px;
+						line-height: 1.2;
+						color: #88858e;
+						text-transform: uppercase;
+					}
+					.clear{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

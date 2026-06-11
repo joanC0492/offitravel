@@ -1,0 +1,213 @@
+$flaticon_tripgo-font: "flaticon_tripgo";
+
+@font-face {
+    font-family: $flaticon_tripgo-font;
+    src: url("./flaticon_tripgo.woff2?71a904932a5b77d5b5b1b672ba38b3f7") format("woff2"),
+url("./flaticon_tripgo.woff?71a904932a5b77d5b5b1b672ba38b3f7") format("woff"),
+url("./flaticon_tripgo.eot?71a904932a5b77d5b5b1b672ba38b3f7#iefix") format("embedded-opentype"),
+url("./flaticon_tripgo.ttf?71a904932a5b77d5b5b1b672ba38b3f7") format("truetype"),
+url("./flaticon_tripgo.svg?71a904932a5b77d5b5b1b672ba38b3f7#flaticon_tripgo") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_tripgo !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_tripgo-map: (
+    "spinner-of-dots": "\f101",
+    "loading": "\f102",
+    "share": "\f103",
+    "share-1": "\f104",
+    "share-2": "\f105",
+    "share-3": "\f106",
+    "share-option": "\f107",
+    "facebook": "\f108",
+    "twitter": "\f109",
+    "twitter-1": "\f10a",
+    "linkedin": "\f10b",
+    "pinterest": "\f10c",
+    "reddit": "\f10d",
+    "reddit-1": "\f10e",
+    "vk": "\f10f",
+    "vk-social-network-logo": "\f110",
+    "odnoklassniki": "\f111",
+    "odnoklassniki-1": "\f112",
+    "tumblr": "\f113",
+    "tumblr-1": "\f114",
+    "digg": "\f115",
+    "digg-1": "\f116",
+    "skype": "\f117",
+    "stumbleupon": "\f118",
+    "stumbleupon-1": "\f119",
+    "linkedin-1": "\f11a",
+    "pinterest-1": "\f11b",
+    "telegram": "\f11c",
+    "telegram-1": "\f11d",
+    "telegram-2": "\f11e",
+    "instagram": "\f11f",
+    "reddit-2": "\f120",
+    "skype-1": "\f121",
+    "pocket": "\f122",
+    "pocket-1": "\f123",
+    "xing": "\f124",
+    "social": "\f125",
+    "whatsapp": "\f126",
+    "whatsapp-1": "\f127",
+    "whatsapp-2": "\f128",
+    "mail": "\f129",
+    "email": "\f12a",
+    "email-1": "\f12b",
+    "printing": "\f12c",
+    "printer": "\f12d",
+    "twitter-2": "\f12e",
+    "twitter-3": "\f12f",
+);
+
+.flaticon-spinner-of-dots:before {
+    content: map-get($flaticon_tripgo-map, "spinner-of-dots");
+}
+.flaticon-loading:before {
+    content: map-get($flaticon_tripgo-map, "loading");
+}
+.flaticon-share:before {
+    content: map-get($flaticon_tripgo-map, "share");
+}
+.flaticon-share-1:before {
+    content: map-get($flaticon_tripgo-map, "share-1");
+}
+.flaticon-share-2:before {
+    content: map-get($flaticon_tripgo-map, "share-2");
+}
+.flaticon-share-3:before {
+    content: map-get($flaticon_tripgo-map, "share-3");
+}
+.flaticon-share-option:before {
+    content: map-get($flaticon_tripgo-map, "share-option");
+}
+.flaticon-facebook:before {
+    content: map-get($flaticon_tripgo-map, "facebook");
+}
+.flaticon-twitter:before {
+    content: map-get($flaticon_tripgo-map, "twitter");
+}
+.flaticon-twitter-1:before {
+    content: map-get($flaticon_tripgo-map, "twitter-1");
+}
+.flaticon-linkedin:before {
+    content: map-get($flaticon_tripgo-map, "linkedin");
+}
+.flaticon-pinterest:before {
+    content: map-get($flaticon_tripgo-map, "pinterest");
+}
+.flaticon-reddit:before {
+    content: map-get($flaticon_tripgo-map, "reddit");
+}
+.flaticon-reddit-1:before {
+    content: map-get($flaticon_tripgo-map, "reddit-1");
+}
+.flaticon-vk:before {
+    content: map-get($flaticon_tripgo-map, "vk");
+}
+.flaticon-vk-social-network-logo:before {
+    content: map-get($flaticon_tripgo-map, "vk-social-network-logo");
+}
+.flaticon-odnoklassniki:before {
+    content: map-get($flaticon_tripgo-map, "odnoklassniki");
+}
+.flaticon-odnoklassniki-1:before {
+    content: map-get($flaticon_tripgo-map, "odnoklassniki-1");
+}
+.flaticon-tumblr:before {
+    content: map-get($flaticon_tripgo-map, "tumblr");
+}
+.flaticon-tumblr-1:before {
+    content: map-get($flaticon_tripgo-map, "tumblr-1");
+}
+.flaticon-digg:before {
+    content: map-get($flaticon_tripgo-map, "digg");
+}
+.flaticon-digg-1:before {
+    content: map-get($flaticon_tripgo-map, "digg-1");
+}
+.flaticon-skype:before {
+    content: map-get($flaticon_tripgo-map, "skype");
+}
+.flaticon-stumbleupon:before {
+    content: map-get($flaticon_tripgo-map, "stumbleupon");
+}
+.flaticon-stumbleupon-1:before {
+    content: map-get($flaticon_tripgo-map, "stumbleupon-1");
+}
+.flaticon-linkedin-1:before {
+    content: map-get($flaticon_tripgo-map, "linkedin-1");
+}
+.flaticon-pinterest-1:before {
+    content: map-get($flaticon_tripgo-map, "pinterest-1");
+}
+.flaticon-telegram:before {
+    content: map-get($flaticon_tripgo-map, "telegram");
+}
+.flaticon-telegram-1:before {
+    content: map-get($flaticon_tripgo-map, "telegram-1");
+}
+.flaticon-telegram-2:before {
+    content: map-get($flaticon_tripgo-map, "telegram-2");
+}
+.flaticon-instagram:before {
+    content: map-get($flaticon_tripgo-map, "instagram");
+}
+.flaticon-reddit-2:before {
+    content: map-get($flaticon_tripgo-map, "reddit-2");
+}
+.flaticon-skype-1:before {
+    content: map-get($flaticon_tripgo-map, "skype-1");
+}
+.flaticon-pocket:before {
+    content: map-get($flaticon_tripgo-map, "pocket");
+}
+.flaticon-pocket-1:before {
+    content: map-get($flaticon_tripgo-map, "pocket-1");
+}
+.flaticon-xing:before {
+    content: map-get($flaticon_tripgo-map, "xing");
+}
+.flaticon-social:before {
+    content: map-get($flaticon_tripgo-map, "social");
+}
+.flaticon-whatsapp:before {
+    content: map-get($flaticon_tripgo-map, "whatsapp");
+}
+.flaticon-whatsapp-1:before {
+    content: map-get($flaticon_tripgo-map, "whatsapp-1");
+}
+.flaticon-whatsapp-2:before {
+    content: map-get($flaticon_tripgo-map, "whatsapp-2");
+}
+.flaticon-mail:before {
+    content: map-get($flaticon_tripgo-map, "mail");
+}
+.flaticon-email:before {
+    content: map-get($flaticon_tripgo-map, "email");
+}
+.flaticon-email-1:before {
+    content: map-get($flaticon_tripgo-map, "email-1");
+}
+.flaticon-printing:before {
+    content: map-get($flaticon_tripgo-map, "printing");
+}
+.flaticon-printer:before {
+    content: map-get($flaticon_tripgo-map, "printer");
+}
+.flaticon-twitter-2:before {
+    content: map-get($flaticon_tripgo-map, "twitter-2");
+}
+.flaticon-twitter-3:before {
+    content: map-get($flaticon_tripgo-map, "twitter-3");
+}

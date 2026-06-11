@@ -1,0 +1,28 @@
+.ova-menu-footer .menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.ova-menu-footer .menu a {
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-menu-footer .menu a:before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 1px;
+  left: 0px;
+  bottom: 0px;
+  transition: all 500ms ease;
+  background-color: var(--primary);
+}
+.ova-menu-footer .menu a:hover:before {
+  width: 100%;
+}
+.ova-menu-footer .menu .sub-menu {
+  list-style: none;
+}

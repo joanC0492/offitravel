@@ -1,0 +1,254 @@
+<?php
+
+namespace Monei\Gateways\PaymentMethods;
+
+use Monei\Gateways\Abstracts\WCMoneiPaymentGatewayHosted;
+use Monei\Services\payment\MoneiPaymentServices;
+use Monei\Services\ApiKeyService;
+use Monei\Services\MoneiStatusCodeHandler;
+use Monei\Services\PaymentMethodsService;
+use Monei\Templates\TemplateManager;
+use WC_Admin_Settings;
+use WC_Monei_IPN;
+use WC_Monei_Payment_Gateway_Hosted;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Class that handle Monei Paypal Payment method.
+ *
+ * Class WC_Gateway_Monei_Paypal
+ */
+class WCGatewayMoneiPaypal extends WCMoneiPaymentGatewayHosted {
+
+	const PAYMENT_METHOD = 'paypal';
+
+	/**
+	 * @var bool
+	 */
+	protected $redirect_flow;
+
+	/**
+	 * Constructor for the gateway.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function __construct(
+		PaymentMethodsService $paymentMethodsService,
+		TemplateManager $templateManager,
+		ApiKeyService $apiKeyService,
+		MoneiPaymentServices $moneiPaymentServices,
+		MoneiStatusCodeHandler $statusCodeHandler
+	) {
+		parent::__construct( $paymentMethodsService, $templateManager, $apiKeyService, $moneiPaymentServices, $statusCodeHandler );
+		$this->id                 = MONEI_GATEWAY_ID . '_paypal';
+		$this->method_title       = __( 'MONEI - PayPal', 'monei' );
+		$this->method_description = __( 'Accept PayPal payments.', 'monei' );
+		$this->enabled            = ( ! empty( $this->get_option( 'enabled' ) ) && 'yes' === $this->get_option( 'enabled' ) && $this->is_valid_for_use() ) ? 'yes' : 'no';
+
+		// Load the form fields.
+		$this->init_form_fields();
+		// Load the settings.
+		$this->init_settings();
+
+		// Bizum Hosted payment with redirect.
+		$this->has_fields = false;
+		$iconUrl          = apply_filters( 'woocommerce_monei_paypal_icon', WC_Monei()->image_url( 'paypal-logo.svg' ) );
+		$iconMarkup       = '<img src="' . $iconUrl . '" alt="MONEI" class="monei-icons" />';
+		// Settings variable
+		$this->hide_logo     = ( ! empty( $this->get_option( 'hide_logo' ) ) && 'yes' === $this->get_option( 'hide_logo' ) ) ? true : false;
+		$this->icon          = ( $this->hide_logo ) ? '' : $iconMarkup;
+		$this->redirect_flow = ( ! empty( $this->get_option( 'mode' ) ) && 'yes' === $this->get_option( 'mode' ) ) ? true : false;
+		$this->testmode      = $this->getTestmode();
+		$hide_title          = ( ! empty( $this->get_option( 'hide_title' ) ) && 'yes' === $this->get_option( 'hide_title' ) ) ? true : false;
+		$this->title         = ( ! $hide_title && ! empty( $this->get_option( 'title' ) ) ) ? $this->get_option( 'title' ) : '';
+		if ( $this->testmode && ! empty( $this->title ) ) {
+			$this->title .= ' (' . __( 'Test Mode', 'monei' ) . ')';
+		}
+		$this->description = ( ! empty( $this->get_option( 'description' ) ) ) ? $this->get_option( 'description' ) : '';
+		// Backward compatible: try local setting first, then global setting
+		$local_orderdo              = $this->get_option( 'orderdo' );
+		$this->status_after_payment = ! empty( $local_orderdo ) ? $local_orderdo : get_option( 'monei_orderdo', 'processing' );
+		$this->api_key              = $this->getApiKey();
+		$this->account_id           = $this->getAccountId();
+		$this->shop_name            = get_bloginfo( 'name' );
+		// Backward compatible: try local setting first, then global setting
+		$local_preauth  = $this->get_option( 'pre-authorize' );
+		$global_preauth = get_option( 'monei_pre_authorize', 'no' );
+		$this->pre_auth = ( ! empty( $local_preauth ) && 'yes' === $local_preauth ) || ( empty( $local_preauth ) && 'yes' === $global_preauth );
+		$this->logging  = ( ! empty( $this->get_option( 'debug' ) ) && 'yes' === $this->get_option( 'debug' ) ) ? true : false;
+
+		// IPN callbacks
+		$this->notify_url = WC_Monei()->get_ipn_url();
+		new WC_Monei_IPN( $this->logging );
+
+		$this->supports = array(
+			'products',
+			'refunds',
+		);
+
+		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
+		add_filter(
+			'woocommerce_save_settings_checkout_' . $this->id,
+			function ( $is_post ) {
+				return $this->checks_before_save( $is_post, 'woocommerce_monei_paypal_enabled' );
+			}
+		);
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'paypal_scripts' ) );
+	}
+
+	/**
+	 * Return whether or not this gateway still requires setup to function.
+	 *
+	 * When this gateway is toggled on via AJAX, if this returns true a
+	 * redirect will occur to the settings page instead.
+	 *
+	 * @return bool
+	 * @since 3.4.0
+	 */
+	public function needs_setup() {
+		if ( ! $this->account_id || ! $this->api_key ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Initialise Gateway Settings Form Fields
+	 *
+	 * @access public
+	 * @return void
+	 * @since 5.0
+	 */
+	public function init_form_fields() {
+		$this->form_fields = require WC_Monei()->plugin_path() . '/includes/admin/monei-paypal-settings.php';
+	}
+
+	/**
+	 * Validate paypal_style field
+	 *
+	 * @param string $key
+	 * @param string $value
+	 * @return string
+	 */
+	public function validate_paypal_style_field( $key, $value ) {
+		if ( empty( $value ) ) {
+			return $value;
+		}
+
+		// WordPress adds slashes to $_POST data, we need to remove them before validating JSON
+		$value = stripslashes( $value );
+
+		// Try to decode JSON
+		$decoded = json_decode( $value, true );
+
+		// Check for JSON errors
+		if ( json_last_error() !== JSON_ERROR_NONE ) {
+			WC_Admin_Settings::add_error(
+				sprintf(
+					/* translators: %s: JSON error message */
+					__( 'PayPal Style field contains invalid JSON: %s', 'monei' ),
+					json_last_error_msg()
+				)
+			);
+			return $this->get_option( 'paypal_style', '{"height": "50px", "disableMaxWidth": true}' );
+		}
+
+		// Re-encode with pretty print for better readability in admin
+		return wp_json_encode( $decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES );
+	}
+
+	/**
+	 * Process the payment and return the result
+	 *
+	 * @access public
+	 * @param int $order_id
+	 * @param null|string $allowed_payment_method
+	 * @return array
+	 */
+	public function process_payment( $order_id, $allowed_payment_method = null ) {
+		return parent::process_payment( $order_id, self::PAYMENT_METHOD );
+	}
+
+	/**
+	 * Frontend MONEI payment-request token generated when PayPal.
+	 *
+	 * @return false|string
+	 */
+	protected function get_frontend_generated_token() {
+		// phpcs:ignore WordPress.Security.NonceVerification, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		return ( isset( $_POST['monei_payment_request_token'] ) ) ? wc_clean( wp_unslash( $_POST['monei_payment_request_token'] ) ) : false;  // WPCS: CSRF ok.
+	}
+
+	public function payment_fields() {
+		// Show description only in redirect mode
+		if ( $this->redirect_flow && $this->description ) {
+			echo '<div class="monei-redirect-description">';
+			echo wp_kses_post( wpautop( wptexturize( $this->description ) ) );
+			echo '</div>';
+		}
+
+		// Only render PayPal button if not using redirect flow
+		if ( ! $this->redirect_flow ) {
+			echo '<fieldset id="monei-paypal-form" class="monei-fieldset monei-payment-request-fieldset">
+				<div
+					id="paypal-container"
+					class="monei-payment-request-container wc-block-components-skeleton__element"
+                        >
+				</div>
+			</fieldset>';
+		}
+	}
+
+	public function paypal_scripts() {
+		if ( ! is_checkout() && ! is_checkout_pay_page() ) {
+			return;
+		}
+		if ( 'no' === $this->enabled ) {
+			return;
+		}
+		// Don't enqueue scripts if using redirect flow
+		if ( $this->redirect_flow ) {
+			return;
+		}
+		if ( ! wp_script_is( 'monei', 'registered' ) ) {
+			wp_register_script( 'monei', 'https://js.monei.com/v2/monei.js', '', '1.0', true );
+		}
+		if ( ! wp_script_is( 'monei', 'enqueued' ) ) {
+			wp_enqueue_script( 'monei' );
+		}
+		wp_register_script(
+			'woocommerce_monei-paypal',
+			plugins_url( 'public/js/monei-paypal-classic.min.js', MONEI_MAIN_FILE ),
+			array(
+				'jquery',
+				'monei',
+			),
+			MONEI_VERSION,
+			true
+		);
+		wp_enqueue_script( 'woocommerce_monei-paypal' );
+
+		// Determine the total amount to be passed
+		$total        = $this->determineTheTotalAmountToBePassed();
+		$paypal_style = $this->get_option( 'paypal_style', '{}' );
+
+		wp_localize_script(
+			'woocommerce_monei-paypal',
+			'wc_paypal_params',
+			array(
+				'accountId'   => $this->getAccountId(),
+				'sessionId'   => WC()->session !== null ? WC()->session->get_customer_id() : '',
+				'total'       => monei_price_format( $total ),
+				'currency'    => get_woocommerce_currency(),
+				'language'    => locale_iso_639_1_code(),
+				'paypalStyle' => json_decode( $paypal_style ),
+			)
+		);
+	}
+}

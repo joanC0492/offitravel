@@ -1,0 +1,204 @@
+.elementor-widget-tripgo_elementor_testimonial_3 .elementor-widget-container {
+  min-height: 1px;
+}
+
+.ova-testimonial.version-3 .slide-testimonials {
+  width: 100%;
+  padding-right: 0;
+}
+.ova-testimonial.version-3 .slide-testimonials .item {
+  position: relative;
+  padding: 60px 80px;
+}
+@media (max-width: 500px) {
+  .ova-testimonial.version-3 .slide-testimonials .item {
+    padding: 15px 30px;
+  }
+}
+.ova-testimonial.version-3 .slide-testimonials .item .evaluate {
+  margin: 0;
+  margin-bottom: 40px;
+}
+.ova-testimonial.version-3 .slide-testimonials .item .info-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 371px) {
+  .ova-testimonial.version-3 .slide-testimonials .item .info-content {
+    display: block;
+  }
+}
+.ova-testimonial.version-3 .slide-testimonials .item .info-content .client-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 830px) {
+  .ova-testimonial.version-3 .slide-testimonials .item .info-content .client-info {
+    flex-direction: unset;
+  }
+}
+@media (max-width: 479px) {
+  .ova-testimonial.version-3 .slide-testimonials .item .info-content .client-info {
+    align-items: start;
+  }
+}
+@media (max-width: 830px) {
+  .ova-testimonial.version-3 .slide-testimonials .item .info-content .client-info .client {
+    margin-bottom: 0;
+  }
+}
+.ova-testimonial.version-3 .slide-testimonials .item .info-content .client-info .client img {
+  width: 70px;
+  height: 70px;
+}
+.ova-testimonial.version-3 .slide-testimonials .item .info-content .client-info .name-job .name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.ova-testimonial.version-3 .slide-testimonials .item .info-content .client-info .name-job .job {
+  margin: 0;
+  font-size: 14px;
+}
+.ova-testimonial.version-3 .slide-testimonials .item .quote {
+  display: block;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 147px;
+}
+.ova-testimonial.version-3 .slide-testimonials .item .quote i {
+  color: var(--primary);
+  opacity: 0.05;
+}
+.ova-testimonial.version-3 .slide-testimonials .item .line1 {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  content: "";
+  width: calc(100% - 40px);
+  height: 15px;
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 40px rgba(43, 89, 255, 0.08);
+  border-radius: 0px 0px 10px 10px;
+}
+.ova-testimonial.version-3 .slide-testimonials .item .line2 {
+  transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  content: "";
+  width: calc(100% - 80px);
+  height: 15px;
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 40px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 40px rgba(43, 89, 255, 0.08);
+  border-radius: 0px 0px 10px 10px;
+}
+.ova-testimonial.version-3 .slide-testimonials .swiper {
+  margin-right: -30px;
+  margin-left: -30px;
+  padding: 0 30px 60px 30px;
+  width: calc(100% + 60px);
+}
+.ova-testimonial.version-3 .slide-testimonials .swiper.swiper-loading .swiper-wrapper {
+  opacity: 0;
+  visibility: hidden;
+}
+.ova-testimonial.version-3 .slide-testimonials .swiper .swiper-wrapper .swiper-slide {
+  box-shadow: 0px 4px 40px rgba(43, 89, 255, 0.08);
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 7px;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-dots.swiper-pagination-bullets {
+  width: 100% !important;
+  left: 50% !important;
+  transform: translate(0, -50%) !important;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-dots .swiper-pagination-bullet {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--primary);
+  opacity: 0.6;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-dots .swiper-pagination-bullet.swiper-pagination-bullet-active, .ova-testimonial.version-3 .slide-testimonials .button-dots .swiper-pagination-bullet:hover {
+  opacity: 1;
+  background-color: var(--primary);
+}
+.ova-testimonial.version-3 .slide-testimonials .button-nav {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, 0.1);
+  background: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-nav.button-prev {
+  left: -25px;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-nav.button-next {
+  right: -25px;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-nav:focus {
+  outline: none;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-nav i {
+  display: flex;
+  font-size: 26px;
+  color: #42516d;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-testimonial.version-3 .slide-testimonials .button-nav:hover i {
+  color: #ff3514;
+}
+@media screen and (max-width: 768px) {
+  .ova-testimonial.version-3 .slide-testimonials .button-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.ova-testimonial.version-3 .slide-testimonials:hover .button-nav {
+  visibility: visible;
+  opacity: 1;
+  transition-duration: 0.3s;
+}

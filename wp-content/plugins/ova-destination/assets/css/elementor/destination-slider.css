@@ -1,0 +1,137 @@
+.ova-destination-slider {
+  position: relative;
+}
+.ova-destination-slider .item-destination {
+  width: 100% !important;
+  padding: 0 !important;
+}
+.ova-destination-slider .item-destination .info {
+  padding: 30px;
+}
+.ova-destination-slider .swiper {
+  margin-right: -10px;
+  margin-left: -10px;
+  padding: 10px;
+  width: calc(100% + 20px);
+}
+.ova-destination-slider .swiper.swiper-loading .swiper-wrapper {
+  opacity: 0;
+  visibility: hidden;
+}
+.ova-destination-slider .button-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 30px;
+}
+.ova-destination-slider .button-dots.swiper-pagination-bullets {
+  width: 100% !important;
+  left: 50% !important;
+  transform: translate(0, -50%) !important;
+}
+.ova-destination-slider .button-dots .swiper-pagination-bullet {
+  display: block;
+  width: 17px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: var(--primary);
+  opacity: 0.6;
+  -webkit-backface-visibility: visible;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-destination-slider .button-dots .swiper-pagination-bullet.swiper-pagination-bullet-active, .ova-destination-slider .button-dots .swiper-pagination-bullet:hover {
+  width: 45px;
+  opacity: 1;
+}
+.ova-destination-slider .swiper-nav .button-nav {
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--light);
+  border-radius: 50%;
+  position: absolute;
+  top: -146px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  z-index: 1;
+  cursor: pointer;
+}
+.ova-destination-slider .swiper-nav .button-nav.button-prev {
+  margin-right: 40px;
+}
+.ova-destination-slider .swiper-nav .button-nav:focus {
+  outline: none;
+}
+.ova-destination-slider .swiper-nav .button-nav i {
+  display: inline-flex;
+  font-size: 22px;
+  color: var(--light);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ova-destination-slider .swiper-nav .button-nav:hover {
+  border-color: var(--primary);
+}
+.ova-destination-slider .swiper-nav .button-nav:hover i {
+  color: var(--primary);
+}
+@media screen and (max-width: 768px) {
+  .ova-destination-slider .swiper-nav .button-nav {
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: #FFFFFF;
+  }
+  .ova-destination-slider .swiper-nav .button-nav.button-prev {
+    margin-right: 0;
+    left: -15px;
+  }
+  .ova-destination-slider .swiper-nav .button-nav.button-next {
+    right: -15px;
+  }
+}
+
+.ova-destination-nav-right .ova-destination-slider .swiper-nav .button-nav {
+  right: 18%;
+}
+@media (max-width: 1299px) {
+  .ova-destination-nav-right .ova-destination-slider .swiper-nav .button-nav {
+    right: 5%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .ova-destination-nav-right .ova-destination-slider .swiper-nav .button-nav.button-prev {
+    left: -15px;
+  }
+  .ova-destination-nav-right .ova-destination-slider .swiper-nav .button-nav.button-next {
+    right: -15px;
+  }
+}
+
+.rtl .ova-destination-slider .swiper-nav .button-nav {
+  right: unset;
+  left: 0;
+}
+.rtl .ova-destination-slider .swiper-nav .button-nav.button-prev {
+  margin-right: 0;
+  margin-left: 40px;
+}
+.rtl .ova-destination-nav-right .ova-destination-slider .swiper-nav .button-nav {
+  right: unset;
+  left: 18%;
+}
+@media (max-width: 1299px) {
+  .rtl .ova-destination-nav-right .ova-destination-slider .swiper-nav .button-nav {
+    left: 5%;
+  }
+}

@@ -1,0 +1,87 @@
+.type6 {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 45px;
+    row-gap: 30px;
+    height: 100%;
+    padding: 30px 40px;
+    box-shadow: 0px 10px 40px 0px rgba(6, 22, 58, .1);
+
+    @media (max-width: 1024px) {
+    	flex-direction: column;
+    }
+    .time-title {
+    	width: 50%;
+
+    	@media (max-width: 1024px) {
+	    	width: 100%;
+	    }
+		.time {
+			margin: 0 20px 8px 0;
+
+			.more_date_text {
+				&:hover {
+					color: var(--heading);
+				}
+			}
+		}
+		.time, .venue {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+
+			i {
+				color: var(--secondary);
+			}
+		}
+		.event_title {
+			margin: 18px 0 0 0;
+			font-size: 25px;
+
+			&:hover {
+				color: var(--primary);
+			}
+		}
+    }
+    .desc-thumbnail {
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+    	width: 100%;
+    	gap: 30px;
+
+    	@media (max-width: 767px) {
+	    	flex-direction: column;
+	    }
+    }
+    .event-thumbnail-v2 {
+    	max-width: 306px;
+
+    	@media (max-width: 1024px) {
+	    	max-width: 100%;
+	    }
+    	img {
+    		display: block;
+    	}
+	}
+
+	.desc {
+		width: 100%;
+
+		.event-excerpt {
+			margin: 0 0 16px 0;
+		}
+		.readmore {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+			color: var(--heading);
+			font-weight: 600;
+
+			&:hover {
+				color: var(--primary);
+			}
+		}
+    }
+}

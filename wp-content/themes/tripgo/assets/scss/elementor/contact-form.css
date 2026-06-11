@@ -1,0 +1,104 @@
+.ova-contact-form {
+  display: block;
+  position: relative;
+  background: #fff;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+@media (max-width: 479px) {
+  .ova-contact-form {
+    padding: 15px;
+  }
+}
+.ova-contact-form .contact-info {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 17px;
+  margin-bottom: 17px;
+}
+@media (max-width: 350px) {
+  .ova-contact-form .contact-info {
+    flex-flow: column;
+  }
+}
+.ova-contact-form .contact-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+@media (max-width: 350px) {
+  .ova-contact-form .contact-info img {
+    margin-bottom: 10px;
+  }
+}
+.ova-contact-form .contact-info .info .label {
+  margin: 0;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.ova-contact-form .contact-info .info .description {
+  display: block;
+  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.ova-contact-form .contact-info .info .phone-address {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+}
+.ova-contact-form .button {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  display: block;
+  background: #FFFFFF;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.ova-contact-form .button:hover {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-contact-form .button i {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-contact-form .button span {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  font-size: 16px;
+  margin-left: 4px;
+  text-transform: capitalize;
+}
+.ova-contact-form .date {
+  display: block;
+  color: var(--light);
+  font-size: 14px;
+  font-weight: 400;
+}
+.ova-contact-form .time {
+  display: block;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 400;
+}

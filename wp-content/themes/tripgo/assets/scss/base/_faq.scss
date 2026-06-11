@@ -1,0 +1,49 @@
+.ova-accordion-custom {
+	.elementor-accordion{
+		.elementor-accordion-item{
+			@include transaction( all, 0.3s, ease);
+			&.ova-active{
+				@include transaction( all, 0.3s, ease);
+				border: 1px solid var(--border) !important;
+			    border-width: 1px !important;
+			    border-top: 1px solid var(--border) !important;
+			    border-radius: 10px;
+			    padding: 25px;
+			    margin-bottom: 24px;
+
+			    @media(max-width: 400px){
+			    	padding: 15px;
+			    }
+			    
+			    .elementor-active{
+			    	padding: 0px;
+			    }
+			    
+			    .elementor-tab-title{
+			    	padding-bottom: 17px;
+			    }
+
+			    .elementor-tab-content{
+				    padding-left: 29px;
+			    }
+			}
+
+			.elementor-tab-title{
+	    		@include transaction( all, 0.3s, ease);
+	    		padding: 13px 20px;
+				padding-left: 25px;
+				.elementor-accordion-icon{
+					svg{
+						width: 10px;
+						height: 10px;
+					}
+				} 
+			}
+
+			.elementor-tab-content{
+				    padding: 0px;
+				    padding-left: 24px;
+			    }
+		}
+	}
+}

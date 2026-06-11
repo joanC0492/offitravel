@@ -1,0 +1,169 @@
+.ovabrw-search-ajax-sidebar{
+
+	.wrap-search-ajax-sidebar{
+		display: grid;
+		gap: 24px;
+		grid-template-columns: 3.2fr 1fr;
+
+		&.left_sidebar {
+			grid-template-columns: 1fr 3.2fr;
+			@media (max-width: 1024px) {
+				grid-template-columns: auto;
+			}
+			.search-ajax-sidebar {
+				grid-row: 1; 
+			}
+		}
+
+		@media (max-width: 1024px) {
+			grid-template-columns: auto;
+			.search-ajax-sidebar {
+				grid-row: 1; 
+				margin-bottom: 30px;
+			}
+		}
+
+		.search-main-content {}
+
+		.search-ajax-sidebar {
+			.ovabrw-search {
+				padding: 25px;
+				padding-bottom: 35px;
+				box-shadow: none;
+				border: 1px solid var(--border);
+				.search-title {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					position: relative;
+					font-size: 20px;
+					line-height: 1.2;
+					border-bottom: 1px solid #e6e6e6;
+		            margin: 0 -25px 25px -25px;
+		    		padding: 0 25px 25px 25px;
+		    		cursor: pointer;
+		    		&:before {
+		    			position: absolute;
+		    			content: "";
+		   				top: 0;
+		   				left: 0;
+		    			height: calc( 100% - 20px );
+		    			width: 4px;
+    					background-color: var(--primary);
+		    		}
+
+		    		i {
+		    			font-size: 24px;
+    					line-height: 1;
+		    		}
+				}
+				.ovabrw-search-form {
+					.ovabrw-s-field {
+						flex-direction: column;
+						align-items: flex-start;
+						row-gap: 16px;
+						padding-bottom: 30px;
+
+						.search-field {
+							display: flex;
+							flex: 0 0 100%;
+							width: 100%;
+							border: 1px solid var(--border);
+							padding: 16px;
+							border-radius: 5px;
+							gap: 5px;
+
+							.ovabrw-input  {
+                                display: flex;
+
+                                input {
+                                	padding: 0 8px;
+                                }
+							}
+							.ovabrw-label {
+								margin-bottom: 0;
+							}
+						}
+					}
+					.ovabrw-search-btn {
+						padding-top: 15px;
+						.ovabrw-btn {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							width: 100%;
+							i {
+								margin-right: 4px;
+							}
+						}
+					}
+					&.unborder {
+						.ovabrw-search-advanced-sidebar {
+							.search-advanced-field-wrapper {
+								.search-advanced-field {
+									&.price-field {
+										.ovabrw-label {
+											border: none;
+											padding: 0;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				.ovabrw-search-advanced-sidebar {
+					.search-advanced-field {
+						margin-bottom: 25px;
+						.ovabrw-label {
+							cursor: pointer;
+							padding-top: 25px;
+							border-top: 1px solid var(--border);
+							margin-bottom: 25px;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+
+							i {
+								font-size: 24px;
+								line-height: 1;
+							}
+						}
+						.search-advanced-content{
+							&.toggled {
+								display: none;
+							}
+						}
+						.brw-tour-price-input {
+							justify-content: space-between;
+							.tour-price-value {
+								position: relative;
+								span {
+									position: absolute;
+									left: 5px;
+									color: #fff;
+								}
+							}
+							input[type='text'] {
+								background-color: var(--secondary);
+							    color: #fff;
+							    border: none;
+							    padding: 2px 4px;
+							    max-width: 70px;
+							    text-align: center;
+							}
+						}
+					}
+				}
+				// select 2 in ovabrw search ajax sidebar
+				.select2-container--default {
+					.select2-selection--single {
+						.select2-selection__arrow {
+							display: block;
+						}
+					}
+				} 
+			}
+		}
+	}
+}
