@@ -1,0 +1,171 @@
+== Changelog ==
+= 2.3.4 =
+* Added WooCommerce 10.8 compatibility.
+* Added WordPress 7.0 compatibility.
+
+= 2.3.3 =
+* Added WooCommerce 10.6 compatibility.
+* Added WordPress 6.9 compatibility.
+* Improved plugin stability and security.
+
+= 2.3.2 =
+* Added WooCommerce 10.2 compatibility.
+
+= 2.3.1 =
+* Added WooCommerce 9.8 compatibility.
+* Added WordPress 6.8 compatibility.
+
+= 2.3.0 =
+* Added WooCommerce 9.6 compatibility.
+
+= 2.2.9 =
+* Added WooCommerce 9.4 compatibility.
+* Added WordPress 6.7 compatibility.
+
+= 2.2.8 =
+* Added WooCommerce 9.2 compatibility.
+* Added WordPress 6.6 compatibility.
+
+= 2.2.7 =
+* Added WooCommerce 8.9 compatibility.
+* Added WordPress 6.5 compatibility.
+
+= 2.2.6 =
+* Added WooCommerce 8.7 compatibility.
+
+= 2.2.5 =
+* Added WooCommerce 8.4 compatibility.
+
+= 2.2.4 =
+* Added WooCommerce 8.2 compatibility.
+* Added WordPress 6.4 compatibility.
+
+= 2.2.3 =
+* Added WooCommerce 7.9 compatibility.
+* Improved the Astra theme compatibility.
+
+= 2.2.2 =
+* Added WooCommerce 7.7 compatibility.
+* Added compatibility with HPOS(High-Performance order storage).
+
+= 2.2.1 =
+* Added WooCommerce 7.5 compatibility.
+* Added WordPress 6.2 compatibility.
+
+= 2.2.0 =
+* Added an option to edit the title for review and payment when separating the steps.
+* Added New UI integration.
+* Added WooCommerce 7.3 compatibility.
+* Added WordPress 6.1 compatibility.
+
+= 2.1.0 =
+* Added WooCommerce 6.9.4 compatibility.
+
+= 2.0.9 =
+* Added WooCommerce 6.7.0 compatibility.
+
+= 2.0.8 =
+* Added WooCommerce 6.5 compatibility.
+* Added WordPress 6.0 compatibility.
+
+= 2.0.7 =
+* Added option to separate order review and payment steps.
+* Added option to display order review and payment on right side.
+* Added option to display coupon form above payment.
+* Added WooCommerce 6.4.1 compatibility.
+* Added WordPress 5.9 compatibility.
+
+= 2.0.6 =
+* Added new layout (Accordion) for checkout steps.
+* Added WooCommerce 6.0.0 compatibility.
+
+= 2.0.5 =
+* Improved the labels.
+* Added WooCommerce 5.8.0 compatibility.
+
+= 2.0.4 =
+* Added Astra theme compatibility.
+* Added WooCommerce version - 5.6.0 compatibility. 
+* Added WordPress version - 5.8 compatibility.
+
+= 2.0.3 =
+Fix: Added nonce check for form submission.
+Improvement: Improved all input field sanitization,.
+Improvement: Added WooCommerce version - 5.3.0 compatibility.
+
+= 2.0.2 =
+* Added new layout (Time Line) for checkout steps.
+* Added option to combine Billing step and Shipping step.
+* Checked woocommerce 5.1.0 and WP 5.7 compatibility.
+
+= 2.0.1 =
+* Added translation string for javascript error text and newly added strings.
+* WooCommerce version 4.7.0 compatibility added.
+
+= 2.0.0 =
+* Added new layout (Vertical Box) for checkout steps.
+* Added option for Next button text.
+* Added option for Previous button text.
+* Added option for showing the back to cart button in the checkout page.
+* Added option for changing the back to cart button text.
+* Improved the admin panel UI.
+* Checked woocommerce 4.5.1 and WP 5.5.1 compatibility.
+
+= 1.1.1 =
+* WooCommerce version 4.3.0 compatibility added.
+* Added a new filter thwmcf_plugin_settings to modify settings
+
+= 1.1.0 =
+* WooCommerce version 4.0.1 compatibility added.
+
+= 1.0.9 =
+* WooCommerce version 3.9.1 compatibility added.
+
+= 1.0.8 =
+* WooCommerce version 3.8 compatibility added.
+* WordPress version 5.3 compatibility added.
+* Fixed the compatibility issue with astra theme.
+
+= 1.0.7 =
+* WooCommerce version 3.7.0 compatibility added.
+* Fixed the validation error of shipping field if ship to diffrent address is unchecked.
+* Fixed the validation error issue of create account fields if create account check box is unchecked.
+* Fixed the validation issue related to the themehigh checkout field editor conditional fields.
+* Added Before customer details hook in billing step and After customer details hook in shipping step.
+* Improved the validation message.
+
+= 1.0.6 =
+* WooCommerce version 3.6.1 compatibility added.
+
+= 1.0.5 =
+*Release Date - 7th Jan, 2019*
+
+* Added javascript step validation in each step
+
+= 1.0.4 =
+*Release Date - 26st May, 2018*
+
+* New option to remove login from step layout.
+* WooCommerce tested up to version updated.
+
+= 1.0.3 =
+*Release Date - 31st January, 2018*
+
+* WooCommerce tested up to version updated.
+
+= 1.0.2 =
+*Release Date - 25th January, 2018*
+
+* Added POT file in language folder.
+
+= 1.0.1 =
+*Release Date - 17th November, 2017*
+
+* New option to set tab background and text colors.
+* New option to align tab left or right.
+* New option to set content background color.
+
+= 1.0.0 =
+*Release Date - 03rd November, 2017*
+
+* Initial version.

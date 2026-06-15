@@ -1,0 +1,351 @@
+# Copyright (C) 2026 ThemeHigh
+# This file is distributed under the same license as the MultiStep Checkout for WooCommerce plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: MultiStep Checkout for WooCommerce 2.3.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woo-multistep-checkout\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-05-26T10:31:05+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: woo-multistep-checkout\n"
+
+#. Plugin Name of the plugin
+#: woo-multistep-checkout.php
+msgid "MultiStep Checkout for WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+#: woo-multistep-checkout.php
+msgid "MultiStep Checkout for WooCommerce plugin breaks up the usual WooCommerce checkout form into multiple steps for a friendlier user experience."
+msgstr ""
+
+#. Author of the plugin
+#: woo-multistep-checkout.php
+msgid "ThemeHigh"
+msgstr ""
+
+#. Author URI of the plugin
+#: woo-multistep-checkout.php
+msgid "https://www.themehigh.com"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:85
+msgid "Woo Multistep Checkout"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:85
+msgid "Multistep Checkout"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:93
+msgid "Get Pro"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:118
+msgid "WooCommerce"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:129
+msgid "yes"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:130
+#: classes/class-thwmscf-settings.php:725
+msgid "Login"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:131
+msgid "Billing details"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:132
+msgid "Shipping details"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:133
+msgid "Order review"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:134
+#: classes/class-thwmscf-settings.php:737
+msgid "Payment"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:165
+msgid "Quick Feedback"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:170
+#: classes/class-thwmscf-settings.php:200
+msgid "Get Support"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:174
+msgid "If you have a moment, please let us know why you want to deactivate this plugin"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:193
+msgid "This form is only for getting your valuable feedback. We do not collect your personal data. To know more read our "
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:193
+msgid "Privacy Policy"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:197
+msgid "Skip & Deactivate"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:201
+msgid "Submit and Deactivate"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:202
+msgid "Cancel"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:413
+msgid "Deactivate and "
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:415
+msgid "leave a review"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:419
+msgid "Upgraded"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:481
+msgid "Upgraded to premium."
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:488
+msgid "I found a better Plugin"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:490
+#: classes/class-thwmscf-settings.php:518
+msgid "Could you please mention the plugin?"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:495
+msgid "It was hard to use"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:497
+msgid "How can we improve your experience?"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:502
+msgid "A specific feature is missing"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:504
+msgid "Type in the feature"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:509
+msgid "The plugin didn’t work as expected"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:511
+msgid "Specify the issue"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:516
+msgid "It’s a temporary deactivation - I’m troubleshooting an issue"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:523
+msgid "Not mentioned here"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:525
+msgid "Kindly tell us your reason, so that we can improve"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:688
+msgid "Left"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:689
+msgid "Center"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:693
+msgid "Horizontal Box Layout"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:694
+msgid "Time Line Layout"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:695
+msgid "Vertical Box Layout"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:696
+msgid "Accordion Layout"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:701
+msgid "Activate Multi-Step"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:703
+msgid "General Settings"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:704
+msgid "Step Display Texts"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:706
+msgid "Display Login Step"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:706
+msgid "Enable 'Allow customers to log into an existing account during checkout' under woocommerce Accounts & Privacy settings tab."
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:709
+msgid "Activate Step Validation"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:712
+msgid "Show Coupon form above Payment"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:716
+msgid "Combine Billing Step and Shipping Step"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:719
+msgid "Show Order Review and Payment in Separate Steps"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:722
+msgid "Show Order Review and Payment on Right side"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:728
+msgid "Billing Details"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:731
+msgid "Shipping Details"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:734
+msgid "Order Review"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:739
+msgid "Layouts"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:741
+msgid "Tab Position"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:741
+msgid "For the vertical layout, this will be treated as text alignment."
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:744
+msgid "Content Background Color"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:747
+msgid "Step Background Color"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:750
+msgid "Step Text Color"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:753
+msgid "Step Background Color - Active"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:756
+msgid "Step Text Color - Active"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:760
+msgid "Multistep Layout"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:762
+msgid "Button Settings"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:764
+msgid "Previous Button Text"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:767
+msgid "Next Button Text"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:770
+msgid "Activate Back to Cart Button"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:773
+msgid "Back to Cart Button Text"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:799
+msgid "Settings successfully reset"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1214
+msgid "Display Styles"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1434
+msgid "Your changes were saved."
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1436
+msgid "Your changes were not saved due to an error (or you made none!)."
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1852
+msgid "Invalid or data missing in the required field(s)"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1986
+msgid "We have a quick favour to ask "
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1987
+msgid "We're excited to launch a fresh new look for our Multi-step Checkout plugin! We've put in a lot of time and effort to make your experience better than before."
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1987
+msgid "If you like it, please show us some love with a "
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1990
+msgid "Yes, today"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1994
+msgid "Already, Did"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:1998
+msgid "Maybe later"
+msgstr ""
+
+#: classes/class-thwmscf-settings.php:2002
+msgid "Nah, Never"
+msgstr ""

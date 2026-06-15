@@ -30,12 +30,43 @@ function tripgo_enqueue_styles()
 	);
 
 	if (function_exists('is_checkout') && is_checkout()) {
+
+		$checkout_summary_css = get_stylesheet_directory() . '/css/checkout-summary.css';
+
+		wp_enqueue_style(
+			'offitravel-checkout-summary',
+			get_stylesheet_directory_uri() . '/css/checkout-summary.css',
+			array('child-style'),
+			file_exists($checkout_summary_css) ? filemtime($checkout_summary_css) : $theme->get('Version')
+		);
+
 		wp_enqueue_script(
 			'offitravel-checkout-field-errors',
 			get_stylesheet_directory_uri() . '/js/checkout-field-errors.js',
 			array(),
 			'1.0.0',
 			true
+		);
+
+		$checkout_tracking_js = get_stylesheet_directory() . '/js/checkout-tracking.js';
+
+		wp_enqueue_script(
+			'offitravel-checkout-tracking',
+			get_stylesheet_directory_uri() . '/js/checkout-tracking.js',
+			array('jquery'),
+			file_exists($checkout_tracking_js) ? filemtime($checkout_tracking_js) : '1.0.0',
+			true
+		);
+
+		wp_localize_script(
+			'offitravel-checkout-tracking',
+			'offiCheckoutTracking',
+			array(
+				'ajaxUrl' => admin_url('admin-ajax.php'),
+				'nonce' => wp_create_nonce('offi_checkout_step'),
+				'debug' => defined('WP_DEBUG') && WP_DEBUG,
+				'eventName' => 'CheckoutStep1Completed',
+			)
 		);
 
 		wp_add_inline_style(
@@ -209,6 +240,19 @@ require_once get_stylesheet_directory() . '/inc/tour-suggestions-fallback.php';
  */
 require_once get_stylesheet_directory() . '/inc/home-search-empty-redirect.php';
 
+/**
+ * Checkout: aside custom de resumen del pedido.
+ */
+require_once get_stylesheet_directory() . '/inc/checkout-summary-sidebar.php';
+
+/**
+ * Checkout: guardado de leads (paso 1) y tracking de compra en thank you.
+ */
+require_once get_stylesheet_directory() . '/inc/checkout-step-leads.php';
+require_once get_stylesheet_directory() . '/inc/checkout-purchase-tracking.php';
+
+
+require_once get_stylesheet_directory() . '/inc/checkout-legal-text.php';
 
 /**
  * Límite de la descripción corta de productos (WooCommerce = campo excerpt).
@@ -440,3 +484,18 @@ JS;
 }
 add_action('admin_enqueue_scripts', 'offitravel_product_excerpt_admin_scripts', 20);
 
+
+/**
+ * OFFITRAVEL - Cambiar "Población" por "Ciudad"
+ * en los campos de dirección de WooCommerce.
+ */
+function offitravel_change_city_field_label($fields)
+{
+	if (isset($fields['city'])) {
+		$fields['city']['label'] = 'Ciudad';
+		$fields['city']['placeholder'] = 'Ciudad';
+	}
+
+	return $fields;
+}
+add_filter('woocommerce_default_address_fields', 'offitravel_change_city_field_label');

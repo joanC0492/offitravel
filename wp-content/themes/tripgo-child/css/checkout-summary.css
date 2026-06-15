@@ -1,0 +1,414 @@
+body.woocommerce-checkout .woocommerce-form-coupon-toggle {
+  display: none !important;
+}
+
+/*
+Oculta la tabla clásica del resumen para evitar duplicado con el aside custom.
+Activar solo si el pago sigue visible correctamente en el segundo paso.
+*/
+body.woocommerce-checkout #order_review_heading,
+body.woocommerce-checkout .woocommerce-checkout-review-order-table {
+  display: none !important;
+}
+
+.offi-checkout-summary {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+  font-size: 14px;
+}
+
+.offi-checkout-summary p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.offi-checkout-summary__header {
+  padding: 24px 24px 12px;
+}
+
+.offi-checkout-summary__header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #4a4a4a;
+}
+
+.offi-checkout-summary__items {
+  padding: 0 24px 20px;
+}
+
+.offi-summary-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.offi-summary-item__image {
+  position: relative;
+  width: 56px;
+  flex: 0 0 56px;
+}
+
+.offi-summary-item__image img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  display: block;
+}
+
+.offi-summary-item__qty {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  background: #fff;
+  color: #555;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+  z-index: 2;
+}
+
+.offi-summary-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.offi-summary-item__content h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.25;
+  color: #3f3f3f;
+}
+
+.offi-summary-item__price {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Metadata del producto: estilo similar al Checkout Block original */
+.offi-summary-item__meta {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #444;
+}
+
+.offi-summary-item__meta .variation {
+  display: grid;
+  grid-template-columns: 48% 52%;
+  margin: 0;
+  width: 100%;
+}
+
+.offi-summary-item__meta .variation dt,
+.offi-summary-item__meta .variation dd {
+  float: none !important;
+  clear: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 9px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.offi-summary-item__meta .variation dt {
+  grid-column: 1;
+  font-weight: 700;
+  padding-right: 8px;
+  color: #444;
+}
+
+.offi-summary-item__meta .variation dd {
+  grid-column: 2;
+  color: #444;
+}
+
+.offi-summary-item__meta .variation dd p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.offi-summary-item__meta .variation dd::after {
+  display: none !important;
+  content: none !important;
+}
+
+.offi-summary-item__meta .variation::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Cupón */
+.offi-checkout-summary__coupon {
+  border-top: 1px solid #ddd;
+}
+
+.offi-checkout-summary__coupon-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  list-style: none;
+}
+
+.offi-checkout-summary__coupon-title::-webkit-details-marker {
+  display: none;
+}
+
+.offi-checkout-summary__coupon-title::marker {
+  display: none;
+  content: "";
+}
+
+.offi-checkout-summary__coupon-icon {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-top: -4px;
+}
+
+.offi-checkout-summary__coupon[open] .offi-checkout-summary__coupon-icon {
+  transform: rotate(225deg);
+  margin-top: 4px;
+}
+
+.offi-checkout-summary__coupon-form {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 118px;
+  gap: 8px;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 24px 16px !important;
+  border: 0 !important;
+  box-sizing: border-box;
+}
+
+.offi-checkout-summary__coupon-form > .form-row {
+  float: none !important;
+  clear: none !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+.offi-checkout-summary__coupon-form > .form-row-first {
+  grid-column: 1;
+}
+
+.offi-checkout-summary__coupon-form > .form-row-last {
+  grid-column: 2;
+}
+
+.offi-checkout-summary__coupon-form > .clear {
+  display: none !important;
+}
+
+.offi-checkout-summary__coupon-form input.input-text {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: 48px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.offi-checkout-summary__coupon-form button.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: 48px;
+  background: #b57a70;
+  color: #fff;
+  border-radius: 4px;
+  border: 0;
+  font-weight: 600;
+  padding: 0 12px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .offi-checkout-summary__coupon-form {
+    grid-template-columns: 1fr;
+  }
+
+  .offi-checkout-summary__coupon-form > .form-row-first,
+  .offi-checkout-summary__coupon-form > .form-row-last {
+    grid-column: 1;
+  }
+}
+
+/* Totales */
+.offi-checkout-summary__totals {
+  border-top: 1px solid #ddd;
+}
+
+.offi-summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+  color: #555;
+}
+
+.offi-summary-total-row strong {
+  font-weight: 500;
+  color: #444;
+}
+
+.offi-summary-total-row--final {
+  font-size: 22px;
+  border-bottom: 0;
+  color: #444;
+}
+
+.offi-summary-total-row--final strong {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .offi-checkout-summary {
+    position: static;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .offi-summary-item {
+    gap: 12px;
+  }
+
+  .offi-summary-item__image {
+    width: 48px;
+    flex-basis: 48px;
+  }
+
+  .offi-summary-item__image img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .offi-summary-item__content h3 {
+    font-size: 15px;
+  }
+
+  .offi-summary-item__meta .variation {
+    grid-template-columns: 50% 50%;
+  }
+
+  .offi-checkout-summary__header,
+  .offi-checkout-summary__items,
+  .offi-checkout-summary__coupon .woocommerce-form-coupon-toggle,
+  .offi-checkout-summary__coupon .checkout_coupon,
+  .offi-summary-total-row {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+.offi-summary-item__description {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #555;
+}
+
+.offi-summary-item__description p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 992px) {
+  div:has(> .offi-checkout-summary) {
+    position: sticky !important;
+    top: 0;
+  }
+}
+
+.woocommerce-checkout
+  .offi-checkout-summary__coupon-form#offi_checkout_coupon_form
+  .form-row.form-row-first,
+.woocommerce-checkout
+  .offi-checkout-summary__coupon-form#offi_checkout_coupon_form
+  .form-row.form-row-last {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Texto legal custom tipo Checkout Block */
+.offi-checkout-legal-text {
+  margin: 24px 0 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e6e6e6;
+  /* text-align: center; */
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.offi-checkout-legal-text a {
+  color: #b57a70;
+  text-decoration: none;
+}
+
+.offi-checkout-legal-text a:hover {
+  text-decoration: underline;
+}
+
+/* Ocultar residuos del checkout clásico de WooCommerce */
+body.woocommerce-checkout .woocommerce-privacy-policy-text,
+body.woocommerce-checkout .woocommerce-terms-and-conditions,
+body.woocommerce-checkout
+  .woocommerce-terms-and-conditions-wrapper
+  .form-row.validate-required {
+  display: none !important;
+}
+
+
+body.woocommerce-checkout div:has(.button.wc-forward[href="/cart/"]) {
+  display: none !important;
+}
+
+/* Multistep checkout: ocultar botones sin acción real en primer/último paso */
+body.woocommerce-checkout .thwmscf-wrapper .thwmscf-buttons .action-prev.thwmscf-first-prev,
+body.woocommerce-checkout .thwmscf-wrapper .thwmscf-buttons .action-next.thwmscf-last-next,
+body.woocommerce-checkout .thwmscf-wrapper .thwmscf-buttons .action-prev.thwmscf-first-prev[disabled],
+body.woocommerce-checkout .thwmscf-wrapper .thwmscf-buttons .action-next.thwmscf-last-next[disabled] {
+  display: none !important;
+}
