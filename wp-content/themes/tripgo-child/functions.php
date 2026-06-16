@@ -499,3 +499,75 @@ function offitravel_change_city_field_label($fields)
 	return $fields;
 }
 add_filter('woocommerce_default_address_fields', 'offitravel_change_city_field_label');
+
+
+/**
+ * OFFITRAVEL - Compatibilidad con Cart Abandonment Recovery.
+ *
+ * El plugin "Cart Abandonment Recovery for WooCommerce" detecta
+ * incorrectamente este checkout como WooCommerce Blocks, aunque actualmente
+ * se utiliza el checkout clásico mediante shortcode y Woo Multistep Checkout.
+ *
+ * Debido a esa detección incorrecta, el plugin asigna:
+ *
+ * wcf_ca_vars._is_block_based_checkout = '1'
+ *
+ * y busca el correo electrónico en el campo:
+ *
+ * #email
+ *
+ * Sin embargo, el checkout clásico de OFFITRAVEL utiliza los campos estándar:
+ *
+ * #billing_email
+ * #billing_phone
+ * #billing_first_name
+ * #billing_last_name
+ *
+ * Como #email no existe en este formulario, el JavaScript del plugin termina
+ * antes de ejecutar la petición AJAX:
+ *
+ * cartflows_save_cart_abandonment_data
+ *
+ * Esto impedía que los nuevos carritos fueran registrados en la tabla:
+ *
+ * {prefix}_cartflows_ca_cart_abandonment
+ *
+ * La solución consiste en forzar el modo de checkout clásico estableciendo:
+ *
+ * wcf_ca_vars._is_block_based_checkout = false
+ *
+ * Se ejecuta en wp_footer con prioridad alta porque la variable wcf_ca_vars
+ * es creada por el plugin al cargar sus scripts en el footer. Al intentar
+ * modificarla antes mediante wp_add_inline_script(), la variable todavía no
+ * estaba disponible y el ajuste no se aplicaba.
+ *
+ * No se modifica ningún archivo del plugin, por lo que esta corrección no se
+ * pierde al actualizar Cart Abandonment Recovery.
+ *
+ * Validación realizada:
+ * - El plugin empezó a leer correctamente #billing_email.
+ * - Se ejecutó la acción AJAX cartflows_save_cart_abandonment_data.
+ * - El carrito se registró correctamente con estado "normal".
+ * - Posteriormente puede pasar a "abandoned" según el tiempo configurado.
+ */
+function offitravel_fix_cart_abandonment_checkout_type()
+{
+	if (
+		!function_exists('is_checkout') ||
+		!is_checkout() ||
+		(function_exists('is_order_received_page') && is_order_received_page())
+	) {
+		return;
+	} ?>
+	<script id="offitravel-cart-abandonment-classic-checkout-fix">
+		if (window.wcf_ca_vars) {
+			window.wcf_ca_vars._is_block_based_checkout = false;
+		}
+	</script>
+	<?php
+}
+add_action(
+	'wp_footer',
+	'offitravel_fix_cart_abandonment_checkout_type',
+	999
+);
