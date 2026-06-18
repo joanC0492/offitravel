@@ -303,6 +303,7 @@ require_once get_stylesheet_directory() . '/inc/checkout-summary-sidebar.php';
  */
 require_once get_stylesheet_directory() . '/inc/checkout-step-leads.php';
 require_once get_stylesheet_directory() . '/inc/checkout-purchase-tracking.php';
+require_once get_stylesheet_directory() . '/inc/meta-purchase-enrichment.php';
 
 
 require_once get_stylesheet_directory() . '/inc/checkout-legal-text.php';

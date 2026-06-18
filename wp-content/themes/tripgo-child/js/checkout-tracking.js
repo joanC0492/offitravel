@@ -2,6 +2,7 @@
   "use strict";
 
   var LOG_PREFIX = "[OFFI Checkout Tracking]";
+  var META_LOG_PREFIX = "[OFFI Meta Tracking]";
   var isSaving = false;
   var checkTimer = null;
 
@@ -16,6 +17,27 @@
     }
 
     console.log(LOG_PREFIX + " " + message, data);
+  }
+
+  function metaLog(title, data) {
+    if (!window.console || typeof window.console.log !== "function") {
+      return;
+    }
+
+    var payload = typeof data === "undefined" ? {} : data;
+    var label = META_LOG_PREFIX + " " + title;
+
+    if (
+      typeof window.console.groupCollapsed === "function" &&
+      typeof window.console.groupEnd === "function"
+    ) {
+      window.console.groupCollapsed(label);
+      window.console.log(payload);
+      window.console.groupEnd();
+      return;
+    }
+
+    window.console.log(label, payload);
   }
 
   function getConfig() {
@@ -322,6 +344,12 @@
     }
 
     if (window.sessionStorage && sessionStorage.getItem(storageKey) === "1") {
+      metaLog("CheckoutStep1Completed no repetido", {
+        event_sent: false,
+        reason: "duplicate_prevented",
+        lead_id: leadId,
+      });
+
       log("Meta event already sent", {
         eventName: eventName,
         storageKey: storageKey,
@@ -335,6 +363,19 @@
     if (window.sessionStorage) {
       sessionStorage.setItem(storageKey, "1");
     }
+
+    metaLog("CheckoutStep1Completed enviado", {
+      event_name: eventName,
+      event_type: "trackCustom",
+      lead_id: leadId,
+      content_name: metaPayload.content_name,
+      content_ids: metaPayload.content_ids,
+      contents: metaPayload.contents,
+      content_type: metaPayload.content_type,
+      num_items: metaPayload.num_items,
+      value: metaPayload.value,
+      currency: metaPayload.currency,
+    });
 
     log("Meta event sent", {
       eventName: eventName,
@@ -388,7 +429,6 @@
       log("step 1 validation blocked AJAX", {
         reason: reason || "unknown",
         errors: validation.errors,
-        data: data,
       });
       return;
     }
@@ -396,10 +436,16 @@
     data.action = "offi_save_checkout_step";
     data.nonce = config.nonce;
 
+    metaLog("Guardando paso 1", {
+      action: "offi_save_checkout_step",
+      target_step: 2,
+    });
+
     log("sending AJAX", {
-      url: config.ajaxUrl,
+      action: "offi_save_checkout_step",
+      targetStep: 2,
+      ajaxUrlExists: !!config.ajaxUrl,
       hasNonce: !!config.nonce,
-      data: data,
     });
 
     isSaving = true;
@@ -414,17 +460,39 @@
         log("AJAX success", response);
 
         if (!response || !response.success || !response.data) {
+          metaLog("Error al guardar paso 1", {
+            ajax_success: false,
+            status: 200,
+            reason:
+              response && response.data && response.data.message
+                ? response.data.message
+                : "invalid_ajax_response",
+          });
           return;
         }
+
+        metaLog("Paso 1 guardado correctamente", {
+          ajax_success: true,
+          target_step: 2,
+          lead_id:
+            response.data && typeof response.data.lead_id !== "undefined"
+              ? String(response.data.lead_id)
+              : "unknown",
+        });
 
         maybeSendMetaEvent(response.data, config);
       })
       .fail(function (xhr) {
+        metaLog("Error al guardar paso 1", {
+          ajax_success: false,
+          status: xhr && xhr.status ? xhr.status : 0,
+          reason:
+            xhr && xhr.statusText ? String(xhr.statusText) : "ajax_failed",
+        });
+
         log("AJAX error", {
           status: xhr && xhr.status,
           statusText: xhr && xhr.statusText,
-          responseText: xhr && xhr.responseText,
-          xhr: xhr,
         });
       })
       .always(function () {
@@ -493,9 +561,14 @@
           event.stopImmediatePropagation();
           applyStep1ValidationErrors(validation);
           showStep1ValidationNotice(validation);
+          metaLog("Paso 1 bloqueado", {
+            event_sent: false,
+            reason: "validation_failed",
+            invalid_fields: validation.errors,
+          });
+
           log("step 1 validation blocked navigation", {
             errors: validation.errors,
-            data: fields,
           });
           return;
         }
