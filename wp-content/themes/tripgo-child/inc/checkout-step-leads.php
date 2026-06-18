@@ -293,6 +293,12 @@ function offitravel_checkout_upsert_step_lead($fields)
 			return new WP_Error('offi_lead_update_failed', 'No se pudo actualizar el lead de checkout.');
 		}
 
+		/**
+		 * Permite que el bridge de integración (Fase 1) vincule wcf_session_id al lead.
+		 * Argumentos: $lead_id (int), $session_key (string).
+		 */
+		do_action('ofi_after_lead_upsert', $existing_id, $record['session_key']);
+
 		return array(
 			'lead_id' => $existing_id,
 			'tracking' => $tracking,
@@ -315,8 +321,16 @@ function offitravel_checkout_upsert_step_lead($fields)
 		return new WP_Error('offi_lead_insert_failed', 'No se pudo guardar el lead de checkout.');
 	}
 
+	$new_lead_id = (int) $wpdb->insert_id;
+
+	/**
+	 * Permite que el bridge de integración (Fase 1) vincule wcf_session_id al lead.
+	 * Argumentos: $lead_id (int), $session_key (string).
+	 */
+	do_action('ofi_after_lead_upsert', $new_lead_id, $record['session_key']);
+
 	return array(
-		'lead_id' => (int) $wpdb->insert_id,
+		'lead_id' => $new_lead_id,
 		'tracking' => $tracking,
 		'email_present' => !empty($record['email']),
 	);
@@ -489,6 +503,15 @@ function offitravel_checkout_link_order_to_lead($order)
 
 	$order_id = (int) $order->get_id();
 	if ($order_id <= 0) {
+		return 0;
+	}
+
+	$canonical_lead_id = (int) apply_filters('ofi_cab_link_order_to_lead_by_session', 0, $order);
+	if ($canonical_lead_id > 0) {
+		return $canonical_lead_id;
+	}
+
+	if ((bool) apply_filters('ofi_cab_disable_legacy_order_link_fallback', false, $order)) {
 		return 0;
 	}
 

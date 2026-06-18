@@ -11,109 +11,114 @@ Text Domain:  tripgo-child
 
 /* Reserva: sin plazas (cantidad 0) — mensaje en lugar del formulario */
 .ova-forms-product.offitravel-booking-no-stock .offitravel-booking-unavailable {
-	padding-top: 1.5rem;
-	background: #fff;
+  padding-top: 1.5rem;
+  background: #fff;
 }
-.ova-forms-product.offitravel-booking-no-stock .offitravel-booking-unavailable p {
-	margin: 0;
-	text-align: center;
-	font-size: 1rem;
-	line-height: 1.5;
-	color: #111;
+.ova-forms-product.offitravel-booking-no-stock
+  .offitravel-booking-unavailable
+  p {
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #111;
 }
 
 /* Contacto si cantidad 0: cabecera = estilos del padre (.price-product + .logo) */
 .ova-forms-product.offitravel-zero-stock-contact .offitravel-contact-widget {
-	padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 /* Botones en columna, ancho uniforme, colores tipo referencia */
 .offitravel-contact-buttons {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	gap: 1rem;
-	padding: 1.25rem 1.25rem 1.5rem;
-	margin: 0.35rem 0 0;
-	width: 100%;
-	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  margin: 0.35rem 0 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .offitravel-contact-btn {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 0.65rem;
-	width: 100%;
-	min-height: 50px;
-	padding: 0.85rem 1.35rem;
-	border: none;
-	border-radius: 999px;
-	font-family: inherit;
-	font-weight: 700;
-	font-size: 0.8125rem;
-	line-height: 1.2;
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
-	color: #fff;
-	text-decoration: none;
-	box-sizing: border-box;
-	box-shadow:
-		0 4px 0 rgba(0, 0, 0, 0.12),
-		0 6px 14px rgba(0, 0, 0, 0.16);
-	transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  min-height: 50px;
+  padding: 0.85rem 1.35rem;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-decoration: none;
+  box-sizing: border-box;
+  box-shadow:
+    0 4px 0 rgba(0, 0, 0, 0.12),
+    0 6px 14px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
 }
 
 .offitravel-contact-btn:hover,
 .offitravel-contact-btn:focus {
-	color: #fff;
-	filter: brightness(1.05);
-	transform: translateY(-2px);
-	box-shadow:
-		0 5px 0 rgba(0, 0, 0, 0.1),
-		0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow:
+    0 5px 0 rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .offitravel-contact-btn:active {
-	transform: translateY(0);
-	filter: brightness(0.98);
+  transform: translateY(0);
+  filter: brightness(0.98);
 }
 
 /* Azul llamada */
 .offitravel-contact-btn--phone {
-	background: linear-gradient(180deg, #2ea0ff 0%, #1e88e5 55%, #1565c0 100%);
+  background: linear-gradient(180deg, #2ea0ff 0%, #1e88e5 55%, #1565c0 100%);
 }
 
 /* Verde WhatsApp */
 .offitravel-contact-btn--whatsapp {
-	background: linear-gradient(180deg, #3ee082 0%, #25d366 50%, #1faa52 100%);
+  background: linear-gradient(180deg, #3ee082 0%, #25d366 50%, #1faa52 100%);
 }
 
 /* Coral / rojo correo */
 .offitravel-contact-btn--email {
-	background: linear-gradient(180deg, #ff8a7a 0%, #ff6b5c 45%, #e64a45 100%);
+  background: linear-gradient(180deg, #ff8a7a 0%, #ff6b5c 45%, #e64a45 100%);
 }
 
 .offitravel-contact-btn__icon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-shrink: 0;
-	line-height: 0;
-	color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+  color: #fff;
 }
 
 .offitravel-contact-btn__icon svg {
-	display: block;
+  display: block;
 }
 
 .offitravel-contact-btn__label {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 .ova-forms-product.offitravel-zero-stock-contact .tabs {
-	margin-top: 0.25rem;
+  margin-top: 0.25rem;
 }
 
 /*
@@ -121,105 +126,148 @@ Text Domain:  tripgo-child
  * del panel (sin márgenes negativos). Woo inyecta « / » entre filas (MiniCart… ~298).
  */
 body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block {
-	max-width: 100%;
-	overflow-x: hidden;
-	box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item {
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: flex-start;
-	column-gap: 12px;
-	min-width: 0;
-	max-width: 100%;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  column-gap: 12px;
+  min-width: 0;
+  max-width: 100%;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item__image {
-	display: block !important;
-	flex: 0 0 48px;
-	width: 48px;
-	margin-top: 8px;
-	padding-bottom: 0;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item__image {
+  display: block !important;
+  flex: 0 0 48px;
+  width: 48px;
+  margin-top: 8px;
+  padding-bottom: 0;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item__description {
-	flex: 1 1 auto;
-	min-width: 0;
-	max-width: 100%;
-	padding: 4px 0 12px 0 !important;
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item__description {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  padding: 4px 0 12px 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item__total-price {
-	flex: 0 0 auto;
-	min-width: 0;
-	margin-left: 0;
-	padding-top: 4px;
-	padding-left: 4px;
-	box-sizing: border-box;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item__total-price {
+  flex: 0 0 auto;
+  min-width: 0;
+  margin-left: 0;
+  padding-top: 4px;
+  padding-left: 4px;
+  box-sizing: border-box;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item__description .wc-block-components-product-details {
-	margin-top: 0.75rem;
-	margin-left: 0;
-	width: 100%;
-	max-width: 100%;
-	min-width: 0;
-	padding: 0.85rem 0 0;
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	box-sizing: border-box;
-	overflow-wrap: break-word;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item__description
+  .wc-block-components-product-details {
+  margin-top: 0.75rem;
+  margin-left: 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0.85rem 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item .wc-block-components-product-details span[aria-hidden="true"] {
-	display: none !important;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item
+  .wc-block-components-product-details
+  span[aria-hidden="true"] {
+  display: none !important;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item .wc-block-components-product-details > span {
-	box-sizing: border-box;
-	clear: none;
-	display: grid;
-	grid-template-columns: minmax(0, 34%) minmax(0, 1fr);
-	gap: 0.25rem 0.75rem;
-	align-items: baseline;
-	width: 100%;
-	padding: 0.42rem 0;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item
+  .wc-block-components-product-details
+  > span {
+  box-sizing: border-box;
+  clear: none;
+  display: grid;
+  grid-template-columns: minmax(0, 34%) minmax(0, 1fr);
+  gap: 0.25rem 0.75rem;
+  align-items: baseline;
+  width: 100%;
+  padding: 0.42rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item .wc-block-components-product-details > span:last-child {
-	border-bottom: none;
-	padding-bottom: 0;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item
+  .wc-block-components-product-details
+  > span:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item .wc-block-components-product-details .wc-block-components-product-details__name,
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item .wc-block-components-product-details .wc-block-components-product-details__value {
-	display: block !important;
-	float: none;
-	margin: 0;
-	min-width: 0;
-	word-break: break-word;
-	overflow-wrap: break-word;
-	font-size: 14px;
-	line-height: 1.42;
-	text-align: start;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item
+  .wc-block-components-product-details
+  .wc-block-components-product-details__name,
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item
+  .wc-block-components-product-details
+  .wc-block-components-product-details__value {
+  display: block !important;
+  float: none;
+  margin: 0;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.42;
+  text-align: start;
 }
 
-body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item .wc-block-components-product-details .wc-block-components-product-details__name {
-	font-weight: 700;
+body.woocommerce-checkout
+  .wp-block-woocommerce-checkout-order-summary-block
+  .wc-block-components-order-summary-item
+  .wc-block-components-product-details
+  .wc-block-components-product-details__name {
+  font-weight: 700;
 }
 
 @media (max-width: 480px) {
-	body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item .wc-block-components-product-details > span {
-		grid-template-columns: minmax(0, 1fr);
-		grid-template-rows: auto auto;
-		row-gap: 0.06rem;
-	}
+  body.woocommerce-checkout
+    .wp-block-woocommerce-checkout-order-summary-block
+    .wc-block-components-order-summary-item
+    .wc-block-components-product-details
+    > span {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    row-gap: 0.06rem;
+  }
 
-	body.woocommerce-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item .wc-block-components-product-details .wc-block-components-product-details__value {
-		grid-row: 2;
-	}
+  body.woocommerce-checkout
+    .wp-block-woocommerce-checkout-order-summary-block
+    .wc-block-components-order-summary-item
+    .wc-block-components-product-details
+    .wc-block-components-product-details__value {
+    grid-row: 2;
+  }
 }

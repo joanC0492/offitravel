@@ -82,6 +82,35 @@ function tripgo_enqueue_styles()
 		);
 	}
 
+
+	/**
+	 * Botón flotante de reserva en páginas individuales de tours.
+	 */
+	if (
+		function_exists('is_product') &&
+		is_product()
+	) {
+		$tour_floating_booking_css = get_stylesheet_directory() . '/css/tour-floating-booking.css';
+		$tour_floating_booking_js = get_stylesheet_directory() . '/js/tour-floating-booking.js';
+		wp_enqueue_style(
+			'offitravel-tour-floating-booking',
+			get_stylesheet_directory_uri() . '/css/tour-floating-booking.css',
+			array('child-style'),
+			file_exists($tour_floating_booking_css)
+			? filemtime($tour_floating_booking_css)
+			: $theme->get('Version')
+		);
+
+		wp_enqueue_script(
+			'offitravel-tour-floating-booking',
+			get_stylesheet_directory_uri() . '/js/tour-floating-booking.js',
+			array(),
+			file_exists($tour_floating_booking_js)
+			? filemtime($tour_floating_booking_js)
+			: '1.0.0',
+			true
+		);
+	}
 }
 
 add_filter('wp_mail_smtp_core_wp_mail_function_incorrect_location_notice', '__return_false');

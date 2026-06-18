@@ -400,15 +400,30 @@ body.woocommerce-checkout
   display: none !important;
 }
 
-
-body.woocommerce-checkout div:has(.button.wc-forward[href="/cart/"]) {
+body.woocommerce-checkout div:has(> .wc-forward[href*="/cart/"]) {
   display: none !important;
 }
 
 /* Multistep checkout: ocultar botones sin acción real en primer/último paso */
-body.woocommerce-checkout .thwmscf-wrapper .thwmscf-buttons .action-prev.thwmscf-first-prev,
-body.woocommerce-checkout .thwmscf-wrapper .thwmscf-buttons .action-next.thwmscf-last-next,
-body.woocommerce-checkout .thwmscf-wrapper .thwmscf-buttons .action-prev.thwmscf-first-prev[disabled],
-body.woocommerce-checkout .thwmscf-wrapper .thwmscf-buttons .action-next.thwmscf-last-next[disabled] {
+body.woocommerce-checkout
+  .thwmscf-wrapper
+  .thwmscf-buttons
+  .action-prev.thwmscf-first-prev,
+body.woocommerce-checkout
+  .thwmscf-wrapper
+  .thwmscf-buttons
+  .action-next.thwmscf-last-next,
+body.woocommerce-checkout
+  .thwmscf-wrapper
+  .thwmscf-buttons
+  .action-prev.thwmscf-first-prev[disabled],
+body.woocommerce-checkout
+  .thwmscf-wrapper
+  .thwmscf-buttons
+  .action-next.thwmscf-last-next[disabled] {
+  display: none !important;
+}
+
+body.woocommerce-checkout #thwmscf-tabs {
   display: none !important;
 }
