@@ -78,6 +78,30 @@ function tripgo_enqueue_styles()
 			}
 			.wc-block-components-text-input.has-error label {
 				color: #cc1818 !important;
+			}
+			.thwmscf-tab-panel-1 .form-row.has-error input,
+			.thwmscf-tab-panel-1 .form-row.has-error select,
+			.thwmscf-tab-panel-1 .form-row.has-error textarea,
+			.thwmscf-tab-panel-1 .form-row.woocommerce-invalid input,
+			.thwmscf-tab-panel-1 .form-row.woocommerce-invalid select,
+			.thwmscf-tab-panel-1 .form-row.woocommerce-invalid textarea {
+				border-color: #cc1818 !important;
+				box-shadow: 0 0 0 1px #cc1818 !important;
+			}
+			.thwmscf-tab-panel-1 .form-row.has-error label,
+			.thwmscf-tab-panel-1 .form-row.woocommerce-invalid label {
+				color: #cc1818 !important;
+			}
+			.thwmscf-tab-panel-1 .form-row.has-error .select2-selection--single,
+			.thwmscf-tab-panel-1 .form-row.woocommerce-invalid .select2-selection--single {
+				border-color: #cc1818 !important;
+				box-shadow: 0 0 0 1px #cc1818 !important;
+			}
+			.thwmscf-tab-panel-1 .offi-step1-field-error {
+				margin: 4px 0 0;
+				color: #cc1818;
+				font-size: 14px;
+				line-height: 1.35;
 			}'
 		);
 	}

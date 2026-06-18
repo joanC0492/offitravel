@@ -19,7 +19,10 @@
   }
 
   function getConfig() {
-    if (typeof window.offiCheckoutTracking !== "object" || !window.offiCheckoutTracking) {
+    if (
+      typeof window.offiCheckoutTracking !== "object" ||
+      !window.offiCheckoutTracking
+    ) {
       return null;
     }
     return window.offiCheckoutTracking;
@@ -32,7 +35,7 @@
     return {
       step2TabActive: step2TabActive,
       panel2Visible: panel2Visible,
-      isActive: step2TabActive || panel2Visible
+      isActive: step2TabActive || panel2Visible,
     };
   }
 
@@ -49,7 +52,7 @@
       billing_state: $("#billing_state").val() || "",
       billing_phone: $("#billing_phone").val() || "",
       billing_email: $("#billing_email").val() || "",
-      order_comments: $("#order_comments").val() || ""
+      order_comments: $("#order_comments").val() || "",
     };
   }
 
@@ -71,6 +74,123 @@
     return digits.length >= 6 && digits.length <= 15;
   }
 
+  function isValidSpanishPostcode(postcode) {
+    var value = (postcode || "").trim();
+    if (!value) {
+      return false;
+    }
+
+    return /^\d{5}$/.test(value);
+  }
+
+  function getStep1FieldRow(fieldName) {
+    var field = document.getElementById(fieldName);
+    if (!field) {
+      return null;
+    }
+
+    return field.closest(".form-row") || field.closest("p") || null;
+  }
+
+  function clearStep1FieldError(fieldName) {
+    var field = document.getElementById(fieldName);
+    var row = getStep1FieldRow(fieldName);
+
+    if (field) {
+      field.setAttribute("aria-invalid", "false");
+      field.removeAttribute("aria-errormessage");
+    }
+
+    if (row) {
+      row.classList.remove("has-error", "woocommerce-invalid");
+
+      var inlineError = row.querySelector(".offi-step1-field-error");
+      if (inlineError) {
+        inlineError.remove();
+      }
+    }
+  }
+
+  function clearStep1FieldErrors() {
+    [
+      "billing_first_name",
+      "billing_last_name",
+      "billing_country",
+      "billing_address_1",
+      "billing_postcode",
+      "billing_city",
+      "billing_state",
+      "billing_phone",
+      "billing_email",
+    ].forEach(function (fieldName) {
+      clearStep1FieldError(fieldName);
+    });
+  }
+
+  function getStep1FieldLabel(fieldName) {
+    var labels = {
+      billing_first_name: "Nombre",
+      billing_last_name: "Apellidos",
+      billing_country: "País / Región",
+      billing_address_1: "Dirección de la calle",
+      billing_postcode: "Código postal / ZIP",
+      billing_city: "Ciudad",
+      billing_state: "Provincia",
+      billing_phone: "Teléfono",
+      billing_email: "Correo electrónico",
+    };
+
+    return labels[fieldName] || fieldName;
+  }
+
+  function getStep1FieldErrorMessage(fieldName) {
+    if (fieldName === "billing_postcode") {
+      return "El código postal no es válido para España.";
+    }
+
+    if (fieldName === "billing_email") {
+      return "Introduce un correo electrónico válido.";
+    }
+
+    if (fieldName === "billing_phone") {
+      return "Introduce un teléfono válido.";
+    }
+
+    return getStep1FieldLabel(fieldName) + " es obligatorio.";
+  }
+
+  function applyStep1FieldError(fieldName) {
+    var field = document.getElementById(fieldName);
+    var row = getStep1FieldRow(fieldName);
+
+    if (!field || !row) {
+      return;
+    }
+
+    clearStep1FieldError(fieldName);
+
+    row.classList.add("has-error", "woocommerce-invalid");
+    field.setAttribute("aria-invalid", "true");
+
+    var errorId = fieldName + "_offi_step1_error";
+    field.setAttribute("aria-errormessage", errorId);
+
+    var error = document.createElement("div");
+    error.id = errorId;
+    error.className = "checkout-inline-error-message offi-step1-field-error";
+    error.textContent = getStep1FieldErrorMessage(fieldName);
+
+    row.appendChild(error);
+  }
+
+  function applyStep1ValidationErrors(validation) {
+    clearStep1FieldErrors();
+
+    validation.errors.forEach(function (fieldName) {
+      applyStep1FieldError(fieldName);
+    });
+  }
+
   function validateStep1Fields(fields) {
     var required = [
       "billing_first_name",
@@ -81,7 +201,7 @@
       "billing_city",
       "billing_state",
       "billing_phone",
-      "billing_email"
+      "billing_email",
     ];
 
     var errors = [];
@@ -92,17 +212,25 @@
       }
     });
 
-    if (!errors.length && !isValidEmail(fields.billing_email)) {
+    if (String(fields.billing_email || "").trim() && !isValidEmail(fields.billing_email)) {
       errors.push("billing_email");
     }
 
-    if (!errors.length && !isValidPhone(fields.billing_phone)) {
+    if (String(fields.billing_phone || "").trim() && !isValidPhone(fields.billing_phone)) {
       errors.push("billing_phone");
+    }
+
+    if (
+      String(fields.billing_country || "").trim().toUpperCase() === "ES" &&
+      String(fields.billing_postcode || "").trim() &&
+      !isValidSpanishPostcode(fields.billing_postcode)
+    ) {
+      errors.push("billing_postcode");
     }
 
     return {
       isValid: errors.length === 0,
-      errors: errors
+      errors: errors,
     };
   }
 
@@ -126,52 +254,66 @@
       return;
     }
 
-    $("html, body").stop(true).animate(
-      {
-        scrollTop: Math.max($target.offset().top - 100, 0)
-      },
-      400
-    );
+    $("html, body")
+      .stop(true)
+      .animate(
+        {
+          scrollTop: Math.max($target.offset().top - 100, 0),
+        },
+        400,
+      );
   }
 
   function showStep1ValidationNotice(validation) {
     var hasPhoneError = validation.errors.indexOf("billing_phone") !== -1;
     var hasEmailError = validation.errors.indexOf("billing_email") !== -1;
-    var message = "Revisa los campos obligatorios del paso 1 antes de continuar.";
+    var message =
+      "Revisa los campos obligatorios del paso 1 antes de continuar.";
 
     if (hasPhoneError) {
       message = "Por favor, introduce un telefono valido para continuar.";
     } else if (hasEmailError) {
-      message = "Por favor, introduce un correo electronico valido para continuar.";
+      message =
+        "Por favor, introduce un correo electronico valido para continuar.";
     }
 
     clearStep1ValidationNotice();
 
-    var html = '<div class="woocommerce-NoticeGroup woocommerce-NoticeGroup-checkout offi-step1-validation-notice">' +
-      '<ul class="woocommerce-error" role="alert"><li>' + message + '</li></ul>' +
-      '</div>';
+    var html =
+      '<div class="woocommerce-NoticeGroup woocommerce-NoticeGroup-checkout offi-step1-validation-notice">' +
+      '<ul class="woocommerce-error" role="alert"><li>' +
+      message +
+      "</li></ul>" +
+      "</div>";
 
     $("#thwmscf-tab-panel-1").prepend(html);
     scrollToStepPanels();
   }
 
   function maybeSendMetaEvent(payload, config) {
-    var eventName = payload && payload.event_name ? payload.event_name : config.eventName;
-    var leadId = payload && payload.lead_id ? String(payload.lead_id) : 'unknown';
-    var storageKey = 'offi_checkout_step1_meta_sent_' + leadId;
+    var eventName =
+      payload && payload.event_name ? payload.event_name : config.eventName;
+    var leadId =
+      payload && payload.lead_id ? String(payload.lead_id) : "unknown";
+    var storageKey = "offi_checkout_step1_meta_sent_" + leadId;
 
     if (!eventName) {
       eventName = "CheckoutStep1Completed";
     }
 
     var metaPayload = {
-      content_name: payload && payload.content_name ? payload.content_name : '',
+      content_name: payload && payload.content_name ? payload.content_name : "",
       content_ids: payload && payload.content_ids ? payload.content_ids : [],
       contents: payload && payload.contents ? payload.contents : [],
-      content_type: payload && payload.content_type ? payload.content_type : 'product',
-      num_items: payload && typeof payload.num_items !== 'undefined' ? payload.num_items : 0,
-      value: payload && typeof payload.value !== 'undefined' ? payload.value : 0,
-      currency: payload && payload.currency ? payload.currency : ''
+      content_type:
+        payload && payload.content_type ? payload.content_type : "product",
+      num_items:
+        payload && typeof payload.num_items !== "undefined"
+          ? payload.num_items
+          : 0,
+      value:
+        payload && typeof payload.value !== "undefined" ? payload.value : 0,
+      currency: payload && payload.currency ? payload.currency : "",
     };
 
     if (typeof window.fbq !== "function") {
@@ -183,7 +325,7 @@
       log("Meta event already sent", {
         eventName: eventName,
         storageKey: storageKey,
-        leadId: leadId
+        leadId: leadId,
       });
       return;
     }
@@ -198,7 +340,7 @@
       eventName: eventName,
       storageKey: storageKey,
       leadId: leadId,
-      payload: metaPayload
+      payload: metaPayload,
     });
   }
 
@@ -221,7 +363,7 @@
       step2TabActive: step2Status.step2TabActive,
       panel2Visible: step2Status.panel2Visible,
       ajaxUrlExists: !!(config && config.ajaxUrl),
-      nonceExists: !!(config && config.nonce)
+      nonceExists: !!(config && config.nonce),
     });
 
     if (!step2Status.isActive) {
@@ -246,7 +388,7 @@
       log("step 1 validation blocked AJAX", {
         reason: reason || "unknown",
         errors: validation.errors,
-        data: data
+        data: data,
       });
       return;
     }
@@ -257,7 +399,7 @@
     log("sending AJAX", {
       url: config.ajaxUrl,
       hasNonce: !!config.nonce,
-      data: data
+      data: data,
     });
 
     isSaving = true;
@@ -266,7 +408,7 @@
       url: config.ajaxUrl,
       method: "POST",
       dataType: "json",
-      data: data
+      data: data,
     })
       .done(function (response) {
         log("AJAX success", response);
@@ -276,14 +418,13 @@
         }
 
         maybeSendMetaEvent(response.data, config);
-
       })
       .fail(function (xhr) {
         log("AJAX error", {
           status: xhr && xhr.status,
           statusText: xhr && xhr.statusText,
           responseText: xhr && xhr.responseText,
-          xhr: xhr
+          xhr: xhr,
         });
       })
       .always(function () {
@@ -302,7 +443,7 @@
 
     var observer = new MutationObserver(function (mutations) {
       log("step 2 mutation detected", {
-        mutationCount: mutations.length
+        mutationCount: mutations.length,
       });
       scheduleStep2Check("mutation", 120);
     });
@@ -310,20 +451,20 @@
     if (step2Node) {
       observer.observe(step2Node, {
         attributes: true,
-        attributeFilter: ["class", "style", "hidden", "aria-hidden"]
+        attributeFilter: ["class", "style", "hidden", "aria-hidden"],
       });
     }
 
     if (panel2Node) {
       observer.observe(panel2Node, {
         attributes: true,
-        attributeFilter: ["class", "style", "hidden", "aria-hidden"]
+        attributeFilter: ["class", "style", "hidden", "aria-hidden"],
       });
     }
 
     log("mutation observers ready", {
       step2NodeFound: !!step2Node,
-      panel2NodeFound: !!panel2Node
+      panel2NodeFound: !!panel2Node,
     });
   }
 
@@ -335,7 +476,10 @@
   document.addEventListener(
     "click",
     function (event) {
-      var button = event.target && event.target.closest ? event.target.closest(".button-next.action-next") : null;
+      var button =
+        event.target && event.target.closest
+          ? event.target.closest(".button-next.action-next")
+          : null;
       if (!button) {
         return;
       }
@@ -347,10 +491,11 @@
         if (!validation.isValid) {
           event.preventDefault();
           event.stopImmediatePropagation();
+          applyStep1ValidationErrors(validation);
           showStep1ValidationNotice(validation);
           log("step 1 validation blocked navigation", {
             errors: validation.errors,
-            data: fields
+            data: fields,
           });
           return;
         }
@@ -358,10 +503,20 @@
         clearStep1ValidationNotice();
       }
 
+      applyStep1ValidationErrors(validateStep1Fields(collectStep1Fields()));
+
       log("next clicked - capture");
       scheduleStep2Check("capture-click", 650);
     },
-    true
+    true,
+  );
+
+  $(document).on(
+    "input change",
+    "#thwmscf-tab-panel-1 input, #thwmscf-tab-panel-1 select, #thwmscf-tab-panel-1 textarea",
+    function () {
+      applyStep1ValidationErrors(validateStep1Fields(collectStep1Fields()));
+    },
   );
 
   log("script loaded");
@@ -373,7 +528,10 @@
       exists: !!config,
       ajaxUrlExists: !!(config && config.ajaxUrl),
       nonceExists: !!(config && config.nonce),
-      eventName: config && config.eventName ? config.eventName : "CheckoutStep1Completed"
+      eventName:
+        config && config.eventName
+          ? config.eventName
+          : "CheckoutStep1Completed",
     });
 
     setupStep2Observers();
