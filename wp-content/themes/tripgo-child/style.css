@@ -271,3 +271,103 @@ body.woocommerce-checkout
     grid-row: 2;
   }
 }
+
+/*
+ * Thank you / order-received: mostrar un unico precio, el total final del pedido.
+ * La informacion descriptiva del tour y el metodo de pago siguen visibles.
+ */
+/* 
+body.woocommerce-order-received
+  .woocommerce-order-overview__total,
+body.woocommerce-order-received
+  .woocommerce-order-details
+  thead
+  .product-total,
+body.woocommerce-order-received
+  .woocommerce-order-details
+  tbody
+  .product-total {
+  display: none !important;
+}
+
+body.woocommerce-order-received
+  .woocommerce-order-details
+  thead
+  .product-name,
+body.woocommerce-order-received
+  .woocommerce-order-details
+  tbody
+  .product-name {
+  display: block;
+  width: 100% !important;
+  box-sizing: border-box;
+  border-right: 0;
+}
+
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > thead,
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > tbody,
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > tfoot {
+  display: block;
+  width: 100%;
+}
+
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > thead
+  > tr,
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > tbody
+  > tr {
+  display: block;
+  width: 100%;
+}
+
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > tfoot
+  > tr {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  width: 100%;
+}
+
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > tfoot
+  > tr
+  > th,
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > tfoot
+  > tr
+  > td {
+  display: block;
+  width: auto !important;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+body.woocommerce-order-received
+  .woocommerce-order-details
+  table.order_details
+  > tfoot
+  > tr
+  > td {
+  white-space: nowrap;
+}
+*/

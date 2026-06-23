@@ -304,7 +304,11 @@ require_once get_stylesheet_directory() . '/inc/checkout-summary-sidebar.php';
 require_once get_stylesheet_directory() . '/inc/checkout-step-leads.php';
 require_once get_stylesheet_directory() . '/inc/checkout-purchase-tracking.php';
 require_once get_stylesheet_directory() . '/inc/meta-purchase-enrichment.php';
+// require_once get_stylesheet_directory() . '/inc/order-received-display.php';
 
+// OFFITRAVEL: muestra el panel nativo "Guests" de OVA en el editor de tours.
+// Comentar esta línea basta para desactivar el ajuste.
+require_once get_stylesheet_directory() . '/inc/ovabrw-guests-admin.php';
 
 require_once get_stylesheet_directory() . '/inc/checkout-legal-text.php';
 
