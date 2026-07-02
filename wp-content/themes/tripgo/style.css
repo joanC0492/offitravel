@@ -6182,7 +6182,8 @@ body.single-product-not-rental.woocommerce #woo_main {
   -webkit-animation: blinker 1.2s linear 2;
   animation: blinker 1.2s linear 2;
 }
-.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit {
+.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit,
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button {
   position: relative;
   width: 100%;
   font-weight: 600;
@@ -6198,7 +6199,8 @@ body.single-product-not-rental.woocommerce #woo_main {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit .ovabrw-submit-loading {
+.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit .ovabrw-submit-loading,
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button .ovabrw-submit-loading{
   display: none;
   position: absolute;
   right: 20px;
@@ -6206,7 +6208,8 @@ body.single-product-not-rental.woocommerce #woo_main {
   transform: translateY(-50%);
   z-index: 1;
 }
-.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit .ovabrw-submit-loading i {
+.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit .ovabrw-submit-loading i,
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button .ovabrw-submit-loading i {
   display: flex;
   animation: ajax_loading 1.2s linear infinite;
   font-size: 16px;
@@ -6216,10 +6219,12 @@ body.single-product-not-rental.woocommerce #woo_main {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit:hover {
+.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit:hover,
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button:hover {
   color: var(--primary);
 }
-.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit:hover .ovabrw-submit-loading i {
+.ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit:hover .ovabrw-submit-loading i,
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button:hover .ovabrw-submit-loading i {
   color: var(--primary);
 }
 .ova-forms-product .forms-wrapper .ova-booking-form form.booking-form .booking-form-submit.disabled {

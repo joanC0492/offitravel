@@ -292,6 +292,7 @@ require_once get_stylesheet_directory() . '/inc/tour-suggestions-fallback.php';
  * Home: búsqueda vacía (destino cualquiera, sin mes) → ancla #categoria-viajes + tab Todos.
  */
 require_once get_stylesheet_directory() . '/inc/home-search-empty-redirect.php';
+require_once get_stylesheet_directory() . '/inc/home-destination-slider-products.php';
 
 /**
  * Checkout: aside custom de resumen del pedido.

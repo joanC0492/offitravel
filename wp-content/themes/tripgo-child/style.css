@@ -14,10 +14,85 @@ Text Domain:  tripgo-child
   padding-top: 1.5rem;
   background: #fff;
 }
+
+.ova-forms-product.offitravel-booking-no-stock
+  .offitravel-booking-unavailable
+  .booking-form-submit {
+  display: block;
+  position: relative;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 18px 0;
+  margin: 5px 0 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ova-forms-product.offitravel-booking-no-stock
+  .offitravel-booking-unavailable
+  .booking-form-submit:hover,
+.ova-forms-product.offitravel-booking-no-stock
+  .offitravel-booking-unavailable
+  .booking-form-submit:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ova-forms-product.offitravel-booking-no-stock
+  .offitravel-booking-unavailable
+  .booking-form-submit
+  .ovabrw-submit-loading {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.offitravel-booking-unavailable .offitravel-budget-request-button {
+  display: block !important;
+  position: relative;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 18px 0;
+  margin: 5px 0 10px;
+  color: #fff !important;
+  background-color: var(--primary) !important;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.offitravel-booking-unavailable .offitravel-budget-request-button:hover,
+.offitravel-booking-unavailable .offitravel-budget-request-button:focus {
+  color: #fff !important;
+  background-color: var(--primary) !important;
+  text-decoration: none !important;
+}
+
+.offitravel-booking-unavailable
+  .offitravel-budget-request-button
+  .ovabrw-submit-loading {
+  display: none !important;
+}
+
 .ova-forms-product.offitravel-booking-no-stock
   .offitravel-booking-unavailable
   p {
-  margin: 0;
+  margin: 0 0 1rem;
   text-align: center;
   font-size: 1rem;
   line-height: 1.5;
@@ -371,3 +446,46 @@ body.woocommerce-order-received
   white-space: nowrap;
 }
 */
+
+
+
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button {
+  position: relative;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 18px 0;
+  margin: 5px 0 10px;
+  color: #FFFFFF;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button .ovabrw-submit-loading{
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button .ovabrw-submit-loading i {
+  display: flex;
+  animation: ajax_loading 1.2s linear infinite;
+  font-size: 16px;
+  color: #FFF;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button:hover {
+  color: var(--primary);
+}
+.ova-forms-product .forms-wrapper .offitravel-budget-request-button:hover .ovabrw-submit-loading i {
+  color: var(--primary);
+}

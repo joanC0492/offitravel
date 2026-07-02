@@ -124,10 +124,20 @@ if ( 'yes' === $show_form ): ?>
             </div>
             <?php endif; ?>
             <?php
-                // Booking form or “no stock” message
+                // Booking form or budget request fallback.
                 if ( 'yes' === $show_booking ) {
                     if ( $booking_unavailable_no_stock ) {
-                        echo '<div class="offitravel-booking-unavailable"><p>' . esc_html__( 'La salida aún no está disponible.', 'tripgo-child' ) . '</p></div>';
+                        ?>
+                        <div class="offitravel-booking-unavailable">
+                            <p><?php esc_html_e( 'La salida aún no está disponible.', 'tripgo-child' ); ?></p>
+                            <a href="<?php echo esc_url( home_url( '/contacto/' ) ); ?>" class="booking-form-submit offitravel-budget-request-button">
+                                <?php esc_html_e( 'Solicita ya tu presupuesto', 'tripgo-child' ); ?>
+                                <span class="ovabrw-submit-loading">
+                                    <i aria-hidden="true" class="flaticon flaticon-spinner-of-dots"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <?php
                     } else {
                         wc_get_template( 'rental/loop/booking-form.php', [ 'id' => $product_id ] );
                     }
