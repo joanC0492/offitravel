@@ -109,7 +109,8 @@ $initial_json = wp_json_encode( array_map( 'absint', $distribution ) );
 						<span class="guests-labels beside_adults"><?php echo esc_html( $label_adults ); ?></span>
 					<?php endif; ?>
 					<span class="guests-price adults-price"><?php echo wc_price( $adult_price['regular_price'] ); ?></span>
-					<span class="offitravel-room-price-hint"><?php esc_html_e( 'Precio por persona y dia (total segun personas abajo).', 'offitravel-ovabrw' ); ?></span>
+					<!-- <span class="offitravel-room-price-hint"><?php esc_html_e( 'Precio por persona y dia (total segun personas abajo).', 'offitravel-ovabrw' ); ?></span> -->
+					<span class="offitravel-room-price-hint"><?php esc_html_e( 'por persona para el circuito completo.', 'offitravel-ovabrw' ); ?></span>
 				</p>
 			<?php endif; ?>
 			<?php

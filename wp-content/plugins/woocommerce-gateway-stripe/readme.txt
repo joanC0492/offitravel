@@ -4,7 +4,7 @@ Tags: credit card, stripe, payments, woocommerce, woo
 Requires at least: 6.7
 Tested up to: 6.9.4
 Requires PHP: 7.4
-Stable tag: 10.6.1
+Stable tag: 10.7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Attributions: thorsten-stripe
@@ -150,6 +150,10 @@ If you get stuck, you can ask for help in the [Plugin Forum](https://wordpress.o
 6. Get started with no additional hardware using Tap to Pay on iPhone, or Tap to Pay on Android.
 
 == Changelog ==
+
+= 10.7.1 - 2026-07-14 =
+* Fix - Improve Checkout Session amount integrity
+* Fix - Update order status only on processing failure in the order status update request
 
 = 10.7.0 - 2026-05-12 =
 

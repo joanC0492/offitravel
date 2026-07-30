@@ -1,5 +1,9 @@
 *** Changelog ***
 
+2026-07-14 - version 10.7.1
+* Fix - Improve Checkout Session amount integrity
+* Fix - Update order status only on processing failure in the order status update request
+
 2026-05-12 - version 10.7.0
 * Fix - Hide the "move Stripe to the top" Optimized Checkout notice when all payment methods above Stripe are disabled
 * Add - Filter wc_stripe_optimized_checkout_title to override the Optimized Checkout payment method title at checkout

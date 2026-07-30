@@ -1,0 +1,478 @@
+*** WooCommerce Gift Cards ***
+
+2026.06.15 - version 2.7.4
+* Fix - Added an admin notice and a one-click repair action when Gift Cards custom database tables are found to be missing.
+* Fix - Fixed spacing between the NYP price input and add-to-cart button on simple gift card products.
+* Fix - Improved CSV import error messages to specify which gift card attributes are missing or invalid.
+* Tweak - Bumped WordPress tested up to version to 7.0.
+* Tweak - Bumped WooCommerce tested up to version to 10.9.
+* Dev - Updated the JavaScript build toolchain to the React 18.3 line and added React 19 readiness guards.
+* Dev - Added read-only WordPress Abilities API support for querying Gift Cards.
+
+2026.02.25 - version 2.7.3
+* Fix - Fixed order total precision issue when rounding prices at subtotal was disabled.
+* Fix - Improved compatibility with WC 10.4 wc_format_decimal changes.
+* Fix - Improved accessibility for gift cards balance toggle.
+* Tweak - Bumped WooCommerce tested up to version to 10.5.
+
+2025.12.03 - version 2.7.2
+* New - Added support for editing the Gift Card received email using the experimental block email editor.
+* New - Introduced 'woocommerce_gc_pre_apply_gift_card_to_session' filter.
+* Tweak - Replaced wc_enqueue_js with wp_add_inline_script according to the recommended WordPress core script patterns.
+* Tweak - Updated 'woocommerce_gc_auto_redeem' filter to pass giftcard parameter.
+* Tweak - Hide quantity selector for Gift Cards.
+* Tweak - Bumped WordPress tested up to version to 6.9.
+* Tweak - Bumped WooCommerce tested up to version to 10.4.
+
+2025.09.02 - version 2.7.1
+* Tweak - Update plugin authors and contributors.
+
+2025.07.29 - version 2.7.0
+* Tweak - Important: Updated frontend templates.
+* Fix - Improved accessibility.
+* Fix - Fixed sortable columns in the Marketing > Gift Cards list table.
+
+2025.07.01 - version 2.6.1
+* Fix - Upgraded cart and checkout blocks to use Gutenberg apiVersion 3.
+
+2025.06.04 - version 2.6.0
+* Fix - Invalidated active gift cards cache when customers log in.
+* Dev - Removed deprecated WC_GC_Core_Compatibility::wc_current_theme_is_fse_theme.
+
+2025.05.06 - version 2.5.0
+* Tweak - Important: Introduced storing gift card currency as metadata.
+* Tweak - Replaced the use of deprecated function wc_current_theme_is_fse_theme.
+* Tweak - Deprecated WC_GC_Core_Compatibility::wc_current_theme_is_fse_theme.
+* Tweak - Improved accessibility.
+* Fix - Fixed missing plain text template for "Self-use gift card received" emails.
+
+2025.03.12 - version 2.4.1
+* Fix - Resolved fatal error that was triggered when trying to add a gift card to the cart with an empty configuration.
+
+2025.03.11 - version 2.4.0
+* New - Added support for email previews when the 'Email Improvements' experimental feature is enabled.
+* New - Added support for Gift card specific fields to Store API.
+
+2025.02.11 - version 2.3.0
+* Tweak - Important: Removed compatibility with the new Product Editor.
+* Fix - Resolved warning when cancelling an order with gift cards and object caching was enabled.
+
+2025.01.15 - version 2.2.2
+* Fix - Fixed an issue where a gift card expiration reminder would be sent immediately when updated through the admin page.
+
+2025.01.13 - version 2.2.1
+* New - Tested up to WooCommerce v9.6.
+* Fix - Important: Security improvements.
+
+2024.12.10 - version 2.2.0
+* New - Added Gift Cards expiration reminder emails feature.
+* Fix - Fixed Store API request fatal error when using Cart Tokens.
+
+2024.11.20 - version 2.1.1
+* New - Added compatibility with WordPress 6.7.
+* Fix - Resolved the deprecation introduced in WC 9.3.0 by inheriting the reporting class conditionally.
+* Fix - Change the text on the admin order configuration button to clarify what is being 'configured'.
+
+2024.10.22 - version 2.1.0
+* New - Added saving of last modified date of gift card when modified.
+
+2024.09.24 - version 2.0.4
+* Fix - Fixed fatal error when using WooCommerce older than v8.8.
+* Fix - Fixed handling of updating gift cards on orders via REST API.
+
+2024.09.03 - version 2.0.3
+* Fix - Fixed fatal error in own version of WP_Background_Process.
+
+2024.08.27 - version 2.0.2
+* Tweak - Updated version of @somewherewarm/selectsw dependency to include updated styling.
+* Tweak - Removed navigation integration (deprecated WooCommerce feature).
+* New - Tested up to WooCommerce v9.2.
+
+2024.07.30 - version 2.0.1
+* Fix - Deactivate plugin for WooCommerce versions prior to 8.2 to avoid fatal errors.
+
+2024.07.30 - version 2.0.0
+* New - Important: PHP 7.4+ is now required.
+* New - Important: WooCommerce 8.2+ is now required.
+* New - Important: WordPress 6.2+ is now required.
+* New - Important: Removed all previously deprecated code.
+* Fix - Included own copy of WP_Background_Process library to avoid conflicts with other plugins.
+* Tweak - Improved success notices when manually editing gift cards delivery dates.
+* New - Added the ability to partially pay for orders using a gift card via WooPayments 8.0.0+ and Stripe 8.6.0+.
+
+2024.07.02 - version 1.17.0
+* New - Introduced compatibility with the new Product Editor.
+* Tweak - Changed 'Gift Card already redeemed' notice to 'Gift Card already linked to an account'.
+
+2024.06.04 - version 1.16.15
+* Fix - Disabled one-click purchase for gift cards in the All Products Block.
+* Fix - Improved validation of values when getting maintenance and dismissed notices from the DB.
+
+2024.05.15 - version 1.16.14
+* Fix - Resolved a compatibility issue with Gravity Forms.
+* Fix - Added validation of input type for $cart_item_data to avoid fatal errors.
+
+2024.04.15 - version 1.16.13
+* Fix - Fixed regression 'Invalid quantity configuration. Please review the recipients count.' error for multiple gift cards with the same recipient email.
+
+2024.04.10 - version 1.16.12
+* Tweak - Improved how gift cards emails are displayed in small screens.
+* Tweak - Updated the way of identifying hydration context in Store API requests.
+
+2024.03.26 - version 1.16.11
+* New - Add gift card as a custom product type on the onboarding task list.
+* Tweak - Updated Gift Cards notices to use the new block styles.
+* Fix - Resolved a PHP error that can occasionally occur when using WooPayments.
+* Fix - Fixed fatal error triggered when recalculating totals with orders with gift cards and fees.
+
+2024.02.14 - version 1.16.10
+* Tweak - Hide 'Refund to gift cards' button from orders that do not include any debited gift cards.
+* Fix - Fixed an issue that prevented admin scripts from loading when High-Performance Order Storage was used.
+* New - Introduced 'woocommerce_gc_cart_gift_cards_template_args' filter.
+
+2024.01.24 - version 1.16.9
+* Tweak - Added compatibility with PHP 8.3.
+* Tweak - Deferred frontend scripts.
+* Tweak - Updated the WooPayments integration to remove express checkout buttons in gift card product pages.
+* Tweak - Updated the PayPal integration to remove smart buttons in gift card product pages.
+
+2023.12.19 - version 1.16.8
+* Fix - Fixed 'Invalid quantity configuration. Please review the recipients count.' error for multiple gift cards with the same recipient email.
+
+2023.12.12 - version 1.16.7
+* Important - Security improvements.
+* Fix - Prevented users from deleting gift cards that are used in orders.
+* Fix - Fixed an issue with how gift card codes were displayed in e-mails when viewed from mobile screens.
+
+2023.10.17 - version 1.16.6
+* Fix - Important: Security improvements.
+* Fix - Resolved deprecation notice when viewing a Subscription paid by gift cards balance.
+* Tweak - Declared compatibility with the cart/checkout Blocks.
+
+2023.09.19 - version 1.16.5
+* Fix - Fixed an issue with page titles in settings.
+* Tweak - Used admin theme colors in settings.
+* Fix - Resolved a styling issue with the outline border when selecting a gift card form field.
+
+2023.08.28 - version 1.16.4
+* Feature - Added compatibility between the 'Send as gift?' feature and the new, block-based single product template.
+
+2023.07.03 - version 1.16.3
+* Tweak - Updated the way screen IDs are constructed to avoid issues with translated WooCommerce instances.
+
+2023.06.12 - version 1.16.2
+* Fix - Fixed an issue that prevented the 'Use gift cards balance for renewal payments' dropdown from rendering correctly in the Subscriptions admin area.
+
+2023.06.01 - version 1.16.1
+* Fix - Fixed styling for dismissible admin notices.
+
+2023.05.29 - version 1.16.0
+* New - Introduced block theme support on existing frontend templates.
+* Fix - Improvements in global styles compatibility.
+* Fix - Important: Security improvements.
+
+2023.05.22 - version 1.15.6
+* Tweak - Introduced basic event tracking support via Tracks.
+* Fix - Fixed a fatal error that was triggered when importing gift cards with corrupted activity data.
+
+2023.05.10 - version 1.15.5
+* Tweak - Added 'Gift Card' section title under 'Product Data > General'.
+* Fix - Ensured that plugin styles are correctly loaded for RTL sites with WooCommerce 7.3+.
+
+2023.04.10 - version 1.15.4
+* Tweak - Added an asterisk next to required form fields.
+* Tweak - Improved data collection.
+
+2023.03.27 - version 1.15.3
+* Fix - Fixed an issue that prevented Gift Cards from being imported on some hosting environments.
+
+2023.03.06 - version 1.15.2
+* Fix - Fixed dates/times format in admin list tables to follow WordPress settings.
+* Fix - Fixed stylesheet path in WooCommerce Blocks compatibility module.
+* Fix - Fixed date filters in admin list tables.
+* Update - Updated color in Gift Cards empty state admin screens.
+
+2023.01.23 - version 1.15.1
+* Important - Security improvements.
+* Tweak - Added support for uploading translation files to GlotPress after each release.
+
+2022.12.12 - version 1.15.0
+* Important - Declared compatibility with the new High-Performance Order Storage.
+
+2022.11.28 - version 1.14.1
+* Tweak - Renamed emails controller.
+
+2022.11.16 - version 1.14.0
+* Important - Security improvements.
+
+2022.11.01 - version 1.13.1
+* Important - Security improvements.
+* Fix - Fixed block 'registered with an invalid category' warnings in the console.
+* Tweak - Enqueue block assets only when needed.
+* Tweak - Declared incompatibility with the new High-Performance Order Storage.
+
+2022.09.22 - version 1.13.0
+* Important - WooCommerce 3.9+ and PHP 7.0+ are now required.
+* Fix - Fixed 'My Account - Gift Cards' not hiding when endpoint setting is empty.
+* Fix - Fixed fatal errors triggered when activating/deactivating the plugin via WP CLI.
+
+2022.07.19 - version 1.12.2
+* Fix - Fixed an issue with the refund button in the edit-order screen introduced in WC gte 6.4.
+
+2022.06.16 - version 1.12.1
+* Fix - Transform PHP date format characters into JS compatible characters when used in the datepicker.
+* Fix - Prevent a fatal error when viewing an order with deleted gift cards.
+
+2022.05.31 - version 1.12.0
+* Fix - Updated REST API (batch) to make it compatible with WooCommerce 6.6+.
+* Tweak - Introduced basic telemetry to collect data on extension usage when tracking is enabled.
+
+2022.05.16 - version 1.11.0
+* Important - Introduced support for the new Cart and Checkout blocks.
+
+2022.05.04 - version 1.10.3
+* Fix - Fix broken empty state documentation links.
+* Fix - Fix deprecation warning for 'is_admin_or_embed_page' in WooCommerce 6.3+.
+* Fix - Use localized times in Gift Cards admin screens.
+
+2022.03.16 - version 1.10.2
+* Tweak - Remove Marketing menu notice.
+* Tweak - Clean up onboarding notices.
+
+2022.03.11 - version 1.10.1
+* Important - Re-hooked 'WC_GC_Cart::after_calculate_totals' at 'woocommerce_after_calculate_totals' with priority '999'.
+* Tweak - Use new WooCommerce brand colors.
+* Fix - Update cart session after modifying cart totals based on redeemed gift cards.
+* Fix - Fixed an issue that prevented 'Self-use gift card received' e-mails from being sent when the gift card order has been deleted.
+* Fix - Fixed fatal error that was triggered when trying to edit an order with an orphaned gift card variation.
+
+2022.01.17 - version 1.10.0
+* Feature - Support gift card refunds.
+* Feature - Added compatibility with WooCommerce Payments to hide unsupported quick-pay buttons in gift card product pages.
+* Fix - Fixed fatal error that showed up when trying to edit a gift card associated with a deleted order.
+
+2021.12.30 - version 1.9.5
+* Fix - Prevent an issue when importing gift cards with zero remaining balance.
+
+2021.12.17 - version 1.9.4
+* Fix - Prevent gift cards codes from being applied to orders multiple times.
+
+2021.11.24 - version 1.9.3
+* Fix - Fixed an issue affecting the 'Self-use gift card received' email settings.
+
+2021.11.18 - version 1.9.2
+* Fix - Removed the 'wc_gc_send_as_gift_checkbox' parameter from the permalinks of non-Gift Card cart/order items.
+* Tweak - Improved invalid Gift Card code length notice.
+
+2021.11.15 - version 1.9.1
+* Fix - Fixed failed Gift Card imports when e-mails values contain whitespaces.
+
+2021.11.11 - version 1.9.0
+* Feature - Let customers purchase gift cards for self-use, bypassing the gift card purchase form.
+* Feature - Allow customers to carbon copy (cc) gift card e-mails to additional recipients.
+* Feature - Allow merchants to blind cabon copy (bcc) additional recipients to all gift card e-mails, handy for testing and archiving purposes.
+* Feature - Added compatibility with PayPal Payments to hide quick pay buttons in gift card product pages.
+* Fix - Fixed missing notices.
+
+2021.09.27 - version 1.8.2
+* Fix - Fixed incorrect early returns in 'set_notice_option'.
+
+2021.09.24 - version 1.8.1
+* Tweak - Dropped support for gift card form templates lt 1.6.0
+* Fix - Fixed an issue that prevented Gift Cards from being imported when the 'Sender Email' field is set to null.
+* Fix - Fixed an issue that prevented the 'Analytics > Gift Cards' report from displaying results when running the latest version of WoCommerce Admin.
+* Fix - Fixed a fatal error that is triggered by invalid 'wc_gc_notice_options' values.
+* Feature - Introduced 'woocommerce_gc_admin_edit_gift_cards_per_page' filter.
+
+2021.08.02 - version 1.8.0
+* Feature - Introduced gift card data in REST API 'orders' endpoint.
+* Feature - Introduced 'gift-cards' REST API endpoint.
+* Feature - Introduced 'Analytics > Gift Cards' reports.
+* Tweak - Added 'woocommerce_gc_email_placeholders' filter for custom email placeholders.
+* Tweak - Revised use of 'balance' vs 'amount' in translatable strings.
+
+2021.07.16 - version 1.7.5
+* Tweak - Improved styles and revised column names in the gift cards list table and edit-gift-card screens.
+* Fix - Fixed an issue affecting the sending process of emails for imported scheduled gift cards.
+* Fix - Fixed an issue that prevented Gift Cards from being imported when the 'Issued Value' field is not set.
+
+2021.06.15 - version 1.7.4
+* Fix - Respect 'woocommerce_admin_disabled' filter when using WooCommerce Admin 2.3+
+
+2021.05.07 - version 1.7.3
+* Fix - Adjusted the value of 'Enable cart page features' checkbox when saving.
+
+2021.04.23 - version 1.7.2
+* Fix - Reversed 'Enable cart page features' checkbox state to match the database value.
+
+2021.04.13 - version 1.7.1
+* Fix - Maximized 'Gift Card Received' e-mail table width.
+
+2021.04.13 - version 1.7.0
+* Important - Moved the variable gift card form to the 'woocommerce_before_single_variation' hook.
+* Important - Prepaid gift cards are now considered as a payment method equivalent. The gift card form has been removed from the cart page, along with all applied gift card details. A new 'Enable cart page features' option has been added under 'Settings > Gift Cards' to control this behavior.
+* Important - Moved gift card form above the payment gateways on the checkout page.
+* Feature - Added integration with WooCommerce Subscriptions: Subscribers can now pay for renewals using their gift cards account balance. The feature is only available to subscriptions paid with gateways that support auto-renewal.
+* Feature - Introduced new 'Settings > Gift Cards' section.
+* Feature - Added new 'Enable account features' option under 'Settings > Gift Cards'.
+* Feature - Added new 'Block gift card discounts' option under 'Settings > Gift Cards'.
+* Feature - Added new 'Grant admin privileges to Shop Managers' option under 'Settings > Gift Cards'.
+* Dev - Rewrote the gift card form script to allow developers to move the gift card form to any location on any page.
+* Fix - Adjusted e-mail text and accent colors to look better against dark backgrounds.
+* Tweak - Modified the recipient field placeholder to better fit small widths.
+* Tweak - Simplified 'Status' labels in the gift cards list table.
+* Tweak - Added 'Clear' button under the 'Delivery Date' input and prevented manual date input.
+* Tweak - Updated default 'Gift card received' e-mail text strings.
+
+2021.02.12 - version 1.6.1
+* Fix - Removed Jetpack dependencies.
+
+2021.02.09 - version 1.6.0
+* Feature - Added gift card code Import/Export support.
+* Feature - Hide quantity input in gift card product pages.
+* Feature - Added contextual elements and notices prompting customers to pay or cancel pending orders to release gift card funds on hold.
+* Fix - Use WordPress timezone to display 'Delivery Date' and 'Expiration Date' fields when editing gift card codes.
+* Fix - Fixed an issue that prevented the 'Delivery Date' and 'Expiration Date' field from being set within the current day.
+* Tweak - Introduced 'Extensions > Gift Cards' menu item inside the new WooCommerce navigation.
+* Tweak - Updated the gift card product form template to make it easier to add custom fields.
+
+2021.01.27 - version 1.5.7
+* Tweak - Added 'woocommerce_gc_disable_datepicker_styles' filter for disabling datepicker styles.
+* Tweak - Expire session cache every 5 minutes.
+
+2021.01.21 - version 1.5.6
+* Fix - Fix account balance cache invalidation issues while doing cron jobs.
+
+2021.01.12 - version 1.5.5
+* Tweak - Prevent nonce checking when adding a GC to the cart.
+
+2021.01.11 - version 1.5.4
+* Fix - PHP warning when viewing activity records without associated orders in the edit-giftcard screen.
+* Fix - Delivery time did not take store time zone offset from UTC into account. Sorry for that, folks, we thought our tests had this one covered.
+* Fix - Release 'hostage' gift card funds when trashing or deleting pending orders.
+
+2020.12.01 - version 1.5.3
+* Important - Updated the 'html-gift-card-container.php' template. If your theme overrides this template file, please review your customizations.
+* Fix - Optimize e-mail styles for compatibility with popular e-mail clients.
+
+2020.11.18 - version 1.5.2
+* Fix - Fixed admin screen issues with certain RTL/translated flavors of the WordPress dashboard.
+* Fix - Added table headers for responsive screens under 'My account > Gift Cards'.
+* Fix - Added quickview support for Flatsome.
+* Fix - Prevented a rare double-issuing bug affecting PayPal Standard.
+
+2020.10.23 - version 1.5.1
+* Feature - Introduced [woocommerce_my_account_giftcards] shortcode.
+* Tweak - Hardened validation to prevent edge cases of double-charging or incorrect refunding of gift cards.
+
+2020.09.24 - version 1.5.0
+* Fix - Added compatibility with WooCommerce Services.
+* Tweak - Prevent double requests when removing gift cards via checkout form.
+
+2020.09.11 - version 1.4.2
+* Fix - Added compatibility with WooCommerce Avatax.
+* Tweak - Deprecate 'WC_GC_Emails::get_into_content'.
+* Tweak - Prevent order item taxes from being recalculated when adding/removing gift cards from orders manually.
+
+2020.08.19 - version 1.4.1
+* Fix - Gift card messages not visible to customers who purchase a gift card in account and order-received pages.
+
+2020.08.18 - version 1.4.0
+* Feature - Improved the accuracy of Revenue reports in 'WooCommerce > Analytics': Orders paid with prepaid gift cards are counted towards the reported gross and net revenue. Gift card purchases are not counted towards the net revenue.
+* Feature - Introduced 'woocommerce_gc_order_stats_data_modifications' filter to control how Revenue reports in 'WooCommerce > Analytics' are adjusted to account for gift card purchases and usage.
+* Feature - Introduced 'Regenerate revenue analytics data' tool under 'WooCommerce > Status > Tools'. Regenerates historical Revenue reports in WoCommerce Analytics, accounting for prepaid gift cards correctly.
+
+2020.08.13 - version 1.3.6
+* Feature - Added filters to manage custom list tables columns.
+* Tweak - Prevent permanent deletion of orders + gift card products with pending code deliveries.
+* Fix - Remove delivery action from the queue when deleting a scheduled gift card code.
+* Fix - Use jQuery 'prop' instead of 'attr' when possible, to prevent issues with WordPress 5.5.
+
+2020.07.01 - version 1.3.5
+* Tweak - Introduced a new template to render gift card apply form in '/templates/cart/apply-gift-card-form.php'.
+* Tweak - Gift card code generator is now trying to generate a unique code up to 10 times before it fails.
+
+2020.06.25 - version 1.3.4
+* Tweak - Check for pending/failed deliveries every 24h and display a warning.
+* Tweak - Added test results in Status Report.
+
+2020.06.19 - version 1.3.3
+* Fix - Fatal error in loopback test handler when running an older version WordPress.
+
+2020.06.18 - version 1.3.2
+* Feature - Added filter to display the balance left in individual codes redeemed via the cart/checkout form - use add_filter( 'woocommerce_gc_checkout_show_remaining_balance_per_gift_card', '__return_true' );
+* Feature - Check if the server is able to perform loopback requests and display a warning if the test fails.
+* Feature - Check if WooCommerce is able to schedule tasks and display a warning if the test fails.
+* Fix - Fixed a rare fatal error occurring after deleting a gift card code from the database.
+* Fix - Failure to send recipient notifications for gift cards with a future delivery under WooCommerce 3.3 and 3.4.
+* Fix - Gift card notification e-mails not styled properly under WooCommerce 3.3-3.5.
+
+2020.06.08 - version 1.3.1
+* Fix - All products showing as Gift Cards after an Export / Import operation.
+
+2020.06.05 - version 1.3.0
+* Feature - Manually add gift card products in editable orders..
+* Tweak - When purchasing a gift card with a future delivery date, the recipient notification is now scheduled to be sent at the same time that the gift card was added to the cart.
+
+2020.06.04 - version 1.2.3
+* Fix - Fixed non-static method warning under Stripe compatibility.
+
+2020.06.01 - version 1.2.2
+* Tweak - Made 'giftcards' account endpoint url translatable/editable.
+* Fix - Prevented Payment Request buttons from displaying when purchasing Gift Card products.
+* Fix - Prevented 'Recipient E-mail Image' option from showing up in product metaboxes when the 'Gift Card' option is disabled.
+
+2020.05.17 - version 1.2.1
+* Fix - Make e-mail template changes backwards compatible.
+* Tweak - Declared compatibility with WooCommerce 4.2.
+
+2020.05.15 - version 1.2.0
+* Feature - Add option to define recipient e-mail image.
+* Feature - Manually apply/remove gift card codes in editable orders.
+* Fix - Account balance not updating when manually deleting a gift card.
+* Fix - Invalid delivery date when using a foreign locale.
+* Fix - Images in recipient e-mails not visible in some versions of Microsoft Outlook.
+
+2020.05.01 - version 1.1.5
+* Tweak - Improved multiple recipient e-mails form input placeholder.
+* Tweak - Made multiple e-mails delimiter filterable.
+* Fix - Fixed a error triggered while paying under WooCommerce 3.3-3.5 due to a WooCommerce bug.
+* Fix - Prevented Apple Pay button from displaying in Gift Card product pages.
+
+2020.04.24 - version 1.1.4
+* Fix - Fatal error when processing an order with deleted gift card products.
+
+2020.04.23 - version 1.1.3
+* Fix - Order items meta are now treated as unique.
+
+2020.04.17 - version 1.1.2
+* Fix - Expiration date not working when purchasing variable gift cards.
+
+2020.04.17 - version 1.1.1
+* Important - Declared support for WooCommerce 4.1.
+* Feature: Added support for the 'WooCommerce Print Invoices and Packing Lists' extension by Skyverge.
+* Feature: Added support for 'WooCommerce PDF Invoices & Packing Slips' plugin by Ewout Fernhout.
+* Tweak - Prevent script from loading unless needed.
+* Fix - Fatal error when sending e-mail recipient notifications under WooCommerce versions lower than 3.7.
+* Fix - Form labels are now translatable.
+
+2020.04.01 - version 1.1.0
+* Feature - 'Gift Card received' e-mail content is now editable via 'WooCommerce > Settings > Emails'.
+* Feature - Introduced 'Add to your account' action in recipient e-mails when the recipient e-mail can be associated with an active customer.
+* Feature - Added ability to turn off redeeming store-wide.
+* Fix - Gift card codes are now generated (and recipient notifications sent) when an order is paid - not when it is completed.
+
+2020.03.23 - version 1.0.3
+* Tweak - Gift Card form preserves data when switching Variations.
+
+2020.03.21 - version 1.0.2
+* Fix - Gift card product fields are now properly escaping quotes.
+* Fix - Added compatibility with Name Your Price to let customers choose the value of their gift cards.
+
+2020.03.18 - version 1.0.1
+* Feature - Gift card messages are now treated as private/confidential data for shop managers.
+* Fix - Gift cards can now be ordered again without hiccups.
+* Fix - Gift card messages missing new line characters in some cases.
+
+2020.03.16 - version 1.0.0
+* Initial release.
