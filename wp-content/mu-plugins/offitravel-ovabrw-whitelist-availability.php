@@ -129,6 +129,64 @@ function offitravel_ovabrw_whitelist_month_nav_bounds( array $allowed_map ) {
 }
 
 /**
+ * Interpreta una fecha del calendario a medianoche en la zona horaria indicada.
+ *
+ * @param string       $raw         Fecha con el formato configurado por OVA.
+ * @param string       $date_format Formato PHP de fecha.
+ * @param DateTimeZone $timezone    Zona horaria del calendario.
+ * @return DateTimeImmutable|null
+ */
+function offitravel_ovabrw_whitelist_parse_local_date( $raw, $date_format, DateTimeZone $timezone ) {
+	$raw = trim( (string) $raw );
+	if ( '' === $raw ) {
+		return null;
+	}
+
+	try {
+		$date   = DateTimeImmutable::createFromFormat( '!' . $date_format, $raw, $timezone );
+		$errors = DateTimeImmutable::getLastErrors();
+	} catch ( Throwable $e ) {
+		return null;
+	}
+
+	if ( false === $date ) {
+		return null;
+	}
+	if ( false !== $errors && ( $errors['warning_count'] || $errors['error_count'] ) ) {
+		return null;
+	}
+	if ( $raw !== $date->format( $date_format ) ) {
+		return null;
+	}
+
+	return $date;
+}
+
+/**
+ * Genera todos los dias bloqueados recorriendo dias de calendario locales.
+ *
+ * @param array             $allowed_map Mapa Y-m-d => true de fechas permitidas.
+ * @param DateTimeImmutable $min_date    Primer dia del recorrido, inclusive.
+ * @param DateTimeImmutable $max_date    Ultimo dia del recorrido, inclusive.
+ * @param string            $date_format Formato PHP de salida.
+ * @return string[]
+ */
+function offitravel_ovabrw_whitelist_get_blocked_dates( array $allowed_map, DateTimeImmutable $min_date, DateTimeImmutable $max_date, $date_format ) {
+	$blocked = array();
+	$cursor  = $min_date;
+
+	while ( $cursor <= $max_date ) {
+		$ymd = $cursor->format( 'Y-m-d' );
+		if ( ! isset( $allowed_map[ $ymd ] ) ) {
+			$blocked[] = $cursor->format( $date_format );
+		}
+		$cursor = $cursor->modify( '+1 day' );
+	}
+
+	return $blocked;
+}
+
+/**
  * Filtra fechas permitidas por ventana de años (año actual + N siguientes).
  *
  * @param array $allowed_map Mapa Y-m-d => true.
@@ -180,6 +238,7 @@ function offitravel_ovabrw_filter_datepicker_whitelist( $datepicker, $product_id
 	}
 
 	$date_format = function_exists( 'ovabrw_get_date_format' ) ? ovabrw_get_date_format() : 'd-m-Y';
+	$timezone    = wp_timezone();
 	$allowed_map = offitravel_ovabrw_get_allowed_ymd_map( $product_id );
 	$years_ahead = (int) apply_filters( 'offitravel_ovabrw_whitelist_years_ahead', 2, $product_id, $form );
 	$allowed_map = offitravel_ovabrw_filter_allowed_map_by_year_window( $allowed_map, $years_ahead );
@@ -190,35 +249,36 @@ function offitravel_ovabrw_filter_datepicker_whitelist( $datepicker, $product_id
 		return $datepicker;
 	}
 
-	$min_ts = strtotime( str_replace( '/', '-', $min_str ) );
-	$max_ts = strtotime( str_replace( '/', '-', $max_str ) );
-	if ( ! $min_ts || ! $max_ts || $max_ts < $min_ts ) {
+	$min_date = offitravel_ovabrw_whitelist_parse_local_date( $min_str, $date_format, $timezone );
+	$max_date = offitravel_ovabrw_whitelist_parse_local_date( $max_str, $date_format, $timezone );
+	if ( ! $min_date || ! $max_date || $max_date < $min_date ) {
 		return $datepicker;
 	}
 
 	$nav_bounds = offitravel_ovabrw_whitelist_month_nav_bounds( $allowed_map );
 	if ( $nav_bounds && apply_filters( 'offitravel_ovabrw_whitelist_clamp_datepicker_month_range', true, $product_id, $allowed_map ) ) {
-		$min_ts = max( $min_ts, $nav_bounds['min_nav'] );
-		$max_ts = min( $max_ts, $nav_bounds['max_nav'] );
-		if ( $max_ts < $min_ts ) {
-			$min_ts = $nav_bounds['min_nav'];
-			$max_ts = $nav_bounds['max_nav'];
+		$nav_min = ( new DateTimeImmutable( '@' . $nav_bounds['min_nav'] ) )->setTimezone( $timezone );
+		$nav_max = ( new DateTimeImmutable( '@' . $nav_bounds['max_nav'] ) )->setTimezone( $timezone );
+
+		if ( $min_date < $nav_min ) {
+			$min_date = $nav_min;
+		}
+		if ( $max_date > $nav_max ) {
+			$max_date = $nav_max;
+		}
+		if ( $max_date < $min_date ) {
+			$min_date = $nav_min;
+			$max_date = $nav_max;
 		}
 
-		$datepicker['LockPlugin']['minDate'] = wp_date( $date_format, $min_ts );
-		$datepicker['LockPlugin']['maxDate'] = wp_date( $date_format, $max_ts );
+		$datepicker['LockPlugin']['minDate'] = $min_date->format( $date_format );
+		$datepicker['LockPlugin']['maxDate'] = $max_date->format( $date_format );
 		if ( isset( $datepicker['startDate'] ) ) {
 			$datepicker['startDate'] = $datepicker['LockPlugin']['minDate'];
 		}
 	}
 
-	$blocked = array();
-	for ( $t = $min_ts; $t <= $max_ts; $t += DAY_IN_SECONDS ) {
-		$ymd = gmdate( 'Y-m-d', $t );
-		if ( ! isset( $allowed_map[ $ymd ] ) ) {
-			$blocked[] = gmdate( $date_format, $t );
-		}
-	}
+	$blocked = offitravel_ovabrw_whitelist_get_blocked_dates( $allowed_map, $min_date, $max_date, $date_format );
 
 	$booked       = isset( $datepicker['bookedDates'] ) && is_array( $datepicker['bookedDates'] ) ? $datepicker['bookedDates'] : array();
 	$use_booked   = apply_filters( 'offitravel_ovabrw_whitelist_merge_booked_dates', false, $product_id, $booked, $allowed_map, $form );
