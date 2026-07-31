@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Este MU Plugin proporciona la configuración administrativa, el cálculo autoritativo y la persistencia de suplementos de cabina por producto OVA. El Checkpoint 5 activa el flujo público exclusivamente para el producto `11280`, Crucero fluvial: Mercadillos de Navidad en el Rin. El producto `11259`, Crucero por el Danubio, permanece sin configuración ni selector público.
+Este MU Plugin proporciona la configuración administrativa, el cálculo autoritativo y la persistencia de suplementos de cabina por producto OVA. El flujo público está activo exclusivamente para los cruceros fluviales aprobados: `11280`, Crucero fluvial: Mercadillos de Navidad en el Rin, y `11259`, Crucero fluvial: Mercadillos de Navidad en el Danubio.
 
 La implementación reutiliza el modo habitaciones existente sin modificarlo. Tampoco modifica OVA/OVABRW, Tripgo, WooCommerce, el tema hijo ni archivos de proveedor.
 
@@ -65,13 +65,31 @@ _offitravel_ovabrw_room_single_supplement_eur = 0
 
 Ese valor neutraliza para `11280` el fallback global de 150 € del suplemento individual. No cambia el comportamiento de ningún otro tour.
 
+## Configuración del Danubio
+
+El producto `11259` tiene activado exactamente este catálogo:
+
+| ID | Etiqueta pública | Precio por persona |
+|---|---|---:|
+| `sin-suplemento` | Sin suplemento | 0,00 € |
+| `puente-intermedio` | Puente intermedio | 111,50 € |
+| `puente-superior` | Puente superior | 200,00 € |
+
+Para representar una categoría independiente por cabina, el producto reutiliza el modo habitaciones con sus límites previamente almacenados: hasta diez habitaciones y hasta cuatro personas por habitación. No se ha añadido un mínimo ni un máximo total de adultos. También se guarda:
+
+```text
+_offitravel_ovabrw_room_single_supplement_eur = 0
+```
+
+Ese valor neutraliza para `11259` el fallback global de 150 € del suplemento individual. Una cabina con una persona continúa siendo válida conforme a la configuración existente, sin añadir dicho suplemento.
+
 ## Formulario público y estado JavaScript
 
 Cuando el producto está activado, el servidor publica un bloque JSON con el producto, la opción inicial y las opciones disponibles. JavaScript inserta **Categoría de cabina** dentro de cada `.offitravel-room-row`.
 
 El estado se mantiene por formulario y por índice de cabina:
 
-- Las cabinas nuevas reciben la primera opción configurada (`sin-suplemento` en el Rin).
+- Las cabinas nuevas reciben la primera opción configurada (`sin-suplemento` en Rin y Danubio).
 - Las cabinas que sobreviven a una reconstrucción conservan su categoría.
 - Las cabinas retiradas desaparecen del estado.
 - La ocupación oculta se sincroniza con el selector real de personas de cada habitación.
@@ -162,8 +180,10 @@ La fila visible **Suplemento de cabina** incluye cabina, ocupantes, categoría, 
 - El seguro por edad de circuitos no cambia.
 - KIT romántico, Seguro de anulación, Platea y Servicio 01 no cambian.
 - Los selectores `rey_leon`, `wicked` y los paquetes existentes no cambian.
-- El Danubio y los demás productos no reciben configuración ni selector.
-- El calculador de cabinas sigue siendo reutilizable para varias cabinas, pero el Rin conserva sus límites actuales: una habitación, hasta cinco personas y mínimo dos adultos.
+- Rin y Danubio son los únicos productos con configuración y selector de cabina activos.
+- El Rin conserva sus límites actuales: una habitación, hasta cinco personas y mínimo dos adultos.
+- El Danubio conserva sus límites actuales: hasta diez habitaciones, hasta cuatro personas por habitación y sin un mínimo total configurado.
+- Los demás productos no reciben configuración ni selector.
 
 ## Pruebas
 
@@ -172,14 +192,16 @@ Las pruebas cubren:
 - Estado y payload JavaScript sin precios del cliente.
 - Opción inicial, preservación y retirada de cabinas.
 - Cancelación de peticiones y protección frente a respuestas antiguas.
-- Configuración exclusiva y exacta del Rin.
-- Cálculos 2×0, 2×135, 2×200, 5×135 y 5×200.
+- Configuración exclusiva y exacta de Rin y Danubio.
+- Rin: cálculos 2×0, 2×135, 2×200, 5×135 y 5×200.
+- Danubio: cálculos 2×0, 2×111,50, 2×200, dos cabinas `3 + 2` y categorías independientes.
+- Aplicación de los límites propios de cada producto y neutralización local del fallback de 150 €.
 - Manipulación de categoría, ocupación, precio, etiqueta y total.
 - Validación AJAX, idempotencia y aislamiento de productos.
 - Restauración de sesión y persistencia del pedido.
 - Eliminación exclusiva del pedido temporal creado por la prueba.
 - Regresión de circuitos, musicales y productos no afectados.
 
-## Trabajo reservado
+## Alcance activo
 
-El producto `11259` no se activa en este checkpoint. Sus opciones, tarifas y cualquier decisión específica de ocupación pertenecen exclusivamente al Checkpoint 6.
+La integración pública de cabinas está activa únicamente en `11280` y `11259`. Cualquier alta futura deberá configurarse explícitamente por producto y conservar sus propios límites OVA; el sistema no inventa límites globales ni activa otros tours automáticamente.

@@ -1,9 +1,10 @@
 <?php
 /**
- * Database and hook regressions for the Checkpoint 5 Rin activation.
+ * Database and hook regressions for the Rin and Danube cabin activations.
  *
  * This test is read-only. It confirms that existing services and cruise
- * products remain untouched and that public cabin integration is scoped to Rin.
+ * products remain untouched and that public cabin integration is scoped to the
+ * two approved river cruises.
  *
  * Run with: php tests/offitravel-cabin-supplements-regression-test.php
  *
@@ -104,11 +105,11 @@ $expected_services = array(
 );
 
 $tests = array(
-	'Rin is the only product with cabin metadata and exact approved options' => static function () {
+	'Rin and Danube are the only products with exact approved cabin options' => static function () {
 		global $wpdb;
 		$pattern = '%' . $wpdb->esc_like( 'offitravel_cabin' ) . '%';
 		$products = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE %s ORDER BY post_id", $pattern ) );
-		offitravel_cabin_regression_same( array( '11280' ), $products, 'Cabin metadata is not isolated to Rin.' );
+		offitravel_cabin_regression_same( array( '11259', '11280' ), $products, 'Cabin metadata is not isolated to the approved river cruises.' );
 		offitravel_cabin_regression_same(
 			array(
 				array( 'id' => 'sin-suplemento', 'label' => 'Sin suplemento', 'price_per_person' => '0.00' ),
@@ -120,13 +121,30 @@ $tests = array(
 		);
 		offitravel_cabin_regression_same( 'yes', get_post_meta( 11280, OFFITRAVEL_CABIN_META_ENABLED, true ), 'Rin cabin options are not enabled.' );
 		offitravel_cabin_regression_same( '0', (string) get_post_meta( 11280, '_offitravel_ovabrw_room_single_supplement_eur', true ), 'Rin single supplement fallback is not disabled.' );
+		offitravel_cabin_regression_same(
+			array(
+				array( 'id' => 'sin-suplemento', 'label' => 'Sin suplemento', 'price_per_person' => '0.00' ),
+				array( 'id' => 'puente-intermedio', 'label' => 'Puente intermedio', 'price_per_person' => '111.50' ),
+				array( 'id' => 'puente-superior', 'label' => 'Puente superior', 'price_per_person' => '200.00' ),
+			),
+			get_post_meta( 11259, OFFITRAVEL_CABIN_META_OPTIONS, true ),
+			'Danube options differ from the approved configuration.'
+		);
+		offitravel_cabin_regression_same( 'yes', get_post_meta( 11259, OFFITRAVEL_CABIN_META_ENABLED, true ), 'Danube cabin options are not enabled.' );
+		offitravel_cabin_regression_same( '0', (string) get_post_meta( 11259, '_offitravel_ovabrw_room_single_supplement_eur', true ), 'Danube single supplement fallback is not disabled.' );
 	},
-	'Danube remains without cabin metadata or activation' => static function () {
-		global $wpdb;
-		$pattern = '%' . $wpdb->esc_like( 'offitravel_cabin' ) . '%';
-		$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key LIKE %s", 11259, $pattern ) );
-		offitravel_cabin_regression_same( 0, $count, 'Danube received cabin metadata.' );
-		offitravel_cabin_regression_same( '', get_post_meta( 11259, '_offitravel_ovabrw_room_single_supplement_eur', true ), 'Danube single supplement configuration changed.' );
+	'Danube booking limits package date stock and base price remain unchanged' => static function () {
+		offitravel_cabin_regression_same( 'yes', get_post_meta( 11259, '_offitravel_ovabrw_room_mode_enabled', true ), 'Danube room mode is not enabled.' );
+		offitravel_cabin_regression_same( '10', get_post_meta( 11259, '_offitravel_ovabrw_room_max_rooms', true ), 'Danube maximum rooms changed.' );
+		offitravel_cabin_regression_same( '4', get_post_meta( 11259, '_offitravel_ovabrw_room_max_per_room', true ), 'Danube maximum occupants changed.' );
+		offitravel_cabin_regression_same( '', get_post_meta( 11259, 'ovabrw_adults_min', true ), 'Danube minimum adults was introduced.' );
+		offitravel_cabin_regression_same( '', get_post_meta( 11259, 'ovabrw_adults_max', true ), 'Danube maximum adults was introduced.' );
+		offitravel_cabin_regression_same( 'pack_mercadillo_danubio', get_post_meta( 11259, 'ovabrw_product_custom_checkout_field', true ), 'Danube package field changed.' );
+		offitravel_cabin_regression_same( '1250', get_post_meta( 11259, '_price', true ), 'Danube base price changed.' );
+		offitravel_cabin_regression_same( array( '30-11-2026' ), get_post_meta( 11259, '_offitravel_ovabrw_available_startdate', true ), 'Danube date changed.' );
+		offitravel_cabin_regression_same( 'yes', get_post_meta( 11259, '_offitravel_ovabrw_whitelist_enabled', true ), 'Danube whitelist changed.' );
+		offitravel_cabin_regression_same( '10', get_post_meta( 11259, 'ovabrw_stock_quantity', true ), 'Danube OVA stock changed.' );
+		offitravel_cabin_regression_same( 'instock', get_post_meta( 11259, '_stock_status', true ), 'Danube stock status changed.' );
 	},
 	'Rin booking limits package dates and base price remain unchanged' => static function () {
 		offitravel_cabin_regression_same( 'yes', get_post_meta( 11280, '_offitravel_ovabrw_room_mode_enabled', true ), 'Rin room mode changed.' );
