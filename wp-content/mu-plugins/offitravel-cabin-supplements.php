@@ -1,12 +1,8 @@
 <?php
 /**
- * Plugin Name: Offitravel Cabin Supplement Base
- * Description: Administrative and calculation primitives for product-scoped cabin options.
- * Version: 0.1.0
- *
- * Checkpoint 4 intentionally registers no public form, AJAX, cart, pricing or
- * order hooks. Product activation and commercial configuration belong to later
- * checkpoints.
+ * Plugin Name: Offitravel Cabin Supplements
+ * Description: Product-scoped cabin option administration, calculation and booking persistence.
+ * Version: 0.2.0
  *
  * @package Offitravel
  */
@@ -15,6 +11,9 @@ defined( 'ABSPATH' ) || exit;
 
 const OFFITRAVEL_CABIN_META_OPTIONS = '_offitravel_cabin_options';
 const OFFITRAVEL_CABIN_META_ENABLED = '_offitravel_cabin_options_enabled';
+const OFFITRAVEL_CABIN_CART_KEY = 'offitravel_cabin_supplements';
+const OFFITRAVEL_CABIN_ORDER_SNAPSHOT_META = '_offitravel_cabin_supplement_snapshot';
+const OFFITRAVEL_CABIN_ORDER_TOTAL_META = '_offitravel_cabin_supplement_total';
 
 /**
  * Format an amount as a WooCommerce decimal snapshot.
@@ -316,6 +315,371 @@ function offitravel_cabin_snapshot_total( $snapshot, $expected_product_id = 0 ) 
 }
 
 /**
+ * Resolve the current OVA product ID for public rendering and assets.
+ *
+ * @param mixed $candidate Explicit product ID or product object.
+ * @return int Product ID, or zero outside a valid OVA product.
+ */
+function offitravel_cabin_public_product_id( $candidate = 0 ) {
+	if ( $candidate instanceof WC_Product ) {
+		$product_id = (int) $candidate->get_id();
+	} elseif ( is_scalar( $candidate ) && (int) $candidate > 0 ) {
+		$product_id = absint( $candidate );
+	} else {
+		$product_id = function_exists( 'get_queried_object_id' ) ? absint( get_queried_object_id() ) : 0;
+	}
+	$product = $product_id ? wc_get_product( $product_id ) : false;
+	return $product instanceof WC_Product && $product->is_type( 'ovabrw_car_rental' ) ? $product_id : 0;
+}
+
+/**
+ * Validate occupancy against limits already stored on the OVA product.
+ *
+ * No new commercial maximum or minimum is introduced here. This boundary
+ * mirrors the current room-mode product configuration before cabin pricing is
+ * calculated, so manipulating the cabin payload cannot bypass those limits.
+ *
+ * @param int                 $product_id Product ID.
+ * @param array<string,mixed> $context    Room count and occupants.
+ * @return array{room_count:int,people:array<int,int>}|WP_Error
+ */
+function offitravel_cabin_validate_product_occupancy( $product_id, array $context ) {
+	$occupancy = offitravel_cabin_normalize_occupancy( $context );
+	if ( is_wp_error( $occupancy ) ) {
+		return $occupancy;
+	}
+	if ( 'yes' !== get_post_meta( $product_id, '_offitravel_ovabrw_room_mode_enabled', true ) ) {
+		return new WP_Error( 'offitravel_cabin_product_occupancy_invalid', __( 'La configuración de cabinas no está disponible para esta reserva.', 'offitravel-cabins' ) );
+	}
+
+	$max_rooms    = absint( get_post_meta( $product_id, '_offitravel_ovabrw_room_max_rooms', true ) );
+	$max_per_room = absint( get_post_meta( $product_id, '_offitravel_ovabrw_room_max_per_room', true ) );
+	$minimum      = absint( get_post_meta( $product_id, 'ovabrw_adults_min', true ) );
+	if ( ( $max_rooms && $occupancy['room_count'] > $max_rooms )
+		|| ( $minimum && array_sum( $occupancy['people'] ) < $minimum )
+	) {
+		return new WP_Error( 'offitravel_cabin_product_occupancy_invalid', __( 'La ocupación de las cabinas no coincide con los límites del viaje.', 'offitravel-cabins' ) );
+	}
+	if ( $max_per_room ) {
+		foreach ( $occupancy['people'] as $people ) {
+			if ( $people > $max_per_room ) {
+				return new WP_Error( 'offitravel_cabin_product_occupancy_invalid', __( 'La ocupación de las cabinas no coincide con los límites del viaje.', 'offitravel-cabins' ) );
+			}
+		}
+	}
+	return $occupancy;
+}
+
+/**
+ * Build a cabin snapshot from an untrusted public request.
+ *
+ * Only cabin index, occupants and category are consumed. Stored WordPress
+ * configuration supplies public labels and prices, while product metadata
+ * supplies the permitted occupancy limits.
+ *
+ * @param int                 $product_id Product ID.
+ * @param array<string,mixed> $request    Untrusted request data.
+ * @param array<string,mixed> $context    Optional trusted cart occupancy.
+ * @return array{version:int,product_id:int,cabins:array<int,array<string,mixed>>,total:string}|WP_Error
+ */
+function offitravel_cabin_calculate_request_snapshot( $product_id, $request, array $context = array() ) {
+	if ( ! is_array( $request ) ) {
+		return new WP_Error( 'offitravel_cabin_invalid_request', __( 'No se pudo validar la selección de cabina.', 'offitravel-cabins' ) );
+	}
+	$request = wp_unslash( $request );
+	$raw     = isset( $request['offitravel_cabins'] ) ? $request['offitravel_cabins'] : array();
+	if ( ! is_array( $raw ) ) {
+		return new WP_Error( 'offitravel_cabin_count_mismatch', __( 'Debe elegirse una opción para cada cabina.', 'offitravel-cabins' ) );
+	}
+	if ( ! isset( $context['offitravel_room_count'] ) && isset( $request['offitravel_room_count'] ) ) {
+		$context['offitravel_room_count'] = $request['offitravel_room_count'];
+	}
+	if ( ! isset( $context['offitravel_room_people'] ) && isset( $request['offitravel_room_people'] ) ) {
+		$context['offitravel_room_people'] = $request['offitravel_room_people'];
+	}
+	$occupancy = offitravel_cabin_validate_product_occupancy( absint( $product_id ), $context );
+	if ( is_wp_error( $occupancy ) ) {
+		return $occupancy;
+	}
+	return offitravel_cabin_calculate_snapshot( absint( $product_id ), $raw, $context );
+}
+
+/**
+ * Convert a WooCommerce amount to safe decoded plain text.
+ *
+ * @param mixed $amount Monetary amount.
+ * @return string Human-readable price including currency symbol.
+ */
+function offitravel_cabin_plain_price_text( $amount ) {
+	$text    = wp_strip_all_tags( wc_price( $amount ) );
+	$charset = get_bloginfo( 'charset' );
+	$text    = html_entity_decode( $text, ENT_QUOTES | ENT_HTML5, $charset ? $charset : 'UTF-8' );
+	$text    = str_replace( "\xC2\xA0", ' ', $text );
+	$text    = preg_replace( '/\s+/u', ' ', $text );
+	return trim( is_string( $text ) ? $text : '' );
+}
+
+/**
+ * Build readable lines from a historical cabin snapshot.
+ *
+ * @param array<string,mixed> $snapshot Normalized snapshot.
+ * @return string[] Plain-text commercial lines.
+ */
+function offitravel_cabin_snapshot_lines( array $snapshot ) {
+	$lines = array();
+	foreach ( $snapshot['cabins'] as $cabin ) {
+		$people_word = 1 === (int) $cabin['occupants'] ? __( 'persona', 'offitravel-cabins' ) : __( 'personas', 'offitravel-cabins' );
+		$lines[] = sprintf(
+			/* translators: 1: cabin index, 2: occupants, 3: person/persons, 4: separator, 5: option label. */
+			__( 'Cabina %1$d: %2$d %3$s %4$s %5$s', 'offitravel-cabins' ),
+			(int) $cabin['cabin_index'],
+			(int) $cabin['occupants'],
+			$people_word,
+			"\xE2\x80\x94",
+			$cabin['label']
+		);
+		$lines[] = sprintf( __( 'Precio por persona: %s', 'offitravel-cabins' ), offitravel_cabin_plain_price_text( $cabin['price_per_person'] ) );
+		$lines[] = sprintf( __( 'Subtotal: %s', 'offitravel-cabins' ), offitravel_cabin_plain_price_text( $cabin['subtotal'] ) );
+	}
+	$lines[] = sprintf( __( 'Total suplementos de cabina: %s', 'offitravel-cabins' ), offitravel_cabin_plain_price_text( $snapshot['total'] ) );
+	return $lines;
+}
+
+/**
+ * Convert cabin lines to safe cart and checkout HTML.
+ *
+ * @param array<string,mixed> $snapshot Normalized snapshot.
+ * @return string Safe HTML containing line breaks only.
+ */
+function offitravel_cabin_snapshot_display( array $snapshot ) {
+	return implode( '<br>', array_map( 'esc_html', offitravel_cabin_snapshot_lines( $snapshot ) ) );
+}
+
+/**
+ * Render the trusted configuration root consumed by the room-row script.
+ *
+ * Inputs are created by JavaScript only after the existing room-mode UI has
+ * built its real cabin rows.
+ *
+ * @param mixed $product Product ID or product object supplied by Tripgo.
+ * @return void
+ */
+function offitravel_cabin_booking_markup( $product = 0 ) {
+	$product_id = offitravel_cabin_public_product_id( $product );
+	if ( ! $product_id || ! offitravel_cabin_product_is_enabled( $product_id ) ) {
+		return;
+	}
+	$options = offitravel_cabin_get_product_options( $product_id );
+	if ( ! $options ) {
+		return;
+	}
+	?>
+	<div class="offitravel-cabin-config" data-offitravel-cabin-config data-product-id="<?php echo esc_attr( $product_id ); ?>">
+		<script type="application/json" data-offitravel-cabin-options><?php echo wp_json_encode( $options, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></script>
+	</div>
+	<?php
+}
+
+/**
+ * Enqueue the pure cabin state before the shared supplement frontend.
+ *
+ * @return void
+ */
+function offitravel_cabin_enqueue_state() {
+	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+		return;
+	}
+	$product_id = offitravel_cabin_public_product_id();
+	if ( ! $product_id || ! offitravel_cabin_product_is_enabled( $product_id ) ) {
+		return;
+	}
+	$path = __DIR__ . '/offitravel-cabin-supplements-state.js';
+	wp_enqueue_script(
+		'offitravel-cabin-supplements-state',
+		plugin_dir_url( __FILE__ ) . 'offitravel-cabin-supplements-state.js',
+		array(),
+		is_readable( $path ) ? (string) filemtime( $path ) : '1',
+		true
+	);
+}
+
+/**
+ * Enqueue the public cabin controls after the shared supplement frontend.
+ *
+ * @return void
+ */
+function offitravel_cabin_enqueue_front() {
+	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+		return;
+	}
+	$product_id = offitravel_cabin_public_product_id();
+	if ( ! $product_id || ! offitravel_cabin_product_is_enabled( $product_id ) ) {
+		return;
+	}
+	$script_path = __DIR__ . '/offitravel-cabin-supplements-front.js';
+	$style_path  = __DIR__ . '/offitravel-cabin-supplements-front.css';
+	$deps        = array( 'jquery', 'offitravel-cabin-supplements-state', 'offitravel-product-addons' );
+	if ( wp_script_is( 'offitravel-ovabrw-room-mode', 'registered' ) ) {
+		$deps[] = 'offitravel-ovabrw-room-mode';
+	}
+	wp_enqueue_script(
+		'offitravel-cabin-supplements-front',
+		plugin_dir_url( __FILE__ ) . 'offitravel-cabin-supplements-front.js',
+		array_values( array_unique( $deps ) ),
+		is_readable( $script_path ) ? (string) filemtime( $script_path ) : '1',
+		true
+	);
+	wp_enqueue_style(
+		'offitravel-cabin-supplements-front',
+		plugin_dir_url( __FILE__ ) . 'offitravel-cabin-supplements-front.css',
+		array(),
+		is_readable( $style_path ) ? (string) filemtime( $style_path ) : '1'
+	);
+}
+
+/**
+ * Validate a complete category selection before adding an enabled product.
+ *
+ * @param bool $passed     Previous validation result.
+ * @param int  $product_id Product ID.
+ * @param int  $quantity   WooCommerce quantity (unused).
+ * @return bool
+ */
+function offitravel_cabin_validate_cart( $passed, $product_id, $quantity ) {
+	unset( $quantity );
+	if ( ! $passed || ! offitravel_cabin_product_is_enabled( $product_id ) ) {
+		return (bool) $passed;
+	}
+	$result = offitravel_cabin_calculate_request_snapshot( $product_id, $_POST ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+	if ( is_wp_error( $result ) ) {
+		wc_add_notice( esc_html( $result->get_error_message() ), 'error' );
+		return false;
+	}
+	return true;
+}
+
+/**
+ * Persist a server-calculated cabin snapshot in the cart item.
+ *
+ * @param array<string,mixed> $cart_item_data Existing cart data.
+ * @param int                 $product_id     Product ID.
+ * @param int                 $variation_id   Variation ID (unused).
+ * @param int                 $quantity       Line quantity (unused).
+ * @return array<string,mixed>
+ */
+function offitravel_cabin_add_cart_item_data( $cart_item_data, $product_id, $variation_id = 0, $quantity = 1 ) {
+	unset( $variation_id, $quantity );
+	if ( ! offitravel_cabin_product_is_enabled( $product_id ) ) {
+		return $cart_item_data;
+	}
+	$result = offitravel_cabin_calculate_request_snapshot( $product_id, $_POST, is_array( $cart_item_data ) ? $cart_item_data : array() ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+	if ( ! is_wp_error( $result ) ) {
+		$cart_item_data[ OFFITRAVEL_CABIN_CART_KEY ] = $result;
+	}
+	return $cart_item_data;
+}
+
+/**
+ * Add the normalized cabin total once to the OVA base total.
+ *
+ * @param float               $line_total    Current OVA total.
+ * @param int                 $product_id    Product ID.
+ * @param mixed               $checkin_date  OVA check-in value (unused).
+ * @param mixed               $checkout_date OVA check-out value (unused).
+ * @param array<string,mixed> $cart_item     Cart or AJAX context.
+ * @return float
+ */
+function offitravel_cabin_line_total( $line_total, $product_id, $checkin_date, $checkout_date, $cart_item ) {
+	unset( $checkin_date, $checkout_date );
+	$product_id = absint( $product_id );
+	$context    = is_array( $cart_item ) ? $cart_item : array();
+	$total      = 0.0;
+	if ( isset( $context[ OFFITRAVEL_CABIN_CART_KEY ] ) ) {
+		$total = offitravel_cabin_snapshot_total( $context[ OFFITRAVEL_CABIN_CART_KEY ], $product_id );
+	} elseif ( wp_doing_ajax() && offitravel_cabin_product_is_enabled( $product_id ) ) {
+		$result = offitravel_cabin_calculate_request_snapshot( $product_id, $_POST, $context ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+		if ( ! is_wp_error( $result ) ) {
+			$total = (float) $result['total'];
+		}
+	}
+	return round( (float) $line_total + $total, wc_get_price_decimals() );
+}
+
+/**
+ * Restore a historical cabin snapshot without current tariff lookups.
+ *
+ * @param array<string,mixed> $cart_item      Rebuilt cart item.
+ * @param array<string,mixed> $session_values Stored session values.
+ * @return array<string,mixed>
+ */
+function offitravel_cabin_restore_cart_item( $cart_item, $session_values ) {
+	$product_id = isset( $cart_item['product_id'] ) ? absint( $cart_item['product_id'] ) : ( isset( $session_values['product_id'] ) ? absint( $session_values['product_id'] ) : 0 );
+	if ( isset( $session_values[ OFFITRAVEL_CABIN_CART_KEY ] ) ) {
+		$normalized = offitravel_cabin_normalize_snapshot( $session_values[ OFFITRAVEL_CABIN_CART_KEY ], $product_id );
+		if ( ! is_wp_error( $normalized ) ) {
+			$cart_item[ OFFITRAVEL_CABIN_CART_KEY ] = $normalized;
+		}
+	}
+	return $cart_item;
+}
+
+/**
+ * Append a readable cabin breakdown to cart and checkout.
+ *
+ * @param array<int,array<string,string>> $item_data Existing display rows.
+ * @param array<string,mixed>             $cart_item Cart line data.
+ * @return array<int,array<string,string>>
+ */
+function offitravel_cabin_cart_display( $item_data, $cart_item ) {
+	if ( empty( $cart_item['data'] ) || ! $cart_item['data'] instanceof WC_Product || ! isset( $cart_item[ OFFITRAVEL_CABIN_CART_KEY ] ) ) {
+		return $item_data;
+	}
+	$normalized = offitravel_cabin_normalize_snapshot( $cart_item[ OFFITRAVEL_CABIN_CART_KEY ], (int) $cart_item['data']->get_id() );
+	if ( ! is_wp_error( $normalized ) ) {
+		$item_data[] = array(
+			'key'   => __( 'Suplemento de cabina', 'offitravel-cabins' ),
+			'value' => offitravel_cabin_snapshot_display( $normalized ),
+		);
+	}
+	return $item_data;
+}
+
+/**
+ * Persist visible and technical cabin metadata on an order line.
+ *
+ * @param WC_Order_Item_Product $item          Order item.
+ * @param string                $cart_item_key Cart item key (unused).
+ * @param array<string,mixed>   $values        Cart line values.
+ * @param WC_Order|null         $order         Parent order (unused).
+ * @return void
+ */
+function offitravel_cabin_order_item( $item, $cart_item_key, $values, $order = null ) {
+	unset( $cart_item_key, $order );
+	if ( ! $item instanceof WC_Order_Item_Product || empty( $values['data'] ) || ! $values['data'] instanceof WC_Product || ! isset( $values[ OFFITRAVEL_CABIN_CART_KEY ] ) ) {
+		return;
+	}
+	$normalized = offitravel_cabin_normalize_snapshot( $values[ OFFITRAVEL_CABIN_CART_KEY ], (int) $values['data']->get_id() );
+	if ( is_wp_error( $normalized ) ) {
+		return;
+	}
+	$item->add_meta_data( __( 'Suplemento de cabina', 'offitravel-cabins' ), implode( "\n", offitravel_cabin_snapshot_lines( $normalized ) ), true );
+	$item->add_meta_data( OFFITRAVEL_CABIN_ORDER_SNAPSHOT_META, $normalized, true );
+	$item->add_meta_data( OFFITRAVEL_CABIN_ORDER_TOTAL_META, $normalized['total'], true );
+}
+
+/**
+ * Hide technical cabin metadata while retaining the commercial row.
+ *
+ * @param string[] $hidden Existing hidden order item keys.
+ * @return string[]
+ */
+function offitravel_cabin_hidden_order_itemmeta( $hidden ) {
+	$hidden[] = OFFITRAVEL_CABIN_ORDER_SNAPSHOT_META;
+	$hidden[] = OFFITRAVEL_CABIN_ORDER_TOTAL_META;
+	return array_values( array_unique( $hidden ) );
+}
+
+/**
  * Add the isolated cabin configuration metabox to OVA rental products.
  *
  * @param WP_Post $post Product post.
@@ -507,3 +871,14 @@ add_action( 'woocommerce_process_product_meta', 'offitravel_cabin_save_product_o
 add_filter( 'redirect_post_location', 'offitravel_cabin_admin_redirect_error', 98, 2 );
 add_action( 'admin_notices', 'offitravel_cabin_admin_notice' );
 add_action( 'admin_enqueue_scripts', 'offitravel_cabin_enqueue_admin_script' );
+
+add_action( 'tripgo_booking_form', 'offitravel_cabin_booking_markup', 24, 1 );
+add_action( 'wp_enqueue_scripts', 'offitravel_cabin_enqueue_state', 390 );
+add_action( 'wp_enqueue_scripts', 'offitravel_cabin_enqueue_front', 410 );
+add_filter( 'woocommerce_add_to_cart_validation', 'offitravel_cabin_validate_cart', 101, 3 );
+add_filter( 'woocommerce_add_cart_item_data', 'offitravel_cabin_add_cart_item_data', 30, 4 );
+add_filter( 'ovabrw_get_price_by_guests', 'offitravel_cabin_line_total', 1009, 5 );
+add_filter( 'woocommerce_get_cart_item_from_session', 'offitravel_cabin_restore_cart_item', 30, 2 );
+add_filter( 'woocommerce_get_item_data', 'offitravel_cabin_cart_display', 40, 2 );
+add_action( 'woocommerce_checkout_create_order_line_item', 'offitravel_cabin_order_item', 20, 4 );
+add_filter( 'woocommerce_hidden_order_itemmeta', 'offitravel_cabin_hidden_order_itemmeta', 20 );

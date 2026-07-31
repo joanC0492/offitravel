@@ -8,6 +8,7 @@
 	var POST_KEY = 'offitravel_addons';
 	var AGE_POST_KEY = 'offitravel_age_addons';
 	var FIXED_QUANTITY_POST_KEY = 'offitravel_addon_quantities';
+	var CABIN_POST_KEY = 'offitravel_cabins';
 	var AGE_RECALC_DELAY = 250;
 
 	function collectAddonIdsFromForm($form) {
@@ -48,6 +49,34 @@
 		var stateApi = window.offitravelProductAddonFixedState;
 		return stateApi && typeof stateApi.buildQuantityPayload === 'function'
 			? stateApi.buildQuantityPayload(rows)
+			: {};
+	}
+
+	/**
+	 * Collect the minimal cabin payload from one booking form.
+	 *
+	 * Prices, labels and subtotals are deliberately absent. PHP resolves them
+	 * from product metadata and validates occupants against room-mode values.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {Object<string,{people:string,category:string}>} Cabin selections.
+	 */
+	function collectCabinsFromForm($form) {
+		var rows = [];
+		if (!$form || !$form.length) {
+			return {};
+		}
+		$form.find('[data-offitravel-cabin-control]').each(function () {
+			var $row = $(this);
+			rows.push({
+				cabinIndex: String($row.data('offitravel-cabin-index') || ''),
+				people: String($row.find('[data-offitravel-cabin-people]').val() || ''),
+				category: String($row.find('[data-offitravel-cabin-category]').val() || ''),
+			});
+		});
+		var stateApi = window.OffitravelCabinState;
+		return stateApi && typeof stateApi.buildCabinPayload === 'function'
+			? stateApi.buildCabinPayload(rows)
 			: {};
 	}
 
@@ -281,7 +310,7 @@
 	}
 
 	/**
-	 * Add fixed selections, manual quantities and traveler ages to AJAX.
+	 * Add fixed selections, manual quantities, traveler ages and cabins to AJAX.
 	 *
 	 * @param {Object} data OVA request object.
 	 * @param {jQuery} $form Booking form.
@@ -299,6 +328,10 @@
 		var travelerAge = collectTravelerAgeFromForm($form);
 		if (!$.isEmptyObject(travelerAge)) {
 			data[AGE_POST_KEY] = travelerAge;
+		}
+		var cabins = collectCabinsFromForm($form);
+		if (!$.isEmptyObject(cabins)) {
+			data[CABIN_POST_KEY] = cabins;
 		}
 	}
 
@@ -555,6 +588,12 @@
 		if (!data) {
 			return;
 		}
+		var sequence = (parseInt($form.data('offitravel-total-recalc-sequence'), 10) || 0) + 1;
+		$form.data('offitravel-total-recalc-sequence', sequence);
+		var previousRequest = $form.data('offitravel-total-recalc-request');
+		if (previousRequest && typeof previousRequest.abort === 'function') {
+			previousRequest.abort();
+		}
 		var $loader = $form.find('.ajax-show-total .ajax-loading-total');
 		$form.find('.ajax-show-total .ovabrw-show-amount').css('display', 'flex');
 		$loader.show();
@@ -563,11 +602,14 @@
 		$form.find('.ajax-show-total .show-amount-insurance').html('');
 		$form.find('.ajax-show-total .show-total-number').html('');
 
-		return $.ajax({
+		var request = $.ajax({
 			url: ajax_object.ajax_url,
 			type: 'POST',
 			data: data,
 			success: function (resp) {
+				if (sequence !== $form.data('offitravel-total-recalc-sequence')) {
+					return;
+				}
 				var e;
 				try {
 					e = typeof resp === 'object' ? resp : JSON.parse(resp);
@@ -631,8 +673,32 @@
 				$loader.hide();
 				$form.find('.ovabrw-date-loading').hide();
 			},
+			complete: function () {
+				if (sequence === $form.data('offitravel-total-recalc-sequence')) {
+					$form.removeData('offitravel-total-recalc-request');
+				}
+			},
 		});
+		$form.data('offitravel-total-recalc-request', request);
+		return request;
 	}
+
+	/**
+	 * Recalculate one form through the shared direct OVA request.
+	 *
+	 * Cabin controls use this entry point so request cancellation and response
+	 * sequencing remain form-scoped and shared with existing supplement data.
+	 *
+	 * @param {jQuery|HTMLElement} form Booking form or descendant.
+	 * @returns {jqXHR|null} Current AJAX request.
+	 */
+	window.offitravelPrdAddonRecalculate = function (form) {
+		var $form = $(form);
+		if (!$form.is('form.booking-form')) {
+			$form = $form.closest('form.booking-form');
+		}
+		return $form.length ? offitravelAjaxSubmitBookingTotal($form.first()) : null;
+	};
 
 	if (typeof $.ajax === 'function' && !$.ajax.__offitravel_prd_addon_wrap) {
 		var origAjax = $.ajax;
@@ -701,6 +767,7 @@
 		var hasFixed = /(?:^|&)offitravel_addons(?:%5B%5D|\[\])=/.test(d);
 		var hasAge = /(?:^|&)offitravel_age_addons(?:%5B|\[)/.test(d);
 		var hasQuantities = /(?:^|&)offitravel_addon_quantities(?:%5B|\[)/.test(d);
+		var hasCabins = /(?:^|&)offitravel_cabins(?:%5B|\[)/.test(d);
 		var ids = collectAddonIdsFromForm($form.first());
 		if (!hasFixed) {
 			for (var i = 0; i < ids.length; i++) {
@@ -720,6 +787,14 @@
 			d += '&' + $.param((function () {
 				var payload = {};
 				payload[FIXED_QUANTITY_POST_KEY] = quantities;
+				return payload;
+			})());
+		}
+		var cabins = collectCabinsFromForm($form.first());
+		if (!hasCabins && !$.isEmptyObject(cabins)) {
+			d += '&' + $.param((function () {
+				var payload = {};
+				payload[CABIN_POST_KEY] = cabins;
 				return payload;
 			})());
 		}

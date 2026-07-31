@@ -1,0 +1,24 @@
+.offitravel-cabin-config {
+	display: none;
+}
+
+.offitravel-cabin-control {
+	margin-top: 16px;
+}
+
+.offitravel-cabin-control label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.offitravel-cabin-control select {
+	width: 100%;
+}
+
+.offitravel-cabin-error {
+	color: #b42318;
+	display: block;
+	font-size: 0.875rem;
+	margin-top: 6px;
+}

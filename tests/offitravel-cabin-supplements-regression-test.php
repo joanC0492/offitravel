@@ -1,9 +1,9 @@
 <?php
 /**
- * Database and hook regressions for the isolated Checkpoint 4 foundation.
+ * Database and hook regressions for the Checkpoint 5 Rin activation.
  *
  * This test is read-only. It confirms that existing services and cruise
- * products remain untouched and that no public cabin integration is active.
+ * products remain untouched and that public cabin integration is scoped to Rin.
  *
  * Run with: php tests/offitravel-cabin-supplements-regression-test.php
  *
@@ -104,19 +104,38 @@ $expected_services = array(
 );
 
 $tests = array(
-	'no cabin metadata exists on any product' => static function () {
+	'Rin is the only product with cabin metadata and exact approved options' => static function () {
 		global $wpdb;
 		$pattern = '%' . $wpdb->esc_like( 'offitravel_cabin' ) . '%';
-		$count   = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_key LIKE %s", $pattern ) );
-		offitravel_cabin_regression_same( 0, $count, 'Checkpoint 4 created cabin metadata.' );
+		$products = $wpdb->get_col( $wpdb->prepare( "SELECT DISTINCT post_id FROM {$wpdb->postmeta} WHERE meta_key LIKE %s ORDER BY post_id", $pattern ) );
+		offitravel_cabin_regression_same( array( '11280' ), $products, 'Cabin metadata is not isolated to Rin.' );
+		offitravel_cabin_regression_same(
+			array(
+				array( 'id' => 'sin-suplemento', 'label' => 'Sin suplemento', 'price_per_person' => '0.00' ),
+				array( 'id' => 'puente-intermedio', 'label' => 'Puente intermedio', 'price_per_person' => '135.00' ),
+				array( 'id' => 'puente-superior', 'label' => 'Puente superior', 'price_per_person' => '200.00' ),
+			),
+			get_post_meta( 11280, OFFITRAVEL_CABIN_META_OPTIONS, true ),
+			'Rin options differ from the approved configuration.'
+		);
+		offitravel_cabin_regression_same( 'yes', get_post_meta( 11280, OFFITRAVEL_CABIN_META_ENABLED, true ), 'Rin cabin options are not enabled.' );
+		offitravel_cabin_regression_same( '0', (string) get_post_meta( 11280, '_offitravel_ovabrw_room_single_supplement_eur', true ), 'Rin single supplement fallback is not disabled.' );
 	},
-	'Rin and Danube have no cabin metadata' => static function () {
+	'Danube remains without cabin metadata or activation' => static function () {
 		global $wpdb;
 		$pattern = '%' . $wpdb->esc_like( 'offitravel_cabin' ) . '%';
-		foreach ( array( 11280, 11259 ) as $product_id ) {
-			$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key LIKE %s", $product_id, $pattern ) );
-			offitravel_cabin_regression_same( 0, $count, "Cruise {$product_id} received cabin metadata." );
-		}
+		$count = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key LIKE %s", 11259, $pattern ) );
+		offitravel_cabin_regression_same( 0, $count, 'Danube received cabin metadata.' );
+		offitravel_cabin_regression_same( '', get_post_meta( 11259, '_offitravel_ovabrw_room_single_supplement_eur', true ), 'Danube single supplement configuration changed.' );
+	},
+	'Rin booking limits package dates and base price remain unchanged' => static function () {
+		offitravel_cabin_regression_same( 'yes', get_post_meta( 11280, '_offitravel_ovabrw_room_mode_enabled', true ), 'Rin room mode changed.' );
+		offitravel_cabin_regression_same( '1', get_post_meta( 11280, '_offitravel_ovabrw_room_max_rooms', true ), 'Rin maximum rooms changed.' );
+		offitravel_cabin_regression_same( '5', get_post_meta( 11280, '_offitravel_ovabrw_room_max_per_room', true ), 'Rin maximum occupants changed.' );
+		offitravel_cabin_regression_same( '2', get_post_meta( 11280, 'ovabrw_adults_min', true ), 'Rin minimum adults changed.' );
+		offitravel_cabin_regression_same( 'pack_mercadillo_rin', get_post_meta( 11280, 'ovabrw_product_custom_checkout_field', true ), 'Rin package field changed.' );
+		offitravel_cabin_regression_same( '1298', get_post_meta( 11280, '_price', true ), 'Rin base price changed.' );
+		offitravel_cabin_regression_same( array( '30-11-2026', '08-12-2026' ), get_post_meta( 11280, '_offitravel_ovabrw_available_startdate', true ), 'Rin dates changed.' );
 	},
 	'existing circuit and musical services retain approved configuration' => static function () use ( $expected_services ) {
 		foreach ( $expected_services as $service_id => $expected ) {
@@ -127,24 +146,25 @@ $tests = array(
 			}
 		}
 	},
-	'no public AJAX cart price session checkout or order hook is active' => static function () {
-		$forbidden_hooks = array(
-			'wp_enqueue_scripts',
-			'wp_ajax_offitravel_cabin',
-			'wp_ajax_nopriv_offitravel_cabin',
-			'ovabrw_get_price_by_guests',
-			'woocommerce_add_to_cart_validation',
-			'woocommerce_add_cart_item_data',
-			'woocommerce_get_cart_item_from_session',
-			'woocommerce_get_item_data',
-			'woocommerce_checkout_create_order_line_item',
-			'woocommerce_hidden_order_itemmeta',
+	'public cabin hooks use the approved existing WooCommerce and OVA boundaries' => static function () {
+		$expected_hooks = array(
+			'tripgo_booking_form'                        => array( 'offitravel_cabin_booking_markup' ),
+			'wp_enqueue_scripts'                         => array( 'offitravel_cabin_enqueue_state', 'offitravel_cabin_enqueue_front' ),
+			'ovabrw_get_price_by_guests'                 => array( 'offitravel_cabin_line_total' ),
+			'woocommerce_add_to_cart_validation'         => array( 'offitravel_cabin_validate_cart' ),
+			'woocommerce_add_cart_item_data'             => array( 'offitravel_cabin_add_cart_item_data' ),
+			'woocommerce_get_cart_item_from_session'     => array( 'offitravel_cabin_restore_cart_item' ),
+			'woocommerce_get_item_data'                  => array( 'offitravel_cabin_cart_display' ),
+			'woocommerce_checkout_create_order_line_item'=> array( 'offitravel_cabin_order_item' ),
+			'woocommerce_hidden_order_itemmeta'           => array( 'offitravel_cabin_hidden_order_itemmeta' ),
 		);
-		foreach ( $forbidden_hooks as $hook_name ) {
-			offitravel_cabin_regression_same( array(), offitravel_cabin_regression_callbacks( $hook_name ), "Cabin callback registered on {$hook_name}." );
+		foreach ( $expected_hooks as $hook_name => $callbacks ) {
+			offitravel_cabin_regression_same( $callbacks, offitravel_cabin_regression_callbacks( $hook_name ), "Cabin callbacks differ on {$hook_name}." );
 		}
+		offitravel_cabin_regression_same( array(), offitravel_cabin_regression_callbacks( 'wp_ajax_offitravel_cabin' ), 'A parallel cabin AJAX endpoint was registered.' );
+		offitravel_cabin_regression_same( array(), offitravel_cabin_regression_callbacks( 'wp_ajax_nopriv_offitravel_cabin' ), 'A public parallel cabin AJAX endpoint was registered.' );
 	},
-	'only administrative hooks from the cabin foundation are registered' => static function () {
+	'administrative cabin hooks remain isolated from provider save handlers' => static function () {
 		offitravel_cabin_regression_same( array( 'offitravel_cabin_add_product_metabox' ), offitravel_cabin_regression_callbacks( 'add_meta_boxes_product' ), 'Unexpected product metabox callbacks.' );
 		offitravel_cabin_regression_same( array( 'offitravel_cabin_save_product_options' ), offitravel_cabin_regression_callbacks( 'woocommerce_process_product_meta' ), 'Unexpected product-save callbacks.' );
 		offitravel_cabin_regression_same( array( 'offitravel_cabin_enqueue_admin_script' ), offitravel_cabin_regression_callbacks( 'admin_enqueue_scripts' ), 'Unexpected cabin admin script callbacks.' );

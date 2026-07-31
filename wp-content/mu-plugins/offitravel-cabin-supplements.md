@@ -1,172 +1,185 @@
-# Offitravel Cabin Supplement Base
+# Suplementos de cabina de Offitravel
 
-## Purpose
+## Propósito
 
-This MU plugin provides the reusable administrative and calculation foundation for product-scoped cabin supplements. Checkpoint 4 deliberately stops before public activation: it does not render cabin fields on a tour, attach JavaScript to a booking form, recalculate AJAX totals, alter a cart price, or persist data in a WooCommerce order.
+Este MU Plugin proporciona la configuración administrativa, el cálculo autoritativo y la persistencia de suplementos de cabina por producto OVA. El Checkpoint 5 activa el flujo público exclusivamente para el producto `11280`, Crucero fluvial: Mercadillos de Navidad en el Rin. El producto `11259`, Crucero por el Danubio, permanece sin configuración ni selector público.
 
-The implementation is isolated from the existing room-mode and product-add-on systems. No provider file or Checkpoint 1–3 file needs to change.
+La implementación reutiliza el modo habitaciones existente sin modificarlo. Tampoco modifica OVA/OVABRW, Tripgo, WooCommerce, el tema hijo ni archivos de proveedor.
 
-## Files
+## Archivos
 
-- `offitravel-cabin-supplements.php`: administrative configuration, authoritative PHP calculator, and snapshot normalization.
-- `offitravel-cabin-supplements-admin.js`: row management for the product metabox.
-- `offitravel-cabin-supplements-state.js`: pure state helpers reserved for a future public interface. It is not enqueued in Checkpoint 4.
+- `offitravel-cabin-supplements.php`: administración, cálculo PHP, formulario público, carrito, sesión y pedido.
+- `offitravel-cabin-supplements-admin.js`: gestión de filas del metabox del producto.
+- `offitravel-cabin-supplements-state.js`: estado puro por cabina y coordinación de peticiones.
+- `offitravel-cabin-supplements-front.js`: integración del selector en cada fila de habitación.
+- `offitravel-cabin-supplements-front.css`: presentación del control y de sus errores.
+- `offitravel-product-addons-front.js`: transporte compartido del payload y recálculo AJAX.
 
-## Administrative configuration
+## Configuración administrativa
 
-OVA rental products receive an **Opciones de cabina — Base técnica** metabox with these fields per option:
+Los productos OVA disponen del metabox **Opciones de cabina — Base técnica**. Cada opción contiene:
 
-- Internal identifier.
-- Public label.
-- Supplement per person.
+- Identificador interno.
+- Etiqueta pública.
+- Suplemento por persona.
 
-The option list is stored under:
+La lista normalizada se guarda en:
 
 ```text
 _offitravel_cabin_options
 ```
 
-Each normalized row has this shape:
+Cada fila usa esta estructura:
 
 ```php
 array(
-    'id'               => 'normalized-id',
-    'label'            => 'Public label',
-    'price_per_person' => '14.37',
+    'id'               => 'identificador-normalizado',
+    'label'            => 'Etiqueta pública',
+    'price_per_person' => '135.00',
 )
 ```
 
-The following activation key is reserved for a later checkpoint:
+La activación pública es explícita y se controla con:
 
 ```text
-_offitravel_cabin_options_enabled
+_offitravel_cabin_options_enabled = yes
 ```
 
-Checkpoint 4 never writes that key and does not expose an activation control. Consequently, storing option rows alone cannot activate a public selector.
+Abrir o guardar un producto sin interactuar con el metabox no crea, migra ni elimina metadatos. Tras una interacción, PHP valida la lista completa antes de escribir: filas completas, identificadores únicos, etiquetas no vacías después del saneamiento y precios decimales no negativos.
 
-### Safe save behavior
+## Configuración del Rin
 
-The metabox includes an interaction marker whose initial value is zero. The administrative script changes it to one only after the user edits a field, adds a row, or removes a row. The PHP save handler exits before any metadata operation when the marker is absent or remains zero.
+El producto `11280` tiene activado exactamente este catálogo:
 
-This means that opening or saving a product without interacting with the metabox performs no creation, migration, update, or deletion of cabin metadata.
+| ID | Etiqueta pública | Precio por persona |
+|---|---|---:|
+| `sin-suplemento` | Sin suplemento | 0,00 € |
+| `puente-intermedio` | Puente intermedio | 135,00 € |
+| `puente-superior` | Puente superior | 200,00 € |
 
-After an explicit interaction, PHP validates the complete submitted option list before writing:
-
-- Rows that are entirely empty are ignored.
-- Partially completed rows are rejected.
-- IDs are normalized with `sanitize_key()` and must be unique.
-- Labels must be present and must remain non-empty after WordPress text sanitization.
-- Prices must be non-negative decimal values and are normalized using WooCommerce precision.
-
-An invalid list causes no metadata write. A valid empty list removes only `_offitravel_cabin_options`; it does not alter activation or booking metadata.
-
-## Authoritative PHP calculator
-
-`offitravel_cabin_calculate_snapshot()` is a callable primitive for later checkpoints. It is not registered on a public hook in Checkpoint 4.
-
-Its inputs are:
-
-```php
-$product_id;
-$raw_cabins = array(
-    1 => array(
-        'people'   => '2',
-        'category' => 'normalized-id',
-    ),
-);
-$context = array(
-    'offitravel_room_count'  => 1,
-    'offitravel_room_people' => array( 2 ),
-);
-```
-
-The calculator:
-
-1. Resolves the ID with `wc_get_product()` and requires an existing WooCommerce product of type `ovabrw_car_rental`.
-2. Requires explicit product activation through the reserved metadata key.
-3. Loads option labels and prices from WordPress metadata.
-4. Validates the current room count and occupants from the trusted context.
-5. Requires one selection per cabin and exact occupant agreement.
-6. Ignores any submitted price, subtotal, or total.
-7. Calculates each subtotal as occupants multiplied by the stored per-person price.
-8. Applies `wc_format_decimal()` and `wc_get_price_decimals()` through the money snapshot helper.
-
-No maximum number of cabins or occupants is imposed here. Those limits must come from the product’s valid room configuration in a future integration layer.
-
-## Snapshot model
-
-The canonical calculation result is structured as follows:
+Además se guarda:
 
 ```text
-version
-product_id
-cabins[CABIN_INDEX]
-  cabin_index
-  occupants
-  category
-  label
-  price_per_person
-  subtotal
-total
+_offitravel_ovabrw_room_single_supplement_eur = 0
 ```
 
-`offitravel_cabin_normalize_snapshot()` validates and rebuilds historical subtotals from the snapshot itself without consulting current product pricing. This prepares a stable persistence boundary for later checkout and order work while retaining the values charged at booking time.
+Ese valor neutraliza para `11280` el fallback global de 150 € del suplemento individual. No cambia el comportamiento de ningún otro tour.
 
-Snapshot normalization rejects product identifiers that become zero after `absint()`, preventing malformed historical payloads from being treated as product-owned data.
+## Formulario público y estado JavaScript
 
-`offitravel_cabin_snapshot_total()` returns the validated aggregate as a float or zero for an invalid snapshot. Checkpoint 4 does not call it from any WooCommerce pricing hook.
+Cuando el producto está activado, el servidor publica un bloque JSON con el producto, la opción inicial y las opciones disponibles. JavaScript inserta **Categoría de cabina** dentro de cada `.offitravel-room-row`.
 
-## JavaScript state contract
+El estado se mantiene por formulario y por índice de cabina:
 
-`offitravel-cabin-supplements-state.js` is a pure, unqueued module that prepares these later behaviors:
+- Las cabinas nuevas reciben la primera opción configurada (`sin-suplemento` en el Rin).
+- Las cabinas que sobreviven a una reconstrucción conservan su categoría.
+- Las cabinas retiradas desaparecen del estado.
+- La ocupación oculta se sincroniza con el selector real de personas de cada habitación.
 
-- Normalize a positive configured occupancy without inventing a maximum.
-- Preserve categories for cabin positions that survive a room rebuild.
-- Add empty selections for newly created cabin positions.
-- Remove state for cabin positions that no longer exist.
-- Build a minimal payload containing only `people` and `category`.
-
-The future request shape is:
+El navegador envía únicamente:
 
 ```text
 offitravel_cabins[ROOM_INDEX][people]
 offitravel_cabins[ROOM_INDEX][category]
 ```
 
-Client-side prices and subtotals are intentionally absent.
+Nunca envía precios, etiquetas, subtotales ni totales. El payload se integra en el único `$.ajaxPrefilter` existente, tanto para solicitudes con objeto como serializadas. Los campos de habitaciones siguen siendo propiedad del modo habitaciones y no se duplican en el constructor del suplemento.
 
-## Registered hooks
+El recálculo directo usa una secuencia aislada por formulario: aborta la petición anterior y sólo la respuesta con el token más reciente puede actualizar el total.
 
-Only administrative hooks are registered:
+## Validación y cálculo PHP
 
-- `add_meta_boxes_product`
-- `woocommerce_process_product_meta`
-- `admin_enqueue_scripts`
-- `redirect_post_location`
-- `admin_notices`
+`offitravel_cabin_calculate_request_snapshot()` recibe el POST y un contexto de ocupación. Antes de calcular:
 
-There are no public render, AJAX, price, cart, session, checkout, order, email, or frontend enqueue hooks in this checkpoint.
+1. Resuelve el producto con `wc_get_product()` y exige el tipo `ovabrw_car_rental`.
+2. Exige activación explícita del producto.
+3. Lee etiquetas y precios exclusivamente desde WordPress.
+4. Valida el número de habitaciones y los ocupantes con los límites configurados en ese producto.
+5. Exige exactamente una categoría válida por cabina.
+6. Exige que la ocupación enviada para la cabina coincida con la ocupación real.
+7. Rechaza cabinas faltantes, adicionales o estructuras no escalares.
 
-## Dependencies and compatibility
+Cada subtotal se calcula como:
 
-- WordPress metadata and nonce APIs.
-- WooCommerce decimal precision helpers and product types.
-- The existing OVA rental product type is detected read-only to decide where the metabox belongs.
+```text
+ocupantes reales × precio por persona almacenado
+```
 
-The plugin does not modify the existing fixed add-ons, traveler-age insurance, room-mode implementation, cart snapshots, session restoration, checkout display, order metadata, or emails.
+Los importes se normalizan con `wc_format_decimal()` y `wc_get_price_decimals()`. Repetir AJAX o recalcular el carrito no acumula el suplemento: el filtro de precio suma una sola vez el total del snapshot al precio base recibido.
 
-Calculator tests use a real OVA product only for type resolution. Activation, option labels, and prices are supplied through temporary read filters with synthetic values; the tests create no product and perform no metadata write.
+## Snapshot
 
-## Deferred work
+El carrito conserva:
 
-Later checkpoints must provide and test, per explicitly configured product:
+```text
+offitravel_cabin_supplements
+  version
+  product_id
+  cabins[CABIN_INDEX]
+    cabin_index
+    occupants
+    category
+    label
+    price_per_person
+    subtotal
+  total
+```
 
-- Activation and commercial option data.
-- Integration with the product’s current room/cabin occupancy rules.
-- Public rendering and event handling.
-- Extension of the existing AJAX payload mechanism without a second global interceptor.
-- Cart validation and idempotent line pricing.
-- Session, checkout, order, administration, and email persistence/display.
-- Product-specific handling of a one-person cabin and any individual supplement.
+La normalización histórica valida y reconstruye subtotales desde el propio snapshot sin consultar tarifas actuales. Esto conserva las condiciones cobradas aunque la configuración comercial cambie después.
 
-None of those behaviors is active in Checkpoint 4.
+## Carrito, sesión y pedido
+
+- `woocommerce_add_to_cart_validation` valida el payload antes de añadir al carrito.
+- `woocommerce_add_cart_item_data` crea el snapshot autoritativo después de que el modo habitaciones haya guardado la ocupación.
+- `ovabrw_get_price_by_guests` añade el total una vez, con prioridad `1009`.
+- `woocommerce_get_cart_item_from_session` restaura el snapshot histórico.
+- `woocommerce_get_item_data` muestra el desglose en carrito y checkout.
+- `woocommerce_checkout_create_order_line_item` guarda una fila comercial visible y dos metadatos técnicos.
+- `woocommerce_hidden_order_itemmeta` oculta exclusivamente los metadatos técnicos.
+
+Metadatos técnicos del pedido:
+
+```text
+_offitravel_cabin_supplement_snapshot
+_offitravel_cabin_supplement_total
+```
+
+La fila visible **Suplemento de cabina** incluye cabina, ocupantes, categoría, precio por persona, subtotal y total. Los correos estándar de WooCommerce heredan esa fila.
+
+## Orden de precio
+
+```text
+815   Matriz CCKF
+844   Descuentos de ocupación
+850   Paquete y suplemento individual
+999   Precio fijo por ocupación
+1008  Suplementos fijos y seguros por edad
+1009  Suplementos de cabina
+```
+
+## Compatibilidad y aislamiento
+
+- El seguro por edad de circuitos no cambia.
+- KIT romántico, Seguro de anulación, Platea y Servicio 01 no cambian.
+- Los selectores `rey_leon`, `wicked` y los paquetes existentes no cambian.
+- El Danubio y los demás productos no reciben configuración ni selector.
+- El calculador de cabinas sigue siendo reutilizable para varias cabinas, pero el Rin conserva sus límites actuales: una habitación, hasta cinco personas y mínimo dos adultos.
+
+## Pruebas
+
+Las pruebas cubren:
+
+- Estado y payload JavaScript sin precios del cliente.
+- Opción inicial, preservación y retirada de cabinas.
+- Cancelación de peticiones y protección frente a respuestas antiguas.
+- Configuración exclusiva y exacta del Rin.
+- Cálculos 2×0, 2×135, 2×200, 5×135 y 5×200.
+- Manipulación de categoría, ocupación, precio, etiqueta y total.
+- Validación AJAX, idempotencia y aislamiento de productos.
+- Restauración de sesión y persistencia del pedido.
+- Eliminación exclusiva del pedido temporal creado por la prueba.
+- Regresión de circuitos, musicales y productos no afectados.
+
+## Trabajo reservado
+
+El producto `11259` no se activa en este checkpoint. Sus opciones, tarifas y cualquier decisión específica de ocupación pertenecen exclusivamente al Checkpoint 6.

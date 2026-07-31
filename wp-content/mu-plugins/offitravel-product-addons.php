@@ -1747,7 +1747,8 @@ function offitravel_addon_enqueue_front() {
 	if ( ! $p instanceof WC_Product || ! $p->is_type( OVABRW_RENTAL ) ) {
 		return;
 	}
-	if ( ! offitravel_addon_posts_for_product( $p->get_id() ) && ! offitravel_addon_age_posts_for_product( $p->get_id() ) ) {
+	$has_cabins = function_exists( 'offitravel_cabin_product_is_enabled' ) && offitravel_cabin_product_is_enabled( $p->get_id() );
+	if ( ! offitravel_addon_posts_for_product( $p->get_id() ) && ! offitravel_addon_age_posts_for_product( $p->get_id() ) && ! $has_cabins ) {
 		return;
 	}
 
@@ -1759,6 +1760,9 @@ function offitravel_addon_enqueue_front() {
 	}
 	if ( wp_script_is( 'offitravel-ovabrw-room-mode', 'registered' ) ) {
 		$deps[] = 'offitravel-ovabrw-room-mode';
+	}
+	if ( $has_cabins && wp_script_is( 'offitravel-cabin-supplements-state', 'registered' ) ) {
+		$deps[] = 'offitravel-cabin-supplements-state';
 	}
 	$deps = array_values( array_unique( $deps ) );
 	$state_path = dirname( __FILE__ ) . '/offitravel-product-addons-traveler-age-state.js';

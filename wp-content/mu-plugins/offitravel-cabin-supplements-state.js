@@ -1,8 +1,5 @@
 /**
- * Pure state helpers reserved for future cabin-selection interfaces.
- *
- * Checkpoint 4 does not enqueue this module. It defines the data contract used
- * by later checkpoints without binding events or sending requests.
+ * Pure state helpers for product-scoped cabin-selection interfaces.
  *
  * @module OffitravelCabinState
  */
@@ -44,16 +41,18 @@
 	 * Reconcile selections with a new ordered occupancy list.
 	 *
 	 * Categories survive only for cabin positions that still exist. Occupants
-	 * always come from the current room state, while newly added cabins start
-	 * without a category.
+	 * always come from the current room state. Newly added cabins use the
+	 * configured initial category; surviving cabins retain their selection.
 	 *
 	 * @param {Array<*>} occupants Current occupants in cabin order.
 	 * @param {Object<string,{people: *, category: *}>} previous Previous state.
+	 * @param {string} [initialCategory=''] Category assigned to new cabins.
 	 * @returns {Object<string,{people: string, category: string}>} Reconciled state.
 	 */
-	function reconcileCabins(occupants, previous) {
+	function reconcileCabins(occupants, previous, initialCategory) {
 		var normalized = normalizeOccupancy(occupants);
 		var oldState = previous && typeof previous === 'object' ? previous : {};
+		var defaultCategory = typeof initialCategory === 'string' ? initialCategory : '';
 		var result = {};
 
 		if (!normalized) {
@@ -64,7 +63,7 @@
 			var oldRow = oldState[index] && typeof oldState[index] === 'object' ? oldState[index] : {};
 			result[index] = {
 				people: String(people),
-				category: typeof oldRow.category === 'string' ? oldRow.category : ''
+				category: typeof oldRow.category === 'string' ? oldRow.category : defaultCategory
 			};
 		});
 		return result;
@@ -110,9 +109,43 @@
 		});
 	}
 
+	/**
+	 * Create a request coordinator that aborts superseded requests.
+	 *
+	 * Tokens are monotonically increasing and remain form-local because each
+	 * booking form creates its own coordinator. Completing an old token cannot
+	 * make it current again.
+	 *
+	 * @returns {{begin:function(*):number,isCurrent:function(number):boolean,complete:function(number):void}}
+	 */
+	function createRequestCoordinator() {
+		var sequence = 0;
+		var currentRequest = null;
+
+		return {
+			begin: function (request) {
+				if (currentRequest && typeof currentRequest.abort === 'function') {
+					currentRequest.abort();
+				}
+				sequence += 1;
+				currentRequest = request || null;
+				return sequence;
+			},
+			isCurrent: function (token) {
+				return token === sequence;
+			},
+			complete: function (token) {
+				if (token === sequence) {
+					currentRequest = null;
+				}
+			}
+		};
+	}
+
 	return {
 		buildCabinPayload: buildCabinPayload,
 		cabinsAreComplete: cabinsAreComplete,
+		createRequestCoordinator: createRequestCoordinator,
 		isPositiveInteger: isPositiveInteger,
 		normalizeOccupancy: normalizeOccupancy,
 		reconcileCabins: reconcileCabins

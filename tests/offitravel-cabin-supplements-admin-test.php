@@ -240,11 +240,11 @@ $tests = array(
 			throw new RuntimeException( 'Checkpoint 4 exposed an activation control.' );
 		}
 	},
-	'admin hooks exist without public pricing or cart hooks' => static function () {
+	'admin hooks remain registered alongside the approved Rin public boundaries' => static function () {
 		offitravel_cabin_admin_same( 10, has_action( 'add_meta_boxes_product', 'offitravel_cabin_add_product_metabox' ), 'Product metabox hook is missing.' );
 		offitravel_cabin_admin_same( 20, has_action( 'woocommerce_process_product_meta', 'offitravel_cabin_save_product_options' ), 'Product save hook is missing.' );
-		offitravel_cabin_admin_same( false, has_filter( 'ovabrw_get_price_by_guests', 'offitravel_cabin_add_to_line_total' ), 'Checkpoint 4 registered a public price hook.' );
-		offitravel_cabin_admin_same( false, has_filter( 'woocommerce_add_to_cart_validation', 'offitravel_cabin_validate_cart' ), 'Checkpoint 4 registered a cart validation hook.' );
+		offitravel_cabin_admin_same( 1009, has_filter( 'ovabrw_get_price_by_guests', 'offitravel_cabin_line_total' ), 'Approved cabin price hook has the wrong priority.' );
+		offitravel_cabin_admin_same( 101, has_filter( 'woocommerce_add_to_cart_validation', 'offitravel_cabin_validate_cart' ), 'Approved cabin validation hook has the wrong priority.' );
 	},
 );
 
