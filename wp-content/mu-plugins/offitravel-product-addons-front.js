@@ -6,6 +6,8 @@
 	'use strict';
 
 	var POST_KEY = 'offitravel_addons';
+	var AGE_POST_KEY = 'offitravel_age_addons';
+	var AGE_RECALC_DELAY = 250;
 
 	function collectAddonIdsFromForm($form) {
 		var out = [];
@@ -13,7 +15,7 @@
 			return out;
 		}
 		$form
-			.find('.offitravel-prd-addon-fields input[type="checkbox"]:checked')
+			.find('input[name="offitravel_addons[]"]:checked')
 			.each(function () {
 				var v = $(this).val();
 				if (v) {
@@ -21,6 +23,177 @@
 				}
 			});
 		return out;
+	}
+
+	/**
+	 * Collect only selected traveler-age rows from one booking form.
+	 *
+	 * Prices and subtotals are deliberately absent; PHP resolves both from the
+	 * assigned service and its stored rules.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {Object<string,Object<string,Object<string,{selected:string,age:string}>>>}
+	 */
+	function collectTravelerAgeFromForm($form) {
+		var rows = [];
+		if (!$form || !$form.length) {
+			return {};
+		}
+		$form.find('[data-offitravel-age-service]').each(function () {
+			var $service = $(this);
+			var serviceId = String($service.data('offitravel-age-service') || '');
+			if (!serviceId) {
+				return;
+			}
+			$service.find('[data-offitravel-traveler-row]').each(function () {
+				var $row = $(this);
+				var $checkbox = $row.find('[data-offitravel-traveler-selected]');
+				if (!$checkbox.prop('checked')) {
+					return;
+				}
+				var room = String($row.data('room') || '');
+				var position = String($row.data('position') || '');
+				if (!room || !position) {
+					return;
+				}
+				rows.push({
+					serviceId: serviceId,
+					room: room,
+					position: position,
+					selected: true,
+					age: String($row.find('[data-offitravel-traveler-age]').val() || ''),
+				});
+			});
+		});
+		var stateApi = window.offitravelProductAddonTravelerState;
+		return stateApi && typeof stateApi.buildTravelerAgePayload === 'function'
+			? stateApi.buildTravelerAgePayload(rows)
+			: {};
+	}
+
+	/**
+	 * Collect the selection and direct age used by client-side form validity.
+	 *
+	 * Server-side validation remains authoritative; this state only prevents a
+	 * customer from submitting while the visible total is stale or incomplete.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {Array<{selected:boolean,age:string}>} Rendered traveler states.
+	 */
+	function collectTravelerAgeValidationRows($form) {
+		var rows = [];
+		$form.find('[data-offitravel-traveler-row]').each(function () {
+			var $row = $(this);
+			rows.push({
+				selected: $row.find('[data-offitravel-traveler-selected]').prop('checked') === true,
+				age: String($row.find('[data-offitravel-traveler-age]').val() || ''),
+			});
+		});
+		return rows;
+	}
+
+	/**
+	 * Determine whether every selected traveler has a non-negative integer age.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {boolean} Whether selected traveler ages are ready to submit.
+	 */
+	function selectedTravelerAgesAreValid($form) {
+		var stateApi = window.offitravelProductAddonTravelerState;
+		return !stateApi || typeof stateApi.selectedTravelerAgesAreValid !== 'function'
+			? true
+			: stateApi.selectedTravelerAgesAreValid(collectTravelerAgeValidationRows($form));
+	}
+
+	/**
+	 * Explain invalid selected ages beside their own input and expose ARIA state.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {void}
+	 */
+	function updateTravelerAgeValidationMessages($form) {
+		var stateApi = window.offitravelProductAddonTravelerState;
+		if (!stateApi || typeof stateApi.travelerAgeValidationMessage !== 'function') {
+			return;
+		}
+		$form.find('[data-offitravel-traveler-row]').each(function () {
+			var $row = $(this);
+			var $age = $row.find('[data-offitravel-traveler-age]');
+			var selected = $row.find('[data-offitravel-traveler-selected]').prop('checked') === true;
+			var reveal = $row.data('offitravel-age-validation-revealed') === true;
+			var message = stateApi.travelerAgeValidationMessage(selected, String($age.val() || ''), reveal);
+			var $error = $row.find('[data-offitravel-traveler-age-error]');
+			$age.attr('aria-invalid', message ? 'true' : 'false');
+			$error.text(message).prop('hidden', !message);
+		});
+	}
+
+	/**
+	 * Reveal feedback for selected travelers whose direct age is invalid.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {jQuery} First invalid age input, or an empty jQuery object.
+	 */
+	function revealInvalidTravelerAges($form) {
+		var stateApi = window.offitravelProductAddonTravelerState;
+		var $firstInvalid = $();
+		$form.find('[data-offitravel-traveler-row]').each(function () {
+			var $row = $(this);
+			var selected = $row.find('[data-offitravel-traveler-selected]').prop('checked') === true;
+			var $age = $row.find('[data-offitravel-traveler-age]');
+			var valid = stateApi && typeof stateApi.isTravelerAgeValueValid === 'function'
+				? stateApi.isTravelerAgeValueValid(String($age.val() || ''))
+				: true;
+			if (selected && !valid) {
+				$row.data('offitravel-age-validation-revealed', true);
+				if (!$firstInvalid.length) {
+					$firstInvalid = $age;
+				}
+			}
+		});
+		updateTravelerAgeValidationMessages($form);
+		return $firstInvalid;
+	}
+
+	/**
+	 * Synchronize the real submit-button state with age validity and AJAX state.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @param {boolean} pending Whether the latest age recalculation is pending.
+	 * @returns {void}
+	 */
+	function updateTravelerAgeBookingButton($form, pending) {
+		updateTravelerAgeValidationMessages($form);
+		var $button = $form.find('button.booking-form-submit');
+		if (!$button.length) {
+			return;
+		}
+		var shouldDisable = pending === true;
+		$button.prop('disabled', shouldDisable);
+		$button.attr('aria-disabled', shouldDisable ? 'true' : 'false');
+		if (pending === true) {
+			$button.attr('aria-busy', 'true');
+		} else {
+			$button.removeAttr('aria-busy');
+		}
+	}
+
+	/**
+	 * Add fixed and traveler-age add-ons to an object AJAX payload.
+	 *
+	 * @param {Object} data OVA request object.
+	 * @param {jQuery} $form Booking form.
+	 * @returns {void}
+	 */
+	function mergeSelectionsIntoDataObject(data, $form) {
+		var ids = collectAddonIdsFromForm($form);
+		if (ids.length) {
+			data[POST_KEY] = ids;
+		}
+		var travelerAge = collectTravelerAgeFromForm($form);
+		if (!$.isEmptyObject(travelerAge)) {
+			data[AGE_POST_KEY] = travelerAge;
+		}
 	}
 
 	/**
@@ -33,10 +206,7 @@
 		if (!a || a.action !== 'ovabrw_calculate_total') {
 			return;
 		}
-		var ids = collectAddonIdsFromForm($form);
-		if (ids.length) {
-			a[POST_KEY] = ids;
-		}
+		mergeSelectionsIntoDataObject(a, $form);
 	};
 
 	function mergeAddonsIntoDataObject(data, $ctxForm) {
@@ -56,10 +226,7 @@
 				$form = $('form.booking-form');
 			}
 		}
-		var ids = collectAddonIdsFromForm($form);
-		if (ids.length) {
-			data[POST_KEY] = ids;
-		}
+		mergeSelectionsIntoDataObject(data, $form);
 	}
 
 	function ajaxUrlIsWp(u) {
@@ -290,7 +457,7 @@
 		$form.find('.ajax-show-total .show-amount-insurance').html('');
 		$form.find('.ajax-show-total .show-total-number').html('');
 
-		$.ajax({
+		return $.ajax({
 			url: ajax_object.ajax_url,
 			type: 'POST',
 			data: data,
@@ -412,7 +579,12 @@
 		) {
 			return;
 		}
-		if (d.indexOf('offitravel_addons') !== -1) {
+		var stateApi = window.offitravelProductAddonTravelerState;
+		if (
+			stateApi &&
+			typeof stateApi.serializedPayloadHasAddonSelections === 'function' &&
+			stateApi.serializedPayloadHasAddonSelections(d)
+		) {
 			return;
 		}
 
@@ -430,32 +602,161 @@
 			});
 		}
 		var ids = collectAddonIdsFromForm($form.first());
-		if (!ids.length) {
-			return;
-		}
 		for (var i = 0; i < ids.length; i++) {
 			d += '&offitravel_addons[]=' + encodeURIComponent(ids[i]);
+		}
+		var travelerAge = collectTravelerAgeFromForm($form.first());
+		if (!$.isEmptyObject(travelerAge)) {
+			d += '&' + $.param((function () {
+				var payload = {};
+				payload[AGE_POST_KEY] = travelerAge;
+				return payload;
+			})());
 		}
 		options.data = d;
 	});
 
+	/**
+	 * Read the current occupants per room from the booking form.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {number[]} Occupants in room order.
+	 */
+	function collectRoomOccupancy($form) {
+		var people = [];
+		$form.find('.offitravel-room-people').each(function () {
+			people.push(parseInt($(this).val(), 10) || 0);
+		});
+		if (!people.length) {
+			var total = parseInt($form.find('input[name="ovabrw_adults"]').val(), 10) || 0;
+			if (total > 0) {
+				people.push(total);
+			}
+		}
+		return people;
+	}
+
+	/**
+	 * Capture the currently rendered values for one traveler-age service.
+	 *
+	 * @param {jQuery} $service Service container.
+	 * @returns {Object<string,{selected:boolean,age:string}>} State by room/position.
+	 */
+	function captureTravelerRows($service) {
+		var rows = [];
+		$service.find('[data-offitravel-traveler-row]').each(function () {
+			var $row = $(this);
+			var selected = $row.find('[data-offitravel-traveler-selected]').prop('checked');
+			rows.push({
+				key: String($row.data('room')) + ':' + String($row.data('position')),
+				selected: selected === true,
+				age: selected ? String($row.find('[data-offitravel-traveler-age]').val() || '') : '',
+			});
+		});
+		return window.offitravelProductAddonTravelerState.indexTravelerState(rows);
+	}
+
+	/**
+	 * Render synchronized checkbox and age controls for every real traveler.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {void}
+	 */
+	function rebuildTravelerRows($form) {
+		var stateApi = window.offitravelProductAddonTravelerState;
+		if (!stateApi) {
+			return;
+		}
+		var occupancy = collectRoomOccupancy($form);
+		$form.find('[data-offitravel-age-service]').each(function () {
+			var $service = $(this);
+			var serviceId = String($service.data('offitravel-age-service') || '');
+			var label = String($service.data('offitravel-age-label') || 'Seguro de viaje');
+			var previous = captureTravelerRows($service);
+			var rows = stateApi.reconcileTravelerState(occupancy, previous);
+			var $host = $service.find('[data-offitravel-traveler-rows]').empty();
+
+			rows.forEach(function (row) {
+				var baseName = AGE_POST_KEY + '[' + serviceId + '][' + row.room + '][' + row.position + ']';
+				var selectedId = 'offitravel-age-' + serviceId + '-' + row.room + '-' + row.position;
+				var ageId = selectedId + '-years';
+				var ageErrorId = ageId + '-error';
+				var $checkbox = $('<input/>', {
+					type: 'checkbox',
+					id: selectedId,
+					name: baseName + '[selected]',
+					value: '1',
+					'data-offitravel-traveler-selected': '',
+				}).prop('checked', row.selected);
+				var $age = $('<input/>', {
+					type: 'number',
+					id: ageId,
+					name: baseName + '[age]',
+					min: '0',
+					step: '1',
+					inputmode: 'numeric',
+					placeholder: 'Ej. 35',
+					value: row.age,
+					'aria-describedby': ageErrorId,
+					'data-offitravel-traveler-age': '',
+				}).prop({ disabled: !row.selected, required: row.selected });
+				var $row = $('<div/>', {
+					'class': 'offitravel-prd-addon-traveler-row',
+					'data-offitravel-traveler-row': '',
+					'data-room': row.room,
+					'data-position': row.position,
+				}).data('offitravel-age-validation-revealed', false);
+				$row.append(
+					$('<span/>', { 'class': 'offitravel-prd-addon-traveler-heading' }).text(
+						'Viajero ' + row.traveler + ' — Habitación ' + row.room
+					)
+				);
+				var $controls = $('<div/>', { 'class': 'offitravel-prd-addon-traveler-controls' });
+				$controls.append($('<label/>', { for: selectedId }).append($checkbox, $('<span/>').text('Contratar ' + label.toLowerCase())));
+				$controls.append(
+					$('<label/>', { for: ageId, 'class': 'offitravel-prd-addon-traveler-age' }).append(
+						$('<span/>').text('Edad:'),
+						$age
+					)
+				);
+				$controls.append(
+					$('<span/>', {
+						id: ageErrorId,
+						'class': 'offitravel-prd-addon-traveler-age-error',
+						role: 'alert',
+						'aria-live': 'polite',
+						'data-offitravel-traveler-age-error': '',
+					}).prop('hidden', true)
+				);
+				$row.append($controls);
+				$host.append($row);
+			});
+		});
+		updateTravelerAgeBookingButton($form, false);
+	}
+
+	/**
+	 * Recalculate the live booking total through the existing OVA mechanism.
+	 *
+	 * @param {HTMLElement} el Control that initiated recalculation.
+	 * @returns {jqXHR|null} AJAX request when directly available.
+	 */
 	function recalc(el) {
 		var $form = $(el).closest('form.booking-form');
 		if (!$form.length) {
-			return;
+			return null;
 		}
 		/* Modo habitaciones: el total se actualiza con offitravelAjaxCalculateBookingTotal, no con change OVA. */
 		if (
 			typeof window.offitravelAjaxCalculateBookingTotal === 'function' &&
 			$form.find('#offitravel_room_count').length
 		) {
-			window.offitravelAjaxCalculateBookingTotal($form);
-			return;
+			return window.offitravelAjaxCalculateBookingTotal($form);
 		}
 		var $qty = $form.find('input[name="ovabrw_quantity"]');
 		if ($qty.length) {
 			$qty.trigger('change');
-			return;
+			return null;
 		}
 		/*
 		 * Sin ovabrw_quantity por defecto: OVA sólo recalcula totales desde +/- en huéspedes
@@ -471,13 +772,12 @@
 			pickupLive &&
 			pidLive
 		) {
-			offitravelAjaxSubmitBookingTotal($form);
-			return;
+			return offitravelAjaxSubmitBookingTotal($form);
 		}
 		var $ovaSelect = $form.find('.ovabrw-select select').first();
 		if ($ovaSelect.length) {
 			$ovaSelect.trigger('change');
-			return;
+			return null;
 		}
 		var $kick = $form.find(
 			'select[name="ovabrw_service[]"], input[name="ovabrw_pickup_date"], input.checkin-date'
@@ -485,13 +785,125 @@
 		if ($kick.length) {
 			$kick.first().trigger('change');
 		}
+		return null;
+	}
+
+	/**
+	 * Debounce direct-age input and let only the latest AJAX request unlock booking.
+	 *
+	 * Invalid selected ages do not trigger a calculation and keep the real submit
+	 * button disabled. A later valid integer replaces that state and recalculates.
+	 *
+	 * @param {HTMLElement} el Traveler checkbox or age input.
+	 * @param {boolean} immediate Whether to skip the typing debounce.
+	 * @returns {void}
+	 */
+	function scheduleTravelerAgeRecalculation(el, immediate) {
+		var $form = $(el).closest('form.booking-form');
+		if (!$form.length) {
+			return;
+		}
+
+		var sequence = (parseInt($form.data('offitravel-age-recalc-sequence'), 10) || 0) + 1;
+		$form.data('offitravel-age-recalc-sequence', sequence);
+
+		var timer = $form.data('offitravel-age-recalc-timer');
+		if (timer) {
+			window.clearTimeout(timer);
+			$form.removeData('offitravel-age-recalc-timer');
+		}
+
+		var previousRequest = $form.data('offitravel-age-recalc-request');
+		if (previousRequest && typeof previousRequest.abort === 'function') {
+			previousRequest.abort();
+			$form.removeData('offitravel-age-recalc-request');
+		}
+
+		if (!selectedTravelerAgesAreValid($form)) {
+			updateTravelerAgeBookingButton($form, false);
+			return;
+		}
+
+		updateTravelerAgeBookingButton($form, true);
+		timer = window.setTimeout(function () {
+			var request = recalc(el);
+			$form.removeData('offitravel-age-recalc-timer');
+			if (!request || typeof request.always !== 'function') {
+				if (sequence === $form.data('offitravel-age-recalc-sequence')) {
+					updateTravelerAgeBookingButton($form, false);
+				}
+				return;
+			}
+
+			$form.data('offitravel-age-recalc-request', request);
+			request.always(function () {
+				if (sequence !== $form.data('offitravel-age-recalc-sequence')) {
+					return;
+				}
+				$form.removeData('offitravel-age-recalc-request');
+				updateTravelerAgeBookingButton($form, false);
+			});
+		}, immediate === true ? 0 : AGE_RECALC_DELAY);
+		$form.data('offitravel-age-recalc-timer', timer);
 	}
 
 	$(document.body).on(
 		'change',
 		'.offitravel-prd-addon-fields input[type=checkbox]',
 		function () {
+			if ($(this).is('[data-offitravel-traveler-selected]')) {
+				var $row = $(this).closest('[data-offitravel-traveler-row]');
+				var checked = $(this).prop('checked');
+				var $age = $row.find('[data-offitravel-traveler-age]');
+				$age.prop({ disabled: !checked, required: checked });
+				$row.data('offitravel-age-validation-revealed', false);
+				if (!checked) {
+					$age.val('');
+					scheduleTravelerAgeRecalculation(this, true);
+				} else {
+					$age.val('').trigger('focus');
+					updateTravelerAgeBookingButton($(this).closest('form.booking-form'), false);
+				}
+				return;
+			}
 			recalc(this);
 		}
 	);
+
+	$(document.body).on('input', '[data-offitravel-traveler-age]', function () {
+		scheduleTravelerAgeRecalculation(this, false);
+	});
+
+	$(document.body).on('blur', '[data-offitravel-traveler-age]', function () {
+		var $row = $(this).closest('[data-offitravel-traveler-row]');
+		$row.data('offitravel-age-validation-revealed', true);
+		updateTravelerAgeBookingButton($(this).closest('form.booking-form'), false);
+	});
+
+	$(document.body).on('click', 'form.booking-form button.booking-form-submit', function (event) {
+		var $form = $(this).closest('form.booking-form');
+		if (selectedTravelerAgesAreValid($form)) {
+			return;
+		}
+		event.preventDefault();
+		event.stopImmediatePropagation();
+		var $invalidAge = revealInvalidTravelerAges($form);
+		if ($invalidAge.length) {
+			$invalidAge.trigger('focus');
+		}
+		return false;
+	});
+
+	$(document.body).on('change', '#offitravel_room_count, .offitravel-room-people', function () {
+		var $form = $(this).closest('form.booking-form');
+		window.setTimeout(function () {
+			rebuildTravelerRows($form);
+		}, 0);
+	});
+
+	$(function () {
+		$('.ova-booking-form form.booking-form').each(function () {
+			rebuildTravelerRows($(this));
+		});
+	});
 })(window.jQuery);

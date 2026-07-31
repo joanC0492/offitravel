@@ -474,7 +474,7 @@ $tests = array(
 		offitravel_test_assert_same( array(), $capture['updates'], 'Invalid configuration caused partial metadata writes.' );
 		offitravel_test_assert_same( array(), $capture['deletes'], 'Invalid configuration caused partial metadata deletions.' );
 	},
-	'traveler age service is excluded from public query rendering and validation' => static function () {
+	'traveler age service is excluded from the fixed-price public query rendering and validation' => static function () {
 		offitravel_test_with_addon_metadata_overlay(
 			12027,
 			array(
@@ -490,13 +490,13 @@ $tests = array(
 					},
 					offitravel_addon_posts_for_product( 10618 )
 				);
-				offitravel_test_assert_same( false, in_array( 12027, $public_ids, true ), 'Age service leaked through the public service query.' );
-				offitravel_test_assert_same( array(), offitravel_addon_validate_ids( array( 12027 ), 10618 ), 'Age service ID was accepted publicly.' );
+				offitravel_test_assert_same( false, in_array( 12027, $public_ids, true ), 'Age service leaked through the fixed-price public query.' );
+				offitravel_test_assert_same( array(), offitravel_addon_validate_ids( array( 12027 ), 10618 ), 'Age service ID was accepted by fixed-price public validation.' );
 
 				ob_start();
 				offitravel_addon_booking_markup( array( 'id' => 10618 ) );
 				$html = (string) ob_get_clean();
-				offitravel_test_assert_same( false, false !== strpos( $html, 'value="12027"' ), 'Age service checkbox was rendered publicly.' );
+				offitravel_test_assert_same( false, false !== strpos( $html, 'value="12027"' ), 'Age service leaked into the fixed-price checkbox markup.' );
 			}
 		);
 	},

@@ -2955,7 +2955,7 @@ function offitravel_ovabrw_room_mode_enqueue_scripts() {
 			$form.find(".ajax-show-total .show-amount-insurance").html("");
 			$form.find(".ajax-show-total .show-total-number").html("");
 
-			$.ajax({
+			return $.ajax({
 				url: ajax_object.ajax_url,
 				type: "POST",
 				data: data,
@@ -3074,7 +3074,14 @@ function offitravel_ovabrw_room_mode_enqueue_scripts() {
 		}
 
 		$count.off("change.offitravelRooms").on("change.offitravelRooms", function(){
-			buildRows($(this).val(), null);
+			var preserved = null;
+			if ($form.find("[data-offitravel-age-service]").length) {
+				preserved = [];
+				$rows.find(".offitravel-room-people").each(function(){
+					preserved.push($(this).val());
+				});
+			}
+			buildRows($(this).val(), preserved);
 		});
 		$form.off("change.offitravelRooms", ".offitravel-room-people").on("change.offitravelRooms", ".offitravel-room-people", sync);
 
