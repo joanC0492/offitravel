@@ -14,6 +14,8 @@ Los servicios `fixed` conservan su consulta, validación y suma independientes. 
 - `_offitravel_addon_public_label`: etiqueta pública opcional. Si falta, se utiliza el título interno.
 - `_offitravel_addon_price_model`: sólo se almacena como `traveler_age` para el modelo por edad. Su ausencia significa `fixed` para conservar compatibilidad con servicios antiguos.
 - `_offitravel_addon_age_rules`: lista ordenada de reglas con `min_age`, `max_age` y `price`. `max_age=null` representa un tramo sin límite superior.
+- `_offitravel_addon_manual_room_product_ids`: productos concretos donde un servicio `room` solicita al comprador una cantidad manual de habitaciones. Su ausencia conserva el cálculo fijo legado.
+- `_offitravel_addon_booking_once`: el valor `yes` fuerza una unidad por reserva/línea OVA para un servicio `booking`, sin utilizar viajeros, habitaciones ni `ovabrw_quantity`.
 
 ## Flujo administrativo
 
@@ -46,6 +48,29 @@ offitravel_age_addons[SERVICE_ID][ROOM][POSITION][age]
 
 El snapshot incluye `service_id`, etiqueta pública, reglas, producto, habitación, posición dentro de la habitación, ordinal global del viajero, edad, tarifa, subtotal y total.
 
+## Flujo fijo con snapshot
+
+Los servicios fijos seleccionados siguen enviándose mediante `offitravel_addons[]`. Sólo los servicios `room` configurados para cantidad manual añaden:
+
+```text
+offitravel_addon_quantities[SERVICE_ID]=ROOM_COUNT
+```
+
+`offitravel_addon_calculate_fixed_snapshot()` valida en PHP que cada servicio esté publicado, sea `fixed` y esté asignado al producto. La etiqueta, modalidad, precio y política de cantidad se leen siempre desde WordPress; el navegador nunca decide importes ni subtotales.
+
+El snapshot `offitravel_fixed_addons` contiene versión, producto, servicios y total. Cada servicio conserva `service_id`, etiqueta pública, modalidad, fuente de cantidad, cantidad, precio unitario y total. Las fuentes soportadas son:
+
+- `real_rooms`: número real de habitaciones del formulario OVA, sin multiplicar por `ovabrw_quantity`.
+- `manual_rooms`: entero positivo introducido expresamente por el comprador.
+- `booking_once`: una unidad exacta por reserva/línea OVA.
+- `legacy`: compatibilidad con los servicios fijos no migrados.
+
+El KIT 12027 mantiene precio `12` y modalidad `room`. En 10618, 10628, 11512 y 11521 utiliza `real_rooms`; en 11528, 11537, 11539 y 11545 utiliza `manual_rooms`. Al marcar el KIT manual se habilita y enfoca el campo sin mostrar error inmediato; al abandonar un valor inválido o intentar reservar se muestra el aviso. Al desmarcar se limpia y deshabilita el campo.
+
+El Seguro de anulación 12732 usa `booking` y `_offitravel_addon_booking_once=yes`: su snapshot siempre registra cantidad 1 y total 6,00 €, aunque se manipulen huéspedes, habitaciones, `ovabrw_quantity` o cantidades enviadas.
+
+Carrito y sesión conservan el snapshot normalizado. `ovabrw_get_price_by_guests` suma su total una sola vez sobre la base recibida, de forma idempotente. Carrito y checkout muestran un desglose HTML seguro; el pedido y los correos guardan el mismo contenido con saltos de línea. Los metadatos técnicos `_offitravel_fixed_addon_snapshot` y `_offitravel_fixed_addon_total` permanecen ocultos, mientras `_offitravel_addon_ids` se conserva por compatibilidad.
+
 ## Validación de tramos
 
 - Debe existir al menos una regla.
@@ -71,6 +96,7 @@ Un servicio creado directamente como `traveler_age` puede no tener `_offitravel_
 - WooCommerce para controles administrativos y normalización decimal.
 - `offitravel-product-addons-admin.js` para la interacción del editor.
 - `offitravel-product-addons-front.js` añade selecciones fijas y por edad al mecanismo AJAX existente.
+- `offitravel-product-addons-fixed-state.js` valida cantidades manuales y construye su payload mediante funciones puras comprobables fuera del navegador.
 - `offitravel-product-addons-traveler-age-state.js` reconcilia posiciones de viajeros sin depender del DOM y permite pruebas aisladas.
 - `offitravel-ovabrw-room-mode.php` conserva ocupaciones existentes al reconstruir habitaciones únicamente cuando el formulario contiene un servicio por edad.
 
@@ -80,11 +106,16 @@ Ejecutar desde la raíz:
 
 ```powershell
 php tests/offitravel-product-addons-admin-test.php
+php tests/offitravel-product-addons-fixed-ajax-test.php
+php tests/offitravel-product-addons-fixed-snapshot-test.php
+php tests/offitravel-product-addons-fixed-order-persistence-test.php
+php tests/offitravel-product-addons-musicals-config-test.php
 php tests/offitravel-product-addons-traveler-age-test.php
 php tests/offitravel-product-addons-order-persistence-test.php
+node tests/offitravel-product-addons-fixed-state-test.js
 node tests/offitravel-product-addons-traveler-age-state-test.js
 ```
 
 Las pruebas administrativas interceptan escrituras durante simulaciones. La suite pública verifica cálculo, límites 69/70, edades inválidas, múltiples habitaciones, manipulación de IDs y precios, idempotencia, sesión, pedido y los servicios configurados 12718/12719. También consulta 12027, 12028 y 12717 para detectar cambios de precio, modalidad o asignaciones.
 
-La prueba de persistencia crea un pedido WooCommerce temporal, guarda el snapshot y el desglose visible, vuelve a cargarlo desde la base de datos y elimina el pedido en un bloque de limpieza. No deja pedidos de prueba persistentes cuando finaliza correctamente.
+Cada prueba de persistencia crea un único pedido WooCommerce temporal identificado por su ID, guarda el snapshot y el desglose visible, vuelve a cargarlo desde la base de datos y elimina exclusivamente ese ID antes de devolver éxito o fallo. No busca ni modifica pedidos ajenos.

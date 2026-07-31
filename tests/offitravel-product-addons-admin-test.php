@@ -559,9 +559,9 @@ $tests = array(
 			'Servicio 01 must retain its current per-person calculation.'
 		);
 	},
-	'existing service records retain their baseline metadata' => static function () {
+	'existing services retain their approved metadata' => static function () {
 		$expected = array(
-			12027 => array( '12', 'room', array( 10628, 10618 ) ),
+			12027 => array( '12', 'room', array( 10618, 10628, 11512, 11521, 11528, 11537, 11539, 11545 ) ),
 			12028 => array( '20', 'person', array( 11789, 10628, 10618 ) ),
 			12717 => array( '32.50', 'person', array( 10618 ) ),
 		);

@@ -7,6 +7,7 @@
 
 	var POST_KEY = 'offitravel_addons';
 	var AGE_POST_KEY = 'offitravel_age_addons';
+	var FIXED_QUANTITY_POST_KEY = 'offitravel_addon_quantities';
 	var AGE_RECALC_DELAY = 250;
 
 	function collectAddonIdsFromForm($form) {
@@ -23,6 +24,31 @@
 				}
 			});
 		return out;
+	}
+
+	/**
+	 * Collect manual room quantities only for selected fixed services.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {Object<string,string>} Quantities keyed by service ID.
+	 */
+	function collectFixedAddonQuantities($form) {
+		var rows = [];
+		if (!$form || !$form.length) {
+			return {};
+		}
+		$form.find('[data-offitravel-fixed-manual]').each(function () {
+			var $row = $(this);
+			rows.push({
+				serviceId: String($row.data('offitravel-fixed-service') || ''),
+				selected: $row.find('input[name="offitravel_addons[]"]').prop('checked') === true,
+				quantity: String($row.find('[data-offitravel-fixed-quantity]').val() || ''),
+			});
+		});
+		var stateApi = window.offitravelProductAddonFixedState;
+		return stateApi && typeof stateApi.buildQuantityPayload === 'function'
+			? stateApi.buildQuantityPayload(rows)
+			: {};
 	}
 
 	/**
@@ -179,7 +205,83 @@
 	}
 
 	/**
-	 * Add fixed and traveler-age add-ons to an object AJAX payload.
+	 * Determine whether all selected manual KIT quantities are valid.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {boolean} Whether each selected manual quantity is a positive integer.
+	 */
+	function selectedManualFixedQuantitiesAreValid($form) {
+		var stateApi = window.offitravelProductAddonFixedState;
+		var valid = true;
+		if (!stateApi || typeof stateApi.isPositiveInteger !== 'function') {
+			return true;
+		}
+		$form.find('[data-offitravel-fixed-manual]').each(function () {
+			var $row = $(this);
+			var selected = $row.find('input[name="offitravel_addons[]"]').prop('checked') === true;
+			var value = String($row.find('[data-offitravel-fixed-quantity]').val() || '');
+			if (selected && !stateApi.isPositiveInteger(value)) {
+				valid = false;
+			}
+		});
+		return valid;
+	}
+
+	/**
+	 * Synchronize progressive validation messages for manual KIT quantities.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {void}
+	 */
+	function updateManualFixedValidationMessages($form) {
+		var stateApi = window.offitravelProductAddonFixedState;
+		if (!stateApi || typeof stateApi.validationMessage !== 'function') {
+			return;
+		}
+		$form.find('[data-offitravel-fixed-manual]').each(function () {
+			var $row = $(this);
+			var $checkbox = $row.find('input[name="offitravel_addons[]"]');
+			var $quantity = $row.find('[data-offitravel-fixed-quantity]');
+			var reveal = $row.data('offitravel-fixed-validation-revealed') === true;
+			var message = stateApi.validationMessage(
+				$checkbox.prop('checked') === true,
+				String($quantity.val() || ''),
+				reveal
+			);
+			$quantity.attr('aria-invalid', message ? 'true' : 'false');
+			$row.find('[data-offitravel-fixed-quantity-error]').text(message).prop('hidden', !message);
+		});
+	}
+
+	/**
+	 * Reveal invalid manual KIT quantities and return the first input.
+	 *
+	 * @param {jQuery} $form Booking form.
+	 * @returns {jQuery} First invalid input, or an empty jQuery collection.
+	 */
+	function revealInvalidManualFixedQuantities($form) {
+		var stateApi = window.offitravelProductAddonFixedState;
+		var $firstInvalid = $();
+		$form.find('[data-offitravel-fixed-manual]').each(function () {
+			var $row = $(this);
+			var selected = $row.find('input[name="offitravel_addons[]"]').prop('checked') === true;
+			var $quantity = $row.find('[data-offitravel-fixed-quantity]');
+			var valid = stateApi && typeof stateApi.isPositiveInteger === 'function'
+				? stateApi.isPositiveInteger(String($quantity.val() || ''))
+				: true;
+			if (selected && !valid) {
+				$row.data('offitravel-fixed-validation-revealed', true);
+				if (!$firstInvalid.length) {
+					$firstInvalid = $quantity;
+				}
+			}
+		});
+		updateManualFixedValidationMessages($form);
+		return $firstInvalid;
+	}
+
+	/**
+	 * Add fixed selections, manual quantities and traveler ages to AJAX.
 	 *
 	 * @param {Object} data OVA request object.
 	 * @param {jQuery} $form Booking form.
@@ -189,6 +291,10 @@
 		var ids = collectAddonIdsFromForm($form);
 		if (ids.length) {
 			data[POST_KEY] = ids;
+		}
+		var quantities = collectFixedAddonQuantities($form);
+		if (!$.isEmptyObject(quantities)) {
+			data[FIXED_QUANTITY_POST_KEY] = quantities;
 		}
 		var travelerAge = collectTravelerAgeFromForm($form);
 		if (!$.isEmptyObject(travelerAge)) {
@@ -579,15 +685,6 @@
 		) {
 			return;
 		}
-		var stateApi = window.offitravelProductAddonTravelerState;
-		if (
-			stateApi &&
-			typeof stateApi.serializedPayloadHasAddonSelections === 'function' &&
-			stateApi.serializedPayloadHasAddonSelections(d)
-		) {
-			return;
-		}
-
 		var m = /(?:^|[?&])product_id=([^&]*)/.exec(d);
 		var pid = m
 			? decodeURIComponent(String(m[1]).replace(/\+/g, '%20')).trim()
@@ -601,15 +698,28 @@
 				);
 			});
 		}
+		var hasFixed = /(?:^|&)offitravel_addons(?:%5B%5D|\[\])=/.test(d);
+		var hasAge = /(?:^|&)offitravel_age_addons(?:%5B|\[)/.test(d);
+		var hasQuantities = /(?:^|&)offitravel_addon_quantities(?:%5B|\[)/.test(d);
 		var ids = collectAddonIdsFromForm($form.first());
-		for (var i = 0; i < ids.length; i++) {
-			d += '&offitravel_addons[]=' + encodeURIComponent(ids[i]);
+		if (!hasFixed) {
+			for (var i = 0; i < ids.length; i++) {
+				d += '&offitravel_addons[]=' + encodeURIComponent(ids[i]);
+			}
 		}
 		var travelerAge = collectTravelerAgeFromForm($form.first());
-		if (!$.isEmptyObject(travelerAge)) {
+		if (!hasAge && !$.isEmptyObject(travelerAge)) {
 			d += '&' + $.param((function () {
 				var payload = {};
 				payload[AGE_POST_KEY] = travelerAge;
+				return payload;
+			})());
+		}
+		var quantities = collectFixedAddonQuantities($form.first());
+		if (!hasQuantities && !$.isEmptyObject(quantities)) {
+			d += '&' + $.param((function () {
+				var payload = {};
+				payload[FIXED_QUANTITY_POST_KEY] = quantities;
 				return payload;
 			})());
 		}
@@ -847,6 +957,50 @@
 		$form.data('offitravel-age-recalc-timer', timer);
 	}
 
+	/**
+	 * Debounce a valid manual quantity and prevent stale AJAX responses.
+	 *
+	 * @param {HTMLElement} el Manual checkbox or quantity input.
+	 * @param {boolean} immediate Whether to skip the typing debounce.
+	 * @returns {void}
+	 */
+	function scheduleManualFixedRecalculation(el, immediate) {
+		var $form = $(el).closest('form.booking-form');
+		if (!$form.length) {
+			return;
+		}
+		var sequence = (parseInt($form.data('offitravel-fixed-recalc-sequence'), 10) || 0) + 1;
+		$form.data('offitravel-fixed-recalc-sequence', sequence);
+		var timer = $form.data('offitravel-fixed-recalc-timer');
+		if (timer) {
+			window.clearTimeout(timer);
+			$form.removeData('offitravel-fixed-recalc-timer');
+		}
+		var previousRequest = $form.data('offitravel-fixed-recalc-request');
+		if (previousRequest && typeof previousRequest.abort === 'function') {
+			previousRequest.abort();
+			$form.removeData('offitravel-fixed-recalc-request');
+		}
+		if (!selectedManualFixedQuantitiesAreValid($form)) {
+			updateManualFixedValidationMessages($form);
+			return;
+		}
+		timer = window.setTimeout(function () {
+			var request = recalc(el);
+			$form.removeData('offitravel-fixed-recalc-timer');
+			if (!request || typeof request.always !== 'function') {
+				return;
+			}
+			$form.data('offitravel-fixed-recalc-request', request);
+			request.always(function () {
+				if (sequence === $form.data('offitravel-fixed-recalc-sequence')) {
+					$form.removeData('offitravel-fixed-recalc-request');
+				}
+			});
+		}, immediate === true ? 0 : AGE_RECALC_DELAY);
+		$form.data('offitravel-fixed-recalc-timer', timer);
+	}
+
 	$(document.body).on(
 		'change',
 		'.offitravel-prd-addon-fields input[type=checkbox]',
@@ -866,9 +1020,35 @@
 				}
 				return;
 			}
+			var $manualRow = $(this).closest('[data-offitravel-fixed-manual]');
+			if ($manualRow.length && $(this).is('input[name="offitravel_addons[]"]')) {
+				var selected = $(this).prop('checked') === true;
+				var $manualQuantity = $manualRow.find('[data-offitravel-fixed-quantity]');
+				$manualQuantity.prop({ disabled: !selected, required: selected });
+				$manualRow.data('offitravel-fixed-validation-revealed', false);
+				if (!selected) {
+					$manualQuantity.val('');
+					updateManualFixedValidationMessages($(this).closest('form.booking-form'));
+					scheduleManualFixedRecalculation(this, true);
+				} else {
+					$manualQuantity.val('').trigger('focus');
+					updateManualFixedValidationMessages($(this).closest('form.booking-form'));
+				}
+				return;
+			}
 			recalc(this);
 		}
 	);
+
+	$(document.body).on('input', '[data-offitravel-fixed-quantity]', function () {
+		scheduleManualFixedRecalculation(this, false);
+	});
+
+	$(document.body).on('blur', '[data-offitravel-fixed-quantity]', function () {
+		var $row = $(this).closest('[data-offitravel-fixed-manual]');
+		$row.data('offitravel-fixed-validation-revealed', true);
+		updateManualFixedValidationMessages($(this).closest('form.booking-form'));
+	});
 
 	$(document.body).on('input', '[data-offitravel-traveler-age]', function () {
 		scheduleTravelerAgeRecalculation(this, false);
@@ -882,14 +1062,17 @@
 
 	$(document.body).on('click', 'form.booking-form button.booking-form-submit', function (event) {
 		var $form = $(this).closest('form.booking-form');
-		if (selectedTravelerAgesAreValid($form)) {
+		if (selectedTravelerAgesAreValid($form) && selectedManualFixedQuantitiesAreValid($form)) {
 			return;
 		}
 		event.preventDefault();
 		event.stopImmediatePropagation();
-		var $invalidAge = revealInvalidTravelerAges($form);
-		if ($invalidAge.length) {
-			$invalidAge.trigger('focus');
+		var $invalid = revealInvalidTravelerAges($form);
+		if (!$invalid.length) {
+			$invalid = revealInvalidManualFixedQuantities($form);
+		}
+		if ($invalid.length) {
+			$invalid.trigger('focus');
 		}
 		return false;
 	});
@@ -903,7 +1086,9 @@
 
 	$(function () {
 		$('.ova-booking-form form.booking-form').each(function () {
-			rebuildTravelerRows($(this));
+			var $form = $(this);
+			rebuildTravelerRows($form);
+			updateManualFixedValidationMessages($form);
 		});
 	});
 })(window.jQuery);

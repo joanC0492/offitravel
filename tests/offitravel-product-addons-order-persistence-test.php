@@ -12,7 +12,8 @@
 
 require dirname( __DIR__ ) . '/wp-load.php';
 
-$order = null;
+$order   = null;
+$failure = null;
 try {
 	$snapshot = offitravel_addon_calculate_traveler_age(
 		9487,
@@ -76,8 +77,7 @@ try {
 
 	printf( "[PASS] temporary order %d persisted snapshot total 78.00 and visible traveler breakdown.\n", $order->get_id() );
 } catch ( Throwable $error ) {
-	fwrite( STDERR, '[FAIL] ' . $error->getMessage() . PHP_EOL );
-	exit( 1 );
+	$failure = $error;
 } finally {
 	if ( $order instanceof WC_Order && $order->get_id() ) {
 		$order_id = $order->get_id();
@@ -88,4 +88,8 @@ try {
 		}
 		printf( "[PASS] temporary order %d removed after verification.\n", $order_id );
 	}
+}
+if ( $failure instanceof Throwable ) {
+	fwrite( STDERR, '[FAIL] ' . $failure->getMessage() . PHP_EOL );
+	exit( 1 );
 }

@@ -18,6 +18,8 @@ const OFFITRAVEL_ADDON_META_PRODUCTS = '_offitravel_addon_product_ids';
 const OFFITRAVEL_ADDON_META_PUBLIC_LABEL = '_offitravel_addon_public_label';
 const OFFITRAVEL_ADDON_META_PRICE_MODEL  = '_offitravel_addon_price_model';
 const OFFITRAVEL_ADDON_META_AGE_RULES    = '_offitravel_addon_age_rules';
+const OFFITRAVEL_ADDON_META_MANUAL_ROOM_PRODUCTS = '_offitravel_addon_manual_room_product_ids';
+const OFFITRAVEL_ADDON_META_BOOKING_ONCE         = '_offitravel_addon_booking_once';
 
 const OFFITRAVEL_ADDON_PRICE_MODEL_FIXED        = 'fixed';
 const OFFITRAVEL_ADDON_PRICE_MODEL_TRAVELER_AGE = 'traveler_age';
@@ -344,6 +346,168 @@ function offitravel_addon_money_snapshot( $amount ) {
 	$decimals = wc_get_price_decimals();
 	$decimal  = wc_format_decimal( (string) $amount, $decimals );
 	return number_format( (float) $decimal, $decimals, '.', '' );
+}
+
+/**
+ * Validate one fixed service against its current product assignment.
+ *
+ * @param int $addon_id   Add-on post ID.
+ * @param int $product_id Product ID.
+ * @return WP_Post|WP_Error Valid service or validation error.
+ */
+function offitravel_addon_validate_fixed_service( $addon_id, $product_id ) {
+	$addon_id   = absint( $addon_id );
+	$product_id = absint( $product_id );
+	$addon      = $addon_id ? get_post( $addon_id ) : null;
+	if ( ! $addon || OFFITRAVEL_ADDON_PT !== $addon->post_type || 'publish' !== $addon->post_status || ! offitravel_addon_uses_fixed_price( $addon_id ) ) {
+		return new WP_Error( 'offitravel_addon_invalid_fixed_service', __( 'El servicio adicional seleccionado no es válido.', 'offitravel-addons' ) );
+	}
+	$products = get_post_meta( $addon_id, OFFITRAVEL_ADDON_META_PRODUCTS, true );
+	$products = is_array( $products ) ? array_map( 'absint', $products ) : array();
+	if ( ! $product_id || ! in_array( $product_id, $products, true ) ) {
+		return new WP_Error( 'offitravel_addon_fixed_service_not_assigned', __( 'El servicio adicional no está disponible para este producto.', 'offitravel-addons' ) );
+	}
+	return $addon;
+}
+
+/**
+ * Calculate a server-owned snapshot for selected fixed add-ons.
+ *
+ * Browser input may select service IDs and provide a manual room count. Price,
+ * label, billing, assignments and quantity policy always come from WordPress.
+ *
+ * @param int                 $product_id    Product ID.
+ * @param mixed               $ids           Selected service IDs.
+ * @param mixed               $raw_quantities Manual quantities keyed by service ID.
+ * @param array<string,mixed> $context       OVA room, guest and quantity context.
+ * @return array{version:int,product_id:int,services:array<int,array>,total:string}|WP_Error
+ */
+function offitravel_addon_calculate_fixed_snapshot( $product_id, $ids, $raw_quantities, array $context ) {
+	$product_id    = absint( $product_id );
+	$ids           = array_values( array_unique( array_filter( array_map( 'absint', (array) $ids ) ) ) );
+	$raw_quantities = is_array( $raw_quantities ) ? $raw_quantities : array();
+	$snapshot      = array(
+		'version'    => 1,
+		'product_id' => $product_id,
+		'services'   => array(),
+		'total'      => offitravel_addon_money_snapshot( 0 ),
+	);
+	if ( ! $ids ) {
+		return $snapshot;
+	}
+
+	$grand_total = 0.0;
+	foreach ( $ids as $addon_id ) {
+		$addon = offitravel_addon_validate_fixed_service( $addon_id, $product_id );
+		if ( is_wp_error( $addon ) ) {
+			return $addon;
+		}
+		$raw_price = get_post_meta( $addon_id, OFFITRAVEL_ADDON_META_PRICE, true );
+		$decimal   = wc_format_decimal( is_scalar( $raw_price ) ? (string) $raw_price : '' );
+		if ( '' === $decimal || (float) $decimal < 0 ) {
+			return new WP_Error( 'offitravel_addon_invalid_fixed_price', __( 'El servicio adicional no tiene un precio válido.', 'offitravel-addons' ) );
+		}
+		$unit_price = (float) $decimal;
+		$billing    = offitravel_addon_normalize_billing( get_post_meta( $addon_id, OFFITRAVEL_ADDON_META_BILLING, true ) );
+		$quantity   = 1;
+		$source     = 'legacy';
+
+		$manual_products = get_post_meta( $addon_id, OFFITRAVEL_ADDON_META_MANUAL_ROOM_PRODUCTS, true );
+		$manual_products = is_array( $manual_products ) ? array_map( 'absint', $manual_products ) : array();
+		if ( 'room' === $billing && in_array( $product_id, $manual_products, true ) ) {
+			$manual_raw = isset( $raw_quantities[ $addon_id ] ) && is_scalar( $raw_quantities[ $addon_id ] ) ? trim( (string) $raw_quantities[ $addon_id ] ) : '';
+			if ( ! preg_match( '/^[1-9]\d*$/', $manual_raw ) ) {
+				return new WP_Error( 'offitravel_addon_invalid_manual_quantity', __( 'Indica un número entero de habitaciones igual o superior a 1.', 'offitravel-addons' ) );
+			}
+			$quantity = (int) $manual_raw;
+			$source   = 'manual_rooms';
+		} elseif ( 'room' === $billing && $manual_products ) {
+			$quantity = offitravel_addon_room_count( $context );
+			$source   = 'real_rooms';
+		} elseif ( 'booking' === $billing && 'yes' === get_post_meta( $addon_id, OFFITRAVEL_ADDON_META_BOOKING_ONCE, true ) ) {
+			$quantity = 1;
+			$source   = 'booking_once';
+		} elseif ( 'person' === $billing ) {
+			$quantity = offitravel_addon_guest_total( $context ) * offitravel_addon_ov_qty( $context );
+		} elseif ( 'room' === $billing ) {
+			$quantity = offitravel_addon_room_count( $context ) * offitravel_addon_ov_qty( $context );
+		} else {
+			$quantity = offitravel_addon_ov_qty( $context );
+		}
+
+		$total       = (float) offitravel_addon_money_snapshot( $unit_price * $quantity );
+		$grand_total += $total;
+		$snapshot['services'][ $addon_id ] = array(
+			'service_id'      => $addon_id,
+			'label'           => offitravel_addon_get_public_label( $addon ),
+			'billing'         => $billing,
+			'quantity_source' => $source,
+			'quantity'        => (int) $quantity,
+			'unit_price'      => offitravel_addon_money_snapshot( $unit_price ),
+			'total'           => offitravel_addon_money_snapshot( $total ),
+		);
+	}
+	$snapshot['total'] = offitravel_addon_money_snapshot( $grand_total );
+	return $snapshot;
+}
+
+/**
+ * Normalize a historical fixed snapshot and rebuild all derived totals.
+ *
+ * @param mixed $raw_snapshot        Stored snapshot.
+ * @param int   $expected_product_id Optional required product ID.
+ * @return array{version:int,product_id:int,services:array<int,array>,total:string}|WP_Error
+ */
+function offitravel_addon_normalize_fixed_snapshot( $raw_snapshot, $expected_product_id = 0 ) {
+	if ( ! is_array( $raw_snapshot ) ) {
+		return new WP_Error( 'offitravel_addon_invalid_fixed_snapshot', __( 'Los suplementos guardados no son válidos.', 'offitravel-addons' ) );
+	}
+	$product_id = isset( $raw_snapshot['product_id'] ) ? absint( $raw_snapshot['product_id'] ) : 0;
+	if ( ! $product_id || ( $expected_product_id && absint( $expected_product_id ) !== $product_id ) || empty( $raw_snapshot['services'] ) || ! is_array( $raw_snapshot['services'] ) ) {
+		return new WP_Error( 'offitravel_addon_invalid_fixed_snapshot', __( 'Los suplementos guardados no son válidos.', 'offitravel-addons' ) );
+	}
+	$allowed_sources = array( 'real_rooms', 'manual_rooms', 'booking_once', 'legacy' );
+	$normalized = array( 'version' => 1, 'product_id' => $product_id, 'services' => array(), 'total' => offitravel_addon_money_snapshot( 0 ) );
+	$grand_total = 0.0;
+	foreach ( $raw_snapshot['services'] as $key => $service ) {
+		if ( ! is_array( $service ) ) {
+			return new WP_Error( 'offitravel_addon_invalid_fixed_snapshot', __( 'Los suplementos guardados no son válidos.', 'offitravel-addons' ) );
+		}
+		$service_id = isset( $service['service_id'] ) ? absint( $service['service_id'] ) : absint( $key );
+		$billing = isset( $service['billing'] ) ? offitravel_addon_normalize_billing( $service['billing'] ) : '';
+		$source = isset( $service['quantity_source'] ) ? sanitize_key( $service['quantity_source'] ) : '';
+		$quantity_raw = isset( $service['quantity'] ) && is_scalar( $service['quantity'] ) ? (string) $service['quantity'] : '';
+		$price_raw = isset( $service['unit_price'] ) && is_scalar( $service['unit_price'] ) ? wc_format_decimal( (string) $service['unit_price'] ) : '';
+		if ( ! $service_id || ! in_array( $source, $allowed_sources, true ) || ! preg_match( '/^[1-9]\d*$/', $quantity_raw ) || '' === $price_raw || (float) $price_raw < 0 ) {
+			return new WP_Error( 'offitravel_addon_invalid_fixed_snapshot', __( 'Los suplementos guardados no son válidos.', 'offitravel-addons' ) );
+		}
+		$quantity = (int) $quantity_raw;
+		$total = (float) offitravel_addon_money_snapshot( (float) $price_raw * $quantity );
+		$grand_total += $total;
+		$normalized['services'][ $service_id ] = array(
+			'service_id'      => $service_id,
+			'label'           => sanitize_text_field( isset( $service['label'] ) ? (string) $service['label'] : '' ),
+			'billing'         => $billing,
+			'quantity_source' => $source,
+			'quantity'        => $quantity,
+			'unit_price'      => offitravel_addon_money_snapshot( $price_raw ),
+			'total'           => offitravel_addon_money_snapshot( $total ),
+		);
+	}
+	$normalized['total'] = offitravel_addon_money_snapshot( $grand_total );
+	return $normalized;
+}
+
+/**
+ * Return the recalculated fixed snapshot total.
+ *
+ * @param mixed $snapshot   Stored snapshot.
+ * @param int   $product_id Expected product ID.
+ * @return float
+ */
+function offitravel_addon_fixed_snapshot_total( $snapshot, $product_id = 0 ) {
+	$normalized = offitravel_addon_normalize_fixed_snapshot( $snapshot, $product_id );
+	return is_wp_error( $normalized ) ? 0.0 : (float) $normalized['total'];
 }
 
 /**
@@ -681,6 +845,57 @@ function offitravel_addon_age_request_payload() {
 }
 
 /**
+ * Read selected fixed service IDs from the current request.
+ *
+ * @return int[] Submitted IDs without checking current assignments.
+ */
+function offitravel_addon_fixed_request_ids() {
+	if ( ! isset( $_POST['offitravel_addons'] ) ) {
+		return array();
+	}
+	$raw = wp_unslash( $_POST['offitravel_addons'] );
+	$raw = is_array( $raw ) ? $raw : array( $raw );
+	return array_values( array_unique( array_filter( array_map( 'absint', $raw ) ) ) );
+}
+
+/**
+ * Read manual fixed-service quantities from the current request.
+ *
+ * @return array<mixed> Untrusted quantities keyed by submitted service ID.
+ */
+function offitravel_addon_fixed_request_quantities() {
+	$raw = isset( $_POST['offitravel_addon_quantities'] ) ? wp_unslash( $_POST['offitravel_addon_quantities'] ) : array();
+	return is_array( $raw ) ? $raw : array();
+}
+
+/**
+ * Build the server calculation context from cart data and OVA request fields.
+ *
+ * @param array<string,mixed> $cart_item Existing cart context.
+ * @return array<string,mixed>
+ */
+function offitravel_addon_fixed_request_context( array $cart_item = array() ) {
+	$context = offitravel_addon_age_request_context( $cart_item );
+	$map     = array(
+		'ovabrw_childrens' => array( 'ovabrw_childrens', 'childrens' ),
+		'ovabrw_babies'    => array( 'ovabrw_babies', 'babies' ),
+		'ovabrw_quantity'  => array( 'ovabrw_quantity', 'quantity' ),
+	);
+	foreach ( $map as $target => $sources ) {
+		if ( array_key_exists( $target, $context ) ) {
+			continue;
+		}
+		foreach ( $sources as $source ) {
+			if ( isset( $_POST[ $source ] ) ) {
+				$context[ $target ] = wp_unslash( $_POST[ $source ] );
+				break;
+			}
+		}
+	}
+	return $context;
+}
+
+/**
  * Validate traveler-age data for add-to-cart without persisting it.
  *
  * @param int                 $product_id Product ID.
@@ -709,6 +924,20 @@ function offitravel_addon_validate_cart( $passed, $product_id, $quantity ) {
 	if ( ! $passed ) {
 		return false;
 	}
+	$fixed_ids = offitravel_addon_fixed_request_ids();
+	if ( $fixed_ids ) {
+		$fixed = offitravel_addon_calculate_fixed_snapshot(
+			$product_id,
+			$fixed_ids,
+			offitravel_addon_fixed_request_quantities(),
+			offitravel_addon_fixed_request_context()
+		);
+		if ( is_wp_error( $fixed ) ) {
+			wc_add_notice( esc_html( $fixed->get_error_message() ), 'error' );
+			return false;
+		}
+	}
+
 	$raw = offitravel_addon_age_request_payload();
 	if ( empty( $raw ) ) {
 		return true;
@@ -726,20 +955,26 @@ function offitravel_addon_validate_cart( $passed, $product_id, $quantity ) {
 }
 
 /**
- * Restore and normalize traveler-age data from the WooCommerce cart session.
+ * Restore and normalize fixed and traveler-age data from the cart session.
  *
  * @param array<string,mixed> $cart_item      Rebuilt cart item.
  * @param array<string,mixed> $session_values Stored session values.
  * @return array<string,mixed>
  */
 function offitravel_addon_restore_cart_item( $cart_item, $session_values ) {
-	if ( empty( $session_values['offitravel_traveler_age'] ) ) {
-		return $cart_item;
-	}
 	$product_id = isset( $cart_item['product_id'] ) ? absint( $cart_item['product_id'] ) : ( isset( $session_values['product_id'] ) ? absint( $session_values['product_id'] ) : 0 );
-	$normalized = offitravel_addon_normalize_age_snapshot( $session_values['offitravel_traveler_age'], $product_id );
-	if ( ! is_wp_error( $normalized ) ) {
-		$cart_item['offitravel_traveler_age'] = $normalized;
+	if ( ! empty( $session_values['offitravel_fixed_addons'] ) ) {
+		$fixed = offitravel_addon_normalize_fixed_snapshot( $session_values['offitravel_fixed_addons'], $product_id );
+		if ( ! is_wp_error( $fixed ) ) {
+			$cart_item['offitravel_fixed_addons'] = $fixed;
+			$cart_item['offitravel_addons']       = array_keys( $fixed['services'] );
+		}
+	}
+	if ( ! empty( $session_values['offitravel_traveler_age'] ) ) {
+		$normalized = offitravel_addon_normalize_age_snapshot( $session_values['offitravel_traveler_age'], $product_id );
+		if ( ! is_wp_error( $normalized ) ) {
+			$cart_item['offitravel_traveler_age'] = $normalized;
+		}
 	}
 	return $cart_item;
 }
@@ -761,6 +996,48 @@ function offitravel_addon_plain_price_text( $amount ) {
 	$text    = str_replace( "\xC2\xA0", ' ', $text );
 	$text    = preg_replace( '/\s+/u', ' ', $text );
 	return trim( is_string( $text ) ? $text : '' );
+}
+
+/**
+ * Build readable, markup-free lines for one fixed-service snapshot.
+ *
+ * @param array<string,mixed> $service Normalized service snapshot.
+ * @return string[] Human-readable lines for cart, orders and emails.
+ */
+function offitravel_addon_fixed_service_lines( array $service ) {
+	$quantity = isset( $service['quantity'] ) ? absint( $service['quantity'] ) : 0;
+	$source   = isset( $service['quantity_source'] ) ? sanitize_key( $service['quantity_source'] ) : 'legacy';
+	$unit     = offitravel_addon_plain_price_text( isset( $service['unit_price'] ) ? $service['unit_price'] : 0 );
+	$total    = offitravel_addon_plain_price_text( isset( $service['total'] ) ? $service['total'] : 0 );
+	if ( in_array( $source, array( 'real_rooms', 'manual_rooms' ), true ) ) {
+		return array(
+			sprintf( __( 'Habitaciones: %d', 'offitravel-addons' ), $quantity ),
+			sprintf( __( 'Precio unitario: %s', 'offitravel-addons' ), $unit ),
+			sprintf( __( 'Total: %s', 'offitravel-addons' ), $total ),
+		);
+	}
+	if ( 'booking_once' === $source ) {
+		return array(
+			__( 'Una vez por reserva', 'offitravel-addons' ),
+			sprintf( __( 'Precio: %s', 'offitravel-addons' ), $unit ),
+			sprintf( __( 'Total: %s', 'offitravel-addons' ), $total ),
+		);
+	}
+	return array(
+		sprintf( __( 'Cantidad: %d', 'offitravel-addons' ), $quantity ),
+		sprintf( __( 'Precio unitario: %s', 'offitravel-addons' ), $unit ),
+		sprintf( __( 'Total: %s', 'offitravel-addons' ), $total ),
+	);
+}
+
+/**
+ * Convert fixed-service lines to safe cart/checkout HTML.
+ *
+ * @param array<string,mixed> $service Normalized service snapshot.
+ * @return string Safe HTML containing line breaks only.
+ */
+function offitravel_addon_fixed_service_display( array $service ) {
+	return implode( '<br>', array_map( 'esc_html', offitravel_addon_fixed_service_lines( $service ) ) );
 }
 
 /**
@@ -1280,6 +1557,15 @@ function offitravel_addon_save( $post_id ) {
 	update_post_meta( $post_id, OFFITRAVEL_ADDON_META_PRODUCTS, $config['product_ids'] );
 }
 
+/**
+ * Render assigned fixed and traveler-age services in the OVA booking form.
+ *
+ * Fixed services may include a product-scoped manual room quantity. Services
+ * without that metadata retain their legacy control and calculation behavior.
+ *
+ * @param array<string,mixed> $args Tripgo booking-form arguments.
+ * @return void
+ */
 function offitravel_addon_booking_markup( $args ) {
 	if ( empty( $args['id'] ) || ! defined( 'OVABRW_RENTAL' ) ) {
 		return;
@@ -1310,9 +1596,15 @@ function offitravel_addon_booking_markup( $args ) {
 				padding: 0.4rem 0; border-bottom: 1px solid #f0f0f0;
 			}
 			.offitravel-prd-addon-row:last-child { border-bottom: 0; }
+			.offitravel-prd-addon-row-manual { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
 			.offitravel-prd-addon-row label { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; flex: 1; margin: 0; }
 			.offitravel-prd-addon-price { font-weight: 700; color: #2271b1; white-space: nowrap; }
 			.offitravel-prd-addon-unit { font-weight: 600; color: #2271b1; font-size: 0.9em; }
+			.offitravel-prd-addon-manual-quantity { display: grid; gap: 0.35rem; grid-column: 1 / -1; margin: 0.45rem 0 0 1.75rem; }
+			.offitravel-prd-addon-manual-quantity label { display: grid; gap: 0.3rem; cursor: default; }
+			.offitravel-prd-addon-manual-quantity input { max-width: 8rem; }
+			.offitravel-prd-addon-manual-error { color: #b32d2e; display: block; font-size: 0.875em; }
+			.offitravel-prd-addon-manual-error[hidden] { display: none; }
 			.offitravel-prd-addon-age-service { margin: 0 0 1rem; }
 			.offitravel-prd-addon-age-title { font-weight: 700; margin: 0 0 0.5rem; }
 			.offitravel-prd-addon-age-rules { color: #555; font-size: 0.9em; margin: 0 0 0.65rem; }
@@ -1343,16 +1635,27 @@ function offitravel_addon_booking_markup( $args ) {
 					'room'    => __( '/ Habitación', 'offitravel-addons' ),
 					'booking' => __( '/ Reserva', 'offitravel-addons' ),
 				)[ $bill ];
-				$dec_pr = wc_format_decimal( (string) $pr );
+				$dec_pr          = wc_format_decimal( (string) $pr );
+				$manual_products = array_map(
+					'absint',
+					(array) get_post_meta( $addon_post->ID, OFFITRAVEL_ADDON_META_MANUAL_ROOM_PRODUCTS, true )
+				);
+				$manual_quantity = 'room' === $bill && in_array( $product_id, $manual_products, true );
+				$quantity_id     = 'offitravel-addon-quantity-' . $addon_post->ID;
+				$error_id        = $quantity_id . '-error';
 				?>
-				<li class="offitravel-prd-addon-row">
+				<li
+					class="offitravel-prd-addon-row<?php echo $manual_quantity ? ' offitravel-prd-addon-row-manual' : ''; ?>"
+					data-offitravel-fixed-service="<?php echo esc_attr( (string) $addon_post->ID ); ?>"
+					<?php echo $manual_quantity ? 'data-offitravel-fixed-manual=""' : ''; ?>
+				>
 					<label>
 						<input
 							type="checkbox"
 							name="offitravel_addons[]"
 							value="<?php echo esc_attr( (string) $addon_post->ID ); ?>"
 						/>
-						<span><?php echo esc_html( get_the_title( $addon_post ) ); ?></span>
+						<span><?php echo esc_html( offitravel_addon_get_public_label( $addon_post ) ); ?></span>
 					</label>
 					<span class="offitravel-prd-addon-price">
 						<?php
@@ -1362,6 +1665,32 @@ function offitravel_addon_booking_markup( $args ) {
 						}
 						?>
 					</span>
+					<?php if ( $manual_quantity ) : ?>
+						<div class="offitravel-prd-addon-manual-quantity">
+							<label for="<?php echo esc_attr( $quantity_id ); ?>">
+								<span><?php esc_html_e( 'Número de habitaciones que recibirán el KIT', 'offitravel-addons' ); ?></span>
+								<input
+									type="number"
+									id="<?php echo esc_attr( $quantity_id ); ?>"
+									name="offitravel_addon_quantities[<?php echo esc_attr( (string) $addon_post->ID ); ?>]"
+									min="1"
+									step="1"
+									inputmode="numeric"
+									aria-describedby="<?php echo esc_attr( $error_id ); ?>"
+									data-offitravel-fixed-quantity=""
+									disabled
+								/>
+							</label>
+							<span
+								id="<?php echo esc_attr( $error_id ); ?>"
+								class="offitravel-prd-addon-manual-error"
+								role="alert"
+								aria-live="polite"
+								data-offitravel-fixed-quantity-error=""
+								hidden
+							></span>
+						</div>
+					<?php endif; ?>
 				</li>
 				<?php
 			endforeach;
@@ -1402,6 +1731,11 @@ function offitravel_addon_booking_markup( $args ) {
 	<?php
 }
 
+/**
+ * Enqueue add-on state helpers and the public booking integration.
+ *
+ * @return void
+ */
 function offitravel_addon_enqueue_front() {
 	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
 		return;
@@ -1436,6 +1770,15 @@ function offitravel_addon_enqueue_front() {
 		true
 	);
 	$deps[] = 'offitravel-product-addons-traveler-age-state';
+	$fixed_state_path = dirname( __FILE__ ) . '/offitravel-product-addons-fixed-state.js';
+	wp_enqueue_script(
+		'offitravel-product-addons-fixed-state',
+		plugin_dir_url( __FILE__ ) . 'offitravel-product-addons-fixed-state.js',
+		array(),
+		is_readable( $fixed_state_path ) ? (string) filemtime( $fixed_state_path ) : '1',
+		true
+	);
+	$deps[] = 'offitravel-product-addons-fixed-state';
 
 	$path = dirname( __FILE__ ) . '/offitravel-product-addons-front.js';
 	$bust = is_readable( $path ) ? (string) filemtime( $path ) : '1';
@@ -1449,6 +1792,14 @@ function offitravel_addon_enqueue_front() {
 	);
 }
 
+/**
+ * Persist server-calculated fixed and traveler-age snapshots in a cart line.
+ *
+ * @param array<string,mixed> $cart_item_data Existing OVA cart data.
+ * @param int                 $product_id     Product ID.
+ * @param mixed               $quantity       OVA/WooCommerce quantity (unused).
+ * @return array<string,mixed>
+ */
 function offitravel_addon_cart_data( $cart_item_data, $product_id, $quantity = null ) {
 	unset( $quantity );
 	if ( ! defined( 'OVABRW_RENTAL' ) ) {
@@ -1458,13 +1809,18 @@ function offitravel_addon_cart_data( $cart_item_data, $product_id, $quantity = n
 	if ( ! $p instanceof WC_Product || ! $p->is_type( OVABRW_RENTAL ) ) {
 		return $cart_item_data;
 	}
-	if ( ! empty( $_POST['offitravel_addons'] ) ) {
-		$raw = wp_unslash( $_POST['offitravel_addons'] );
-		$raw = is_array( $raw ) ? $raw : array( $raw );
-		$cart_item_data['offitravel_addons'] = offitravel_addon_validate_ids(
-			array_map( 'absint', $raw ),
-			absint( $product_id )
+	$fixed_ids = offitravel_addon_fixed_request_ids();
+	if ( $fixed_ids ) {
+		$fixed = offitravel_addon_calculate_fixed_snapshot(
+			$product_id,
+			$fixed_ids,
+			offitravel_addon_fixed_request_quantities(),
+			offitravel_addon_fixed_request_context( $cart_item_data )
 		);
+		if ( ! is_wp_error( $fixed ) && ! empty( $fixed['services'] ) ) {
+			$cart_item_data['offitravel_addons']       = array_keys( $fixed['services'] );
+			$cart_item_data['offitravel_fixed_addons'] = $fixed;
+		}
 	}
 
 	$age_raw = offitravel_addon_age_request_payload();
@@ -1481,6 +1837,16 @@ function offitravel_addon_cart_data( $cart_item_data, $product_id, $quantity = n
 	return $cart_item_data;
 }
 
+/**
+ * Add normalized add-on totals exactly once to an OVA base line total.
+ *
+ * @param float               $line_total    OVA base line total.
+ * @param int                 $product_id    Product ID.
+ * @param mixed               $checkin_date  OVA check-in value (unused).
+ * @param mixed               $checkout_date OVA check-out value (unused).
+ * @param array<string,mixed> $cart_item     Cart or AJAX calculation context.
+ * @return float
+ */
 function offitravel_addon_line_total( $line_total, $product_id, $checkin_date, $checkout_date, $cart_item ) {
 	unset( $checkin_date, $checkout_date );
 	if ( empty( $product_id ) || ! defined( 'OVABRW_RENTAL' ) ) {
@@ -1491,9 +1857,21 @@ function offitravel_addon_line_total( $line_total, $product_id, $checkin_date, $
 		return $line_total;
 	}
 	$t     = is_array( $cart_item ) ? $cart_item : array();
-	$ids   = offitravel_addon_get_post_ids_from_request( $t );
-	$valid = offitravel_addon_validate_ids( $ids, absint( $product_id ) );
-	$add   = offitravel_addon_sum( $valid, $t );
+	$ids = offitravel_addon_get_post_ids_from_request( $t );
+	if ( ! empty( $t['offitravel_fixed_addons'] ) ) {
+		$add = offitravel_addon_fixed_snapshot_total( $t['offitravel_fixed_addons'], absint( $product_id ) );
+	} elseif ( wp_doing_ajax() && $ids ) {
+		$fixed = offitravel_addon_calculate_fixed_snapshot(
+			$product_id,
+			$ids,
+			offitravel_addon_fixed_request_quantities(),
+			offitravel_addon_fixed_request_context( $t )
+		);
+		$add = is_wp_error( $fixed ) ? 0.0 : (float) $fixed['total'];
+	} else {
+		$valid = offitravel_addon_validate_ids( $ids, absint( $product_id ) );
+		$add   = offitravel_addon_sum( $valid, $t );
+	}
 	if ( ! empty( $t['offitravel_traveler_age'] ) ) {
 		$add += offitravel_addon_age_snapshot_total( $t['offitravel_traveler_age'], absint( $product_id ) );
 	} elseif ( wp_doing_ajax() && ! empty( $_POST['offitravel_age_addons'] ) ) {
@@ -1512,30 +1890,48 @@ function offitravel_addon_line_total( $line_total, $product_id, $checkin_date, $
 	return round( (float) $line_total + $add, wc_get_price_decimals() );
 }
 
+/**
+ * Append readable add-on breakdowns to cart and checkout item data.
+ *
+ * @param array<int,array<string,string>> $item_data Existing display rows.
+ * @param array<string,mixed>             $cart_item Cart line data.
+ * @return array<int,array<string,string>>
+ */
 function offitravel_addon_cart_display( $item_data, $cart_item ) {
 	if ( empty( $cart_item['data'] ) || ! defined( 'OVABRW_RENTAL' )
 		|| ! $cart_item['data']->is_type( OVABRW_RENTAL )
 	) {
 		return $item_data;
 	}
-	$labels = array();
-	if ( ! empty( $cart_item['offitravel_addons'] ) && is_array( $cart_item['offitravel_addons'] ) ) {
+	$product_id     = (int) $cart_item['data']->get_id();
+	$fixed_snapshot = ! empty( $cart_item['offitravel_fixed_addons'] )
+		? offitravel_addon_normalize_fixed_snapshot( $cart_item['offitravel_fixed_addons'], $product_id )
+		: null;
+	if ( is_array( $fixed_snapshot ) ) {
+		foreach ( $fixed_snapshot['services'] as $service ) {
+			$item_data[] = array(
+				'key'   => '' !== $service['label'] ? $service['label'] : __( 'Servicio adicional', 'offitravel-addons' ),
+				'value' => offitravel_addon_fixed_service_display( $service ),
+			);
+		}
+	} elseif ( ! empty( $cart_item['offitravel_addons'] ) && is_array( $cart_item['offitravel_addons'] ) ) {
+		$labels = array();
 		foreach ( array_map( 'absint', $cart_item['offitravel_addons'] ) as $aid ) {
 			$po = get_post( $aid );
 			if ( $po && OFFITRAVEL_ADDON_PT === $po->post_type ) {
 				$labels[] = $po->post_title;
 			}
 		}
-	}
-	if ( $labels ) {
-		$item_data[] = array(
-			'key'   => __( 'Servicios adicionales', 'offitravel-addons' ),
-			'value' => esc_html( implode( ', ', $labels ) ),
-		);
+		if ( $labels ) {
+			$item_data[] = array(
+				'key'   => __( 'Servicios adicionales', 'offitravel-addons' ),
+				'value' => esc_html( implode( ', ', $labels ) ),
+			);
+		}
 	}
 
 	$age_snapshot = ! empty( $cart_item['offitravel_traveler_age'] )
-		? offitravel_addon_normalize_age_snapshot( $cart_item['offitravel_traveler_age'], $cart_item['data']->get_id() )
+		? offitravel_addon_normalize_age_snapshot( $cart_item['offitravel_traveler_age'], $product_id )
 		: null;
 	if ( is_array( $age_snapshot ) ) {
 		foreach ( $age_snapshot['services'] as $service ) {
@@ -1548,6 +1944,14 @@ function offitravel_addon_cart_display( $item_data, $cart_item ) {
 	return $item_data;
 }
 
+/**
+ * Persist visible breakdowns and hidden structured snapshots on an order item.
+ *
+ * @param WC_Order_Item_Product $item          Order item being created.
+ * @param string                $cart_item_key Cart item key.
+ * @param array<string,mixed>   $values        Cart line values.
+ * @return void
+ */
 function offitravel_addon_order_item( $item, $cart_item_key, $values ) {
 	unset( $cart_item_key );
 	if ( empty( $values['data'] ) || ! defined( 'OVABRW_RENTAL' )
@@ -1555,10 +1959,26 @@ function offitravel_addon_order_item( $item, $cart_item_key, $values ) {
 	) {
 		return;
 	}
-	if ( ! empty( $values['offitravel_addons'] ) && is_array( $values['offitravel_addons'] ) ) {
+	$product_id     = (int) $values['data']->get_id();
+	$fixed_snapshot = ! empty( $values['offitravel_fixed_addons'] )
+		? offitravel_addon_normalize_fixed_snapshot( $values['offitravel_fixed_addons'], $product_id )
+		: null;
+	if ( is_array( $fixed_snapshot ) ) {
+		$ids = array_keys( $fixed_snapshot['services'] );
+		foreach ( $fixed_snapshot['services'] as $service ) {
+			$item->add_meta_data(
+				'' !== $service['label'] ? $service['label'] : __( 'Servicio adicional', 'offitravel-addons' ),
+				implode( "\n", offitravel_addon_fixed_service_lines( $service ) ),
+				true
+			);
+		}
+		$item->add_meta_data( '_offitravel_addon_ids', implode( ',', array_map( 'absint', $ids ) ), false );
+		$item->add_meta_data( '_offitravel_fixed_addon_snapshot', $fixed_snapshot, true );
+		$item->add_meta_data( '_offitravel_fixed_addon_total', $fixed_snapshot['total'], true );
+	} elseif ( ! empty( $values['offitravel_addons'] ) && is_array( $values['offitravel_addons'] ) ) {
 		$ids = offitravel_addon_validate_ids(
 			array_map( 'absint', $values['offitravel_addons'] ),
-			(int) $values['data']->get_id()
+			$product_id
 		);
 		$names = array();
 		foreach ( $ids as $id ) {
@@ -1600,6 +2020,8 @@ function offitravel_addon_order_item( $item, $cart_item_key, $values ) {
  * @return string[]
  */
 function offitravel_addon_hidden_order_itemmeta( $hidden ) {
+	$hidden[] = '_offitravel_fixed_addon_snapshot';
+	$hidden[] = '_offitravel_fixed_addon_total';
 	$hidden[] = '_offitravel_traveler_age_snapshot';
 	$hidden[] = '_offitravel_traveler_age_total';
 	return array_values( array_unique( $hidden ) );

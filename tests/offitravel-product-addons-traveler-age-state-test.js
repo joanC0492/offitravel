@@ -84,12 +84,13 @@ const tests = {
 		assert.match(frontSource, /\.find\(['"]input\[name=["']offitravel_addons\[\]["']\]:checked['"]\)/);
 		assert.doesNotMatch(frontSource, /\.find\(['"]\.offitravel-prd-addon-fields input\[type=["']checkbox["']\]:checked['"]\)/);
 	},
-	'the existing AJAX prefilter recognizes traveler-age data already present in a serialized payload'() {
+	'the existing AJAX prefilter preserves traveler-age data already present in a serialized payload'() {
 		const serialized = 'action=ovabrw_calculate_total&offitravel_age_addons%5B12718%5D%5B1%5D%5B1%5D%5Bselected%5D=1';
 
 		assert.strictEqual(state.serializedPayloadHasAddonSelections(serialized), true);
 		assert.strictEqual(state.serializedPayloadHasAddonSelections('action=ovabrw_calculate_total'), false);
-		assert.match(frontSource, /serializedPayloadHasAddonSelections\(d\)/);
+		assert.match(frontSource, /var hasAge = \/\(\?:\^\|&\)offitravel_age_addons/);
+		assert.match(frontSource, /if \(!hasAge && !\$\.isEmptyObject\(travelerAge\)\)/);
 	},
 	'age zero is valid but selected travelers cannot keep an empty negative or decimal age'() {
 		assert.strictEqual(state.isTravelerAgeValueValid('0'), true);
